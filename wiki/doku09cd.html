@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=administratorguide:administratorguide by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:38:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>administratorguide:administratorguide</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="administratorguide,administratorguide"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="doku4035.html?id=administratorguide:administratorguide&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feed9523.php?mode=list&amp;ns=administratorguide"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="doku09cd.html?do=export_xhtml&amp;id=administratorguide:administratorguide"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="administratorguide5d98.txt?do=export_raw&amp;id=administratorguide:administratorguide"/>
+<link rel="canonical" href="dokuebef.html?id=administratorguide:administratorguide"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='administratorguide';var JSINFO = {"id":"administratorguide:administratorguide","namespace":"administratorguide"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#audience">Audience</a></div></li>
+<li class="level1"><div class="li"><a href="#required_hardware">Required hardware</a></div></li>
+<li class="level1"><div class="li"><a href="#instructions_to_install_sigmah">Instructions to install Sigmah</a></div></li>
+<li class="level1"><div class="li"><a href="#instructions_to_upgrade_sigmah_database">Instructions to upgrade Sigmah database</a></div></li>
+<li class="level1"><div class="li"><a href="#data_separation">Data separation</a></div></li>
+<li class="level1"><div class="li"><a href="#instructions_to_install_solr">Instructions to install Solr</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="audience">Audience</h1>
+<div class="level1">
+
+<p>
+This guide is for those who wish deploy and run Sigmah on their own server.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Audience" [0-91] -->
+<h1 class="sectionedit2" id="required_hardware">Required hardware</h1>
+<div class="level1">
+
+<p>
+To run a Sigmah Server, you will need to have a machine with the following requirements:
+</p>
+<div class="table sectionedit3"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> <strong>Application type</strong> </td><td class="col1"> Java web application (for information: 115MB .war file) </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">:———————</td><td class="col1">:——————————————————-</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> <strong>Server type</strong>      </td><td class="col1"> Java application server (Tomcat recommended but working also with Jetty) accepting Hibernate, or dedicated server </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> <strong>Database type</strong>    </td><td class="col1"> The current version has been tested with PostGreSQL 9.2 (and higher). It is possible to configure Sigmah to work with <a href="http://community.jboss.org/wiki/SupportedDatabases" class="urlextern" title="http://community.jboss.org/wiki/SupportedDatabases" rel="nofollow">other databases</a>, but these have not been tested and would require some adaptation on SQL functions. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> <strong>Processor</strong>        </td><td class="col1 leftalign"> 2Ghz recommended, dual-core if possible                </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> <strong>Live memory</strong>      </td><td class="col1 leftalign"> 2GB recommended                                        </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> <strong>Hard drive</strong>       </td><td class="col1"> At least 50GB, but depends strongly on the volume of data and files stored by the user of the organization </td>
+	</tr>
+</table></div>
+<!-- EDIT3 TABLE [207-1109] -->
+</div>
+<!-- EDIT2 SECTION "Required hardware" [92-1111] -->
+<h1 class="sectionedit4" id="instructions_to_install_sigmah">Instructions to install Sigmah</h1>
+<div class="level1">
+
+<p>
+<a href="doku1ba3.html?id=administratorguide:installingsigmah" class="wikilink1" title="administratorguide:installingsigmah">Instructions to install Sigmah</a>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Instructions to install Sigmah" [1112-1198] -->
+<h1 class="sectionedit5" id="instructions_to_upgrade_sigmah_database">Instructions to upgrade Sigmah database</h1>
+<div class="level1">
+
+<p>
+Link to <a href="doku17a0.html?id=contributorguide:schemachangelog" class="wikilink1" title="contributorguide:schemachangelog">schema change log</a> where all steps to upgrade your database are explained.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Instructions to upgrade Sigmah database" [1199-1362] -->
+<h1 class="sectionedit6" id="data_separation">Data separation</h1>
+<div class="level1">
+
+<p>
+<a href="doku2081.html?id=administratorguide:dataseparation" class="wikilink1" title="administratorguide:dataseparation">How to use the data separation scripts</a>
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Data separation" [1363-1440] -->
+<h1 class="sectionedit7" id="instructions_to_install_solr">Instructions to install Solr</h1>
+<div class="level1">
+
+<p>
+<a href="dokud962.html?id=administratorguide:solrinstallation" class="wikilink1" title="administratorguide:solrinstallation">Installing Solr for enabling search within Sigmah</a>
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Instructions to install Solr" [1441-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=administratorguide:administratorguide by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:38:58 GMT -->
+</html>

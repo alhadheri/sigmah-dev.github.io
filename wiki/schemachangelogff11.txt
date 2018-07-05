@@ -1,0 +1,2086 @@
+# Introduction #
+
+Every attempt will be made to keep new versions of Sigmah backwards compatible with SQL databases created with earlier versions of Sigmah, but sometimes there will be a need for breaking changes. These can be found here.
+
+All SQL commands below should be able to be runned on PostgreSQL database. Ideally, they should be written respecting the ANSI SQL norm.
+
+
+
+# Release 2.3 #
+
+## 1. Schema changes ##
+
+<code postgresql sigmah-schemachanges-v2.3.sql>
+
+-- Iteration "type" for more intuitive iteration group manipulation (#928)
+ALTER TABLE layout_group ADD COLUMN iteration_type character varying (8192);
+
+-- Limit contacts available for a contact list according to a contact model checkbox field (#1018)
+ALTER TABLE contact_list_element
+    ADD COLUMN id_checkbox_element bigint;
+ALTER TABLE contact_list_element
+    ADD FOREIGN KEY (id_checkbox_element)
+    REFERENCES checkbox_element (id_flexible_element) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION;
+
+-- Importation frameworks for Contact models (#924)
+ALTER TABLE importation_scheme_model ADD id_contact_model integer;
+ALTER TABLE importation_scheme_model ADD CONSTRAINT importation_scheme_model_id_contact_model_fkey
+  FOREIGN KEY (id_contact_model) REFERENCES contact_model(id_contact_model) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+</code>
+
+# Release 2.2 #
+
+## 1. Schema changes ##
+
+<code postgresql sigmah-schemachanges-v2.2.sql>
+
+-- Project team sub-tab (#620) 
+CREATE TABLE project_team_members
+(
+  id_project integer NOT NULL,
+  userid integer NOT NULL,
+  CONSTRAINT fk_70qe4sufg4oab00hik1d550jq FOREIGN KEY (id_project)
+      REFERENCES project (databaseid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_npm2g3bmepw61ye0vvce18614 FOREIGN KEY (userid)
+      REFERENCES userlogin (userid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT uk_aiug08fx4cx6p93ynvqlgp7xu UNIQUE (id_project, userid)
+)
+WITH (
+  OIDS=FALSE
+);
+
+
+CREATE TABLE project_team_member_profiles
+(
+  id_project integer NOT NULL,
+  id_profile integer NOT NULL,
+  CONSTRAINT fk_9jyuxw6qomv6jou6tt5ogs4yq FOREIGN KEY (id_project)
+      REFERENCES project (databaseid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_ho3qygde3ttb969mpa5k1wn7k FOREIGN KEY (id_profile)
+      REFERENCES profile (id_profile) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT uk_asrruyupsb7jmfcgbrr9i8vn4 UNIQUE (id_project, id_profile)
+)
+WITH (
+  OIDS=FALSE
+);
+
+
+-- User attached to several OrgUnit (#243)
+ALTER TABLE user_unit ADD COLUMN user_unit_type varchar(32);
+
+
+-- Data framework feature foundations development (#860)
+CREATE TABLE framework
+(
+  id_framework integer NOT NULL,
+  availability_status character varying(255) NOT NULL,
+  implementation_status character varying(255) NOT NULL,
+  label character varying(255) NOT NULL,
+  id_organization integer,
+  CONSTRAINT framework_pkey PRIMARY KEY (id_framework),
+  CONSTRAINT fk_3l3o8bnug9ymilr8irjecxfxy FOREIGN KEY (id_organization)
+      REFERENCES organization (id_organization) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE framework_fulfillment
+(
+  id_framework_fulfillment integer NOT NULL,
+  reject_reason character varying(255),
+  id_framework integer NOT NULL,
+  id_project_model integer NOT NULL,
+  CONSTRAINT framework_fulfillment_pkey PRIMARY KEY (id_framework_fulfillment),
+  CONSTRAINT fk_hn13s8iybgi1vdo47xkqqd0b7 FOREIGN KEY (id_framework)
+      REFERENCES framework (id_framework) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE,
+  CONSTRAINT fk_rs0vcqcllktrd5d12o1blowqe FOREIGN KEY (id_project_model)
+      REFERENCES project_model (id_project_model) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE,
+  CONSTRAINT uk_rs0vcqcllktrd5d12o1blowqe UNIQUE (id_project_model, id_framework)
+);
+
+CREATE TABLE framework_hierarchy
+(
+  id_framework_hierarchy integer NOT NULL,
+  label character varying(255) NOT NULL,
+  level integer NOT NULL,
+  id_framework integer NOT NULL,
+  parent_hierarchy integer, -- XXX: Useless if the hierarchy is not a tree
+  CONSTRAINT framework_hierarchy_pkey PRIMARY KEY (id_framework_hierarchy),
+  CONSTRAINT fk_6ap8cn4cxh5vj7163tyvlk03b FOREIGN KEY (parent_hierarchy)
+      REFERENCES framework_hierarchy (id_framework_hierarchy) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE,
+  CONSTRAINT fk_g7s48h8iyf2po13qyi6sd5qtb FOREIGN KEY (id_framework)
+      REFERENCES framework (id_framework) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE,
+  CONSTRAINT framework_hierarchy_level_check CHECK (level >= 0)
+);
+
+CREATE TABLE framework_element
+(
+  id_framework_element integer NOT NULL,
+  data_type character varying(255) NOT NULL,
+  label character varying(255) NOT NULL,
+  value_rule character varying(255) NOT NULL,
+  id_framework_hierarchy integer NOT NULL,
+  CONSTRAINT framework_element_pkey PRIMARY KEY (id_framework_element),
+  CONSTRAINT fk_j2vqfnb56b43qyrxp0cuoyd60 FOREIGN KEY (id_framework_hierarchy)
+      REFERENCES framework_hierarchy (id_framework_hierarchy) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE
+);
+
+CREATE TABLE framework_element_implementation
+(
+  id_framework_element_implementation integer NOT NULL,
+  id_flexible_element integer NOT NULL,
+  id_framework_element integer NOT NULL,
+  id_framework_fulfillment integer NOT NULL,
+  CONSTRAINT framework_element_implementation_pkey PRIMARY KEY (id_framework_element_implementation),
+  CONSTRAINT fk_1q2w7ryycg4e220id3s69kdgu FOREIGN KEY (id_framework_element)
+      REFERENCES framework_element (id_framework_element) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE,
+  CONSTRAINT fk_haj6o47cyolg7xjob4uymvndw FOREIGN KEY (id_flexible_element)
+      REFERENCES flexible_element (id_flexible_element) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE,
+  CONSTRAINT fk_mq0iewhji722rna3m050mwmfj FOREIGN KEY (id_framework_fulfillment)
+      REFERENCES framework_fulfillment (id_framework_fulfillment) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE,
+  CONSTRAINT uk_mq0iewhji722rna3m050mwmfj UNIQUE (id_flexible_element, id_framework_element)
+);
+
+
+-- Revise budget default field design (#864)
+CREATE TABLE budget_ratio_element
+(
+  id_flexible_element bigint NOT NULL,
+  id_spent_field bigint,
+  id_planned_field bigint,
+  CONSTRAINT budget_ratio_element_pkey PRIMARY KEY (id_flexible_element),
+  CONSTRAINT budget_ratio_element_fkey1 FOREIGN KEY (id_spent_field)
+      REFERENCES flexible_element (id_flexible_element) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT budget_ratio_element_fkey2 FOREIGN KEY (id_planned_field)
+      REFERENCES flexible_element (id_flexible_element) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+
+-- Contact database (aka "CRM") (#634)
+CREATE TABLE contact_model (
+  id_contact_model INTEGER PRIMARY KEY,
+  id_organization INTEGER NOT NULL
+    REFERENCES organization(id_organization),
+  type VARCHAR(255) NOT NULL,
+  name VARCHAR(8192) NOT NULL,
+  status VARCHAR(255) NOT NULL,
+  date_deleted TIMESTAMP WITHOUT TIME ZONE,
+  date_maintenance TIMESTAMP WITHOUT TIME ZONE
+);
+
+CREATE TABLE contact_card (
+  id_contact_card INTEGER PRIMARY KEY,
+  id_contact_model INTEGER NOT NULL
+    REFERENCES contact_model(id_contact_model)
+    ON DELETE CASCADE,
+  id_layout INTEGER REFERENCES layout(id_layout)
+);
+
+CREATE TABLE contact_details (
+  id_contact_details INTEGER PRIMARY KEY,
+  id_contact_model INTEGER NOT NULL
+    REFERENCES contact_model(id_contact_model)
+    ON DELETE CASCADE,
+  id_layout INTEGER REFERENCES layout(id_layout)
+);
+
+CREATE TABLE default_contact_flexible_element (
+  id_flexible_element INTEGER NOT NULL
+    PRIMARY KEY
+    REFERENCES flexible_element (id_flexible_element)
+    ON DELETE CASCADE,
+  type VARCHAR(255)
+);
+
+CREATE OR REPLACE FUNCTION contact_model_create_default_layout_constraint(p_type VARCHAR, p_id_layout_group INTEGER, p_id_contact_model INTEGER, p_sort_order INTEGER, p_recycle_flexible_element_from_details BOOLEAN) RETURNS INTEGER AS $$
+    DECLARE
+        p_id_flexible_element INTEGER;
+        p_id_layout_constraint INTEGER;
+    BEGIN
+        p_id_layout_constraint := nextval('hibernate_sequence');
+
+        IF p_recycle_flexible_element_from_details THEN
+            -- Let's find the flexible element with the same type in the details layout
+            -- Sharing the flexible element between card and details indicates to the application that a flexible
+            -- element in the details layout appears in the contact card
+            SELECT dcf.id_flexible_element INTO p_id_flexible_element
+            FROM contact_details cd
+            JOIN layout_group dlg ON (dlg.id_layout = cd.id_layout)
+            JOIN layout_constraint dlc ON (dlc.id_layout_group = dlg.id_layout_group)
+            JOIN default_contact_flexible_element dcf ON (dcf.id_flexible_element = dlc.id_flexible_element AND dcf.type = p_type)
+            WHERE cd.id_contact_model = p_id_contact_model;
+        ELSE
+            p_id_flexible_element := nextval('hibernate_sequence');
+
+            INSERT INTO flexible_element (id_flexible_element, amendable, validates, exportable, globally_exportable, creation_date)
+            SELECT p_id_flexible_element, false, false, true, false, NOW();
+
+            INSERT INTO default_contact_flexible_element (id_flexible_element, type)
+            SELECT p_id_flexible_element, p_type;
+        END IF;
+
+        INSERT INTO layout_constraint (id_layout_constraint, sort_order, id_flexible_element, id_layout_group)
+        SELECT p_id_layout_constraint, p_sort_order, p_id_flexible_element, p_id_layout_group;
+
+        RETURN p_id_layout_constraint;
+    END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION contact_model_create_card_and_details(p_id_contact_model INTEGER) RETURNS VOID AS $$
+    DECLARE
+        p_id_contact_card INTEGER;
+        p_id_contact_card_layout INTEGER;
+        p_id_contact_photo_layout_group INTEGER;
+        p_id_contact_card_layout_group INTEGER;
+        p_id_contact_details INTEGER;
+        p_id_contact_details_layout INTEGER;
+        p_id_contact_details_layout_group INTEGER;
+        p_type VARCHAR;
+        p_counter INTEGER;
+    BEGIN
+        -- ContactDetails creation
+        p_id_contact_details := nextval('hibernate_sequence');
+        p_id_contact_details_layout := nextval('hibernate_sequence');
+        p_id_contact_details_layout_group := nextval('hibernate_sequence');
+
+        INSERT INTO layout (id_layout, columns_count, rows_count)
+        SELECT p_id_contact_details_layout, 1, 1;
+
+        INSERT INTO layout_group (id_layout_group, column_index, row_index, title, id_layout)
+        SELECT p_id_contact_details_layout_group, 0, 0, 'Default details group', p_id_contact_details_layout;
+
+        p_counter := 1;
+        FOREACH p_type IN ARRAY ARRAY['FAMILY_NAME', 'FIRST_NAME', 'ORGANIZATION_NAME', 'MAIN_ORG_UNIT', 'SECONDARY_ORG_UNITS', 'CREATION_DATE', 'LOGIN', 'EMAIL_ADDRESS', 'PHONE_NUMBER', 'POSTAL_ADDRESS', 'PHOTO', 'COUNTRY', 'DIRECT_MEMBERSHIP', 'TOP_MEMBERSHIP']
+        LOOP
+            PERFORM contact_model_create_default_layout_constraint(p_type, p_id_contact_details_layout_group, p_id_contact_model, p_counter, false);
+            p_counter := p_counter + 1;
+        END LOOP;
+
+        INSERT INTO contact_details (id_contact_details, id_contact_model, id_layout)
+        SELECT p_id_contact_details, p_id_contact_model, p_id_contact_details_layout;
+
+        -- ContactCard creation
+        p_id_contact_card := nextval('hibernate_sequence');
+        p_id_contact_card_layout := nextval('hibernate_sequence');
+
+        INSERT INTO layout (id_layout, columns_count, rows_count)
+        SELECT p_id_contact_card_layout, 2, 1;
+
+        -- Photo group
+        p_id_contact_photo_layout_group := nextval('hibernate_sequence');
+
+        INSERT INTO layout_group (id_layout_group, column_index, row_index, title, id_layout)
+        SELECT p_id_contact_photo_layout_group, 0, 0, 'Avatar group', p_id_contact_card_layout;
+
+        PERFORM contact_model_create_default_layout_constraint('PHOTO', p_id_contact_photo_layout_group, p_id_contact_model, 0, true);
+
+        -- Card information group
+        p_id_contact_card_layout_group := nextval('hibernate_sequence');
+
+        INSERT INTO layout_group (id_layout_group, column_index, row_index, title, id_layout)
+        SELECT p_id_contact_card_layout_group, 0, 1, 'Default card group', p_id_contact_card_layout;
+
+        PERFORM contact_model_create_default_layout_constraint('FAMILY_NAME', p_id_contact_card_layout_group, p_id_contact_model, 1, true);
+        PERFORM contact_model_create_default_layout_constraint('ORGANIZATION_NAME', p_id_contact_card_layout_group, p_id_contact_model, 1, true);
+        PERFORM contact_model_create_default_layout_constraint('FIRST_NAME', p_id_contact_card_layout_group, p_id_contact_model, 2, true);
+        PERFORM contact_model_create_default_layout_constraint('TOP_MEMBERSHIP', p_id_contact_card_layout_group, p_id_contact_model, 3, true);
+        PERFORM contact_model_create_default_layout_constraint('EMAIL_ADDRESS', p_id_contact_card_layout_group, p_id_contact_model, 4, true);
+        PERFORM contact_model_create_default_layout_constraint('PHONE_NUMBER', p_id_contact_card_layout_group, p_id_contact_model, 5, true);
+        PERFORM contact_model_create_default_layout_constraint('POSTAL_ADDRESS', p_id_contact_card_layout_group, p_id_contact_model, 6, true);
+        PERFORM contact_model_create_default_layout_constraint('COUNTRY', p_id_contact_card_layout_group, p_id_contact_model, 7, true);
+
+        INSERT INTO contact_card (id_contact_card, id_contact_model, id_layout)
+        SELECT p_id_contact_card, p_id_contact_model, p_id_contact_card_layout;
+    END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE OR REPLACE FUNCTION contact_model_create(p_id_organization INTEGER, p_type VARCHAR, p_name VARCHAR) RETURNS INTEGER AS $$
+    DECLARE
+        p_id_contact_model INTEGER;
+    BEGIN
+        p_id_contact_model := nextval('hibernate_sequence');
+
+        INSERT INTO contact_model (id_contact_model, name, status, type, id_organization)
+        SELECT p_id_contact_model, p_name, 'USED', p_type, p_id_organization;
+
+        PERFORM contact_model_create_card_and_details(p_id_contact_model);
+
+        RETURN p_id_contact_model;
+    END;
+$$ LANGUAGE plpgsql;
+
+CREATE TABLE contact (
+  id_contact INTEGER PRIMARY KEY,
+  id_contact_model INTEGER NOT NULL REFERENCES contact_model(id_contact_model),
+  id_user INTEGER REFERENCES userlogin(userid),
+  id_organization INTEGER REFERENCES organization(id_organization),
+  name VARCHAR,
+  firstname VARCHAR,
+  id_main_org_unit INTEGER REFERENCES partner(partnerid),
+  login VARCHAR,
+  email VARCHAR,
+  phone_number VARCHAR,
+  postal_address VARCHAR,
+  photo VARCHAR,
+  id_country INTEGER REFERENCES country(countryid),
+  id_parent INTEGER REFERENCES contact(id_contact),
+  date_created TIMESTAMP WITHOUT TIME ZONE,
+  date_deleted TIMESTAMP WITHOUT TIME ZONE
+);
+
+CREATE OR REPLACE FUNCTION contact_check_type (p_id_user INTEGER, p_id_organization INTEGER, p_id_contact_model INTEGER) RETURNS BOOLEAN AS $$
+    DECLARE
+        p_valid BOOLEAN;
+    BEGIN
+        IF p_id_user IS NOT NULL AND p_id_organization IS NOT NULL THEN
+            -- This contact is both related to a user and an organization
+            -- This is not valid
+            p_valid = false;
+        ELSIF p_id_user IS NOT NULL THEN
+            -- The related model should be an 'INDIVIDUAL' model
+            SELECT type = 'INDIVIDUAL' INTO p_valid
+            FROM contact_model
+            WHERE id_contact_model = p_id_contact_model;
+        ELSIF p_id_organization IS NOT NULL THEN
+            -- The related model should be an 'ORGANIZATION' model
+            SELECT type = 'ORGANIZATION' INTO p_valid
+            FROM contact_model
+            WHERE id_contact_model = p_id_contact_model;
+        ELSE
+            -- Not related to a user or an organization
+            -- the type of the related model can either be 'INDIVIDUAL' or 'ORGANIZATION'
+            p_valid = true;
+        END IF;
+
+        RETURN p_valid;
+    END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION is_parent_an_organization (p_id_contact INTEGER) RETURNS BOOLEAN AS $$
+    SELECT cm.id_contact_model IS NOT NULL
+    FROM contact c
+    LEFT JOIN contact_model cm ON (c.id_contact_model = c.id_contact_model AND cm.type = 'ORGANIZATION')
+    WHERE c.id_contact = p_id_contact;
+$$ LANGUAGE SQL;
+
+ALTER TABLE contact
+  ADD CONSTRAINT is_parent_an_organization_constraint
+  CHECK (is_parent_an_organization(id_parent)) ;
+
+ALTER TABLE contact
+  ADD CONSTRAINT check_type_constraint
+  CHECK (contact_check_type(id_user, id_organization, id_contact_model));
+
+CREATE TABLE contact_unit (
+  id_contact INTEGER NOT NULL REFERENCES contact(id_contact),
+  id_org_unit INTEGER NOT NULL REFERENCES partner(partnerid),
+  PRIMARY KEY (id_contact, id_org_unit)
+);
+
+
+CREATE TABLE contact_list_element (
+  id_flexible_element BIGINT
+    PRIMARY KEY
+    REFERENCES flexible_element(id_flexible_element),
+  allowed_type VARCHAR,
+  contact_limit INTEGER NOT NULL DEFAULT 0,
+  is_member BOOLEAN NOT NULL DEFAULT false
+);
+
+CREATE TABLE contact_list_element_model (
+  id_flexible_element INTEGER NOT NULL REFERENCES contact_list_element(id_flexible_element),
+  id_contact_model INTEGER NOT NULL REFERENCES contact_model(id_contact_model),
+  PRIMARY KEY (id_flexible_element, id_contact_model)
+);
+
+CREATE TABLE global_contact_export
+(
+  id bigint NOT NULL,
+  generated_date timestamp without time zone NOT NULL,
+  organization_id integer NOT NULL,
+  CONSTRAINT global_contact_export_pkey PRIMARY KEY (id),
+  CONSTRAINT global_contact_export_organization_fkey FOREIGN KEY (organization_id)
+      REFERENCES organization (id_organization) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE global_contact_export_content
+(
+  id bigint NOT NULL,
+  csv_content text,
+  contact_model_name character varying(8192) NOT NULL,
+  global_export_id bigint NOT NULL,
+  CONSTRAINT global_contact_export_content_pkey PRIMARY KEY (id),
+  CONSTRAINT global_contact_export_content_global_export_fkey FOREIGN KEY (global_export_id)
+      REFERENCES global_contact_export (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE global_contact_export_settings
+(
+  id bigint NOT NULL,
+  auto_delete_frequency integer,
+  auto_export_frequency integer,
+  default_organization_export_format character varying(255),
+  export_format character varying(255),
+  last_export_date timestamp without time zone,
+  locale_string character varying(4) NOT NULL,
+  organization_id integer NOT NULL,
+  CONSTRAINT global_contact_export_settings_pkey PRIMARY KEY (id),
+  CONSTRAINT global_contact_export_settings_organization_fkey FOREIGN KEY (organization_id)
+      REFERENCES organization (id_organization) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+
+-- Extension required to search for similar but not exactly equal contact duplicates (part of issue #634)
+CREATE EXTENSION IF NOT EXISTS pg_trgm; 
+
+CREATE INDEX contact_fullname_idx ON contact USING gin(LOWER(name||' '||firstname) gin_trgm_ops);
+CREATE INDEX contact_email_idx ON contact (LOWER(email));
+CREATE INDEX userlogin_fullname_idx ON userlogin USING gin(LOWER(name||' '||firstname) gin_trgm_ops);
+CREATE INDEX userlogin_email_idx ON userlogin (LOWER(email));
+CREATE INDEX organization_name_idx ON organization USING gin(LOWER(name) gin_trgm_ops);
+
+
+-- Group iterations (#501)
+CREATE TABLE layout_group_iteration (
+  id_layout_group_iteration integer NOT NULL,
+  id_layout_group integer NOT NULL,
+  id_container integer NOT NULL,
+  name varchar(30) NOT NULL,
+  CONSTRAINT layout_group_iteration_pkey PRIMARY KEY (id_layout_group_iteration),
+  CONSTRAINT layout_group_iteration_id_layout_group_fkey FOREIGN KEY (id_layout_group)
+    REFERENCES layout_group (id_layout_group) MATCH SIMPLE
+    ON UPDATE NO ACTION ON DELETE CASCADE
+);
+
+CREATE OR REPLACE FUNCTION does_layout_group_have_iterations (p_id_layout_group integer) RETURNS boolean AS $$
+  DECLARE
+    p_has_iterations boolean;
+  BEGIN
+    SELECT has_iterations INTO p_has_iterations
+    FROM layout_group
+    WHERE id_layout_group = p_id_layout_group;
+
+    RETURN p_has_iterations;
+  END;
+$$ LANGUAGE plpgsql;
+
+ALTER TABLE layout_group_iteration
+  ADD CONSTRAINT does_layout_group_have_iterations_constraint
+  CHECK (does_layout_group_have_iterations(id_layout_group)) ;
+
+ALTER TABLE layout_group ADD has_iterations boolean NOT NULL DEFAULT false;
+
+ALTER TABLE value ADD id_layout_group_iteration integer;
+ALTER TABLE value DROP CONSTRAINT value_id_flexible_element_key;
+ALTER TABLE value ADD CONSTRAINT uk_ev3lt5f4afcgkonu6exlm9be8
+  UNIQUE (id_flexible_element, id_project, id_layout_group_iteration);
+
+ALTER TABLE history_token ADD id_layout_group_iteration integer;
+
+CREATE TABLE iteration_history_token
+(
+  id_iteration_history_token integer NOT NULL,
+  history_date timestamp without time zone NOT NULL,
+  id_layout_group_iteration integer NOT NULL,
+  id_layout_group integer NOT NULL,
+  id_project integer NOT NULL,
+  name varchar(30) NOT NULL,
+  core_version integer,
+  CONSTRAINT iteration_history_token_pkey PRIMARY KEY (id_iteration_history_token),
+  CONSTRAINT fk_iteration_history_token_core_version FOREIGN KEY (core_version)
+      REFERENCES amendment (id_amendment) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_iteration_history_token_layout_group FOREIGN KEY (id_layout_group)
+      REFERENCES layout_group (id_layout_group) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+</code>
+
+## 2. Existing data updates ##
+
+**After the schema is updated**, in order to update the existing data, you need to run the SQL commands below:
+
+<code postgresql sigmah-dataupdates-v2.2.sql>
+
+-- Add Kosovo country in Sigmah list of countries
+INSERT INTO Country (CountryId, x1, x2, y1, y2, ISO2, Name) VALUES (496, -180, 180, -90, 180, 'XK', 'Kosovo');
+
+
+--
+-- Migrate all old budget fields into v2.2 new budget ratio format
+-- 
+--
+CREATE OR REPLACE FUNCTION migrate_budget_fields(p_droptables boolean default false) RETURNS INTEGER AS $$
+DECLARE	
+	--
+	-- Get budget_element fields
+	--
+	budget_elements_cursor CURSOR FOR
+		SELECT be.id_flexible_element old_id_flexible_element, be.id_ratio_divisor old_subfield_id_ratio_divisor, be.id_ratio_dividend old_subfield_id_ratio_dividend, 
+			lc.id_layout_constraint, lc.id_layout_group, lc.sort_order, NULL as new_id_flexible_element, NULL as new_id_element_divisor, NULL as new_id_element_dividend
+		FROM budget_element be
+			inner join layout_constraint lc on lc.id_flexible_element = be.id_flexible_element
+			inner join layout_group lg on lg.id_layout_group = lc.id_layout_group
+		WHERE lg.id_layout not in (select id_layout from project_banner union select id_layout from org_unit_banner);
+	budget_element_record RECORD;
+
+	budget_layout_constraint_banner_cursor CURSOR FOR
+		SELECT lc.id_layout_constraint
+		FROM budget_element be
+			inner join layout_constraint lc on lc.id_flexible_element = be.id_flexible_element
+			inner join layout_group lg on lg.id_layout_group = lc.id_layout_group
+		WHERE lg.id_layout in (select id_layout from project_banner union select id_layout from org_unit_banner);
+	budget_layout_constraint_banner_record RECORD;
+
+	--
+	-- Get budget history values
+	--
+	budget_history_values_cursor CURSOR FOR
+	SELECT ht.id_history_token, ht.history_date, ht.id_element, ht.id_project, ht.change_type, ht.value, ht.id_user, ht.comment, ht.core_version, aht.amendment_id_amendment
+	FROM history_token ht
+		inner join budget_element be on be.id_flexible_element = ht.id_element
+		left outer join amendment_history_token aht on aht.values_id_history_token = ht.id_history_token
+	ORDER BY history_date, id_history_token;
+	budget_history_values_record RECORD;
+
+	--
+	-- Get budget importation scheme mapping
+	--
+	budget_importation_mapping_cursor CURSOR FOR
+	SELECT ivbsf.id_budget_sub_field old_id_budget_sub_field, ivbsf.var_id, ivbsf.var_fle_id
+	FROM importation_variable_budget_sub_field ivbsf ;
+	budget_importation_mapping_record RECORD;
+	
+	v_result INTEGER;
+	v_tmp_id INTEGER;
+	v_planned_id INTEGER;
+	v_spent_id INTEGER;
+	v_received_id INTEGER;
+	v_newplanned_id INTEGER;
+	v_newspent_id INTEGER;
+	v_newreceived_id INTEGER;
+	v_value TEXT;
+	v_oldvalue TEXT;
+	v_droptruncate_action TEXT;
+BEGIN	
+	v_result := 0;
+	
+	-- temp table to keep all mapping between old and new ids
+	CREATE TEMPORARY TABLE tmp_migrate_budget_field AS
+	SELECT be.id_flexible_element old_id_flexible_element, 
+		be.id_ratio_divisor old_subfield_id_ratio_divisor, be.id_ratio_dividend old_subfield_id_ratio_dividend, 0 as old_subfield_id_received,
+		lc.id_layout_constraint, lc.id_layout_group, lc.sort_order, 
+		0 as new_id_flexible_element, 0 as new_id_element_divisor, 0 as new_id_element_dividend, 0 as new_id_element_received
+	FROM budget_element be
+		inner join layout_constraint lc on lc.id_flexible_element = be.id_flexible_element
+		inner join layout_group lg on lg.id_layout_group = lc.id_layout_group
+	WHERE lg.id_layout not in (select id_layout from project_banner union select id_layout from org_unit_banner);		
+
+	--
+	-- 1. CREATE BUDGET RATIO FIELDS
+	--
+	FOR budget_element_record IN budget_elements_cursor 
+	LOOP	
+		-- --
+		-- sort_order management: leave room for the new fields
+		UPDATE layout_constraint
+			SET sort_order = sort_order + 3
+			WHERE id_layout_group = budget_element_record.id_layout_group and sort_order > budget_element_record.sort_order;
+
+		-- --
+		-- create divisor number field ("PLANNED")
+		SELECT nextval('hibernate_sequence') INTO v_tmp_id;
+		INSERT INTO flexible_element(
+				id_flexible_element, amendable, label, validates, id_privacy_group, 
+				exportable, globally_exportable, creation_date, is_disabled, 
+				disabled_date, code)
+			SELECT v_tmp_id, fe.amendable, 'Planned budget', fe.validates, fe.id_privacy_group,
+				fe.exportable, fe.globally_exportable, fe.creation_date, fe.is_disabled,
+				fe.disabled_date, COALESCE(fe.code || '_planned', 'planned_' || v_tmp_id)
+			FROM flexible_element fe
+			WHERE fe.id_flexible_element = budget_element_record.old_id_flexible_element;
+		INSERT INTO textarea_element (is_decimal, type, id_flexible_element)
+			VALUES(TRUE, 'N', v_tmp_id);
+		-- "spent budget" set in new position just below old full budget field
+		INSERT INTO layout_constraint(
+				id_layout_constraint, sort_order, id_flexible_element, id_layout_group)
+			SELECT nextval('hibernate_sequence'), budget_element_record.sort_order + 1, v_tmp_id, budget_element_record.id_layout_group;
+		UPDATE tmp_migrate_budget_field 
+			SET new_id_element_divisor = v_tmp_id 
+			WHERE old_id_flexible_element = budget_element_record.old_id_flexible_element;
+			
+		-- --
+		-- create dividend number field ("SPENT") (not amendable by default)
+		SELECT nextval('hibernate_sequence') INTO v_tmp_id;
+		INSERT INTO flexible_element(
+				id_flexible_element, amendable, label, validates, id_privacy_group, 
+				exportable, globally_exportable, creation_date, is_disabled, 
+				disabled_date, code)
+			SELECT v_tmp_id, false, 'Spent budget', fe.validates, fe.id_privacy_group,
+				fe.exportable, fe.globally_exportable, fe.creation_date, fe.is_disabled,
+				fe.disabled_date, COALESCE(fe.code || '_spent', 'spent_' || v_tmp_id)
+			FROM flexible_element fe
+			WHERE fe.id_flexible_element = budget_element_record.old_id_flexible_element;
+		INSERT INTO textarea_element (is_decimal, type, id_flexible_element)
+			VALUES(TRUE, 'N', v_tmp_id);
+		-- "planned budget" set in new position just two points below old full budget field
+		INSERT INTO layout_constraint(
+				id_layout_constraint, sort_order, id_flexible_element, id_layout_group)
+			SELECT nextval('hibernate_sequence'), budget_element_record.sort_order + 2, v_tmp_id, budget_element_record.id_layout_group;
+		UPDATE tmp_migrate_budget_field 
+			SET new_id_element_dividend = v_tmp_id 
+			WHERE old_id_flexible_element = budget_element_record.old_id_flexible_element;
+			
+		-- --
+		-- create received number field ("RECEIVED") (not amendable by default)
+		SELECT nextval('hibernate_sequence') INTO v_tmp_id;
+		INSERT INTO flexible_element(
+				id_flexible_element, amendable, label, validates, id_privacy_group, 
+				exportable, globally_exportable, creation_date, is_disabled, 
+				disabled_date, code)
+			SELECT v_tmp_id, false, 'Received budget', fe.validates, fe.id_privacy_group,
+				fe.exportable, fe.globally_exportable, fe.creation_date, fe.is_disabled,
+				fe.disabled_date, COALESCE(fe.code || '_received', 'received_' || v_tmp_id)
+			FROM flexible_element fe
+			WHERE fe.id_flexible_element = budget_element_record.old_id_flexible_element;
+		INSERT INTO textarea_element (is_decimal, type, id_flexible_element)
+			VALUES(TRUE, 'N', v_tmp_id);
+		-- "received budget" set in new position three points below old full budget field
+		INSERT INTO layout_constraint(
+				id_layout_constraint, sort_order, id_flexible_element, id_layout_group)
+			SELECT nextval('hibernate_sequence'), budget_element_record.sort_order + 3, v_tmp_id, budget_element_record.id_layout_group;
+		UPDATE tmp_migrate_budget_field 
+			SET new_id_element_received = v_tmp_id,
+				old_subfield_id_received = (SELECT id_budget_sub_field
+								FROM budget_sub_field 
+								WHERE type = 'RECEIVED' 
+									and id_budget_element = budget_element_record.old_id_flexible_element )
+			WHERE old_id_flexible_element = budget_element_record.old_id_flexible_element;
+
+		
+		-- --
+		-- create budget ratio default field
+		SELECT nextval('hibernate_sequence') INTO v_tmp_id;
+		INSERT INTO flexible_element(
+				id_flexible_element, amendable, label, validates, id_privacy_group, 
+				exportable, globally_exportable, creation_date, is_disabled, 
+				disabled_date, code)
+			SELECT v_tmp_id, fe.amendable, 'Budget consumption', fe.validates, fe.id_privacy_group,
+				fe.exportable, fe.globally_exportable, fe.creation_date, fe.is_disabled,
+				fe.disabled_date, fe.code
+			FROM flexible_element fe
+			WHERE fe.id_flexible_element = budget_element_record.old_id_flexible_element;
+		INSERT INTO budget_ratio_element (id_flexible_element, id_spent_field, id_planned_field)
+			SELECT v_tmp_id, new_id_element_dividend,  new_id_element_divisor
+			FROM tmp_migrate_budget_field
+			WHERE old_id_flexible_element = budget_element_record.old_id_flexible_element;
+		INSERT INTO default_flexible_element(type, id_flexible_element)
+			VALUES ('BUDGET_RATIO', v_tmp_id);
+		-- "budget ratio" field set in same position as old full budget field
+		UPDATE layout_constraint
+			SET id_flexible_element = v_tmp_id				 
+			WHERE id_layout_group = budget_element_record.id_layout_group and id_flexible_element = budget_element_record.old_id_flexible_element;
+		UPDATE tmp_migrate_budget_field 
+			SET new_id_flexible_element = v_tmp_id 
+			WHERE old_id_flexible_element = budget_element_record.old_id_flexible_element;
+
+	END LOOP;	
+	-- --
+	-- update banners
+	FOR budget_layout_constraint_banner_record IN budget_layout_constraint_banner_cursor 
+	LOOP
+		UPDATE layout_constraint lc
+			SET id_flexible_element = (select new_id_flexible_element 
+						from tmp_migrate_budget_field 
+						where old_id_flexible_element = lc.id_flexible_element)
+			WHERE lc.id_layout_constraint = budget_layout_constraint_banner_record.id_layout_constraint;
+	END LOOP;
+	
+	--
+	-- 2. CREATE BUDGET RATIO VALUES AND MODIF HISTORY
+	--
+	FOR budget_history_values_record IN budget_history_values_cursor
+	LOOP
+		SELECT old_subfield_id_ratio_divisor, old_subfield_id_ratio_dividend, old_subfield_id_received,
+			new_id_element_divisor, new_id_element_dividend, new_id_element_received
+			INTO v_planned_id, v_spent_id, v_received_id, v_newplanned_id, v_newspent_id, v_newreceived_id
+			FROM tmp_migrate_budget_field
+			WHERE old_id_flexible_element = budget_history_values_record.id_element;
+
+		IF ( budget_history_values_record.change_type = 'ADD' )
+		THEN
+			-- if old budget history change type is initial 'ADD', create initial value for each new field
+			
+			-- planned
+			v_value := regexp_matches(budget_history_values_record.value, v_planned_id || '%' || '[0-9.]+');
+			v_value := split_part(trim(both '{}' from v_value),'%',2);
+			IF (v_value is not NULL)
+			THEN			
+				PERFORM update_field_anytime(v_newplanned_id, v_value, budget_history_values_record.id_project, 
+					budget_history_values_record.id_user, budget_history_values_record.comment, budget_history_values_record.history_date, 
+					budget_history_values_record.core_version, budget_history_values_record.amendment_id_amendment);
+			END IF;
+			
+			-- spent
+			v_value := regexp_matches(budget_history_values_record.value, v_spent_id || '%' || '[0-9.]+');
+			v_value := split_part(trim(both '{}' from v_value),'%',2);
+			IF (v_value is not NULL)
+			THEN
+				PERFORM update_field_anytime(v_newspent_id, v_value, budget_history_values_record.id_project, 
+					budget_history_values_record.id_user, budget_history_values_record.comment, budget_history_values_record.history_date, 
+					budget_history_values_record.core_version, budget_history_values_record.amendment_id_amendment);
+			END IF;
+			
+			-- received
+			v_value := regexp_matches(budget_history_values_record.value, v_received_id || '%' || '[0-9.]+');
+			v_value := split_part(trim(both '{}' from v_value),'%',2);
+			IF (v_value is not NULL)
+			THEN
+				PERFORM update_field_anytime(v_newreceived_id, v_value, budget_history_values_record.id_project, 
+					budget_history_values_record.id_user, budget_history_values_record.comment, budget_history_values_record.history_date, 
+					budget_history_values_record.core_version, budget_history_values_record.amendment_id_amendment);
+			END IF;
+		ELSE
+			-- if old budget history change type is 'EDIT', only update changed values
+			
+			-- planned
+			v_value := regexp_matches(budget_history_values_record.value, v_planned_id || '%' || '[0-9.]+');
+			v_value := split_part(trim(both '{}' from v_value),'%',2);
+			SELECT value 
+				INTO v_oldvalue 
+				FROM value 
+				WHERE id_flexible_element = v_newplanned_id
+					and id_project = budget_history_values_record.id_project;
+			IF (v_value is not NULL and (v_value != v_oldvalue or v_oldvalue is NULL))
+			THEN
+				PERFORM update_field_anytime(v_newplanned_id, v_value, budget_history_values_record.id_project, 
+					budget_history_values_record.id_user, budget_history_values_record.comment, budget_history_values_record.history_date, 
+					budget_history_values_record.core_version, budget_history_values_record.amendment_id_amendment);				
+			END IF;
+			
+			-- spent
+			v_value := regexp_matches(budget_history_values_record.value, v_spent_id || '%' || '[0-9.]+');
+			v_value := split_part(trim(both '{}' from v_value),'%',2);
+			SELECT value 
+				INTO v_oldvalue 
+				FROM value 
+				WHERE id_flexible_element = v_newspent_id
+					and id_project = budget_history_values_record.id_project;
+			IF (v_value is not NULL and (v_value != v_oldvalue or v_oldvalue is NULL))
+			THEN
+				PERFORM update_field_anytime(v_newspent_id, v_value, budget_history_values_record.id_project, 
+					budget_history_values_record.id_user, budget_history_values_record.comment, budget_history_values_record.history_date, 
+					budget_history_values_record.core_version, budget_history_values_record.amendment_id_amendment);				
+			END IF;
+			
+			-- received
+			v_value := regexp_matches(budget_history_values_record.value, v_received_id || '%' || '[0-9.]+');
+			v_value := split_part(trim(both '{}' from v_value),'%',2);
+			SELECT value 
+				INTO v_oldvalue 
+				FROM value 
+				WHERE id_flexible_element = v_newreceived_id
+					and id_project = budget_history_values_record.id_project;
+			IF (v_value is not NULL and (v_value != v_oldvalue or v_oldvalue is NULL))
+			THEN
+				PERFORM update_field_anytime(v_newreceived_id, v_value, budget_history_values_record.id_project, 
+					budget_history_values_record.id_user, budget_history_values_record.comment, budget_history_values_record.history_date, 
+					budget_history_values_record.core_version, budget_history_values_record.amendment_id_amendment);				
+			END IF;
+
+		END IF;
+		
+	END LOOP;	
+	
+	--
+	-- 3. UPDATE IMPORTATION SCHEME
+	--
+	FOR budget_importation_mapping_record IN budget_importation_mapping_cursor
+	LOOP
+		v_tmp_id := 0;
+		CASE( get_field_type(budget_importation_mapping_record.old_id_budget_sub_field) )
+			WHEN 'PLANNED'
+			THEN
+				SELECT new_id_element_divisor
+					INTO v_tmp_id
+					FROM tmp_migrate_budget_field
+					WHERE old_subfield_id_ratio_divisor = budget_importation_mapping_record.old_id_budget_sub_field;
+			WHEN 'SPENT'
+			THEN
+				SELECT new_id_element_dividend
+					INTO v_tmp_id
+					FROM tmp_migrate_budget_field
+					WHERE old_subfield_id_ratio_dividend = budget_importation_mapping_record.old_id_budget_sub_field;
+			WHEN 'RECEIVED'
+			THEN
+				SELECT new_id_element_received
+					INTO v_tmp_id
+					FROM tmp_migrate_budget_field
+					WHERE old_subfield_id_received = budget_importation_mapping_record.old_id_budget_sub_field;
+		END CASE;
+			
+		UPDATE importation_scheme_variable_flexible_element
+			SET id_flexible_element = v_tmp_id,
+				var_id = budget_importation_mapping_record.var_id
+			WHERE var_fle_id = budget_importation_mapping_record.var_fle_id;
+	END LOOP;
+
+
+	--
+	-- 3. CHECK, CLEAN AND DELETE TABLES
+	--
+	IF ( p_droptables )
+	THEN
+		v_droptruncate_action := 'DROP';
+	ELSE
+		v_droptruncate_action := 'TRUNCATE';
+	END IF;
+	
+	-- clean importation_variable_budget_sub_field
+	DELETE FROM importation_variable_budget_sub_field
+		WHERE id_budget_sub_field IN (	(SELECT old_subfield_id_ratio_divisor FROM tmp_migrate_budget_field)
+					UNION (SELECT old_subfield_id_ratio_dividend FROM tmp_migrate_budget_field)
+					UNION (SELECT old_subfield_id_received FROM tmp_migrate_budget_field)	) ;
+	SELECT COUNT(*) INTO v_result FROM importation_variable_budget_sub_field;
+	IF ( v_result > 0)
+	THEN
+		RAISE EXCEPTION 'Some importation budget sub-fields mapping have not been migrated!';
+	ELSE
+		PERFORM v_droptruncate_action || ' TABLE importation_variable_budget_sub_field';
+	END IF;
+	
+	-- clean importation_scheme_variable_budget_element
+	PERFORM v_droptruncate_action || ' DROP TABLE importation_scheme_variable_budget_element';	
+	
+	-- clean budget_sub_field (see ratio to NULL in budget_element because cross FK constraints)
+	UPDATE budget_element
+		SET id_ratio_divisor = NULL, id_ratio_dividend = NULL
+		WHERE id_flexible_element IN (SELECT old_id_flexible_element FROM tmp_migrate_budget_field);
+	DELETE FROM budget_sub_field
+		WHERE id_budget_element IN (SELECT old_id_flexible_element FROM tmp_migrate_budget_field);
+	SELECT COUNT(*) INTO v_result FROM budget_sub_field;
+	IF ( v_result > 0)
+	THEN
+		RAISE EXCEPTION 'Some budget sub-fields have not been migrated!';
+	END IF;
+	
+	-- clean budget_element
+	DELETE FROM budget_element
+		WHERE id_flexible_element IN (SELECT old_id_flexible_element FROM tmp_migrate_budget_field);
+	SELECT COUNT(*) INTO v_result FROM budget_element;
+	IF ( v_result > 0)
+	THEN
+		RAISE EXCEPTION 'Some budget fields have not been migrated!';
+	ELSE
+		PERFORM v_droptruncate_action || ' TABLE budget_element, budget_sub_field';
+	END IF;
+
+	-- clean default_flexible_element
+	DELETE FROM default_flexible_element
+		WHERE id_flexible_element IN (SELECT old_id_flexible_element FROM tmp_migrate_budget_field);
+	SELECT COUNT(*) INTO v_result FROM default_flexible_element WHERE type = 'BUDGET';
+	IF ( v_result > 0)
+	THEN
+		RAISE EXCEPTION 'Some budget default fields have not been migrated!';
+	END IF;
+	
+	-- clean value
+	DELETE FROM value
+		WHERE id_flexible_element IN (SELECT old_id_flexible_element FROM tmp_migrate_budget_field);
+
+	-- clean amendment_history_token
+	DELETE FROM amendment_history_token
+		WHERE values_id_history_token IN (SELECT id_history_token 
+						FROM history_token 
+						WHERE id_element IN (SELECT old_id_flexible_element 
+									FROM tmp_migrate_budget_field)
+						);
+	
+	-- clean history_token
+	DELETE FROM history_token
+		WHERE id_element IN (SELECT old_id_flexible_element FROM tmp_migrate_budget_field);
+
+	-- clean flexible_element
+	DELETE FROM flexible_element
+		WHERE id_flexible_element IN (SELECT old_id_flexible_element FROM tmp_migrate_budget_field);
+	
+	RETURN v_result;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+
+
+
+--
+-- Return as a string the field type from any field (aka flexible element) id.
+-- Also returns the budget sub-field type if a budget sub-field it is given.
+--
+-- Note: id_flexible_element and id_budget_sub_field have never the same value
+--
+CREATE OR REPLACE FUNCTION get_field_type(p_field_id bigint) RETURNS character varying(20) AS $$
+DECLARE
+	v_type character varying(20);
+BEGIN
+	SELECT CASE
+		WHEN p_field_id IN (SELECT id_flexible_element FROM default_flexible_element)
+			THEN (SELECT type FROM default_flexible_element WHERE id_flexible_element = p_field_id )
+		WHEN p_field_id IN (SELECT id_budget_sub_field FROM budget_sub_field)
+			THEN (SELECT type FROM budget_sub_field WHERE id_budget_sub_field = p_field_id )
+		WHEN p_field_id IN (SELECT id_question FROM question_choice_element) 
+			THEN 'QUESTION'
+		WHEN p_field_id IN (SELECT id_flexible_element FROM files_list_element)
+			THEN 'FILES'
+		WHEN p_field_id IN (SELECT id_flexible_element FROM textarea_element)
+			THEN CASE (SELECT type FROM textarea_element WHERE id_flexible_element=p_field_id)
+				WHEN 'D'
+					THEN 'DATE'
+				WHEN 'N'
+					THEN 'NUMBER'
+				WHEN 'P'
+					THEN 'PARAGRAPH'
+				WHEN 'T'
+					THEN 'TEXT'
+				END
+		ELSE 'other' END
+	INTO v_type;
+
+
+RETURN v_type;
+END;
+$$ LANGUAGE plpgsql;
+CREATE OR REPLACE FUNCTION get_field_type(p_field_id integer) RETURNS character varying(20) AS $$
+BEGIN
+	RETURN get_field_type(CAST(p_field_id as bigint));
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+
+--
+-- Update the value of a field.
+--
+--    Impossible for field type 'OWNER', 'COUNTRY' and 'BUDGET'.
+--    This function doesn't take into account field limits
+--
+-- Parameter format for p_field_value according to field type:
+--   - START_DATE, END_DATE : date format like '25/12/2015'
+--   - CODE : text, but no longer than 50 characters
+--   - MANAGER : user id like '35'
+--   - ORG_UNIT : partner id like '602'
+--   - SPENT, RECEIVED, PLANNED: budget sub-field value like '25080' or '78450.23'
+--   - DATE : date format like '25/12/2015'
+--   - NUMBER : number like '25080' or '78450.23'
+--   - TEXT : text like 'plusieurs mots'
+--   - PARAGRAPH : one more more lines of text, each line of text must be separated only by a NEWLINE (ASCII code 10) character, like 'first line' || chr(10) || ' and second important line'
+CREATE OR REPLACE FUNCTION update_field_anytime(p_field_id integer, p_field_value text, p_project_id integer, p_author_id integer, p_history_comment character varying(255), p_timestamp timestamp without time zone, p_core_version integer, p_amendment_history_token integer) RETURNS boolean AS $$
+DECLARE
+	v_type character varying(20);
+	v_history_last_change_record RECORD;
+	v_history_change_type character varying(255);
+	v_action_last_modif character(1);
+	v_budget_field_id integer;
+	v_value text;
+	v_history_date timestamp without time zone;
+	v_id_history_token integer;
+BEGIN
+	v_type := get_field_type(p_field_id);
+	IF(v_type = 'PLANNED' or v_type = 'SPENT' or v_type = 'RECEIVED')
+	THEN
+		SELECT id_budget_element INTO v_budget_field_id FROM budget_sub_field WHERE id_budget_sub_field=p_field_id; 
+		SELECT change_type, history_date
+			INTO v_history_last_change_record 
+			FROM history_token
+			WHERE id_element = v_budget_field_id and id_project = p_project_id;
+	ELSE
+		SELECT change_type, history_date
+			INTO v_history_last_change_record 
+			FROM history_token
+			WHERE id_element = p_field_id and id_project = p_project_id;
+	END IF;
+	IF(v_history_last_change_record IS NULL)
+	THEN
+		v_history_change_type := 'ADD';
+		v_action_last_modif := 'C';
+		v_history_date := p_timestamp;
+	ELSE
+		v_history_change_type := 'EDIT';
+		v_action_last_modif := 'U';
+		IF (p_timestamp - v_history_last_change_record.history_date < interval '1 minute')
+		THEN
+			v_history_date := v_history_last_change_record.history_date + interval '1 minute';
+		ELSE
+			v_history_date := p_timestamp;
+		END IF;
+	END IF;
+
+	SELECT nextval('hibernate_sequence') INTO v_id_history_token;
+	CASE v_type
+		WHEN 'START_DATE'
+			THEN
+			UPDATE userdatabase u SET startdate = CAST(p_field_value AS timestamp without time zone) 
+				WHERE u.databaseid = p_project_id;
+			INSERT INTO history_token(id_history_token, history_date, id_element, id_project, 
+					change_type, value, id_user, comment, core_version) 
+				SELECT v_id_history_token, v_history_date, p_field_id, p_project_id, 
+					v_history_change_type as change_type, CAST(ROUND(EXTRACT(EPOCH FROM DATE(p_field_value))*1000) AS text), p_author_id, p_history_comment, p_core_version;
+		WHEN 'CODE'
+			THEN 
+			UPDATE userdatabase u SET name = CAST(p_field_value AS character varying(50)) 
+				WHERE u.databaseid = p_project_id;
+			INSERT INTO history_token(id_history_token, history_date, id_element, id_project, 
+					change_type, value, id_user, comment, core_version) 
+				SELECT v_id_history_token, v_history_date, p_field_id, p_project_id, 
+					v_history_change_type as change_type, p_field_value, p_author_id, p_history_comment, p_core_version;
+		WHEN 'COUNTRY'
+			THEN 
+			RETURN false;
+		WHEN 'END_DATE'
+			THEN 
+			UPDATE project SET end_date = CAST(p_field_value AS timestamp without time zone) 
+				WHERE databaseid = p_project_id;
+			INSERT INTO history_token(id_history_token, history_date, id_element, id_project, 
+					change_type, value, id_user, comment, core_version) 
+				SELECT v_id_history_token, v_history_date, p_field_id, p_project_id, 
+					v_history_change_type as change_type, CAST(ROUND(EXTRACT(EPOCH FROM DATE(p_field_value))*1000) AS text), p_author_id, p_history_comment, p_core_version;
+		WHEN 'MANAGER'
+			THEN 
+			UPDATE project SET id_manager = CAST(p_field_value AS integer) 
+				WHERE databaseid = p_project_id;
+			INSERT INTO history_token(id_history_token, history_date, id_element, id_project, 
+					change_type, value, id_user, comment, core_version) 
+				SELECT v_id_history_token, v_history_date, p_field_id, p_project_id, 
+					v_history_change_type as change_type, p_field_value, p_author_id, p_history_comment, p_core_version;
+		WHEN 'ORG_UNIT'
+			THEN 
+			UPDATE partnerindatabase SET partnerid = CAST(p_field_value AS integer) 
+				WHERE databaseid = p_project_id;
+			INSERT INTO history_token(id_history_token, history_date, id_element, id_project, 
+					change_type, value, id_user, comment, core_version) 
+				SELECT v_id_history_token, v_history_date, p_field_id, p_project_id, 
+					v_history_change_type as change_type, p_field_value, p_author_id, p_history_comment, p_core_version;
+		WHEN 'TITLE'
+			THEN 
+			UPDATE userdatabase u SET fullname = CAST(p_field_value AS character varying(500)) 
+				WHERE u.databaseid = p_project_id;
+			INSERT INTO history_token(id_history_token, history_date, id_element, id_project, 
+					change_type, value, id_user, comment, core_version) 
+				SELECT v_id_history_token, v_history_date, p_field_id, p_project_id, 
+					v_history_change_type as change_type, p_field_value, p_author_id, p_history_comment, p_core_version;
+		WHEN 'BUDGET'
+			THEN RETURN false;
+		WHEN 'SPENT', 'RECEIVED', 'PLANNED'
+			THEN 
+			-- Create budget value
+			-- Example : INSERT INTO value (id_value, id_project, action_last_modif, date_last_modif, value, id_flexible_element, id_user_last_modif) VALUES (12783382, 12783370, 'C', '2016-07-22 16:34:05.619', '380%1.23456789E8~382%0.0~383%0.0', 1598, 122);
+			-- INSERT INTO history_token (id_history_token, history_date, id_element, id_project, change_type, value, id_user, comment, core_version) VALUES (12783389, '2016-07-22 16:34:05.629', 1598, 12783370, 'ADD', '380%1.23456789E8~382%0.0~383%0.0', 122, NULL, NULL);
+			v_value := get_updated_budget_string(p_field_id, p_project_id, p_field_value);
+			IF( v_action_last_modif = 'C')
+			THEN
+				INSERT INTO value(
+					    id_value, id_project, action_last_modif, date_last_modif, value, 
+					    id_flexible_element, id_user_last_modif)
+				    SELECT nextval('hibernate_sequence'), p_project_id, v_action_last_modif, localtimestamp, v_value,
+						v_budget_field_id, p_author_id;
+			ELSE
+				UPDATE value  SET action_last_modif = 'U', date_last_modif = localtimestamp,
+					value = v_value, id_user_last_modif = p_author_id 
+					WHERE id_flexible_element = v_budget_field_id and id_project = p_project_id;
+			END IF;
+			
+			INSERT INTO history_token(id_history_token, history_date, id_element, id_project, 
+					change_type, value, id_user, comment, core_version) 
+				SELECT v_id_history_token, v_history_date, v_budget_field_id, p_project_id, 
+					v_history_change_type, v_value, p_author_id, p_history_comment, p_core_version;
+		WHEN 'OWNER'
+			THEN 
+			RETURN false;
+		WHEN 'DATE'
+			THEN 
+			v_value := CAST(ROUND(EXTRACT(EPOCH FROM DATE(p_field_value))*1000) AS text);
+			IF( v_action_last_modif = 'C')
+			THEN
+				INSERT INTO value(
+					    id_value, id_project, action_last_modif, date_last_modif, value, 
+					    id_flexible_element, id_user_last_modif)
+				    SELECT nextval('hibernate_sequence'), p_project_id, v_action_last_modif, localtimestamp, v_value,
+						p_field_id, p_author_id;
+			ELSE
+				UPDATE value  SET action_last_modif = 'U', date_last_modif = localtimestamp,
+					value = v_value, id_user_last_modif = p_author_id 
+					WHERE id_flexible_element = p_field_id and id_project = p_project_id;
+			END IF;
+			INSERT INTO history_token(id_history_token, history_date, id_element, id_project, 
+					change_type, value, id_user, comment, core_version) 
+				SELECT v_id_history_token, v_history_date, p_field_id, p_project_id, 
+					v_history_change_type, v_value, p_author_id, p_history_comment, p_core_version;
+		WHEN 'NUMBER', 'TEXT', 'PARAGRAPH'
+			THEN 
+			IF( v_action_last_modif = 'C')
+			THEN
+				INSERT INTO value(
+					    id_value, id_project, action_last_modif, date_last_modif, value, 
+					    id_flexible_element, id_user_last_modif)
+				    SELECT nextval('hibernate_sequence'), p_project_id, v_action_last_modif, localtimestamp, p_field_value,
+						p_field_id, p_author_id;
+			ELSE
+				UPDATE value  SET action_last_modif = 'U', date_last_modif = localtimestamp,
+					value = p_field_value, id_user_last_modif = p_author_id 
+					WHERE id_flexible_element = p_field_id and id_project = p_project_id;
+			END IF;
+			INSERT INTO history_token(id_history_token, history_date, id_element, id_project, 
+					change_type, value, id_user, comment, core_version) 
+				SELECT v_id_history_token, v_history_date, p_field_id, p_project_id, 
+					v_history_change_type, p_field_value, p_author_id, p_history_comment, p_core_version;
+		ELSE
+			return false;
+	END CASE;
+
+	--Create a new link from an amendment is an amendment id is given from the amendment_history_token table
+	IF ( p_amendment_history_token is not null)
+	THEN
+		INSERT INTO amendment_history_token(amendment_id_amendment, values_id_history_token) 
+		VALUES (p_amendment_history_token, v_id_history_token);
+	END IF;
+
+RETURN true;
+END;
+$$ LANGUAGE plpgsql;
+
+
+-- Call the budget field migration function
+START transaction;
+SELECT migrate_budget_fields();
+DROP FUNCTION migrate_budget_fields(boolean);
+DROP FUNCTION get_field_type(integer);
+DROP FUNCTION get_field_type(bigint);
+DROP FUNCTION update_field_anytime(integer, text, integer, integer, character varying, timestamp without time zone, integer, integer);
+COMMIT;
+
+
+	
+
+
+-- Project team sub-tab (#620) : gives rights to view/edit all projects to all profiles having right to view/edit projects
+UPDATE global_permission SET permission = 'VIEW_MY_PROJECTS' WHERE permission = 'VIEW_PROJECT';
+INSERT INTO global_permission(id_global_permission, permission, id_profile)
+SELECT nextval('hibernate_sequence'), 'VIEW_ALL_PROJECTS', id_profile
+FROM global_permission
+WHERE permission = 'VIEW_MY_PROJECTS';
+INSERT INTO global_permission(id_global_permission, permission, id_profile)
+SELECT nextval('hibernate_sequence'), 'EDIT_ALL_PROJECTS', id_profile
+FROM global_permission
+WHERE permission = 'EDIT_PROJECT';
+
+-- User attached to several OrgUnit (#243)
+UPDATE user_unit SET user_unit_type = 'MAIN';
+
+-- Contact database (aka "CRM") (#634)
+SELECT
+  contact_model_create(o.id_organization, 'ORGANIZATION', o.name || ' model'),
+  contact_model_create(o.id_organization, 'INDIVIDUAL', 'Sigmah user model')
+FROM organization o;
+
+INSERT INTO contact (id_contact, id_contact_model, id_organization, date_created)
+SELECT nextval('hibernate_sequence'), cm.id_contact_model, o.id_organization, NOW()
+FROM organization o
+JOIN contact_model cm ON (cm.id_organization = o.id_organization AND cm.name = o.name || ' model');
+
+INSERT INTO contact (id_contact, id_contact_model, id_user, id_parent, date_created)
+SELECT nextval('hibernate_sequence'), cm.id_contact_model, u.userid, parent.id_contact, NOW()
+FROM userlogin u
+JOIN contact_model cm ON (cm.id_organization = u.id_organization AND cm.name = 'Sigmah user model')
+JOIN contact parent ON (parent.id_organization = u.id_organization);
+
+</code>
+
+
+
+# Release 2.1 #
+
+## 1. Schema changes ##
+
+<code postgresql sigmah-schemachanges-v2.1.sql>
+-- "code" property.
+ALTER TABLE flexible_element ADD code VARCHAR(30);
+
+-- "computation field" flexible element.
+CREATE TABLE computation_element
+(
+  id_flexible_element int primary key,
+  rule varchar(1500),
+  minimum varchar(1500),
+  maximum varchar(1500)
+);
+
+</code>
+
+
+## 2. Existing data updates ##
+
+<code postgresql sigmah-dataupdates-v2.1.sql>
+
+-- Add default field codes to numeric fields which haven't any
+UPDATE flexible_element
+SET code = 'f' || id_flexible_element 
+WHERE id_flexible_element in
+	(SELECT fe.id_flexible_element 
+	FROM flexible_element fe
+		inner join textarea_element te on te.id_flexible_element = fe.id_flexible_element
+	WHERE fe.code is null and te.type = 'N');
+
+</code>
+
+# Release 2.0 #
+
+
+## 1. Schema changes ##
+
+```
+-- Add table for storing the password expiration policy of an organization (issue #438 / #517)
+-- ------
+CREATE TABLE password_expiration_policy
+(
+  id bigint NOT NULL,
+  policy_type character varying(255),
+  reference_date date,
+  frequency integer,
+  reset_for_new_users boolean NOT NULL,
+  organization_id integer NOT NULL,
+  CONSTRAINT password_expiration_policy_pkey PRIMARY KEY (id),
+  CONSTRAINT fk2fb477b2f85c2c3c FOREIGN KEY (organization_id)
+      REFERENCES organization (id_organization) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+
+-- Default password expiration policy (with no automatic reset set)
+INSERT INTO password_expiration_policy (id, policy_type, reset_for_new_users, organization_id) SELECT nextval('hibernate_sequence'), 'NEVER', false, MAX(id_organization) FROM organization;
+
+
+
+-- Add column to store the last password change of an user. (issue #438 / #517)
+-- ------
+ALTER TABLE UserLogin ADD COLUMN last_password_change timestamp without time zone;
+
+
+
+-- Add columns to store the start date of maintenance periods. (issue #419)
+-- ------
+ALTER TABLE flexible_element ADD COLUMN creation_date timestamp without time zone not null default current_timestamp;
+
+ALTER TABLE project_model ADD COLUMN date_maintenance timestamp without time zone;
+ALTER TABLE org_unit_model ADD COLUMN date_maintenance timestamp without time zone;
+
+ALTER TABLE flexible_element ADD COLUMN is_disabled boolean default false;
+ALTER TABLE question_choice_element ADD COLUMN is_disabled boolean default false;
+
+
+-- Adds tables for managing reminders and monitored points history  (issue #550)
+-- ------
+CREATE TABLE reminder_history (
+	id_reminder_history integer PRIMARY KEY,
+	generated_date timestamp without time zone NOT NULL,
+	id_reminder integer REFERENCES reminder NOT NULL,
+	id_user integer NOT NULL,
+	value text,
+	change_type character varying(255) NOT NULL
+);
+
+CREATE TABLE monitored_point_history (
+	id_monitored_point_history integer PRIMARY KEY,
+	generated_date timestamp without time zone NOT NULL,
+	id_monitored_point integer REFERENCES monitored_point NOT NULL,
+	id_user integer NOT NULL,
+	value text,
+	change_type character varying(255) NOT NULL
+);
+
+
+-- Adds tables for managing the flexibility of budget element and sets by default the planned and spent budget  (issue #386)
+-- ------
+
+CREATE TABLE budget_element
+(
+  id_flexible_element bigint NOT NULL,
+  id_ratio_divisor bigint,
+  id_ratio_dividend bigint,
+  CONSTRAINT budget_element_pkey PRIMARY KEY (id_flexible_element),
+  CONSTRAINT fk1ba06002a82c370 FOREIGN KEY (id_flexible_element)
+      REFERENCES default_flexible_element (id_flexible_element) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE budget_sub_field
+(
+  id_budget_sub_field bigint NOT NULL,
+  label character varying(255),
+  id_budget_element bigint NOT NULL,
+  fieldorder integer,
+  type character varying(255),
+  CONSTRAINT budget_sub_field_pkey PRIMARY KEY (id_budget_sub_field),
+  CONSTRAINT fkc12629c1a251b09 FOREIGN KEY (id_budget_element)
+      REFERENCES budget_element (id_flexible_element) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+ALTER TABLE budget_element ADD  CONSTRAINT fk1ba0600222f4f59 FOREIGN KEY (id_ratio_divisor)
+      REFERENCES budget_sub_field (id_budget_sub_field) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION;
+	  
+ALTER TABLE budget_element ADD  CONSTRAINT fk1ba06002a2a3285a FOREIGN KEY (id_ratio_dividend)
+      REFERENCES budget_sub_field (id_budget_sub_field) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION;
+	  
+
+INSERT INTO budget_element (id_flexible_element)
+	SELECT id_flexible_element FROM default_flexible_element WHERE default_flexible_element.type = 'BUDGET' AND default_flexible_element.id_flexible_element NOT IN (SELECT budget_element.id_flexible_element FROM budget_element );
+INSERT INTO budget_sub_field (id_budget_sub_field,label, id_budget_element, fieldorder, type) 
+			SELECT nextval('hibernate_sequence'), NULL, budget_element.id_flexible_element, 0, 'RECEIVED' FROM  budget_element;
+INSERT INTO budget_sub_field (id_budget_sub_field,label, id_budget_element, fieldorder, type) 
+			SELECT nextval('hibernate_sequence'), NULL, budget_element.id_flexible_element, 0, 'SPENT' FROM  budget_element;
+INSERT INTO budget_sub_field (id_budget_sub_field,label, id_budget_element, fieldorder, type) 
+			SELECT nextval('hibernate_sequence'), NULL, budget_element.id_flexible_element, 0, 'PLANNED' FROM  budget_element;
+	UPDATE budget_element  SET id_ratio_divisor = bsf.id_budget_sub_field FROM budget_sub_field bsf WHERE  id_flexible_element =  bsf.id_budget_element AND bsf.type = 'PLANNED';
+	UPDATE budget_element  SET id_ratio_dividend = bsf.id_budget_sub_field FROM budget_sub_field bsf WHERE  id_flexible_element =  bsf.id_budget_element AND bsf.type = 'SPENT';
+
+
+-- Deletes all entries from the AdminEntity table which contains only admin entities from the Democratic Republic of the Congo 
+-- ------
+
+DELETE FROM adminentity;
+
+
+-- Set all users as active by default (issue #771)
+-- ------
+ALTER TABLE UserLogin ALTER COLUMN active SET default true;
+
+
+
+-- Add column for the main site
+-- ------
+ALTER TABLE project ADD COLUMN mainsite int;
+
+-- 
+-- Add column for comment in the history token table.
+-- ------
+ALTER TABLE history_token ADD comment varchar(255);
+
+
+
+-- Add tables to manage importation scheme (importation frameworks)
+-- ------
+
+CREATE TABLE importation_scheme
+(
+  sch_id bigint NOT NULL,
+  datedeleted timestamp without time zone,
+  sch_file_format character varying(255) NOT NULL,
+  sch_first_row integer,
+  sch_import_type character varying(255) NOT NULL,
+  sch_name character varying(255) NOT NULL,
+  sch_sheet_name character varying(255),
+  CONSTRAINT importation_scheme_pkey PRIMARY KEY (sch_id )
+);
+
+
+CREATE TABLE importation_scheme_model
+(
+  sch_mod_id bigint NOT NULL,
+  datedeleted timestamp without time zone,
+  sch_id bigint NOT NULL,
+  org_unit_model_id integer,
+  id_project_model bigint,
+  CONSTRAINT importation_scheme_model_pkey PRIMARY KEY (sch_mod_id ),
+  CONSTRAINT fk_cgrmoq07kxyggtnldsvlwjqcs FOREIGN KEY (id_project_model)
+      REFERENCES project_model (id_project_model) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_ckwexvghil94ha4ct8b1wepxq FOREIGN KEY (org_unit_model_id)
+      REFERENCES org_unit_model (org_unit_model_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_prpi3dmykj4nbdeyk3dhb51jn FOREIGN KEY (sch_id)
+      REFERENCES importation_scheme (sch_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE importation_scheme_variable
+(
+  var_id bigint NOT NULL,
+  datedeleted timestamp without time zone,
+  var_name character varying(255) NOT NULL,
+  var_reference character varying(255) NOT NULL,
+  sch_id bigint NOT NULL,
+  CONSTRAINT importation_scheme_variable_pkey PRIMARY KEY (var_id ),
+  CONSTRAINT fk_khgoedwqkg3au5a2o3fe4g398 FOREIGN KEY (sch_id)
+      REFERENCES importation_scheme (sch_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+
+CREATE TABLE importation_scheme_variable_flexible_element
+(
+  var_fle_id bigint NOT NULL,
+  datedeleted timestamp without time zone,
+  var_fle_is_key boolean,
+  id_flexible_element bigint NOT NULL,
+  sch_mod_id bigint NOT NULL,
+  var_id bigint,
+  CONSTRAINT importation_scheme_variable_flexible_element_pkey PRIMARY KEY (var_fle_id ),
+  CONSTRAINT fk_kr8tjw9mvseef9x0il6dojoh9 FOREIGN KEY (sch_mod_id)
+      REFERENCES importation_scheme_model (sch_mod_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_nbgxlc3whl76ws07c99f70r6n FOREIGN KEY (var_id)
+      REFERENCES importation_scheme_variable (var_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_q4la1it8wgg6nkosxi6rpd4cp FOREIGN KEY (id_flexible_element)
+      REFERENCES flexible_element (id_flexible_element) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE importation_scheme_variable_budget_element
+(
+  var_fle_id bigint NOT NULL,
+  CONSTRAINT importation_scheme_variable_budget_element_pkey PRIMARY KEY (var_fle_id ),
+  CONSTRAINT fk_eu352p1mmft8pwwyylmwe63q8 FOREIGN KEY (var_fle_id)
+      REFERENCES importation_scheme_variable_flexible_element (var_fle_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE importation_variable_budget_sub_field
+(
+  id_budget_sub_field bigint NOT NULL,
+  var_id bigint NOT NULL,
+  var_fle_id bigint NOT NULL,
+  CONSTRAINT importation_variable_budget_sub_field_pkey PRIMARY KEY (id_budget_sub_field , var_id , var_fle_id ),
+  CONSTRAINT fk_dfeq1vnw6d3ooeqf1stt4x276 FOREIGN KEY (var_id)
+      REFERENCES importation_scheme_variable (var_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_ms0uq981iysge90gt1o3pf40q FOREIGN KEY (var_fle_id)
+      REFERENCES importation_scheme_variable_budget_element (var_fle_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_og2mv36vlu4uu885yrpnhbl2q FOREIGN KEY (id_budget_sub_field)
+      REFERENCES budget_sub_field (id_budget_sub_field) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+
+-- Core version element table
+-- -----
+
+CREATE TABLE core_version_element
+(
+  id_flexible_element int primary key
+);
+
+
+-- Add column name in amendement (project core)
+-- --------------------------------------------
+ALTER TABLE amendment ADD COLUMN name character varying(255);
+
+
+
+-- Add column for the core version
+-- --------------------------------
+ALTER TABLE history_token ADD core_version int;
+
+
+
+-- Add column for disabling flexible elements
+-- ------
+ALTER TABLE flexible_element ADD disabled_date timestamp;
+
+```
+
+## 2. Existing data updates ##
+
+**After the schema is updated**, in order to update the existing data, the following request has to be applied (request required because of the issue [0000386: Flexible budget field](http://www.sigmah.org/issues/view.php?id=386) which lets user modify the budget sub fields)
+
+```
+-- Add South Sudan newest country in Sigmah list of countries
+INSERT INTO Country (CountryId, x1, x2, y1, y2, ISO2, Name) VALUES (495, -180, 180, -90, 180, 'SS', 'South Sudan');
+
+-- Updates all project model existing default fields to set them as part of project core (issue #167) (but not orgunit default fields)
+update flexible_element
+set amendable = TRUE
+where id_flexible_element in 
+	(select dfe.id_flexible_element 
+	from default_flexible_element dfe
+	where dfe.id_flexible_element not in 
+		(select id_flexible_element 
+		from layout_constraint lc
+			inner join layout_group lg on lg.id_layout_group = lc.id_layout_group
+			inner join org_unit_details oud on oud.id_layout = lg.id_layout)
+	);
+
+
+-- Updates existing users 'last password change' with current timestamp (issue #438 / #517)
+-- ------
+UPDATE UserLogin SET last_password_change = current_timestamp;
+
+
+
+-- Updates existing global permissions to the new hierarchy of privileges (issue #616 and related)
+-- ------
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'CREATE_TEST_PROJECT', p.id_profile FROM global_permission p WHERE p.permission='VIEW_ADMIN';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'REMOVE_PROJECT_FILE', p.id_profile FROM global_permission p WHERE p.permission='REMOVE_FILE';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'REMOVE_ORG_UNIT_FILE', p.id_profile FROM global_permission p WHERE p.permission='REMOVE_FILE';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'LOCK_PROJECT', p.id_profile FROM global_permission p WHERE p.permission='EDIT_PROJECT';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'VIEW_PROJECT_AGENDA', p.id_profile FROM global_permission p WHERE p.permission='VIEW_PROJECT';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'EDIT_PROJECT_AGENDA', p.id_profile FROM global_permission p WHERE p.permission='EDIT_PROJECT';
+
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'VIEW_LOGFRAME', p.id_profile FROM global_permission p WHERE p.permission='VIEW_PROJECT';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'EDIT_LOGFRAME', p.id_profile FROM global_permission p WHERE p.permission='EDIT_PROJECT';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'VIEW_INDICATOR', p.id_profile FROM global_permission p WHERE p.permission='VIEW_PROJECT';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'VIEW_MAPTAB', p.id_profile FROM global_permission p WHERE p.permission='VIEW_PROJECT';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'MANAGE_MAIN_SITE', p.id_profile FROM global_permission p WHERE p.permission='EDIT_PROJECT';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'MANAGE_SITES', p.id_profile FROM global_permission p WHERE p.permission='EDIT_PROJECT';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'MANAGE_INDICATOR', p.id_profile FROM global_permission p WHERE p.permission='VIEW_PROJECT';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'EDIT_INDICATOR', p.id_profile FROM global_permission p WHERE p.permission='EDIT_PROJECT';
+
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'EDIT_OWN_REMINDERS', p.id_profile FROM global_permission p WHERE p.permission='EDIT_PROJECT';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'EDIT_ALL_REMINDERS', p.id_profile FROM global_permission p WHERE p.permission='EDIT_PROJECT';
+
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'RELATE_PROJECT', p.id_profile FROM global_permission p WHERE p.permission='EDIT_PROJECT';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'EDIT_ORG_UNIT', p.id_profile FROM global_permission p WHERE p.permission='MANAGE_UNIT';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'REMOVE_ORG_UNIT_FILE', p.id_profile FROM global_permission p WHERE p.permission='REMOVE_FILE';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'VIEW_ORG_UNIT_AGENDA', p.id_profile FROM profile p WHERE p.id_profile not in (select id_profile from global_permission where permission='VIEW_ORG_UNIT_AGENDA');
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'EDIT_ORG_UNIT_AGENDA', p.id_profile FROM profile p WHERE p.id_profile not in (select id_profile from global_permission where permission='EDIT_ORG_UNIT_AGENDA');
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'MANAGE_USERS', p.id_profile FROM global_permission p WHERE p.permission='VIEW_ADMIN';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'MANAGE_ORG_UNITS', p.id_profile FROM global_permission p WHERE p.permission='VIEW_ADMIN';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'MANAGE_PROJECT_MODELS', p.id_profile FROM global_permission p WHERE p.permission='VIEW_ADMIN';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'MANAGE_ORG_UNIT_MODELS', p.id_profile FROM global_permission p WHERE p.permission='VIEW_ADMIN';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'MANAGE_REPORT_MODELS', p.id_profile FROM global_permission p WHERE p.permission='VIEW_ADMIN';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'MANAGE_CATEGORIES', p.id_profile FROM global_permission p WHERE p.permission='VIEW_ADMIN';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'MANAGE_IMPORTATION_SCHEMES', p.id_profile FROM global_permission p WHERE p.permission='VIEW_ADMIN';
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'MANAGE_SETTINGS', p.id_profile FROM global_permission p WHERE p.permission='VIEW_ADMIN';
+
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'CHANGE_PASSWORD', p.id_profile FROM profile p WHERE p.id_profile not in (select id_profile from global_permission where permission='CHANGE_PASSWORD');
+DELETE FROM global_permission p WHERE p.permission='MANAGE_UNIT';
+DELETE FROM global_permission p WHERE p.permission='REMOVE_FILE';
+DELETE FROM global_permission p WHERE p.permission='MANAGE_USER';
+DELETE FROM global_permission p WHERE p.permission='VIEW_AGENDA';
+DELETE FROM global_permission p WHERE p.permission='EDIT_AGENDA';
+
+-- Updates history_token and value to table to fit the new structure of a budget element (issue #386)
+-- ------
+UPDATE history_token SET value = planned_budget_id || '%' || coalesce(budgetValues[1], '0.0') || '~' || received_budget_id || '%' || coalesce(budgetValues[2], '0.0')  || '~' || spent_budget_id || '%' ||  coalesce(budgetValues[3], '0.0') 
+FROM (
+	SELECT value, string_to_array(value, '~') AS budgetValues, flexible_element.id_flexible_element, id_history_token,
+		planned.id_budget_sub_field  AS planned_budget_id,
+		spent.id_budget_sub_field    AS spent_budget_id,
+		received.id_budget_sub_field AS received_budget_id
+	FROM history_token AS ht
+	INNER JOIN flexible_element ON ( flexible_element.id_flexible_element = ht.id_element )
+	LEFT  JOIN budget_sub_field AS planned  ON ( planned.id_budget_element = flexible_element.id_flexible_element  AND planned.type = 'PLANNED' )
+	LEFT  JOIN budget_sub_field AS spent    ON ( spent.id_budget_element = flexible_element.id_flexible_element    AND spent.type = 'SPENT' )
+	LEFT  JOIN budget_sub_field AS received ON ( received.id_budget_element = flexible_element.id_flexible_element AND received.type = 'RECEIVED' )
+	WHERE flexible_element.id_flexible_element IN (Select id_flexible_element from budget_element)
+) AS ssrequete
+WHERE history_token.id_history_token = ssrequete.id_history_token;
+
+
+INSERT INTO value (id_value, id_project, action_last_modif, date_last_modif, value, id_flexible_element, id_user_last_modif)
+SELECT nextval('hibernate_sequence'), ht.id_project, CASE change_type WHEN 'EDIT' THEN 'U' ELSE 'C' END, history_date, value, ht.id_element, id_user
+FROM history_token AS ht JOIN ( SELECT history_token.id_project, history_token.id_element, MAX (id_history_token) AS max_history_id FROM history_token GROUP BY id_project, id_element) AS requete
+  ON requete.id_project = ht.id_project AND requete.id_element = ht.id_element AND requete.max_history_id = ht.id_history_token
+WHERE (ht.id_project, ht.id_element) NOT IN (SELECT id_project, id_flexible_element FROM value) AND ht.id_element IN (SELECT id_flexible_element FROM budget_element);
+
+
+
+-- Set all users as active by default (issue #771)
+-- ------
+UPDATE UserLogin SET active = true WHERE active is null;
+
+
+
+
+
+```
+
+# Release 1.2 #
+
+## 1. Schema changes ##
+
+```
+
+-- Add the exportable preferences columns to the fields table and the required new tables (issue #388)
+-- ------
+
+-- POSTGRESQL
+ALTER TABLE flexible_element ADD COLUMN exportable BOOLEAN NOT NULL DEFAULT TRUE;
+ALTER TABLE flexible_element ADD COLUMN globally_exportable BOOLEAN NOT NULL DEFAULT TRUE;
+
+
+-- MYSQL
+ALTER TABLE flexible_element ADD exportable bit(1) NOT NULL DEFAULT b'1';
+ALTER TABLE flexible_element ADD globally_exportable bit(1) NOT NULL DEFAULT b'1';
+
+
+-- Add tables and basic default settings for Global Export (issue #388)
+-- ------
+
+-- tables in POSTGRESQL
+CREATE TABLE global_export (
+    id bigint NOT NULL,
+    generated_date timestamp without time zone NOT NULL,
+    organization_id integer NOT NULL
+);
+
+CREATE TABLE global_export_content (
+    id bigint NOT NULL,
+    csv_content text,
+    project_model_name character varying(8192) NOT NULL,
+    global_export_id bigint NOT NULL
+);
+
+CREATE TABLE global_export_settings (
+    id bigint NOT NULL,
+    auto_delete_frequency integer,
+    auto_export_frequency integer,
+    default_organization_export_format character varying(255),
+    export_format character varying(255),
+    last_export_date timestamp without time zone,
+    locale_string character varying(4) NOT NULL,
+    organization_id integer NOT NULL
+);
+
+ALTER TABLE ONLY global_export_content
+    ADD CONSTRAINT global_export_content_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY global_export
+    ADD CONSTRAINT global_export_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY global_export_settings
+    ADD CONSTRAINT global_export_settings_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY global_export_settings
+    ADD CONSTRAINT fk2fb477b2f85c2c3c FOREIGN KEY (organization_id) REFERENCES organization(id_organization);
+
+ALTER TABLE ONLY global_export
+    ADD CONSTRAINT fk9e763fd0f85c2c3c FOREIGN KEY (organization_id) REFERENCES organization(id_organization);
+
+ALTER TABLE ONLY global_export_content
+    ADD CONSTRAINT fkdca84b0af33647b9 FOREIGN KEY (global_export_id) REFERENCES global_export(id);
+
+
+
+
+-- POSTGRESQL
+INSERT INTO global_export_settings(id, auto_delete_frequency, auto_export_frequency, default_organization_export_format, export_format, last_export_date, locale_string, organization_id)
+SELECT nextval('hibernate_sequence'), NULL, NULL, 'XLS', 'XLS', NULL, 'fr', id_organization FROM organization;
+
+-- MYSQL
+INSERT INTO global_export_settings(auto_delete_frequency, auto_export_frequency, default_organization_export_format, export_format, last_export_date, locale_string, organization_id)
+SELECT NULL, NULL, 'XLS', 'XLS', NULL, 'fr', id_organization FROM organization;
+
+-- Changes the date type columns to timestamp to avoid time difference (issue #463)
+-- ------
+
+-- POSTGRESQL
+ALTER TABLE userdatabase ALTER COLUMN startdate TYPE TIMESTAMP;
+ALTER TABLE project ALTER COLUMN end_date TYPE TIMESTAMP;
+ALTER TABLE project ALTER COLUMN close_date TYPE TIMESTAMP;
+
+ALTER TABLE personalevent ALTER COLUMN enddate TYPE TIMESTAMP WITH TIME ZONE;
+ALTER TABLE personalevent ALTER COLUMN startdate TYPE TIMESTAMP WITH TIME ZONE;
+
+-- MYSQL
+ALTER TABLE userdatabase CHANGE startdate startdate TIMESTAMP;
+ALTER TABLE project CHANGE end_date end_date TIMESTAMP;
+ALTER TABLE project CHANGE close_date close_date TIMESTAMP;
+
+-- Increases the indicator name length (issue #408).
+-- ------
+ALTER TABLE indicator ALTER COLUMN name TYPE varchar(1024);
+
+
+-- Increases the indicator category length (issue #434).
+-- ------
+ALTER TABLE indicator ALTER COLUMN category TYPE varchar(1024);
+
+
+-- Merges 'risks' and 'hypothesis' columns of the log frame (issue #189).
+-- ------
+
+-- POSTGRESQL
+ALTER TABLE log_frame_element ADD COLUMN risksAndAssumptions TEXT;
+
+-- MYSQL
+ALTER TABLE log_frame_element ADD risksAndAssumptions TEXT;
+
+
+-- MYSQL AND POSTGRESQL
+UPDATE log_frame_element SET risksAndAssumptions=( risks  || '\n' || assumptions) WHERE char_length(assumptions)>0 and char_length(risks)>0;
+UPDATE log_frame_element SET risksAndAssumptions=risks WHERE (char_length(assumptions)=0 or assumptions is null)  and char_length(risks)>0;  
+UPDATE log_frame_element SET risksAndAssumptions=assumptions WHERE (char_length(risks)=0 or risks is null)  and char_length(assumptions)>0;   
+ALTER TABLE log_frame_element DROP risks;
+ALTER TABLE log_frame_element DROP assumptions;
+
+-- Add a date_deleted column to the table project_model and org_unit_model (issue #489)
+-- ------
+
+-- POSTGRESQL
+ALTER TABLE org_unit_model ADD COLUMN date_deleted DATE;
+ALTER TABLE project_model ADD COLUMN date_deleted DATE;
+
+-- MYSQL
+ALTER TABLE org_unit_model ADD COLUMN date_deleted DATETIME;
+ALTER TABLE project_model ADD COLUMN date_deleted DATETIME;
+
+-- Increases the project code length (issue #504).
+-- ------
+
+-- POSTGRESQL
+ALTER TABLE userdatabase ALTER COLUMN name TYPE varchar(50);
+
+-- MYSQL
+ALTER TABLE userdatabase CHANGE name name varchar(50);
+
+```
+
+
+## 2. Existing data updates ##
+
+```
+
+-- Updates the countries ISO codes (issue #457)
+UPDATE Country SET ISO2 = 'BN' WHERE CountryId = 281;
+UPDATE Country SET ISO2 = 'CN' WHERE CountryId = 293;
+UPDATE Country SET ISO2 = 'GN' WHERE CountryId = 339;
+UPDATE Country SET ISO2 = 'HN' WHERE CountryId = 345;
+UPDATE Country SET ISO2 = 'IN' WHERE CountryId = 349;
+UPDATE Country SET ISO2 = 'MN' WHERE CountryId = 394;
+UPDATE Country SET ISO2 = 'AN' WHERE CountryId = 404;
+UPDATE Country SET ISO2 = 'PN' WHERE CountryId = 423;
+UPDATE Country SET ISO2 = 'KN' WHERE CountryId = 434;
+UPDATE Country SET ISO2 = 'SN' WHERE CountryId = 443;
+UPDATE Country SET ISO2 = 'TN' WHERE CountryId = 472;
+UPDATE Country SET ISO2 = 'VN' WHERE CountryId = 487;
+
+
+-- Fixes issue with old inconsistent data in the log_frame_model table (issue #189)
+UPDATE log_frame_model SET a_gp_max=1, a_max=1, a_per_er_max=1, a_per_gp_max=1, a_enable_groups=false, er_enable_groups=false, p_enable_groups=false, so_enable_groups=false, er_gp_max=1, er_max=1, er_per_gp_max=1, er_per_so_max=1, p_gp_max=1, p_max=1, p_per_gp_max=1, so_gp_max=1, so_max=1, so_per_gp_max=1 
+WHERE name LIKE 'Auto-created default model at%';
+
+-- Removes temporarily ACTIVITY INFO permission (issue #591)
+DELETE FROM global_permission WHERE permission = 'VIEW_ACTIVITYINFO';
+
+-- Deletes the projects links linked to a deleted project (issue #565)
+DELETE FROM project_funding AS pf
+	USING userdatabase AS ud
+	WHERE ud.databaseid = pf.id_project_funded 
+		AND ud.datedeleted is not null;
+		
+DELETE FROM project_funding AS pf
+	USING userdatabase AS ud
+	WHERE ud.databaseid = pf.id_project_funding
+		AND ud.datedeleted is not null;
+```
+
+# Release 1.1 #
+
+## 1. Schema changes ##
+
+```
+
+ALTER TABLE project DROP COLUMN starred ;  
+
+CREATE TABLE project_userlogin
+(
+  project_databaseid integer NOT NULL,
+  favoriteusers_userid integer NOT NULL,
+  CONSTRAINT project_userlogin_pkey PRIMARY KEY (project_databaseid,    favoriteusers_userid),
+  CONSTRAINT fk8076a4d884058733 FOREIGN KEY (project_databaseid)
+      REFERENCES project (databaseid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk8076a4d8efbea106 FOREIGN KEY (favoriteusers_userid)
+      REFERENCES userlogin (userid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+ALTER TABLE indicator ADD COLUMN directdataentryenabled boolean;
+ALTER TABLE indicator ALTER COLUMN directdataentryenabled SET NOT NULL;
+ALTER TABLE indicator ALTER COLUMN directdataentryenabled SET DEFAULT true;
+
+```
+
+## 2. Existing data updates ##
+
+**After the schema is updated**, in order to update the existing data, the following request has to be applied (request required because of the issue [000352: OrgUnit administration lacking orgunit model status management](http://www.sigmah.org/issues/view.php?id=352) which lets user create orgunit from deletable draft orgunit models)
+
+```
+UPDATE org_unit_model
+SET status = 'USED'
+WHERE status='DRAFT' and org_unit_model_id in (select id_org_unit_model from partner where 1);
+```
+
+
+# Release 1.0-rc2 #
+
+## 1. Schema changes ##
+
+```
+
+ALTER TABLE userdatabase ALTER COLUMN FullName TYPE VARCHAR(500);
+
+ALTER TABLE org_unit_model DROP COLUMN min_level;
+
+ALTER TABLE org_unit_model DROP COLUMN max_level;
+
+```
+
+# Release 1.0 #
+
+## 1. Schema changes ##
+
+```
+
+ALTER TABLE partner ADD COLUMN deleted timestamp without time zone;
+
+```
+
+_For MySQL databases, use instead:_
+ALTER TABLE partner ADD COLUMN deleted DATETIME DEFAULT NULL;
+
+```
+CREATE TABLE  indicator_datasource (
+  IndicatorId int(11) NOT NULL,
+  IndicatorSourceId int(11) NOT NULL,
+  PRIMARY KEY (IndicatorId,IndicatorSourceId),
+  KEY `FK7A87F87547C62157` (indicatorid),
+  KEY `FK7A87F8755038B772` (indicatorsourceid)
+);
+
+```
+
+Note: all existing logframe elements will be lost. I'm not aware of any real logframes in the wild yet, but if there are they will have to be migrated by hand to redo the ids.
+
+```
+
+DROP TABLE log_frame_expected_result;
+DROP TABLE log_frame_specific_objective;
+DROP TABLE log_frame_activity;
+
+CREATE TABLE  log_frame_element (
+  id_element int(11) NOT NULL AUTO_INCREMENT,
+  assumptions text,
+  code int(11) NOT NULL,
+  position int(11) DEFAULT NULL,
+  risks text,
+  id_group int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_element`),
+  KEY `FK5A2E206F4F6005EE` (id_group)
+);
+
+CREATE TABLE  log_frame_specific_objective (
+  `intervention_logic` text,
+  `id_element` int(11) NOT NULL,
+  `id_log_frame` int(11) NOT NULL,
+  PRIMARY KEY (`id_element`),
+  KEY `FKC979EF199BC5C4DA` (`id_log_frame`),
+  KEY `FKC979EF19E41DAE8` (`id_element`)
+);
+
+CREATE TABLE  log_frame_expected_result (
+  `intervention_logic` text,
+  `id_element` int(11) NOT NULL,
+  `id_specific_objective` int(11) NOT NULL,
+  PRIMARY KEY (`id_element`),
+  KEY `FK99D3DDF7D88379D4` (`id_specific_objective`),
+  KEY `FK99D3DDF7E41DAE8` (`id_element`)
+);
+
+CREATE TABLE log_frame_activity (
+  advancement int(11) DEFAULT NULL,
+  endDate datetime DEFAULT NULL,
+  startDate datetime DEFAULT NULL,
+  title text,
+  id_element int(11) NOT NULL,
+  id_result int(11) NOT NULL,
+  PRIMARY KEY (`id_element`),
+  KEY `FK89611FFC8012BC39` (`id_result`),
+  KEY `FK89611FFCE41DAE8` (`id_element`)
+);
+
+CREATE TABLE  log_frame_indicators (
+  `log_frame_element_id_element` int(11) NOT NULL,
+  `indicators_IndicatorId` int(11) NOT NULL,
+  PRIMARY KEY (`log_frame_element_id_element`,`indicators_IndicatorId`),
+  KEY `FK17E5A9F1F6E4C4B8` (`log_frame_element_id_element`),
+  KEY `FK17E5A9F1A023DDC` (`indicators_IndicatorId`)
+);
+
+```
+
+# Release 0.9.1 #
+
+## 1. Schema changes ##
+
+From 0.9 to 0.9.1, the following changes have to be performed on the schema:
+
+```
+
+ALTER TABLE log_frame DROP COLUMN title;
+
+ALTER TABLE project ADD COLUMN activity_advancement INTEGER ;
+
+ALTER TABLE log_frame_activity ADD COLUMN advancement INTEGER ;
+
+ALTER TABLE projectreport ADD COLUMN orgunit_partnerid INTEGER ;
+
+ALTER TABLE category_type ADD COLUMN id_organization INTEGER ;
+
+ALTER TABLE category_element ADD COLUMN id_organization INTEGER ;
+
+ALTER TABLE quality_framework ADD COLUMN id_organization INTEGER ;
+
+ALTER TABLE quality_criterion ADD COLUMN id_organization INTEGER ;
+
+ALTER TABLE privacy_group ADD COLUMN id_organization INTEGER ;
+
+ALTER TABLE profile ADD COLUMN id_organization INTEGER ;
+
+ALTER TABLE projectreportmodel ADD COLUMN id_organization INTEGER ;
+
+ALTER TABLE org_unit_model ADD COLUMN id_organization INTEGER ;
+
+ALTER TABLE monitored_point ADD COLUMN deleted BIT(1);
+
+ALTER TABLE reminder ADD COLUMN deleted BIT(1);
+
+```
+
+## 2. Existing data updates ##
+
+**After the schema is updated**, in order to update the existing data, the following requests have to be applied: (requests only valid for database with a single organization)
+
+
+```
+
+UPDATE category_type SET id_organization = (SELECT MAX(id_organization) FROM organization WHERE id_root_org_unit IS NOT NULL) ;
+
+UPDATE category_element SET id_organization = (SELECT MAX(id_organization) FROM organization WHERE id_root_org_unit IS NOT NULL);
+
+UPDATE quality_framework SET id_organization  = (SELECT MAX(id_organization) FROM organization WHERE id_root_org_unit IS NOT NULL);
+
+UPDATE quality_criterion SET id_organization  = (SELECT MAX(id_organization) FROM organization WHERE id_root_org_unit IS NOT NULL);
+
+UPDATE privacy_group SET id_organization  = (SELECT MAX(id_organization) FROM organization WHERE id_root_org_unit IS NOT NULL);
+
+UPDATE profile SET id_organization  = (SELECT MAX(id_organization) FROM organization WHERE id_root_org_unit IS NOT NULL);
+
+UPDATE projectreportmodel SET id_organization  = (SELECT MAX(id_organization) FROM organization WHERE id_root_org_unit IS NOT NULL);
+
+UPDATE org_unit_model SET id_organization  = (SELECT MAX(id_organization) FROM organization WHERE id_root_org_unit IS NOT NULL);
+
+```
+
+# Release 0.9 #
+
+From 0.8.1 to 0.9, the following changes have to be performed on the schema:
+
+
+```
+DROP TABLE report;
+
+ALTER TABLE project_model ADD COLUMN status VARCHAR(20) DEFAULT 'READY';
+UPDATE project_model SET status = 'READY' WHERE status IS NULL;
+
+ALTER TABLE org_unit_model ADD COLUMN status VARCHAR(20) DEFAULT 'READY';
+UPDATE org_unit_model SET status = 'READY' WHERE status IS NULL;
+
+ALTER TABLE Indicator CHANGE ActivityId ActivityId int(11) NULL;
+ALTER TABLE Indicator CHANGE Units Units varchar(15) NULL;
+
+ALTER TABLE locationtype CHANGE LocationTypeId LocationTypeId int(11) NOT NULL AUTO_INCREMENT; 
+
+ALTER TABLE Site CHANGE ActivityId ActivityId int(11) NULL;
+```
+
+
+# Revision [r1215](https://code.google.com/p/sigma-h/source/detail?r=1215) #
+  * Global export(export logger), Global export content (CSV content of export) and Global export settings (export settings per organization)
+```
+CREATE TABLE global_export
+(
+  id bigint NOT NULL,
+  generated_date timestamp without time zone,
+  organization_id integer NOT NULL,
+  CONSTRAINT global_export_pkey PRIMARY KEY (id ),
+  CONSTRAINT fk9e763fd0f85c2c3c FOREIGN KEY (organization_id)
+      REFERENCES organization (id_organization) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE global_export_content
+(
+  id bigint NOT NULL,
+  csv_content text,
+  project_model_name character varying(8192) NOT NULL,
+  global_export_id bigint NOT NULL,
+  CONSTRAINT global_export_content_pkey PRIMARY KEY (id ),
+  CONSTRAINT fkdca84b0af33647b9 FOREIGN KEY (global_export_id)
+      REFERENCES global_export (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+CREATE TABLE global_export_settings
+(
+  id bigint NOT NULL,
+  auto_delete_frequency integer,
+  auto_export_frequency integer,
+  default_organization_export_format character varying(255),
+  export_format character varying(255),
+  last_export_date timestamp without time zone,
+  locale_string character varying(4) NOT NULL,
+  organization_id integer NOT NULL,
+  CONSTRAINT global_export_settings_pkey PRIMARY KEY (id ),
+  CONSTRAINT fk2fb477b2f85c2c3c FOREIGN KEY (organization_id)
+      REFERENCES organization (id_organization) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+
+```
+  * Default global export settings
+
+```
+INSERT INTO global_export_settings (id, default_organization_export_format, auto_export_frequency, locale_string, organization_id) 
+SELECT nextval('hibernate_sequence'),'ODS',1,'fr', o.id_organization from organization o limit 1;
+```
+
+> two added export related flags
+```
+update flexible_element set exportable =true;
+update flexible_element set globally_exportable =false;
+```
+
+  * Adds default GLOBAL\_EXPORT permission to default "PioneerAdministrator" profile
+
+```
+INSERT INTO global_permission (id_global_permission, permission, id_profile) SELECT nextval('hibernate_sequence'), 'GLOBAL_EXPORT', id_profile FROM profile WHERE name = 'PioneerAdministrator' AND id_organization = (SELECT MAX(id_organization) FROM organization WHERE logo = 'logo');
+```

@@ -1,0 +1,1 @@
+createdb -U sigmah sigmah -E utf-8

@@ -1,0 +1,175 @@
+# Step 0: prerequisites
+
+## Environment and tooling
+
+If you want to start developing on sigmah, you need to set your environment up. If you develop Java application on a regular basis, you may already fulfill all the requirements. Any Sigmah developer needs the following:
+  * JDK 1.6\*
+  * Postgresql 9
+  * Maven 3
+  * Git 2.7
+
+Before continuing, make sure everything is properly installed.
+
+//\*JDK 1.6// : JDK8 is actually better for use with Sigmah since it removes some headaches related to memory management. However, the syntax is limited to Java 6 in the client and shared packages due to the outdated version of GWT required by GXT. So any JDK from JDK6 will do the job, but new syntax added in JDK7 and JDK8 should not be used in the client and shared packages.
+
+## Creating a database to store Sigmah data
+### Windows
+
+Now you should have a PostgreSQL server and pgAdmin III installed. To be able to test your development with Sigmah, you will need to create now a test database.
+
+  - Open pgAdmin III.
+
+{{:contributorguide:22_pgadminiii.png?nolink|}}
+
+  - Connect to your server, and add a new database.
+
+{{:contributorguide:23_pgadminiii.png?nolink|}}
+
+  - Name it “sigmah”, keep “postgres” as the owner, and UTF8 encoding.
+
+Install the [[https://www.postgresql.org/docs/current/static/pgtrgm.html|pg_trgm postgresql extension]] (required so Sigmah can full-text search). Connect to the Sigmah database and run:
+
+```sql
+CREATE EXTENSION IF NOT EXISTS pg_trgm;
+```
+
+### Linux
+
+Connect as the postgres user, it's required for anything about your local PosgreSQL instance.
+
+```bash
+sudo su postgres
+```
+
+We will create a PostgreSQL user, let's call him "sigmah" and give it the right to create a database
+
+```bash
+createuser sigmah --createdb --pwprompt
+```
+
+You will be prompted a password, let's enter 
+
+  hamsig
+
+That's all we need to do as postgres, log out from postgres user and continue as your everyday user.
+
+Now the user is created, let's create him a database (with UTF-8 encoding)
+
+```bash
+createdb -U sigmah sigmah -E utf-8
+```
+
+Now, log out from postgres user.
+
+Let's check everything is OK by connecting:
+
+```bash
+psql sigmah -U sigmah
+```
+
+Enter the hamsig password. If you connected successfully, everything is OK.
+
+Install the [[https://www.postgresql.org/docs/current/static/pgtrgm.html|pg_trgm postgresql extension]] (required so Sigmah can full-text search):
+
+```bash
+psql --username postgres sigmah --command "CREATE EXTENSION IF NOT EXISTS pg_trgm;"
+```
+
+
+## Creating a folder to store Sigmah files
+
+Create any folder in your filesystem to store Sigmah application files: organisation logo, files attachment and archives workdir.
+In the rest of this procedure, we'll consider that this folder will be a Windows folder ''C:\Sigmah\files\sigmah_lightdev''.
+
+# Step 1: fork the official Github repository
+
+The main Sigmah repository is hosted at github. To contribute, you should fork the project first.
+
+Go to https://github.com/sigmah-dev/sigmah and click "Fork". Github will create your own repository, with its own URL like: https://github.com/**your-github-account**/sigmah.git
+
+# Step 2: get a local copy of the source
+
+You can now get the source on your local machine, by using command-line:
+
+  git clone https://github.com/your-github-account/sigmah.git
+
+
+
+**[Optional] If you are under Windows**, type also now the following config command to avoid end-of-line issues while committing:
+  git config --global core.autocrlf true
+
+# Step 3: your first build
+
+Our build process is based on maven. Since you are a developer, we made the things simple for you. There is a maven profile named ''sigmah-dev''. It will reduce compilation time among others simplifications to ease your daily workflow.
+
+Now, remember that maven must be aware of your configuration so you must create a ''settings.xml'' file in your Maven user directory ''.m2'' subfolder (ie: ''C:\Users\MyUserName\\.m2\'' on Windows) with the following lines, which will at build time automatically override the values of the matching properties of the central Sigmah Maven ''pom.xml'' file:
+    
+<code xml settings.xml>
+<settings> 
+  <profiles>
+        <profile>
+            <id>sigmah-dev</id>
+            <properties>
+                <sigmah.database.url>jdbc:postgresql://localhost:5432/sigmah</sigmah.database.url>
+                <sigmah.database.user>sigmah</sigmah.database.user>
+                <sigmah.database.password>hamsig</sigmah.database.password>
+                <files.repository.name>C:\\Sigmah\\files\\sigmah_dev</files.repository.name>
+                <archives.repository.name>C:\\Sigmah\\files\\sigmah_dev\\archives</archives.repository.name>
+            </properties>
+        </profile>
+   </profiles>
+</settings> 
+</code>
+
+You can build the application using the following, traditional maven command.
+
+  mvn install -Psigmah-dev
+
+# Step 4: create the database schema
+
+We rely on the Flyway database migration framework to keep everyone's postgresql instance up-to-date with every change made on the schema. Flyway can tell you the precise state or your database.
+
+  mvn flyway:info -Psigmah-dev
+
+Here is an example output.
+
+  [INFO] Scanning for projects...
+  [INFO]
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Building Sigmah 2.2-SNAPSHOT
+  [INFO] ------------------------------------------------------------------------
+  [INFO]
+  [INFO] --- flyway-maven-plugin:3.2.1:info (default-cli) @ sigmah ---
+  [INFO] Flyway 3.2.1 by Boxfuse
+  [INFO] Database: jdbc:postgresql://localhost:5432/sigmah (PostgreSQL 9.3)
+  [INFO]
+  +---------+----------------------------------------+---------------------+---------+
+  | Version | Description                            | Installed on        | State   |
+  +---------+----------------------------------------+---------------------+---------+
+  | 1       | sigmah minimum data kit for sigmah 2.0 | 2016-09-01 10:09:57 | Success |
+  | 2       | computation field                      | 2016-09-01 10:09:59 | Success |
+  | 3       | project team                           | 2016-09-01 10:09:59 | Success |
+  | 4       | secondary org units                    | 2016-09-01 10:09:59 | Success |
+  | 5       | project model framework                | 2016-09-01 10:09:59 | Success |
+  | 6       | contacts model                         | 2016-09-01 10:09:59 | Success |
+  | 7       | contacts                               | 2016-09-01 10:09:59 | Success |
+  | 8       | contact list element                   | 2016-09-01 10:09:59 | Success |
+  | 9       | dedupe contacts                        |                     | Pending |
+  | 10      | group iterations                       |                     | Pending |
+  | 11      | iterations history token               |                     | Pending |
+  | 12      | global contact export                  |                     | Pending |
+  +---------+----------------------------------------+---------------------+---------+
+  
+  [INFO] ------------------------------------------------------------------------
+  [INFO] BUILD SUCCESS
+  [INFO] ------------------------------------------------------------------------
+  [INFO] Total time: 1.927 s
+  [INFO] Finished at: 2016-09-01T11:17:05+02:00
+  [INFO] Final Memory: 14M/205M
+  [INFO] ------------------------------------------------------------------------
+
+We can see that there is a **pending** migration. Let's run it by running 
+
+  mvn flyway:migrate -Psigmah-dev
+
+When you upgrade sigmah, always check ''flyway:info'' to see if there is any pending migration (and run ''flyway:migrate'' if necessary). If you don't do so, you may encounter random bugs due to the fact that the database schema is not quite like your sigmah version expect it.

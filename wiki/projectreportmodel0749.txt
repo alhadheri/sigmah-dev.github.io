@@ -1,0 +1,13 @@
+# Table projectreportmodel #
+## Remarks ##
+A ProjectReportModel is a model of report. It defines how the report must be displayed.
+
+## Schema ##
+| **Name** | **Type** | **Not Null** | **Primary Key** | **Foreign Key** | **Remarks** |
+|:---------|:---------|:-------------|:----------------|:----------------|:------------|
+| id       | integer  | X            | X               |                 | This is the primary key of the table. |
+| name     | character varying(255) |              |                 |                 | This is the name that identify the ProjectReportModel. |
+| id\_organization | integer  | X            |                 | [organization](organization)(id\_organization) | This is a foreign key to the table organization.  |
+
+## Diagram ##
+{{url>http://wiki.sigmah.org/svg_load.php?file=projectreportmodel.svg 900px,550px noborder}}

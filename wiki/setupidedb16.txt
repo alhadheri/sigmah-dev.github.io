@@ -1,0 +1,7 @@
+# Install IDE (Netbeans / Eclipse)
+
+Developers have worked on Sigmah source code both with Netbeans and Eclipse free and open-source Integrated Development Environment. The choice of the IDE remains yours.
+
+  * [Netbeans](netbeans)
+  * [Eclipse](eclipse)
+  * [Intellij IDEA](intellijidea)

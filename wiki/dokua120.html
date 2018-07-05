@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=contributorguide:performanceoptimisation by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:55:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>contributorguide:performanceoptimisation</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="contributorguide,performanceoptimisation"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="doku3724.html?id=contributorguide:performanceoptimisation&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feed3c04.php?mode=list&amp;ns=contributorguide"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="dokua120.html?do=export_xhtml&amp;id=contributorguide:performanceoptimisation"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="performanceoptimisationda43.txt?do=export_raw&amp;id=contributorguide:performanceoptimisation"/>
+<link rel="canonical" href="dokuc325.html?id=contributorguide:performanceoptimisation"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='contributorguide';var JSINFO = {"id":"contributorguide:performanceoptimisation","namespace":"contributorguide"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#measuring_performance">Measuring performance</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#for_everyone">For everyone</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#allowing_an_user_to_measure_performances">Allowing an user to measure performances</a></div></li>
+<li class="level3"><div class="li"><a href="#activating_probes">Activating probes</a></div></li>
+<li class="level3"><div class="li"><a href="#sending_reports">Sending reports</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#for_developers">For developers</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#running_the_automated_tests">Running the automated tests</a></div></li>
+<li class="level3"><div class="li"><a href="#adding_probes_to_your_own_code">Adding probes to your own code</a></div></li>
+<li class="level3"><div class="li"><a href="#understanding_the_raw_report">Understanding the raw report</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#configuration">Configuration</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#existing_scenarios">Existing scenarios</a></div></li>
+<li class="level1"><div class="li"><a href="#probe_api">Probe API</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#how_to_declare_a_new_scenario">How to declare a new scenario</a></div></li>
+<li class="level2"><div class="li"><a href="#marking_the_start_and_the_end_of_your_scenario">Marking the start and the end of your scenario</a></div></li>
+<li class="level2"><div class="li"><a href="#using_checkpoints_to_gather_more_precise_information">Using checkpoints to gather more precise information</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="measuring_performance">Measuring performance</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Measuring performance" [0-44] -->
+<h2 class="sectionedit2" id="for_everyone">For everyone</h2>
+<div class="level2">
+
+<p>
+By activating the performance probes and sending reports, everyone can help to improve Sigmah. Reports contains informations about the time spent while doing common tasks like opening a project.
+</p>
+
+<p>
+If a functionality feels slow, send us your report to help us understand what takes time and how we can fix it.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "For everyone" [45-380] -->
+<h3 class="sectionedit3" id="allowing_an_user_to_measure_performances">Allowing an user to measure performances</h3>
+<div class="level3">
+
+<p>
+Performance measurement is a new user authorisation. It is deactivated by default and should be added to the user profiles by an administrator.
+</p>
+
+<p>
+If you own the <code>Manage users</code> authorisation, you can allow or disallow users to measure performance by doing the following steps:
+</p>
+<ol>
+<li class="level1"><div class="li">Open the <code>Users</code> tab of the Administration.</div>
+</li>
+<li class="level0"><div class="li">Click on the <code>edit</code> button next to the user profile to authorize or deauthorize.</div>
+</li>
+<li class="level0"><div class="li">Scroll down to the <code>Others</code> section of the <code>Global Authorizations</code>.</div>
+</li>
+<li class="level0"><div class="li">Check or uncheck the <code>Probes management</code> authorization to allow or disallow the measurement of performances.</div>
+</li>
+</ol>
+
+<p>
+<a href="lib/exe/detail27ed.html?id=contributorguide%3Aperformanceoptimisation&amp;media=contributorguide:1_probes_management.gif" class="media" title="contributorguide:1_probes_management.gif"><img src="lib/exe/1_probes_managementf6f0.gif_%3b?media=contributorguide:1_probes_management.gif" class="media" title="Profile edition" alt="Profile edition" /></a>
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Allowing an user to measure performances" [381-1083] -->
+<h3 class="sectionedit4" id="activating_probes">Activating probes</h3>
+<div class="level3">
+
+<p>
+When a user has the right to activate and deactivate probes, a new icon will appear for him at the top of the screen. Hover your mouse cursor over it to display the <code>probes management menu</code> and select <code>Enable trace mode</code> to activate measurement.
+</p>
+
+<p>
+<a href="lib/exe/detail0edd.html?id=contributorguide%3Aperformanceoptimisation&amp;media=contributorguide:2_activate_probes.gif" class="media" title="contributorguide:2_activate_probes.gif"><img src="lib/exe/2_activate_probes5a0b.gif_%3b?media=contributorguide:2_activate_probes.gif" class="media" title="Enable trace mode" alt="Enable trace mode" /></a>
+</p>
+
+<p>
+When active, the <code>probes management</code> icon will turn white:
+</p>
+
+<p>
+<a href="lib/exe/detail2e72.html?id=contributorguide%3Aperformanceoptimisation&amp;media=contributorguide:3_probes_are_activated.gif" class="media" title="contributorguide:3_probes_are_activated.gif"><img src="lib/exe/3_probes_are_activated5315.gif_%3b?media=contributorguide:3_probes_are_activated.gif" class="media" title="Trace mode is enabled" alt="Trace mode is enabled" /></a>
+</p>
+
+<p>
+At this point, Sigmah will measure the time taken when doing common tasks. These data are saved locally and won&#039;t be sent without your consent.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Activating probes" [1084-1696] -->
+<h3 class="sectionedit5" id="sending_reports">Sending reports</h3>
+<div class="level3">
+
+<p>
+To send a report, simply go to the <code>probe management menu</code> and click on the <code>Send report</code> button.
+</p>
+
+<p>
+<a href="lib/exe/detail31b4.html?id=contributorguide%3Aperformanceoptimisation&amp;media=contributorguide:5_send_report.png" class="media" title="contributorguide:5_send_report.png"><img src="lib/exe/5_send_reportee21.png_%3b?media=contributorguide:5_send_report.png" class="media" alt="" /></a>
+</p>
+
+<p>
+The reports will be sent to you and to the Sigmah development team. To configure who can receive reports, see the configuration section.
+</p>
+
+<p>
+The mail sent will include 2 files:
+</p>
+<ul>
+<li class="level1"><div class="li">A plain-text file following the <a href="https://daringfireball.net/projects/markdown/syntax" class="urlextern" title="https://daringfireball.net/projects/markdown/syntax" rel="nofollow">Markdown syntax</a> with the minimum, maximum and average time taken by every scenario.</div>
+</li>
+<li class="level1"><div class="li">A raw report containing detailed information for the Sigmah development team.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT5 SECTION "Sending reports" [1697-2295] -->
+<h2 class="sectionedit6" id="for_developers">For developers</h2>
+<div class="level2">
+
+<p>
+When contributing to Sigmah, you can measure the impact of your developments by frequently running the automated tests. By comparing the generated reports, you will be able to see how your changes affected the performances of Sigmah.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "For developers" [2296-2563] -->
+<h3 class="sectionedit7" id="running_the_automated_tests">Running the automated tests</h3>
+<div class="level3">
+
+<p>
+The automated tests are using Selenium to simulate a user browsing Sigmah. For more information about Selenium, you can visit <a href="http://www.seleniumhq.org/" class="urlextern" title="http://www.seleniumhq.org" rel="nofollow">Selenium home page</a>.
+</p>
+
+<p>
+You can run the automated tests on your computer or use the pre-configured virtual machine available on <a href="http://sigmah.org/" class="urlextern" title="http://sigmah.org" rel="nofollow">sigmah.org</a>.
+</p>
+
+<p>
+If you choose to use the virtual machine, you can skip the installation and configuration phase.
+</p>
+
+</div>
+
+<h4 id="installing_selenium">Installing Selenium</h4>
+<div class="level4">
+
+<p>
+Selenium require Firefox to run.
+</p>
+
+<p>
+From Firefox, visit the <a href="https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/" class="urlextern" title="https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/" rel="nofollow">add-on installation page</a> of Selenium IDE. Click on <code>Add to Firefox</code> to install Selenium:
+</p>
+
+<p>
+<a href="lib/exe/detailb966.html?id=contributorguide%3Aperformanceoptimisation&amp;media=contributorguide:install-selenium.gif" class="media" title="contributorguide:install-selenium.gif"><img src="lib/exe/install-selenium15ab.gif_%3b?media=contributorguide:install-selenium.gif" class="media" title="Selenium IDE install page" alt="Selenium IDE install page" /></a>
+</p>
+
+</div>
+
+<h4 id="adding_support_for_while_and_endwhile_to_selenium">Adding support for `while` and `endWhile` to Selenium</h4>
+<div class="level4">
+
+<p>
+Download this <a href="https://doc-0o-c8-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/qm44n34veas1jfjhsf767tuiqtk9beli/1466164800000/13072740796266983643/*/0B6vnknygMB3ISHBYODA3UDUtS0U?e=download" class="urlextern" title="https://doc-0o-c8-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/qm44n34veas1jfjhsf767tuiqtk9beli/1466164800000/13072740796266983643/*/0B6vnknygMB3ISHBYODA3UDUtS0U?e=download" rel="nofollow">user-extension.js</a> file.
+</p>
+
+<p>
+Open Selenium IDE preferences and select the file you just downloaded into the <code>Selenium Core Extensions</code> field:
+</p>
+
+<p>
+<a href="lib/exe/detail1642.html?id=contributorguide%3Aperformanceoptimisation&amp;media=contributorguide:userextension.png" class="media" title="contributorguide:userextension.png"><img src="lib/exe/userextension219e.png_%3b?media=contributorguide:userextension.png" class="media" title="Selenium IDE preferences" alt="Selenium IDE preferences" /></a>
+</p>
+
+</div>
+
+<h4 id="running_the_script">Running the script</h4>
+<div class="level4">
+
+<p>
+You are now ready to run the automated tests.
+</p>
+
+<p>
+Open Firefox. In the menubar, select <code>Tools</code> then <code>Selenium IDE</code> to open Selenium.
+</p>
+
+<p>
+Copy the following script in the <code>Source</code> tab of Selenium and edit the following values:
+</p>
+<ul>
+<li class="level1"><div class="li">Replace <code>https://optimisation.sigmah.org/#login</code> by the <abbr title="Uniform Resource Locator">URL</abbr> of your instance of Sigmah.</div>
+</li>
+<li class="level1"><div class="li">Replace <code>user@sigmah.org</code> by the login of the user to use.</div>
+</li>
+<li class="level1"><div class="li">Replace <code>yourpassword</code> by the password to use.</div>
+</li>
+<li class="level1"><div class="li">Optionally you can also increment or decrement the number of time to run the tests by changing the limit defined by <code>index &amp;lt; 10;</code> (note: <code>&amp;lt;</code> means <code>less than</code>).</div>
+</li>
+</ul>
+
+<p>
+When you are done, switch to the <code>table</code> tab and hit <code>play</code> to let Selenium execute the tests.
+</p>
+<pre class="code">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;
+&lt;head profile=&quot;http://selenium-ide.openqa.org/profiles/test-case&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+&lt;link rel=&quot;selenium.base&quot; href=&quot;https://optimisation.sigmah.org/#login&quot; /&gt;
+&lt;title&gt;Boucle-10-ID&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;table cellpadding=&quot;1&quot; cellspacing=&quot;1&quot; border=&quot;1&quot;&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;td rowspan=&quot;1&quot; colspan=&quot;3&quot;&gt;Boucle-10-ID&lt;/td&gt;&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+
+&lt;!-- Identification	--&gt;
+&lt;tr&gt;
+	&lt;td&gt;open&lt;/td&gt;
+	&lt;td&gt;/#login&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td&gt;type&lt;/td&gt;
+	&lt;td&gt;id=loginEmailId&lt;/td&gt;
+	&lt;td&gt;user@sigmah.org&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td&gt;type&lt;/td&gt;
+	&lt;td&gt;id=loginPasswordId&lt;/td&gt;
+	&lt;td&gt;yourpassword&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td&gt;clickAndWait&lt;/td&gt;
+	&lt;td&gt;css=button.x-btn-text&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;!-- Activation	trace	--&gt;
+&lt;tr&gt;
+	&lt;td&gt;click&lt;/td&gt;
+	&lt;td&gt;id=activeDesactiveButtonId&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;!-- Début de boucle	--&gt;
+&lt;tr&gt;
+	&lt;td&gt;getEval&lt;/td&gt;
+	&lt;td&gt;index = 0;&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td&gt;while&lt;/td&gt;
+	&lt;td&gt;index &amp;lt; 10;&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td&gt;storeEval&lt;/td&gt;
+	&lt;td&gt;index&lt;/td&gt;
+	&lt;td&gt;value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td&gt;echo&lt;/td&gt;
+	&lt;td&gt;${value}&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;!-- Ouverture projet	--&gt;
+&lt;tr&gt;
+	&lt;td&gt;click&lt;/td&gt;
+	&lt;td&gt;id=projectCodeColumnId_-45917&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;!-- Ouverture agenda --&gt;
+&lt;tr&gt;
+	&lt;td&gt;click&lt;/td&gt;
+	&lt;td&gt;id=agendaSubMenuId&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;!-- Fermeture projet--&gt;
+&lt;tr&gt;
+	&lt;td&gt;selectWindow&lt;/td&gt;
+	&lt;td&gt;null&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td&gt;click&lt;/td&gt;
+	&lt;td&gt;id=dashboardProjectTabId5917&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td&gt;getEval&lt;/td&gt;
+	&lt;td&gt;index++;&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;!-- Fin de boucle	--&gt;
+&lt;tr&gt;
+	&lt;td&gt;endWhile&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;!-- Désactivation trace--&gt;
+&lt;tr&gt;
+	&lt;td&gt;click&lt;/td&gt;
+	&lt;td&gt;id=activeDesactiveButtonId&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;!-- Envoi du rapport	--&gt;
+&lt;tr&gt;
+	&lt;td&gt;click&lt;/td&gt;
+	&lt;td&gt;id=sendReportButtonId&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;!-- Fin d&#039;identification	--&gt;
+&lt;tr&gt;
+	&lt;td&gt;click&lt;/td&gt;
+	&lt;td&gt;link=Fermer session&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+	&lt;td&gt;click&lt;/td&gt;
+	&lt;td&gt;//table[@id=&#039;yesButtonId&#039;]/tbody/tr[2]/td[2]/em/button&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+</div>
+
+<h4 id="recording_your_own_automated_test">Recording your own automated test</h4>
+<div class="level4">
+
+<p>
+You can record your own test by clicking on the <code>record</code> button in the Selenium IDE window.
+See <a href="http://www.seleniumhq.org/docs/02_selenium_ide.jsp#building-test-cases" class="urlextern" title="http://www.seleniumhq.org/docs/02_selenium_ide.jsp#building-test-cases" rel="nofollow">Selenium help page</a> for more information.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Running the automated tests" [2564-7473] -->
+<h3 class="sectionedit8" id="adding_probes_to_your_own_code">Adding probes to your own code</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li">Add a new case to the <code>Scenario</code> enumeration.</div>
+</li>
+<li class="level0"><div class="li">Use the <code>Profiler</code> to define the start and end points of your <code>Scenario</code></div>
+</li>
+<li class="level0"><div class="li">Surround the important parts of your code with checkpoints to better understand what takes time.</div>
+</li>
+</ol>
+
+<p>
+See the <strong>Probe <abbr title="Application Programming Interface">API</abbr></strong> section for more information about the code required.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Adding probes to your own code" [7474-7816] -->
+<h3 class="sectionedit9" id="understanding_the_raw_report">Understanding the raw report</h3>
+<div class="level3">
+
+<p>
+When running a <code>Scenario</code>, the start time, duration of every checkpoint is saved in IndexedDB. The raw report is a JSON export of the entire database.
+</p>
+
+<p>
+<a href="lib/exe/detail3883.html?id=contributorguide%3Aperformanceoptimisation&amp;media=contributorguide:4_trace_are_recorded.png" class="media" title="contributorguide:4_trace_are_recorded.png"><img src="lib/exe/4_trace_are_recorded33df.png_%3b?media=contributorguide:4_trace_are_recorded.png" class="media" title="IndexedDB content" alt="IndexedDB content" /></a>
+</p>
+
+<p>
+Each entry is the result of an execution of a scenario. For each execution, the following fields are saved:
+</p>
+<ul>
+<li class="level1"><div class="li"><code>applicationCacheStatus</code>: the state of ApplicationCache. You should ignore execution results when the state is not <code>IDLE</code>. Performances are badly hurt when ApplicationCache is working. Hopefully, this only happen once every new version update.</div>
+</li>
+<li class="level1"><div class="li"><code>checkpoints</code>: Name, start time and duration of each checkpoint.</div>
+</li>
+<li class="level1"><div class="li"><code>date</code>: Start date of the execution.</div>
+</li>
+<li class="level1"><div class="li"><code>duration</code>: Total duration of the execution.</div>
+</li>
+<li class="level1"><div class="li"><code>id</code>: Execution identifier in the local database. Can be safely ignored.</div>
+</li>
+<li class="level1"><div class="li"><code>online</code>: Tells if the user was online or offline when the execution started. Offline mode is usually faster so you should avoid mixing the results of online and offline mode.</div>
+</li>
+<li class="level1"><div class="li"><code>scenario</code>: Name of the executed scenario.</div>
+</li>
+<li class="level1"><div class="li"><code>userAgent</code>: User-agent of the web browser used.</div>
+</li>
+<li class="level1"><div class="li"><code>versionNumber</code>: Version of Sigmah used.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT9 SECTION "Understanding the raw report" [7817-8990] -->
+<h2 class="sectionedit10" id="configuration">Configuration</h2>
+<div class="level2">
+
+<p>
+Inside of the <code>sigmah.properties</code>, locate the <code>mail.optimisation</code> entries. They define what will be sent by email and who will receive the reports:
+</p>
+<pre class="code">mail.optimisation.to.address=osarrat@urd.org
+mail.optimisation.copy.address=
+mail.optimisation.markdownfile.name=sigmah_performance_report.md
+mail.optimisation.jsonfile.name=sigmah_performance_raw_values.json</pre>
+<ul>
+<li class="level1"><div class="li"> <code>mail.optimisation.to.address</code> and <code>mail.optimisation.copy.address</code> are email addresses fields. You can define multiple addresses by separating them with a semicolon (&#039;;&#039;). All of theses addresses will receive every reports sent by users. If you want the Sigmah team to receive your reports you should ensure that <code>osarrat@urd.org</code> is present in one of those two fields.</div>
+</li>
+<li class="level1"><div class="li"> <code>mail.optimisation.markdownfile.name</code> is the name of the main report. It is a plain-text file following the <a href="https://daringfireball.net/projects/markdown/syntax" class="urlextern" title="https://daringfireball.net/projects/markdown/syntax" rel="nofollow">Markdown syntax</a>.</div>
+</li>
+<li class="level1"><div class="li"> <code>mail.optimisation.jsonfile.name</code> is the name of the raw report. It is a json file and is not intended to be understood as is. It contains the raw value measured by the probes. If you are a developer and are interested in understanding this file, see the <a href="#understanding_20the_20raw_20report" title="contributorguide:performanceoptimisation ↵" class="wikilink1">Understanding the raw report</a> section.</div>
+</li>
+</ul>
+
+<p>
+You can edit this file will Sigmah is running. The changes will be taken right away, no reboot of the server is required.
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Configuration" [8991-10412] -->
+<h1 class="sectionedit11" id="existing_scenarios">Existing scenarios</h1>
+<div class="level1">
+
+<p>
+Currently Sigmah records the duration of the following actions:
+</p>
+<ul>
+<li class="level1"><div class="li">Time spent opening a project from the dashboard and loading the content of its current phase.</div>
+</li>
+<li class="level1"><div class="li">Time spent opening the calendar of a project and loading the events of the current month.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT11 SECTION "Existing scenarios" [10413-10708] -->
+<h1 class="sectionedit12" id="probe_api">Probe API</h1>
+<div class="level1">
+
+<p>
+The probe <abbr title="Application Programming Interface">API</abbr> is located in the <code>org.sigmah.client.util.profiler</code>.
+</p>
+
+<p>
+Here is a quick list of the objects to use:
+</p>
+<ul>
+<li class="level1"><div class="li">Profiler</div>
+</li>
+<li class="level1"><div class="li">Scenario</div>
+</li>
+<li class="level1"><div class="li">Checkpoint</div>
+</li>
+<li class="level1"><div class="li">Execution</div>
+</li>
+</ul>
+
+<p>
+Throughout this section we will see how to create a scenario named <em>Update Reminder</em> that record the time taken to mark a reminder as done/todo.
+</p>
+
+</div>
+<!-- EDIT12 SECTION "Probe API" [10709-11043] -->
+<h2 class="sectionedit13" id="how_to_declare_a_new_scenario">How to declare a new scenario</h2>
+<div class="level2">
+
+<p>
+Open the <code>Scenario</code> enum and add a case for your new scenario. To respect the coding conventions, you should name your scenario in all capital cases and replace spaces by underscores.
+</p>
+
+<p>
+For our example, we will add a new case named <em>UPDATE_REMINDER</em> to the enum:
+</p>
+<pre class="code">public enum Scenario {	
+	AGENDA,
+	OPEN_PROJECT,
+	UPDATE_REMINDER; // Our new scenario
+}</pre>
+
+</div>
+<!-- EDIT13 SECTION "How to declare a new scenario" [11044-11475] -->
+<h2 class="sectionedit14" id="marking_the_start_and_the_end_of_your_scenario">Marking the start and the end of your scenario</h2>
+<div class="level2">
+
+<p>
+In your code, use the <code>startScenario(Scenario)</code> method of the <code>Profiler</code> to start the recording of a new execution of any scenario. Only one execution can be recorded at a time. If an execution is running, starting a new one will lose any unsaved information.
+</p>
+
+<p>
+To end the execution and save its data inside the database, use the <code>endScenario(Scenario)</code> method of the <code>Profiler</code>.
+</p>
+
+<p>
+You can also pause and resume execution with the <code>pauseScenario(Scenario)</code> and <code>resumeScenario(Scenario)</code> if your scenario require user interaction to continue. You should avoid recording waits for user interaction to ensure that the recorded time reflect the time spent by Sigmah.
+</p>
+
+<p>
+For our example, we will edit the <code>ProjectDashboardPresenter</code> and start the scenario when the user clicks on the check:
+</p>
+<pre class="code">// --
+// Reminders / Monitored Points edit update event handlers.
+// --
+  
+view.getRemindersGrid().getStore().addListener(Store.Update, new Listener&lt;StoreEvent&lt;ReminderDTO&gt;&gt;() {
+  
+	@Override
+	public void handleEvent(final StoreEvent&lt;ReminderDTO&gt; event) {
+  
+		// Manages only edit event.
+		if (event.getOperation() == RecordUpdate.EDIT) {
+		    // Starting the scenario
+			Profiler.INSTANCE.startScenario(Scenario.UPDATE_REMINDER);
+			onReminderUpdate(event.getModel());
+		}
+	}
+});</pre>
+
+<p>
+The end of our scenario happens when the <code>UpdateReminders</code> command ends with success:
+</p>
+<pre class="code">// Updates points.
+dispatch.execute(new UpdateReminders(edited), new CommandResultHandler&lt;ListResult&lt;ReminderDTO&gt;&gt;() {
+  
+	@Override
+	public void onCommandFailure(final Throwable e) {
+          // ...
+	}
+  
+	@Override
+	public void onCommandSuccess(final ListResult&lt;ReminderDTO&gt; result) {
+  
+		view.getRemindersGrid().getStore().commitChanges();
+  
+		for (final ReminderDTO point : result.getList()) {
+			point.setIsCompleted();
+			view.getRemindersGrid().getStore().update(point);
+		}
+  
+		N10N.notification(I18N.CONSTANTS.infoConfirmation(), I18N.CONSTANTS.reminderUpdateConfirm(), MessageType.INFO);
+		// Ending the scenario
+		Profiler.INSTANCE.endScenario(Scenario.UPDATE_REMINDER);
+	}</pre>
+
+<p>
+At this point, you can already try and see the time taken to update a reminder.
+</p>
+
+</div>
+<!-- EDIT14 SECTION "Marking the start and the end of your scenario" [11476-13743] -->
+<h2 class="sectionedit15" id="using_checkpoints_to_gather_more_precise_information">Using checkpoints to gather more precise information</h2>
+<div class="level2">
+
+<p>
+You can use the <code>markCheckpoint(Scenario, String)</code> method of the <code>Profiler</code> to measure the time taken by a specific code block. Just surround the desired block with 2 checkpoints (usually named <em>“before [function]“</em> and <em>“after [function]“</em>). 
+</p>
+
+<p>
+For our example, we will measure the time taken to update the user interface:
+</p>
+<pre class="code">@Override
+public void onCommandSuccess(final ListResult&lt;ReminderDTO&gt; result) {
+  
+      // Before UI update checkpoint
+	Profiler.INSTANCE.markCheckpoint(Scenario.UPDATE_REMINDER, &quot;Before UI update&quot;);
+	view.getRemindersGrid().getStore().commitChanges();
+  
+	for (final ReminderDTO point : result.getList()) {
+		point.setIsCompleted();
+		view.getRemindersGrid().getStore().update(point);
+	}
+	// After UI update checkpoint
+	Profiler.INSTANCE.markCheckpoint(Scenario.UPDATE_REMINDER, &quot;After UI update&quot;);
+  
+	N10N.notification(I18N.CONSTANTS.infoConfirmation(), I18N.CONSTANTS.reminderUpdateConfirm(), MessageType.INFO);
+	// Ending the scenario
+	Profiler.INSTANCE.endScenario(Scenario.UPDATE_REMINDER);
+}</pre>
+
+</div>
+<!-- EDIT15 SECTION "Using checkpoints to gather more precise information" [13744-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=contributorguide:performanceoptimisation by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:55:42 GMT -->
+</html>

@@ -1,0 +1,365 @@
+Measuring performance
+=====================
+
+For everyone
+------------
+
+By activating the performance probes and sending reports, everyone can help to improve Sigmah. Reports contains informations about the time spent while doing common tasks like opening a project.
+
+If a functionality feels slow, send us your report to help us understand what takes time and how we can fix it.
+
+### Allowing an user to measure performances ###
+Performance measurement is a new user authorisation. It is deactivated by default and should be added to the user profiles by an administrator.
+
+If you own the `Manage users` authorisation, you can allow or disallow users to measure performance by doing the following steps:
+
+1. Open the `Users` tab of the Administration.
+2. Click on the `edit` button next to the user profile to authorize or deauthorize.
+3. Scroll down to the `Others` section of the `Global Authorizations`.
+4. Check or uncheck the `Probes management` authorization to allow or disallow the measurement of performances.
+
+{{:contributorguide:1_probes_management.gif|Profile edition}}
+
+### Activating probes ###
+When a user has the right to activate and deactivate probes, a new icon will appear for him at the top of the screen. Hover your mouse cursor over it to display the `probes management menu` and select `Enable trace mode` to activate measurement.
+
+{{:contributorguide:2_activate_probes.gif|Enable trace mode}}
+
+When active, the `probes management` icon will turn white:
+
+{{:contributorguide:3_probes_are_activated.gif|Trace mode is enabled}}
+
+At this point, Sigmah will measure the time taken when doing common tasks. These data are saved locally and won't be sent without your consent.
+
+### Sending reports ###
+To send a report, simply go to the `probe management menu` and click on the `Send report` button.
+
+{{:contributorguide:5_send_report.png|}}
+
+The reports will be sent to you and to the Sigmah development team. To configure who can receive reports, see the configuration section.
+
+The mail sent will include 2 files:
+
+  * A plain-text file following the [Markdown syntax](https://daringfireball.net/projects/markdown/syntax) with the minimum, maximum and average time taken by every scenario.
+  * A raw report containing detailed information for the Sigmah development team.
+
+
+For developers
+----------------
+
+When contributing to Sigmah, you can measure the impact of your developments by frequently running the automated tests. By comparing the generated reports, you will be able to see how your changes affected the performances of Sigmah.
+
+### Running the automated tests ###
+The automated tests are using Selenium to simulate a user browsing Sigmah. For more information about Selenium, you can visit [Selenium home page](http://www.seleniumhq.org).
+
+You can run the automated tests on your computer or use the pre-configured virtual machine available on [sigmah.org](http://sigmah.org).
+
+If you choose to use the virtual machine, you can skip the installation and configuration phase.
+
+#### Installing Selenium
+Selenium require Firefox to run.
+
+From Firefox, visit the [add-on installation page](https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/) of Selenium IDE. Click on `Add to Firefox` to install Selenium:
+
+{{:contributorguide:install-selenium.gif|Selenium IDE install page}}
+
+#### Adding support for `while` and `endWhile` to Selenium
+
+Download this [user-extension.js](https://doc-0o-c8-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/qm44n34veas1jfjhsf767tuiqtk9beli/1466164800000/13072740796266983643/*/0B6vnknygMB3ISHBYODA3UDUtS0U?e=download) file.
+
+Open Selenium IDE preferences and select the file you just downloaded into the `Selenium Core Extensions` field:
+
+{{:contributorguide:userextension.png|Selenium IDE preferences}}
+
+#### Running the script
+You are now ready to run the automated tests.
+
+Open Firefox. In the menubar, select `Tools` then `Selenium IDE` to open Selenium.
+
+Copy the following script in the `Source` tab of Selenium and edit the following values:
+
+  * Replace `https://optimisation.sigmah.org/#login` by the URL of your instance of Sigmah.
+  * Replace `user@sigmah.org` by the login of the user to use.
+  * Replace `yourpassword` by the password to use.
+  * Optionally you can also increment or decrement the number of time to run the tests by changing the limit defined by `index &lt; 10;` (note: `&lt;` means `less than`).
+
+When you are done, switch to the `table` tab and hit `play` to let Selenium execute the tests.
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head profile="http://selenium-ide.openqa.org/profiles/test-case">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="selenium.base" href="https://optimisation.sigmah.org/#login" />
+    <title>Boucle-10-ID</title>
+    </head>
+    <body>
+    <table cellpadding="1" cellspacing="1" border="1">
+    <thead>
+    <tr><td rowspan="1" colspan="3">Boucle-10-ID</td></tr>
+    </thead><tbody>
+    
+    <!-- Identification	-->
+    <tr>
+    	<td>open</td>
+    	<td>/#login</td>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td>type</td>
+    	<td>id=loginEmailId</td>
+    	<td>user@sigmah.org</td>
+    </tr>
+    <tr>
+    	<td>type</td>
+    	<td>id=loginPasswordId</td>
+    	<td>yourpassword</td>
+    </tr>
+    <tr>
+    	<td>clickAndWait</td>
+    	<td>css=button.x-btn-text</td>
+    	<td></td>
+    </tr>
+    <!-- Activation	trace	-->
+    <tr>
+    	<td>click</td>
+    	<td>id=activeDesactiveButtonId</td>
+    	<td></td>
+    </tr>
+    <!-- Début de boucle	-->
+    <tr>
+    	<td>getEval</td>
+    	<td>index = 0;</td>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td>while</td>
+    	<td>index &lt; 10;</td>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td>storeEval</td>
+    	<td>index</td>
+    	<td>value</td>
+    </tr>
+    <tr>
+    	<td>echo</td>
+    	<td>${value}</td>
+    	<td></td>
+    </tr>
+    <!-- Ouverture projet	-->
+    <tr>
+    	<td>click</td>
+    	<td>id=projectCodeColumnId_-45917</td>
+    	<td></td>
+    </tr>
+    <!-- Ouverture agenda -->
+    <tr>
+    	<td>click</td>
+    	<td>id=agendaSubMenuId</td>
+    	<td></td>
+    </tr>
+    <!-- Fermeture projet-->
+    <tr>
+    	<td>selectWindow</td>
+    	<td>null</td>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td>click</td>
+    	<td>id=dashboardProjectTabId5917</td>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td>getEval</td>
+    	<td>index++;</td>
+    	<td></td>
+    </tr>
+    <!-- Fin de boucle	-->
+    <tr>
+    	<td>endWhile</td>
+    	<td></td>
+    	<td></td>
+    </tr>
+    <!-- Désactivation trace-->
+    <tr>
+    	<td>click</td>
+    	<td>id=activeDesactiveButtonId</td>
+    	<td></td>
+    </tr>
+    <!-- Envoi du rapport	-->
+    <tr>
+    	<td>click</td>
+    	<td>id=sendReportButtonId</td>
+    	<td></td>
+    </tr>
+    <!-- Fin d'identification	-->
+    <tr>
+    	<td>click</td>
+    	<td>link=Fermer session</td>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td>click</td>
+    	<td>//table[@id='yesButtonId']/tbody/tr[2]/td[2]/em/button</td>
+    	<td></td>
+    </tr>
+    </tbody></table>
+    </body>
+    </html>
+
+#### Recording your own automated test
+You can record your own test by clicking on the `record` button in the Selenium IDE window.
+See [Selenium help page](http://www.seleniumhq.org/docs/02_selenium_ide.jsp#building-test-cases) for more information.
+
+### Adding probes to your own code ###
+
+1. Add a new case to the `Scenario` enumeration.
+2. Use the `Profiler` to define the start and end points of your `Scenario`
+3. Surround the important parts of your code with checkpoints to better understand what takes time.
+
+See the **Probe API** section for more information about the code required.
+
+### Understanding the raw report ###
+When running a `Scenario`, the start time, duration of every checkpoint is saved in IndexedDB. The raw report is a JSON export of the entire database.
+
+{{:contributorguide:4_trace_are_recorded.png|IndexedDB content}}
+
+Each entry is the result of an execution of a scenario. For each execution, the following fields are saved:
+
+  * `applicationCacheStatus`: the state of ApplicationCache. You should ignore execution results when the state is not `IDLE`. Performances are badly hurt when ApplicationCache is working. Hopefully, this only happen once every new version update.
+  * `checkpoints`: Name, start time and duration of each checkpoint.
+  * `date`: Start date of the execution.
+  * `duration`: Total duration of the execution.
+  * `id`: Execution identifier in the local database. Can be safely ignored.
+  * `online`: Tells if the user was online or offline when the execution started. Offline mode is usually faster so you should avoid mixing the results of online and offline mode.
+  * `scenario`: Name of the executed scenario.
+  * `userAgent`: User-agent of the web browser used.
+  * `versionNumber`: Version of Sigmah used.
+
+Configuration
+-------------
+Inside of the `sigmah.properties`, locate the `mail.optimisation` entries. They define what will be sent by email and who will receive the reports:
+
+    mail.optimisation.to.address=osarrat@urd.org
+    mail.optimisation.copy.address=
+    mail.optimisation.markdownfile.name=sigmah_performance_report.md
+    mail.optimisation.jsonfile.name=sigmah_performance_raw_values.json
+
+  * `mail.optimisation.to.address` and `mail.optimisation.copy.address` are email addresses fields. You can define multiple addresses by separating them with a semicolon (';'). All of theses addresses will receive every reports sent by users. If you want the Sigmah team to receive your reports you should ensure that `osarrat@urd.org` is present in one of those two fields.
+  * `mail.optimisation.markdownfile.name` is the name of the main report. It is a plain-text file following the [Markdown syntax](https://daringfireball.net/projects/markdown/syntax).
+  * `mail.optimisation.jsonfile.name` is the name of the raw report. It is a json file and is not intended to be understood as is. It contains the raw value measured by the probes. If you are a developer and are interested in understanding this file, see the [Understanding the raw report](#Understanding%20the%20raw%20report) section.
+
+You can edit this file will Sigmah is running. The changes will be taken right away, no reboot of the server is required.
+
+Existing scenarios
+==================
+Currently Sigmah records the duration of the following actions:
+
+  * Time spent opening a project from the dashboard and loading the content of its current phase.
+  * Time spent opening the calendar of a project and loading the events of the current month.
+
+Probe API
+=========
+The probe API is located in the `org.sigmah.client.util.profiler`.
+
+Here is a quick list of the objects to use:
+
+  * Profiler
+  * Scenario
+  * Checkpoint
+  * Execution
+
+Throughout this section we will see how to create a scenario named *Update Reminder* that record the time taken to mark a reminder as done/todo.
+
+How to declare a new scenario
+-----------------------------
+Open the `Scenario` enum and add a case for your new scenario. To respect the coding conventions, you should name your scenario in all capital cases and replace spaces by underscores.
+
+For our example, we will add a new case named *UPDATE_REMINDER* to the enum:
+
+    public enum Scenario {	
+    	AGENDA,
+    	OPEN_PROJECT,
+    	UPDATE_REMINDER; // Our new scenario
+    }
+
+Marking the start and the end of your scenario
+----------------------------------------------
+In your code, use the `startScenario(Scenario)` method of the `Profiler` to start the recording of a new execution of any scenario. Only one execution can be recorded at a time. If an execution is running, starting a new one will lose any unsaved information.
+
+To end the execution and save its data inside the database, use the `endScenario(Scenario)` method of the `Profiler`.
+
+You can also pause and resume execution with the `pauseScenario(Scenario)` and `resumeScenario(Scenario)` if your scenario require user interaction to continue. You should avoid recording waits for user interaction to ensure that the recorded time reflect the time spent by Sigmah.
+
+For our example, we will edit the `ProjectDashboardPresenter` and start the scenario when the user clicks on the check:
+
+	// --
+	// Reminders / Monitored Points edit update event handlers.
+	// --
+    
+	view.getRemindersGrid().getStore().addListener(Store.Update, new Listener<StoreEvent<ReminderDTO>>() {
+    
+		@Override
+		public void handleEvent(final StoreEvent<ReminderDTO> event) {
+    
+			// Manages only edit event.
+			if (event.getOperation() == RecordUpdate.EDIT) {
+			    // Starting the scenario
+				Profiler.INSTANCE.startScenario(Scenario.UPDATE_REMINDER);
+				onReminderUpdate(event.getModel());
+			}
+		}
+	});
+
+The end of our scenario happens when the `UpdateReminders` command ends with success:
+
+	// Updates points.
+	dispatch.execute(new UpdateReminders(edited), new CommandResultHandler<ListResult<ReminderDTO>>() {
+    
+		@Override
+		public void onCommandFailure(final Throwable e) {
+            // ...
+		}
+    
+		@Override
+		public void onCommandSuccess(final ListResult<ReminderDTO> result) {
+    
+			view.getRemindersGrid().getStore().commitChanges();
+    
+			for (final ReminderDTO point : result.getList()) {
+				point.setIsCompleted();
+				view.getRemindersGrid().getStore().update(point);
+			}
+    
+			N10N.notification(I18N.CONSTANTS.infoConfirmation(), I18N.CONSTANTS.reminderUpdateConfirm(), MessageType.INFO);
+			// Ending the scenario
+			Profiler.INSTANCE.endScenario(Scenario.UPDATE_REMINDER);
+		}
+
+At this point, you can already try and see the time taken to update a reminder.
+
+Using checkpoints to gather more precise information
+----------------------------------------------------
+You can use the `markCheckpoint(Scenario, String)` method of the `Profiler` to measure the time taken by a specific code block. Just surround the desired block with 2 checkpoints (usually named *"before [function]"* and *"after [function]"*). 
+
+For our example, we will measure the time taken to update the user interface:
+
+	@Override
+	public void onCommandSuccess(final ListResult<ReminderDTO> result) {
+    
+        // Before UI update checkpoint
+		Profiler.INSTANCE.markCheckpoint(Scenario.UPDATE_REMINDER, "Before UI update");
+		view.getRemindersGrid().getStore().commitChanges();
+    
+		for (final ReminderDTO point : result.getList()) {
+			point.setIsCompleted();
+			view.getRemindersGrid().getStore().update(point);
+		}
+		// After UI update checkpoint
+		Profiler.INSTANCE.markCheckpoint(Scenario.UPDATE_REMINDER, "After UI update");
+    
+		N10N.notification(I18N.CONSTANTS.infoConfirmation(), I18N.CONSTANTS.reminderUpdateConfirm(), MessageType.INFO);
+		// Ending the scenario
+		Profiler.INSTANCE.endScenario(Scenario.UPDATE_REMINDER);
+	}

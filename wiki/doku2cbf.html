@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=contributorguide:preparerunningenvironment by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:55:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>contributorguide:preparerunningenvironment</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="contributorguide,preparerunningenvironment"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="dokub6b1.html?id=contributorguide:preparerunningenvironment&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feed3c04.php?mode=list&amp;ns=contributorguide"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="doku2cbf.html?do=export_xhtml&amp;id=contributorguide:preparerunningenvironment"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="preparerunningenvironmentd56e.txt?do=export_raw&amp;id=contributorguide:preparerunningenvironment"/>
+<link rel="canonical" href="dokue387.html?id=contributorguide:preparerunningenvironment"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='contributorguide';var JSINFO = {"id":"contributorguide:preparerunningenvironment","namespace":"contributorguide"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+
+<h1 class="sectionedit1" id="step_1create_sample_data_in_your_local_database">Step 1 : create sample data in your local database</h1>
+<div class="level1">
+
+<p>
+Now you should have a PostgreSQL server installed. To be able to test your development with Sigmah, you will need to add sample data to your database (mainly, an organization).
+This can be done through a simple call to the SQL function <code>create_new_organization</code> .
+</p>
+
+<p>
+Call this function on your database. You can use command <code>psql -U sigmah -d sigmah -c “select create_new_organization(&#039;p_organization_name&#039;, &#039;p_organization_logo_filename&#039;, &#039;p_headquarters_country_code&#039;, &#039;p_user_email&#039;, &#039;p_user_name&#039;, &#039;p_user_first_name&#039;,  &#039;p_user_locale&#039;);”</code>.
+</p>
+
+<p>
+Here are the description of the parameters:
+</p>
+<div class="table sectionedit2"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Parameter </th><th class="col1"> Description</th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> p_organization_name       </td><td class="col1"> The name of your organization </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> p_organization_logo_filename </td><td class="col1"> The filename of the logo (i.e. logo.png) </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> p_headquarters_country_code </td><td class="col1"> Use an ISO 2-letters code like “AF” from <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements" class="urlextern" title="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements" rel="nofollow">Officially assigned code elements</a> </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> p_user_email              </td><td class="col1"> Your mail address </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> p_user_name               </td><td class="col1 leftalign"> Your name       </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> p_user_first_name          </td><td class="col1"> Your first name </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> p_user_locale             </td><td class="col1"> Must be “fr” or “en” or “es” don&#039;t include quotes (“) </td>
+	</tr>
+</table></div>
+<!-- EDIT2 TABLE [669-1277] -->
+<p>
+Instead of using the <code>psql</code> command-line tool, you may feel more confortable using the graphical PgAdmin tool. You must first connect to the <code>sigmah</code> database.
+</p>
+
+<p>
+<img src="lib/exe/22_pgadminiii8bd4.png_%3b?media=contributorguide:22_pgadminiii.png" class="media" alt="" />
+</p>
+
+<p>
+Then open the “Run SQL” insterface, copy-paste the command ”<code>select create_new_organization(&#039;p_organization_name&#039;, &#039;p_organization_logo_filename&#039;, &#039;p_headquarters_country_code&#039;, &#039;p_user_email&#039;, &#039;p_user_name&#039;, &#039;p_user_first_name&#039;,  &#039;p_user_locale&#039;);</code>“ here and run it.
+</p>
+
+<p>
+<img src="lib/exe/25_pgadminiiie838.png_%3b?media=contributorguide:25_pgadminiii.png" class="media" alt="" />
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Step 1 : create sample data in your local database" [0-1830] -->
+<h1 class="sectionedit3" id="step_2deploy_and_start_sigmah">Step 2 : deploy and start Sigmah</h1>
+<div class="level1">
+
+<p>
+You need Tomcat 8, if you don&#039;t have it already, you can download it from the <a href="http://tomcat.apache.org/" class="urlextern" title="http://tomcat.apache.org/" rel="nofollow">official tomcat page</a>. Sigmah won&#039;t work in Tomcat 7.
+</p>
+<pre class="code"># extract the archive
+unzip apache-tomcat-8.0.30.zip
+
+# enter the main directory
+cd apache-tomcat-8.0.30
+
+# make the script executables
+chmod +x bin/*.sh</pre>
+
+<p>
+Once Tomcat 8 is installed, build the sigmah war file.
+</p>
+<pre class="code">mvn clean package -Psigmah-dev</pre>
+
+<p>
+Deploy the application
+</p>
+<pre class="code">mv target/sigmah-XXX.war /path/to/tomcat/webapps</pre>
+
+<p>
+Start tomcat (go back to tomcat directory)
+</p>
+<pre class="code">./bin/startup.sh</pre>
+
+<p>
+You can now open your web browser and open <abbr title="Uniform Resource Locator">URL</abbr>
+</p>
+<pre class="code">http://localhost:8080/sigmah/</pre>
+
+<p>
+If it doesn&#039;t work, have a look in the tomcat <code>logs</code> directory.
+</p>
+
+<p>
+Once finished, stop tomcat properly:
+</p>
+<pre class="code">./bin/shutdown.sh</pre>
+
+</div>
+<!-- EDIT3 SECTION "Step 2 : deploy and start Sigmah" [1831-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=contributorguide:preparerunningenvironment by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:55:41 GMT -->
+</html>

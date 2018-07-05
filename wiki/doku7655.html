@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=model:attributegroup by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>model:attributegroup</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="model,attributegroup"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="doku982c.html?id=model:attributegroup&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feedd021.php?mode=list&amp;ns=model"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="doku7655.html?do=export_xhtml&amp;id=model:attributegroup"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="attributegroupdf2c.txt?do=export_raw&amp;id=model:attributegroup"/>
+<link rel="canonical" href="doku4fbf.html?id=model:attributegroup"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='model';var JSINFO = {"id":"model:attributegroup","namespace":"model"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#table_attributegroup">Table attributegroup</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#remarks">Remarks</a></div></li>
+<li class="level2"><div class="li"><a href="#schema">Schema</a></div></li>
+<li class="level2"><div class="li"><a href="#diagram">Diagram</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="table_attributegroup">Table attributegroup</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Table attributegroup" [0-24] -->
+<h2 class="sectionedit2" id="remarks">Remarks</h2>
+<div class="level2">
+
+<p>
+An attributegroup is a group of attributes.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Remarks" [25-83] -->
+<h2 class="sectionedit3" id="schema">Schema</h2>
+<div class="level2">
+<div class="table sectionedit4"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> <strong>Name</strong> </td><td class="col1"> <strong>Type</strong> </td><td class="col2"> <strong>Not Null</strong> </td><td class="col3"> <strong>Primary Key</strong> </td><td class="col4"> <strong>Foreign Key</strong> </td><td class="col5"> <strong>Remarks</strong> </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">:———</td><td class="col1">:———</td><td class="col2">:————-</td><td class="col3">:—————-</td><td class="col4">:—————-</td><td class="col5">:————</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> attributegroupid </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign"> X               </td><td class="col4 leftalign">                 </td><td class="col5"> This is the primary key of the table. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> category </td><td class="col1"> character varying(50) </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> it represents the category of the group. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> datedeleted </td><td class="col1"> timestamp(0) </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This is the date the attribute group was deleted. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> multipleallowed </td><td class="col1 leftalign"> bool     </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> It indicates if a group can contains several attributes. </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> name     </td><td class="col1"> character varying(255) </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This is an human readable name for the attribute group. </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> sortorder </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> It corresponds to the order it will be displayed. </td>
+	</tr>
+</table></div>
+<!-- EDIT4 TABLE [98-1079] -->
+</div>
+<!-- EDIT3 SECTION "Schema" [84-1079] -->
+<h2 class="sectionedit5" id="diagram">Diagram</h2>
+<div class="level2">
+
+<p>
+<iframe title="" src="svg_load9dc0.svg?file=attributegroup.svg" style="width:900px; height:550px" frameborder="0"></iframe>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Diagram" [1080-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=model:attributegroup by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:12 GMT -->
+</html>

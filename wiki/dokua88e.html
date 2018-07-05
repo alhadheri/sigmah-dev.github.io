@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=model:project by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>model:project</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="model,project"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="dokub441.html?id=model:project&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feedd021.php?mode=list&amp;ns=model"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="dokua88e.html?do=export_xhtml&amp;id=model:project"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="project03ee.txt?do=export_raw&amp;id=model:project"/>
+<link rel="canonical" href="dokub780.html?id=model:project"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='model';var JSINFO = {"id":"model:project","namespace":"model"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#table_project">Table project</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#remarks">Remarks</a></div></li>
+<li class="level2"><div class="li"><a href="#schema">Schema</a></div></li>
+<li class="level2"><div class="li"><a href="#diagram">Diagram</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="table_project">Table project</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Table project" [0-17] -->
+<h2 class="sectionedit2" id="remarks">Remarks</h2>
+<div class="level2">
+
+<p>
+The table project contains all projects of the organizations.
+A project is set by a project_model that defines how it will be displayed.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Remarks" [18-170] -->
+<h2 class="sectionedit3" id="schema">Schema</h2>
+<div class="level2">
+<div class="table sectionedit4"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> <strong>Name</strong> </td><td class="col1"> <strong>Type</strong> </td><td class="col2"> <strong>Not Null</strong> </td><td class="col3"> <strong>Primary Key</strong> </td><td class="col4"> <strong>Foreign Key</strong> </td><td class="col5"> <strong>Remarks</strong> </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">:———</td><td class="col1">:———</td><td class="col2">:————-</td><td class="col3">:—————-</td><td class="col4">:—————-</td><td class="col5">:————</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> databaseid </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign"> X               </td><td class="col4"> <a href="doku8e18.html?id=model:userdatabase" class="wikilink1" title="model:userdatabase">userdatabase</a>(databaseid) </td><td class="col5"> This is the primary key of the table. It is also a foreign key to the table userdatabase that contains some metadata of the project. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> activity_advancement </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This column indicates the progression of the activity </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> amendment_revision </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This column corresponds to the current number of the amendment revision </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> amendment_status </td><td class="col1"> character varying(255) </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This columns defines the status of the amendment (DRAFT, LOCKED, ACTIVE, REJECTED or ARCHIVED) </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> amendment_version </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This column sepcifies the cureent number of the amendment version. </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> calendarid </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This column is a link to the table personalcalendar </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> close_date </td><td class="col1 leftalign"> date     </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> It specifies when the project will be finished. </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> end_date </td><td class="col1 leftalign"> date     </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> It specifies when the project will begin. </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"> planned_budget </td><td class="col1"> double precision </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> It defines the amount of funds expected </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"> received_budget </td><td class="col1"> double precision </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> It defines the amount of funds received </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"> spend_budget </td><td class="col1"> double precision </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> It defines the amount of funds spent </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"> id_current_phase </td><td class="col1 leftalign"> bigint   </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="doku2f18.html?id=model:phase" class="wikilink1" title="model:phase">phase</a>(id_phase) </td><td class="col5"> This column defines which is the current phase of the project. </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"> id_manager </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="doku275a.html?id=model:userlogin" class="wikilink1" title="model:userlogin">userlogin</a>(userid) </td><td class="col5"> It&#039;s a foreign key to the table userlogin and corresponds to the manager of the project. </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"> id_monitored_points_list </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="doku248a.html?id=model:monitored_point_list" class="wikilink1" title="model:monitored_point_list">monitored\_point\_list</a>(id_monitored_point_list) </td><td class="col5"> This is a foreign key to the table monitored_point_list. </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"> id_project_model </td><td class="col1 leftalign"> bigint   </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="doku60b5.html?id=model:project_model" class="wikilink1" title="model:project_model">project\_model</a>(id_project_model) </td><td class="col5"> This column specifies the type of the project. </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"> id_reminder_list </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="doku8ca1.html?id=model:reminder_list" class="wikilink1" title="model:reminder_list">reminder\_list</a>(id_reminder_list) </td><td class="col5"> This is the foreign key to a reminder list. </td>
+	</tr>
+</table></div>
+<!-- EDIT4 TABLE [185-2918] -->
+</div>
+<!-- EDIT3 SECTION "Schema" [171-2918] -->
+<h2 class="sectionedit5" id="diagram">Diagram</h2>
+<div class="level2">
+
+<p>
+<iframe title="" src="svg_load7ffd.svg?file=project.svg" style="width:900px; height:550px" frameborder="0"></iframe>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Diagram" [2919-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=model:project by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:26 GMT -->
+</html>

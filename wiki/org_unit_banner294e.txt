@@ -1,0 +1,13 @@
+# Table org\_unit\_banner #
+## Remarks ##
+The table org\_unit\_banner is an association table between the table org\_unit\_model and the table layout. It defines the layout which is associated with a project model on the banner.
+
+## Schema ##
+| **Name** | **Type** | **Not Null** | **Primary Key** | **Foreign Key** | **Remarks** |
+|:---------|:---------|:-------------|:----------------|:----------------|:------------|
+| banner\_id | integer  | X            | X               |                 | This is the primary key of the table. |
+| id\_layout | bigint   | X            |                 | [layout](layout)(id\_layout) | This is a foreign key to the table layout. |
+| id\_org\_unit\_model | integer  | X            |                 | [org\_unit\_model](org_unit_model)(org\_unit\_model\_id) | This is a foreign key to the table org\_unit\_model. |
+
+## Diagram ##
+{{url>http://wiki.sigmah.org/svg_load.php?file=org_unit_banner.svg 900px,550px noborder}}

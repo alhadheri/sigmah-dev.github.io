@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=contributorguide:troubleshooting by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>contributorguide:troubleshooting</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="contributorguide,troubleshooting"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="doku3bf6.html?id=contributorguide:troubleshooting&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feed3c04.php?mode=list&amp;ns=contributorguide"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="doku00e3.html?do=export_xhtml&amp;id=contributorguide:troubleshooting"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="troubleshootingf20d.txt?do=export_raw&amp;id=contributorguide:troubleshooting"/>
+<link rel="canonical" href="dokucabe.html?id=contributorguide:troubleshooting"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='contributorguide';var JSINFO = {"id":"contributorguide:troubleshooting","namespace":"contributorguide"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#troubleshooting">Troubleshooting</a></div></li>
+<li class="level1"><div class="li"><a href="#what_to_do_when">What to do when... ?</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#my_local_repo_and_my_fork_are_behind_the_sigmah-dev_upstream_one">... my local repo and my fork are behind the sigmah-dev upstream one ?</a></div></li>
+<li class="level2"><div class="li"><a href="#i_get_starting_of_tomcat_failed_in_netbeans">... I get &quot;Starting of Tomcat failed&quot; in Netbeans ?</a></div></li>
+<li class="level2"><div class="li"><a href="#operator_class_gin_trgm_ops_does_not_exist_for_access_method_gin">... operator class &quot;gin_trgm_ops&quot; does not exist for access method &quot;gin&quot;</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="troubleshooting">Troubleshooting</h1>
+<div class="level1">
+
+<p>
+Troubleshooting is the place where all solutions of most usual problems can found… and should be gathered. :)
+</p>
+
+<p>
+This page could be named as well…
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Troubleshooting" [1-171] -->
+<h1 class="sectionedit2" id="what_to_do_when">What to do when... ?</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT2 SECTION "What to do when... ?" [172-197] -->
+<h2 class="sectionedit3" id="my_local_repo_and_my_fork_are_behind_the_sigmah-dev_upstream_one">... my local repo and my fork are behind the sigmah-dev upstream one ?</h2>
+<div class="level2">
+
+<p>
+What to understand while playing with <code>git</code> is that you will actually play with three repository:
+</p>
+<ol>
+<li class="level1"><div class="li"> <code>upstream</code> (or also named <code>sigmah-dev</code>): the official online sigmah-dev repository which contains all accepted commits from all parties</div>
+</li>
+<li class="level1"><div class="li"> <code>origin</code>: your online fork repository on GitHub, which is a fork of the <code>sigmah-dev</code> repository</div>
+</li>
+<li class="level1"><div class="li"> your local repository</div>
+</li>
+</ol>
+
+<p>
+If the upstream official <code>sigmah-dev</code> repo has new changes and your local repo and your online fork are no more up-to-date, the route to follow to update them is: 1. update your local repo, 2. push those updates to your online fork.
+</p>
+
+<p>
+In command lines from the source folder of your local repository, it will look like:
+</p>
+<pre class="code bash"><span class="co0"># 0. List remotes to be sure of the names to use</span>
+<span class="kw2">git remote</span>
+<span class="co0">#_example result begin_</span>
+<span class="co0">#origin</span>
+<span class="co0">#sigmah-dev</span>
+<span class="co0">#_example result end_</span>
+&nbsp;
+<span class="co0"># 1. Pull changes from the upstream 'sigmah-dev' repository to the master branch of your local repo</span>
+<span class="kw2">git pull</span> sigmah-dev master
+&nbsp;
+<span class="co0"># 2. Push changes from your local repo to your online fork 'origin'</span>
+<span class="kw2">git push</span> origin</pre>
+
+</div>
+<!-- EDIT3 SECTION "... my local repo and my fork are behind the sigmah-dev upstream one ?" [198-1334] -->
+<h2 class="sectionedit4" id="i_get_starting_of_tomcat_failed_in_netbeans">... I get &quot;Starting of Tomcat failed&quot; in Netbeans ?</h2>
+<div class="level2">
+
+<p>
+In your Tomcat “bin” directory, do the following replacement in the “catalina.bat” file:
+</p>
+
+<p>
+<strong>original part</strong>
+</p>
+<pre class="code">:noJuliConfig
+set &quot;JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG%&quot;
+
+:noJuliManager
+set &quot;JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER%&quot;</pre>
+
+<p>
+<strong>replaced part</strong>
+</p>
+<pre class="code">:noJuliConfig
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG%
+
+:noJuliManager
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER%</pre>
+
+<p>
+Solution found on <a href="http://stackoverflow.com/a/26374164" class="urlextern" title="http://stackoverflow.com/a/26374164" rel="nofollow">http://stackoverflow.com/a/26374164</a> .
+</p>
+
+</div>
+<!-- EDIT4 SECTION "... I get Starting of Tomcat failed in Netbeans ?" [1335-1846] -->
+<h2 class="sectionedit5" id="operator_class_gin_trgm_ops_does_not_exist_for_access_method_gin">... operator class &quot;gin_trgm_ops&quot; does not exist for access method &quot;gin&quot;</h2>
+<div class="level2">
+
+<p>
+If you get this error while running Sigmah or while installing (database migration):
+</p>
+<pre class="code">operator class &quot;gin_trgm_ops&quot; does not exist for access method &quot;gin&quot;</pre>
+
+<p>
+It&#039;s because your sigmah database lacks the <a href="https://www.postgresql.org/docs/current/static/pgtrgm.html" class="urlextern" title="https://www.postgresql.org/docs/current/static/pgtrgm.html" rel="nofollow">pg_trgm</a> extension (which is useful for full-text search since we can&#039;t do that in pure SQL).
+</p>
+
+<p>
+Use a superuser account (postgres) to install the extension in the sigmah database:
+</p>
+<pre class="code">psql --username postgres sigmah --command &quot;CREATE EXTENSION IF NOT EXISTS pg_trgm;&quot;</pre>
+
+</div>
+<!-- EDIT5 SECTION "... operator class gin_trgm_ops does not exist for access method gin" [1847-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=contributorguide:troubleshooting by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:10 GMT -->
+</html>

@@ -1,0 +1,72 @@
+
+# Troubleshooting #
+
+Troubleshooting is the place where all solutions of most usual problems can found... and should be gathered. :)
+
+This page could be named as well...
+
+# What to do when... ? #
+
+## ... my local repo and my fork are behind the sigmah-dev upstream one ? ##
+
+What to understand while playing with ''git'' is that you will actually play with three repository:
+  - ''upstream'' (or also named ''sigmah-dev''): the official online sigmah-dev repository which contains all accepted commits from all parties
+  - ''origin'': your online fork repository on GitHub, which is a fork of the ''sigmah-dev'' repository
+  - your local repository
+
+If the upstream official ''sigmah-dev'' repo has new changes and your local repo and your online fork are no more up-to-date, the route to follow to update them is: 1. update your local repo, 2. push those updates to your online fork.
+
+In command lines from the source folder of your local repository, it will look like:
+<code bash>
+# 0. List remotes to be sure of the names to use
+git remote
+#_example result begin_
+#origin
+#sigmah-dev
+#_example result end_
+
+# 1. Pull changes from the upstream 'sigmah-dev' repository to the master branch of your local repo
+git pull sigmah-dev master
+
+# 2. Push changes from your local repo to your online fork 'origin'
+git push origin
+
+</code>
+
+
+
+## ... I get "Starting of Tomcat failed" in Netbeans ? ##
+
+In your Tomcat "bin" directory, do the following replacement in the "catalina.bat" file:
+
+**original part**
+<code>
+:noJuliConfig
+set "JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG%"
+
+:noJuliManager
+set "JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER%"
+</code>
+
+**replaced part**
+<code>
+:noJuliConfig
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG%
+
+:noJuliManager
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER%
+</code>
+
+Solution found on http://stackoverflow.com/a/26374164 .
+
+## ... operator class "gin_trgm_ops" does not exist for access method "gin" ##
+
+If you get this error while running Sigmah or while installing (database migration):
+
+  operator class "gin_trgm_ops" does not exist for access method "gin"
+
+It's because your sigmah database lacks the [[https://www.postgresql.org/docs/current/static/pgtrgm.html|pg_trgm]] extension (which is useful for full-text search since we can't do that in pure SQL).
+
+Use a superuser account (postgres) to install the extension in the sigmah database:
+
+  psql --username postgres sigmah --command "CREATE EXTENSION IF NOT EXISTS pg_trgm;"

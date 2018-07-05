@@ -1,0 +1,124 @@
+# How to build a customSigmah version for my NGO? #
+
+## Introduction: the use case ##
+This page describes how to create and build a custom Sigmah version for the needs of a particular organisation.
+
+There might be several reasons why an NGO may want to have its own custom version of Sigmah. One of the most common one is because the organisation wants to modify some wording. In Sigmah, for performance reasons, it is not possible to modify text labels of the software without creating a separate Sigmah version. Sigmah is highly flexible and many parts are modified through its extensive parametrization features, but changing labels is out of this scope. This page explains how an organisation can change the default labels and create its own Sigmah version.
+
+
+
+## Creating a Maven profile for my special needs ##
+
+The creation of a new release of Sigmah is done through a single file, the ''pom.xml'', processed by a single software, ''Maven''. 
+
+In the pom.xml file, it is possible to create several profiles to match different scenarios to build a version of Sigmah. In order to reply to the special needs of an organisation, the solution is then to create a custom Maven profile in the pom.xml file that the organisation will choose each time the organisation wants to build from a new official Sigmah release the custom variation for them.
+
+In the description of the Sigmah profile, the modifications requested to match the specific needs of the organisation will be described so that they can be reproduced for each new official release of Sigmah. 
+
+### The modifications on the pom.xml file ###
+Here is the example of the Maven profile created to reply to their need to replace the label "In-house project" by "Implemented project" in their Sigmah.
+
+<code>
+        
+<!-- ========= [ HANDICAP INTERNATIONAL SPECIAL VERSION. ] ========= -->
+<profile>
+	<id>sigmah-custom-handicapinternational</id>
+	
+	<build>
+		<finalName>sigmah-hi_v${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>com.google.code.maven-replacer-plugin</groupId>
+				<artifactId>replacer</artifactId>
+				<version>1.5.3</version>
+				<executions>
+					<execution>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>replace</goal>
+						</goals>                   
+					</execution>
+				</executions>
+				
+				<configuration>
+					<basedir>${basedir}</basedir>
+					<filesToInclude>
+						src/main/resources/org/sigmah/client/i18n/UIConstants.properties,
+						src/main/resources/org/sigmah/client/i18n/UIConstants_en_GB.properties
+					</filesToInclude>
+					<replacements>
+						<replacement>
+							<token>createProjectTypeNGO=In-house project</token>
+							<value>createProjectTypeNGO=Implemented project</value>
+						</replacement>         
+					</replacements>
+				</configuration>
+			</plugin>
+			
+			
+			<plugin>
+				<groupId>org.sigmah</groupId>
+				<artifactId>sigmah-maven-plugin</artifactId>
+				<version>${maven-sigmah-plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>sigmah</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<version>
+						<!-- Maven property: ${sigmah.version.number} -->
+						<number>${project.version}-hi</number>
+						<!-- Maven property: ${sigmah.version.name} -->
+						<name>Handicap International custom version</name> 
+					</version>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+		
+	</build>
+
+</profile>
+        
+</code>
+
+### Sharing the modified pom.xml file ###
+
+By creating a separate custom profile in pom.xml file, it is possible to include this profile in the official shared pom.xml file of the Sigmah project. For the official release, this custom profile will be ignored. And for the organisation having requested this custom profile, the build of the variation of the official release will always be the same and performed in a single command line. So it is highly recommended to all organisations wishing to have their own Sigmah version to request to add the profile they have created into the common pom.xml file of the Sigmah project.
+
+To share your profile, you need to create a pull request of the modification you made on Github. See contributions rules elsewhere in this Contributor Guide to learn how.
+
+
+
+## Building the special Sigmah version ##
+
+### Prerequisites: Java JDK and Maven ###
+If you don't have a Java JDK and Maven already installed on your computer, you need to download an install them.
+  * **Java JDK**
+    * Download link : http://www.oracle.com/technetwork/java/javase/downloads/index.html
+    * Installation : for Windows, Java JDK is installable through a .exe installer you have to run 
+  * **Maven**
+    * Download link : http://maven.apache.org/
+    * Installation : you just need to copy and unzip maven a the place you want, nothing to run.
+
+### Step 1: download the source code ###
+  - Go to https://github.com/sigmah-dev/sigmah/releases/latest to download the latest Sigmah version source code as a zip file
+  - Unzip this file in a directory of your computer
+
+If you haven't shared your modification of the pom.xml file, you need to modify now the pom.xml as described above.
+
+### Step 2: build your Sigmah custom version! ###
+Building your version can now be done in one single command line.
+  - Open a terminal into the directory containing the pom.xml of the just downloaded Sigmah source code (or the modified version of it if you have modified it manually).
+  - If we assume that the profile name you want to run is ''sigmah-custom-handicapinternational'', and that you have copied Maven into a folder ''C:\Program Files\Apache\apache-maven-3.3.9\'', then the command line you have to run is **''"C:\Program Files\Apache\apache-maven-3.3.9\bin\"mvn -DskipTests -Psigmah-custom-handicapinternational install''** .
+  - Wait the end of the build for about half an hour if your computer is fast... (you can continue to work on other stuff on the same computer)
+  - Open the ''target'' folder which has been created and filled.
+  - You can now find here the freshly created ''.war'' file of your variation of Sigmah latest official release!
+  - Deploy and enjoy!
+
+
+

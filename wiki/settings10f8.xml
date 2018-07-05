@@ -1,0 +1,14 @@
+<settings> 
+  <profiles>
+        <profile>
+            <id>sigmah-dev</id>
+            <properties>
+                <sigmah.database.url>jdbc:postgresql://localhost:5432/sigmah</sigmah.database.url>
+                <sigmah.database.user>sigmah</sigmah.database.user>
+                <sigmah.database.password>hamsig</sigmah.database.password>
+                <files.repository.name>C:\\Sigmah\\files\\sigmah_dev</files.repository.name>
+                <archives.repository.name>C:\\Sigmah\\files\\sigmah_dev\\archives</archives.repository.name>
+            </properties>
+        </profile>
+   </profiles>
+</settings> 

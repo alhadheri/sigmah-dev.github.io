@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=optimisation:conception by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:54:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>optimisation:conception</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="optimisation,conception"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="doku6ab4.html?id=optimisation:conception&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feed8537.php?mode=list&amp;ns=optimisation"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="dokuac50.html?do=export_xhtml&amp;id=optimisation:conception"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="conceptione033.txt?do=export_raw&amp;id=optimisation:conception"/>
+<link rel="canonical" href="doku98ce.html?id=optimisation:conception"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='optimisation';var JSINFO = {"id":"optimisation:conception","namespace":"optimisation"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#introduction">Introduction</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#conception_phase">Conception phase</a></div></li>
+<li class="level2"><div class="li"><a href="#performance_measure_phase">Performance measure phase</a></div></li>
+<li class="level2"><div class="li"><a href="#optimization_phase">Optimization phase</a></div></li>
+<li class="level2"><div class="li"><a href="#report_phase">Report phase</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#test_environment">Test environment</a></div></li>
+<li class="level1"><div class="li"><a href="#measurement">Measurement</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#scenario">Scenario</a></div></li>
+<li class="level2"><div class="li"><a href="#robot">Robot</a></div></li>
+<li class="level2"><div class="li"><a href="#probes">Probes</a></div></li>
+<li class="level2"><div class="li"><a href="#report">Report</a></div></li>
+<li class="level2"><div class="li"><a href="#faq">FAQ</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#qwhy_are_you_using_probes_instead_of_relaying_only_on_selenium">Q: Why are you using probes instead of relaying only on Selenium?</a></div></li>
+<li class="level3"><div class="li"><a href="#qwhy_aren_t_you_using_jmeter_to_measure_performances">Q: Why aren&#039;t you using JMeter to measure performances?</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#measurement_in_production">Measurement in production</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="introduction">Introduction</h1>
+<div class="level1">
+
+<p>
+This development will be done in 4 phases:
+</p>
+<ol>
+<li class="level1"><div class="li">Conception of the solution and production of this document.</div>
+</li>
+<li class="level0"><div class="li">Setting up the test environment and placing probes to measure performances.</div>
+</li>
+<li class="level0"><div class="li">Optimization of Sigmah.</div>
+</li>
+<li class="level0"><div class="li">Report summarizing performance results.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT1 SECTION "Introduction" [0-282] -->
+<h2 class="sectionedit2" id="conception_phase">Conception phase</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Identification of the solution.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Conception phase" [283-339] -->
+<h2 class="sectionedit3" id="performance_measure_phase">Performance measure phase</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Setting up the test environment, including the tool to feed variable sizes of database.</div>
+</li>
+<li class="level1"><div class="li"> Developing the probe <abbr title="Application Programming Interface">API</abbr>.</div>
+</li>
+<li class="level1"><div class="li"> Putting probes in Sigmah.</div>
+</li>
+<li class="level1"><div class="li"> Creating Selenium scripts.</div>
+</li>
+<li class="level1"><div class="li"> Measuring initial performances of Sigmah.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Performance measure phase" [340-598] -->
+<h2 class="sectionedit4" id="optimization_phase">Optimization phase</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Identifiying which scenario needs optimizations.</div>
+</li>
+<li class="level1"><div class="li"> Optimizing performances of Sigmah for the designated scenarios.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT4 SECTION "Optimization phase" [599-742] -->
+<h2 class="sectionedit5" id="report_phase">Report phase</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Measuring performances of Sigmah after the optimizations.</div>
+</li>
+<li class="level1"><div class="li"> Showing performance results.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT5 SECTION "Report phase" [743-855] -->
+<h1 class="sectionedit6" id="test_environment">Test environment</h1>
+<div class="level1">
+
+<p>
+The test environment should be stable to be able to compare the results between differents versions of Sigmah.
+</p>
+
+<p>
+It will be composed of 2 virtual machines:
+</p>
+<ul>
+<li class="level1"><div class="li">A server machine (hosting Sigmah and PostgreSQL)</div>
+</li>
+<li class="level1"><div class="li">A client machine (with Firefox and Selenium)</div>
+</li>
+</ul>
+
+<p>
+The client and server virtual machines should be 2 differents machines to measure the impact of network usage.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Test environment" [856-1260] -->
+<h1 class="sectionedit7" id="measurement">Measurement</h1>
+<div class="level1">
+
+<p>
+We recommend the use of probes in the javascript code to measure the time of a scenario.
+Each scenario should be run by a robot for each execution to be the same. It also simplify the multiple execution of each scenario in order to obtain reliable measures.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Measurement" [1261-1543] -->
+<h2 class="sectionedit8" id="scenario">Scenario</h2>
+<div class="level2">
+
+<p>
+A scenario is a set of functional actions.
+</p>
+
+<p>
+A functional action is something the user feel as being an unique action but that may send multiple requests to the server (like opening a project or saving the values of a phase).
+</p>
+
+<p>
+The duration of each functional action is summed up to obtain the duration a scenario. The time spent during actions (like the time spent moving the mouse cursor to the next button or the time spent writing a value in text area) is not taken in account.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Scenario" [1544-2036] -->
+<h2 class="sectionedit9" id="robot">Robot</h2>
+<div class="level2">
+
+<p>
+The robot that will be used to run scenarios is <a href="http://www.seleniumhq.org/" class="urlextern" title="http://www.seleniumhq.org/" rel="nofollow">Selenium</a>.
+</p>
+
+<p>
+Selenium can mimic a user and follow instructions to perform one or multiple scenarios.
+It can be used to run hundreds or thousands times the scenarios to calculate the average durations.
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Robot" [2037-2323] -->
+<h2 class="sectionedit10" id="probes">Probes</h2>
+<div class="level2">
+
+<p>
+A probe <abbr title="Application Programming Interface">API</abbr> will be written in Java and used in the client side of Sigmah. It will be compiled to Javascript by GWT compiler.
+</p>
+
+<p>
+To allow the placement of probes by the community, a documentation of the <abbr title="Application Programming Interface">API</abbr> will be written on this wiki.
+</p>
+
+<p>
+Probing will record the duration of each scenario when using Sigmah. To avoid slowing down users in production, a parameter will be added in the administration to enable or disable probing.
+</p>
+
+<p>
+Results will be stored client-side in a dedicated IndexedDB. This database will be shared between every users of a same browser. Storing the traces client-side minimize the performance impact of probing. Using a database also eases the exploitation of the traces.
+</p>
+
+<p>
+When probing is enabled, a button will be added in Sigmah to send a report containing informations about each scenario.
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Probes" [2324-3146] -->
+<h2 class="sectionedit11" id="report">Report</h2>
+<div class="level2">
+
+<p>
+When an user chooses to send its performance, a report will be generated in Markdown format. Using this format will make publications to wikis easier.
+</p>
+
+<p>
+The reports will be anonymous and will contains the following informations:
+</p>
+<ul>
+<li class="level1"><div class="li">Version of Sigmah</div>
+</li>
+<li class="level1"><div class="li">User agent (to identify the browser and the <abbr title="Operating System">OS</abbr> used)</div>
+</li>
+<li class="level1 node"><div class="li">For each scenario:</div>
+<ul>
+<li class="level2"><div class="li">Name</div>
+</li>
+<li class="level2"><div class="li">Number of executions</div>
+</li>
+<li class="level2"><div class="li">Average duration</div>
+</li>
+<li class="level2"><div class="li">Fastest duration</div>
+</li>
+<li class="level2"><div class="li">Longest duration</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+Clicking on the <code>send</code> button will create a report and automatically send it to the email address of the user.
+</p>
+
+<p>
+<a href="lib/exe/detaila62d.html?id=optimisation%3Aconception&amp;media=optimisation:schema01.png" class="media" title="optimisation:schema01.png"><img src="lib/exe/schema01f878.png_%3b?w=400&amp;tok=b8eedd&amp;media=optimisation:schema01.png" class="media" alt="" width="400" /></a>
+<a href="lib/exe/detail6377.html?id=optimisation%3Aconception&amp;media=optimisation:schema02.png" class="media" title="optimisation:schema02.png"><img src="lib/exe/schema02d91c.png_%3b?w=400&amp;tok=4d9040&amp;media=optimisation:schema02.png" class="media" alt="" width="400" /></a>
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Report" [3147-3781] -->
+<h2 class="sectionedit12" id="faq">FAQ</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT12 SECTION "FAQ" [3782-3788] -->
+<h3 class="sectionedit13" id="qwhy_are_you_using_probes_instead_of_relaying_only_on_selenium">Q: Why are you using probes instead of relaying only on Selenium?</h3>
+<div class="level3">
+
+<p>
+Selenium can&#039;t be used to measure performances. It can not detect when an ajax call is finished. Using probes to record and store performances allow the recording to include only the duration of the actions.
+</p>
+
+</div>
+<!-- EDIT13 SECTION "Q: Why are you using probes instead of relaying only on Selenium?" [3789-4067] -->
+<h3 class="sectionedit14" id="qwhy_aren_t_you_using_jmeter_to_measure_performances">Q: Why aren&#039;t you using JMeter to measure performances?</h3>
+<div class="level3">
+
+<p>
+JMeter is great to run load tests on a simple request but it can&#039;t measure the time taken by a set of functional actions. It does not reflect the user experience.
+</p>
+
+</div>
+<!-- EDIT14 SECTION "Q: Why aren't you using JMeter to measure performances?" [4068-4292] -->
+<h1 class="sectionedit15" id="measurement_in_production">Measurement in production</h1>
+<div class="level1">
+
+<p>
+Since probes are activables in production, users of Sigmah will be able to send reports and share their performances.
+</p>
+
+</div>
+<!-- EDIT15 SECTION "Measurement in production" [4293-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=optimisation:conception by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:54:44 GMT -->
+</html>

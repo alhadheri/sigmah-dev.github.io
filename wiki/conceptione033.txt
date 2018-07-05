@@ -1,0 +1,99 @@
+Introduction
+============
+This development will be done in 4 phases:
+
+1. Conception of the solution and production of this document.
+2. Setting up the test environment and placing probes to measure performances.
+3. Optimization of Sigmah.
+4. Report summarizing performance results.
+
+## Conception phase
+  * Identification of the solution.
+
+## Performance measure phase
+  * Setting up the test environment, including the tool to feed variable sizes of database.
+  * Developing the probe API.
+  * Putting probes in Sigmah.
+  * Creating Selenium scripts.
+  * Measuring initial performances of Sigmah.
+
+## Optimization phase
+  * Identifiying which scenario needs optimizations.
+  * Optimizing performances of Sigmah for the designated scenarios.
+
+## Report phase
+  * Measuring performances of Sigmah after the optimizations.
+  * Showing performance results.
+
+
+Test environment
+================
+The test environment should be stable to be able to compare the results between differents versions of Sigmah.
+
+It will be composed of 2 virtual machines:
+
+  * A server machine (hosting Sigmah and PostgreSQL)
+  * A client machine (with Firefox and Selenium)
+
+The client and server virtual machines should be 2 differents machines to measure the impact of network usage.
+
+Measurement
+===========
+We recommend the use of probes in the javascript code to measure the time of a scenario.
+Each scenario should be run by a robot for each execution to be the same. It also simplify the multiple execution of each scenario in order to obtain reliable measures.
+
+## Scenario
+A scenario is a set of functional actions.
+
+A functional action is something the user feel as being an unique action but that may send multiple requests to the server (like opening a project or saving the values of a phase).
+
+The duration of each functional action is summed up to obtain the duration a scenario. The time spent during actions (like the time spent moving the mouse cursor to the next button or the time spent writing a value in text area) is not taken in account.
+
+## Robot
+The robot that will be used to run scenarios is [Selenium](http://www.seleniumhq.org/).
+
+Selenium can mimic a user and follow instructions to perform one or multiple scenarios.
+It can be used to run hundreds or thousands times the scenarios to calculate the average durations.
+
+## Probes
+A probe API will be written in Java and used in the client side of Sigmah. It will be compiled to Javascript by GWT compiler.
+
+To allow the placement of probes by the community, a documentation of the API will be written on this wiki.
+
+Probing will record the duration of each scenario when using Sigmah. To avoid slowing down users in production, a parameter will be added in the administration to enable or disable probing.
+
+Results will be stored client-side in a dedicated IndexedDB. This database will be shared between every users of a same browser. Storing the traces client-side minimize the performance impact of probing. Using a database also eases the exploitation of the traces.
+
+When probing is enabled, a button will be added in Sigmah to send a report containing informations about each scenario.
+
+## Report
+When an user chooses to send its performance, a report will be generated in Markdown format. Using this format will make publications to wikis easier.
+
+The reports will be anonymous and will contains the following informations:
+
+  * Version of Sigmah
+  * User agent (to identify the browser and the OS used)
+  * For each scenario:
+    * Name
+    * Number of executions
+    * Average duration
+    * Fastest duration
+    * Longest duration
+
+
+Clicking on the `send` button will create a report and automatically send it to the email address of the user.
+
+{{:optimisation:schema01.png?400|}}
+{{:optimisation:schema02.png?400|}}
+
+## FAQ
+### Q: Why are you using probes instead of relaying only on Selenium?
+Selenium can't be used to measure performances. It can not detect when an ajax call is finished. Using probes to record and store performances allow the recording to include only the duration of the actions.
+
+### Q: Why aren't you using JMeter to measure performances?
+JMeter is great to run load tests on a simple request but it can't measure the time taken by a set of functional actions. It does not reflect the user experience.
+
+
+Measurement in production
+=========================
+Since probes are activables in production, users of Sigmah will be able to send reports and share their performances.

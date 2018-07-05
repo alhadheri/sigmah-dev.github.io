@@ -1,0 +1,48 @@
+# Sigmah technical documentation#
+
+Welcome on Sigmah wiki, home of all its technical documentation.
+
+
+<columns 100% *-* *-* *-* *-*>
+[{{::sigmah-administrator-guide.png?nolink&200|}}](administratorguide:administratorguide)
+
+**[Administrator Guide](administratorguide:administratorguide)**
+
+//To install Sigmah on your server//
+
+<newcolumn>
+
+[{{::sigmah-contributor-guide.png?nolink&200|}}](contributorguide:contributorguide)
+
+**[Contributor Guide](contributorguide:contributorguide)**
+
+//To help develop new versions of Sigmah//
+
+<newcolumn>
+
+[{{::sigmah-database-model.png?nolink&200|}}](model:sidebar)
+
+**[Database model](model:sidebar)**
+
+//To understand Sigmah database//
+
+<newcolumn>
+
+[{{::sigmah-translation-guide.png?nolink&200|}}](translationguide)
+
+**[Translation Guide](translationguide)**
+
+//All the lessons learnt for translators and Pootle admin//
+
+</columns>
+
+
+
+
+
+
+### Other wiki pages ###
+
+[[ssoc:ssocintroduction|Google Summer of Code with Sigmah]]
+
+[Optimisation phase](optimisation:conception)

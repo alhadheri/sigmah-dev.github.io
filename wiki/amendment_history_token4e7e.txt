@@ -1,0 +1,13 @@
+# Table amendment\_history\_token #
+## Remarks ##
+The table amendment\_history\_token associates values of elements in a project to an amendment.
+
+## Schema ##
+| **Name** | **Type** | **Not Null** | **Primary Key** | **Foreign Key** | **Remarks** |
+|:---------|:---------|:-------------|:----------------|:----------------|:------------|
+| amendment\_id\_amendment | integer  | X            |                 | [amendment](amendment)(id\_amendment) | This is a foreign key to the table amendment. |
+| values\_id\_history\_token | integer  | X            |                 | [history\_token](history_token)(id\_history\_token) | This is a foreign key to the table history\_token. |
+
+## Diagram ##
+{{url>http://wiki.sigmah.org/svg_load.php?file=amendment_history_token.svg 900px,550px noborder}}
+

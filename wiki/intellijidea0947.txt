@@ -1,0 +1,1 @@
+Sigmah is Maven based, so IDEA can open it quite easily. Click ''File > Open'' and select the ''pom.xml'' file at the root directory of your git clone.

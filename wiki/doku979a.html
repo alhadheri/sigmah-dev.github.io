@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=model:projectreport by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>model:projectreport</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="model,projectreport"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="doku577d.html?id=model:projectreport&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feedd021.php?mode=list&amp;ns=model"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="doku979a.html?do=export_xhtml&amp;id=model:projectreport"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="projectreport4c79.txt?do=export_raw&amp;id=model:projectreport"/>
+<link rel="canonical" href="doku552e.html?id=model:projectreport"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='model';var JSINFO = {"id":"model:projectreport","namespace":"model"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#table_projectreport">Table projectreport</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#remarks">Remarks</a></div></li>
+<li class="level2"><div class="li"><a href="#schema">Schema</a></div></li>
+<li class="level2"><div class="li"><a href="#diagram">Diagram</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="table_projectreport">Table projectreport</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Table projectreport" [0-23] -->
+<h2 class="sectionedit2" id="remarks">Remarks</h2>
+<div class="level2">
+
+<p>
+This table corresponds to a concrete report based on a report model (contained in the table ProjectReportModel).
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Remarks" [24-151] -->
+<h2 class="sectionedit3" id="schema">Schema</h2>
+<div class="level2">
+<div class="table sectionedit4"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> <strong>Name</strong> </td><td class="col1"> <strong>Type</strong> </td><td class="col2"> <strong>Not Null</strong> </td><td class="col3"> <strong>Primary Key</strong> </td><td class="col4"> <strong>Foreign Key</strong> </td><td class="col5"> <strong>Remarks</strong> </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">:———</td><td class="col1">:———</td><td class="col2">:————-</td><td class="col3">:—————-</td><td class="col4">:—————-</td><td class="col5">:————</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> id       </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign"> X               </td><td class="col4 leftalign">                 </td><td class="col5"> This is the primary key of the table. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> datedeleted </td><td class="col1"> timestamp(0) </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This is the date the report was deleted. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> name     </td><td class="col1"> character varying(255) </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This is the human readable name of the report. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> currentversion_id </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="doku4894.html?id=model:projectreportversion" class="wikilink1" title="model:projectreportversion">projectreportversion</a>(id) </td><td class="col5"> This is a foreign key to the table projectreportversion. It corresponds to the current version of the report. </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> flexibleelement_id_flexible_element </td><td class="col1 leftalign"> bigint   </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="doku600d.html?id=model:flexible_element" class="wikilink1" title="model:flexible_element">flexible\_element</a>(id_flexible_element) </td><td class="col5"> This is a foreign key to the table flexible_element. This is the flexible element that contains this report. </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> model_id </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="doku0b15.html?id=model:projectreportmodel" class="wikilink1" title="model:projectreportmodel">projectreportmodel</a>(id) </td><td class="col5"> This is a foreign key to the table ProjectReportModel. This report follow the same architecture than this model. </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> orgunit_partnerid </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="doku027d.html?id=model:partner" class="wikilink1" title="model:partner">partner</a>(partnerid) </td><td class="col5"> This is a foreign key to the table partner. In Sigmah, this column is not used. </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> project_databaseid </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="dokub780.html?id=model:project" class="wikilink1" title="model:project">project</a>(databaseid) </td><td class="col5"> This is a foreign key to the table userdatabase. </td>
+	</tr>
+</table></div>
+<!-- EDIT4 TABLE [166-1766] -->
+</div>
+<!-- EDIT3 SECTION "Schema" [152-1766] -->
+<h2 class="sectionedit5" id="diagram">Diagram</h2>
+<div class="level2">
+
+<p>
+<iframe title="" src="svg_load989f.svg?file=projectreport.svg" style="width:900px; height:550px" frameborder="0"></iframe>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Diagram" [1767-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=model:projectreport by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:26 GMT -->
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?id=administratorguide:solrinstallation by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:39:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <title>administratorguide:solrinstallation [Sigmah wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="administratorguide,solrinstallation"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="doku9a38.html?id=administratorguide:solrinstallation&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feed9523.php?mode=list&amp;ns=administratorguide"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="dokuee0c.html?do=export_xhtml&amp;id=administratorguide:solrinstallation"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="solrinstallationf267.txt?do=export_raw&amp;id=administratorguide:solrinstallation"/>
+<link rel="canonical" href="dokud962.html?id=administratorguide:solrinstallation"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='administratorguide';var JSINFO = {"id":"administratorguide:solrinstallation","namespace":"administratorguide"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki     ">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">skip to content</a></li>
+        </ul>
+
+        <h1><a href="doku81aa.html?id=start"  accesskey="h" title="[H]"><img src="lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>Sigmah wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li><a href="dokued56.html?id=administratorguide:solrinstallation&amp;do=register"  class="action register" rel="nofollow" title="Register">Register</a></li><li><a href="doku3149.html?id=administratorguide:solrinstallation&amp;do=login&amp;sectok="  class="action login" rel="nofollow" title="Log In">Log In</a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="http://wiki.sigmah.org/doku.php?id=start" accept-charset="utf-8" class="search" id="dw__search" method="get" role="search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" placeholder="Search" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" /><button type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="http://wiki.sigmah.org/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="administratorguide:solrinstallation" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Show pagesource</option><option value="revisions">Old revisions</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Recent Changes</option><option value="media">Media Manager</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="login">Log In</option><option value="register">Register</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li><a href="dokuefb7.html?id=administratorguide:solrinstallation&amp;do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Recent Changes [R]">Recent Changes</a></li><li><a href="doku0e25.html?id=administratorguide:solrinstallation&amp;do=media&amp;ns=administratorguide"  class="action media" rel="nofollow" title="Media Manager">Media Manager</a></li><li><a href="doku9a38.html?id=administratorguide:solrinstallation&amp;do=index"  class="action index" accesskey="x" rel="nofollow" title="Sitemap [X]">Sitemap</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <bdi><a href="dokuebef.html?id=administratorguide:administratorguide"  class="breadcrumbs" title="administratorguide:administratorguide">administratorguide</a></bdi> <span class="bcsep">•</span> <bdi><a href="doku4692.html?id=contributorguide:contributorguide"  class="breadcrumbs" title="contributorguide:contributorguide">contributorguide</a></bdi> <span class="bcsep">•</span> <bdi><a href="dokuc3da.html?id=model:sidebar"  class="breadcrumbs" title="model:sidebar">sidebar</a></bdi> <span class="bcsep">•</span> <bdi><a href="dokubf2f.html?id=translationguide"  class="breadcrumbs" title="translationguide">translationguide</a></bdi> <span class="bcsep">•</span> <bdi><a href="doku0050.html?id=ssoc:ssocintroduction"  class="breadcrumbs" title="ssoc:ssocintroduction">ssocintroduction</a></bdi> <span class="bcsep">•</span> <bdi><a href="doku98ce.html?id=optimisation:conception"  class="breadcrumbs" title="optimisation:conception">conception</a></bdi> <span class="bcsep">•</span> <bdi><a href="doku1ba3.html?id=administratorguide:installingsigmah"  class="breadcrumbs" title="administratorguide:installingsigmah">installingsigmah</a></bdi> <span class="bcsep">•</span> <bdi><a href="doku17a0.html?id=contributorguide:schemachangelog"  class="breadcrumbs" title="contributorguide:schemachangelog">schemachangelog</a></bdi> <span class="bcsep">•</span> <bdi><a href="doku2081.html?id=administratorguide:dataseparation"  class="breadcrumbs" title="administratorguide:dataseparation">dataseparation</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="dokud962.html?id=administratorguide:solrinstallation"  class="breadcrumbs" title="administratorguide:solrinstallation">solrinstallation</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>administratorguide:solrinstallation</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#introduction">Introduction</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#prerequisites">Prerequisites</a></div></li>
+<li class="level2"><div class="li"><a href="#installing_solr">Installing Solr</a></div></li>
+<li class="level2"><div class="li"><a href="#running_solr">Running Solr</a></div></li>
+<li class="level2"><div class="li"><a href="#downloading_required_jars_for_sigmah">Downloading required jars for Sigmah</a></div></li>
+<li class="level2"><div class="li"><a href="#creating_a_new_solr_core_for_sigmah">Creating a new Solr core for Sigmah</a></div></li>
+<li class="level2"><div class="li"><a href="#changing_the_name_of_the_core">Changing the name of the core</a></div></li>
+<li class="level2"><div class="li"><a href="#carrying_out_a_full_data_import_of_the_database">Carrying out a full data import of the database</a></div></li>
+<li class="level2"><div class="li"><a href="#integrating_solr_with_an_instance_of_sigmah">Integrating Solr with an instance of Sigmah</a></div></li>
+<li class="level2"><div class="li"><a href="#notes">Notes</a></div></li>
+<li class="level2"><div class="li"><a href="#sources">Sources</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="introduction">Introduction</h1>
+<div class="level1">
+
+<p>
+Solr is a Java-based search server which Sigmah relies on to carry out search over fields like projects, contacts and org-units. An instance of the Solr server needs to be installed on the server-side, and a Solr “core” (an index) needs to be setup for a particular organization to facilitate searching within an instance of Sigmah.
+</p>
+
+<p>
+This installation guide describes the technical procedure to install Solr and set up a  Solr Core, covering both Windows and Linux platforms.
+</p>
+
+</div>
+
+<h2 class="sectionedit2" id="prerequisites">Prerequisites</h2>
+<div class="level2">
+
+<p>
+For better performance and security, it is recommended to maintain an installation environment for Sigmah with latest versions of the following 4 key components:
+</p>
+<ul>
+<li class="level1"><div class="li"><strong>Java 1.8 and above</strong></div>
+</li>
+<li class="level1"><div class="li"><strong>PostgreSQL 9 and above</strong></div>
+</li>
+<li class="level1"><div class="li"><strong>Tomcat 7 and above</strong></div>
+</li>
+</ul>
+
+<p>
+Refer to the instructions for installation of Sigmah for the above 3.
+</p>
+<ul>
+<li class="level1"><div class="li"><strong>You will also require the latest version of Sigmah (v2.2) with the search feature included.</strong></div>
+</li>
+</ul>
+
+<p>
+Currently, you can find the code for this here: <a href="https://github.com/sigmah-dev/sigmah/pull/97" class="urlextern" title="https://github.com/sigmah-dev/sigmah/pull/97" rel="nofollow">https://github.com/sigmah-dev/sigmah/pull/97</a>.
+Although yet to be merged, it contains a working version of the search feature. 
+</p>
+
+</div>
+
+<h2 class="sectionedit3" id="installing_solr">Installing Solr</h2>
+<div class="level2">
+
+<p>
+The latest Solr version is available at <a href="http://lucene.apache.org/solr/mirrors-solr-latest-redir.html" class="urlextern" title="http://lucene.apache.org/solr/mirrors-solr-latest-redir.html" rel="nofollow">http://lucene.apache.org/solr/mirrors-solr-latest-redir.html</a>
+</p>
+
+<p>
+(The version of Solr used for testing Sigmah&#039;s search feature is 6.5.0 )
+</p>
+
+<p>
+For Linux/Unix/OSX systems, download the .tgz file. For Windows systems, download the .zip file. When getting started, all you need to do is extract the Solr distribution archive to a directory of your choice. When you&#039;re ready to setup Solr for a production environment, please refer to the instructions provided at <a href="https://cwiki.apache.org/confluence/display/solr/Taking+Solr+to+Production" class="urlextern" title="https://cwiki.apache.org/confluence/display/solr/Taking+Solr+to+Production" rel="nofollow">https://cwiki.apache.org/confluence/display/solr/Taking+Solr+to+Production</a>. To keep things simple for now, extract the Solr distribution archive to your local home directory.
+</p>
+
+<p>
+For example, on Linux, do:
+</p>
+<pre class="code">
+$ cd ~/
+$ tar -zxf solr-x.y.z.tgz</pre>
+
+</div>
+
+<h2 class="sectionedit4" id="running_solr">Running Solr</h2>
+<div class="level2">
+
+<p>
+You can start Solr by running the following command from the Solr directory:
+</p>
+
+<p>
+On Linux:
+</p>
+<pre class="code">
+$ bin/solr start</pre>
+
+<p>
+On Windows:
+</p>
+<pre class="code">
+bin\solr.cmd start</pre>
+
+<p>
+This will start Solr in the background, listening on default port 8983.
+To change the port Solr listens on, you can use the -p parameter when starting, such as:
+</p>
+<pre class="code">
+$ bin/solr start -p 8984</pre>
+
+<p>
+Solr can be stopped with (add specific port number if it is not running on the default port):
+</p>
+<pre class="code">
+$ bin/solr stop -p 8983</pre>
+
+<p>
+To confirm that Solr is running, open the admin console in a browser: <a href="http://localhost:8983/solr/" class="urlextern" title="http://localhost:8983/solr/" rel="nofollow">http://localhost:8983/solr/</a>
+</p>
+
+</div>
+
+<h2 class="sectionedit5" id="downloading_required_jars_for_sigmah">Downloading required jars for Sigmah</h2>
+<div class="level2">
+
+<p>
+Download the postgresql jar from here: <a href="https://jdbc.postgresql.org/download.html" class="urlextern" title="https://jdbc.postgresql.org/download.html" rel="nofollow">https://jdbc.postgresql.org/download.html</a> and paste it in {solr installation directory}/solr-6.x.0/contrib/dataimporthandler/lib.
+</p>
+
+</div>
+
+<h2 class="sectionedit6" id="creating_a_new_solr_core_for_sigmah">Creating a new Solr core for Sigmah</h2>
+<div class="level2">
+
+<p>
+Each organization has a separate core or index which has to be linked to the Sigmah instance.
+Download/clone the latest version of Sigmah containing the search feature.
+</p>
+
+<p>
+Go to “sigmah/src/main/resources/solr_config” and copy the folder “Test_Sigmah”. 
+This folder is a core with the necessary configuration files for Sigmah.
+</p>
+
+<p>
+Paste it inside {solr installation directory}/solr-6.x.0/server/solr/.
+</p>
+
+<p>
+Alternately in Linux:
+</p>
+<pre class="code">
+$ cp sigmah/src/main/resources/solr_config/Test_Sigmah ~/home/{your-username}/solr-6.x.0/server/solr/</pre>
+
+<p>
+In this copy, open the file Test_Sigmah/conf/data-config.xml in a text editor. 
+You will see the lines:
+</p>
+<pre class="code">
+&lt;dataSource driver=&quot;org.postgresql.Driver&quot;
+  url=&quot;jdbc:postgresql://localhost:5432/sigmah_demo?zeroDateTimeBehavior=convertToNull&quot;
+  user=&quot;sigmah&quot;
+  password=&quot;hamsig&quot; /&gt;</pre>
+
+<p>
+In place of “sigmah_demo”, write the name of the sigmah database linked to the organization. 
+Replace the values in user and password with the username and password of the database.
+</p>
+
+<p>
+Restart the Solr Server in case it was still running.
+</p>
+
+<p>
+Go to the admin panel, click on “Core Selector” dropdown on the left-hand side, and you should see “Test_Sigmah”. Click on it.
+</p>
+
+<p>
+Alternately, open <a href="http://localhost:8983/solr/#/Test_Sigmah" class="urlextern" title="http://localhost:8983/solr/#/Test_Sigmah" rel="nofollow">http://localhost:8983/solr/#/Test_Sigmah</a> in your browser.
+</p>
+
+<p>
+If either of these failed, it means that Solr has not been installed correctly in the first step.
+</p>
+
+</div>
+
+<h2 class="sectionedit7" id="changing_the_name_of_the_core">Changing the name of the core</h2>
+<div class="level2">
+
+<p>
+In order to change the name of the core from Test_Sigmah to something more appropriate:
+</p>
+
+<p>
+Open {solr installation directory}/solr-6.x.0/server/solr/Test_Sigmah/core.properties. You will see:
+</p>
+
+<p>
+<code>name=Test_Sigmah</code>
+</p>
+
+<p>
+Replace Test_Sigmah with the name of your choice.
+</p>
+
+<p>
+Change the name of the folder Test_Sigmah to the same name. Then, restart the Solr server.
+</p>
+
+<p>
+The name of the core is important. It forms a part of the url using which an admin connects to the Solr server.
+</p>
+
+</div>
+
+<h2 class="sectionedit8" id="carrying_out_a_full_data_import_of_the_database">Carrying out a full data import of the database</h2>
+<div class="level2">
+
+<p>
+Before going any further, carry out a full data import. This basically takes all the required tables in your database and puts them into the Solr index.
+</p>
+
+<p>
+Go to the &#039;Data Import&#039; tab in the options below &#039;Test_Sigmah&#039; and press the &#039;Execute&#039; button for full-import command.
+Press &#039;Refresh Status&#039; until the UI says &#039;Indexing Completed. Added/Updated X documents…&#039;
+</p>
+
+<p>
+<a href="lib/exe/detail095c.html?id=administratorguide%3Asolrinstallation&amp;media=administratorguide:7a2ef76f-12a9-45d6-8450-7c26158972d9.jpg" class="media" title="administratorguide:7a2ef76f-12a9-45d6-8450-7c26158972d9.jpg"><img src="lib/exe/7a2ef76f-12a9-45d6-8450-7c26158972d9f825.jpg_%3b?media=administratorguide:7a2ef76f-12a9-45d6-8450-7c26158972d9.jpg" class="media" title="
+
+
+
+" alt="
+
+
+
+" /></a>
+</p>
+
+<p>
+If it doesn&#039;t say this after a minute or so and seems to be stuck in a loop, check the &#039;Logging&#039; tab in the Solr admin, if it says there are errors, then there could be some mistake in the config files.
+</p>
+
+<p>
+Also check the connection with the database and the database version.
+</p>
+
+</div>
+
+<h2 class="sectionedit9" id="integrating_solr_with_an_instance_of_sigmah">Integrating Solr with an instance of Sigmah</h2>
+<div class="level2">
+
+<p>
+First of all, check that the schema of the database is upto-date, and migrate any changes. The changes to the schema made for including the search feature can be found here (as of now): 
+</p>
+
+<p>
+<a href="https://github.com/indianauthority97/sigmah/blob/bec9e807d9a725b308c9da154574b9e68489aa5d/src/main/resources/db/migration/V21__solr_core_url_field.sql" class="urlextern" title="https://github.com/indianauthority97/sigmah/blob/bec9e807d9a725b308c9da154574b9e68489aa5d/src/main/resources/db/migration/V21__solr_core_url_field.sql" rel="nofollow">https://github.com/indianauthority97/sigmah/blob/bec9e807d9a725b308c9da154574b9e68489aa5d/src/main/resources/db/migration/V21__solr_core_url_field.sql</a>
+</p>
+
+<p>
+Compile and run the war file on the Tomcat Server.
+</p>
+
+<p>
+When you open the new instance of Sigmah, you won&#039;t see any search bar. It will probably complain with a message like “Solr Server connection is not available.”
+</p>
+
+<p>
+In any case, the first thing to do is to connect Sigmah with the solr core you just created.
+</p>
+
+<p>
+Go to Administration → Settings → Solr Search Settings. It has a text field called “Solr Core Url”.
+</p>
+
+<p>
+Enter the full <abbr title="Uniform Resource Locator">URL</abbr> for the solr core, <code>http://{server-ip:port}/solr/{solr-core-name}</code>.
+</p>
+
+<p>
+For example if the solr core is on your local system, enter:
+</p>
+<pre class="code">
+http://localhost:8983/solr/Test_Sigmah</pre>
+
+<p>
+<a href="lib/exe/detail2dc4.html?id=administratorguide%3Asolrinstallation&amp;media=administratorguide:image.jpg" class="media" title="administratorguide:image.jpg"><img src="lib/exe/image1020.jpg_%3b?media=administratorguide:image.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+Save the changes.
+</p>
+
+<p>
+If it gives a message saying “Successfully updated Solr Core!”, you&#039;re good to go.
+</p>
+
+<p>
+Otherwise, if it says “Failed to update Solr Core!”, re-check the url you entered, and that the solr server is up and running.
+</p>
+
+<p>
+The next step is to permit the user to carry out search.
+</p>
+
+<p>
+Go to Administration → Users → Profiles.
+</p>
+
+<p>
+Edit the profiles for which you want to permit searching. In the popup for editing, go to Global Authorisations → Others. A new permission “Search” should be there. Tick it and save the changes.
+</p>
+
+<p>
+<a href="lib/exe/detail0388.html?id=administratorguide%3Asolrinstallation&amp;media=administratorguide:image_1_.jpg" class="media" title="administratorguide:image_1_.jpg"><img src="lib/exe/image_1_2292.jpg_%3b?media=administratorguide:image_1_.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+Reload Sigmah on your browser.
+</p>
+
+<p>
+A few seconds after loading, the search bar should appear. If it doesn&#039;t, try logging out and then logging back in.
+</p>
+
+</div>
+
+<h2 class="sectionedit10" id="notes">Notes</h2>
+<div class="level2">
+
+<p>
+An automatic background job on the server side keeps indexing the database as well as files every 10 minutes to Solr. This ensures that any changes made to databases and files keep showing up in Solr, and ultimately to the user carrying out the search.
+</p>
+
+<p>
+However, this operation can also be carried out manually by the admin from the front-end, and should be done right after entering the solr core url. 
+</p>
+
+<p>
+In Administration → Settings → Solr Search Settings, the “Manual Index” button is for this purpose.
+</p>
+
+</div>
+
+<h2 class="sectionedit11" id="sources">Sources</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"><a href="https://cwiki.apache.org/confluence/display/solr/Installing+Solr" class="urlextern" title="https://cwiki.apache.org/confluence/display/solr/Installing+Solr" rel="nofollow">https://cwiki.apache.org/confluence/display/solr/Installing+Solr</a>
+</div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=535" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=535" rel="nofollow">http://www.sigmah.org/issues/view.php?id=535</a></div>
+</li>
+</ul>
+
+<p>
+Work is still going on for the search feature at:
+</p>
+<ul>
+<li class="level1"><div class="li"><a href="https://github.com/sigmah-dev/sigmah/pull/97" class="urlextern" title="https://github.com/sigmah-dev/sigmah/pull/97" rel="nofollow">https://github.com/sigmah-dev/sigmah/pull/97</a></div>
+</li>
+</ul>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>administratorguide/solrinstallation.txt</bdi> · Last modified: 2017/08/14 15:11 by <bdi>indianauthority97</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li><a href="dokua47c.html?id=administratorguide:solrinstallation&amp;do=edit"  class="action source" accesskey="v" rel="nofollow" title="Show pagesource [V]"><span>Show pagesource</span></a></li><li><a href="doku7736.php?id=administratorguide:solrinstallation&amp;do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Old revisions [O]"><span>Old revisions</span></a></li><li><a href="doku49c6.html?id=administratorguide:solrinstallation&amp;do=backlink"  class="action backlink" rel="nofollow" title="Backlinks"><span>Backlinks</span></a></li><li><a href="#dokuwiki__top"  class="action top" accesskey="t" rel="nofollow" title="Back to top [T]"><span>Back to top</span></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    <div class="license">Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" class="urlextern">CC Attribution-Share Alike 4.0 International</a></bdi></div>
+    <div class="buttons">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license"><img src="lib/images/license/button/cc-by-sa.png" alt="CC Attribution-Share Alike 4.0 International" /></a>        <a href="http://www.dokuwiki.org/donate" title="Donate" ><img
+            src="lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="http://php.net/" title="Powered by PHP" ><img
+            src="lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="http://validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="http://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="lib/exe/indexerbaa4.gif?id=administratorguide%3Asolrinstallation&amp;1530808560" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?id=administratorguide:solrinstallation by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:41:48 GMT -->
+</html>

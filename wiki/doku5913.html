@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=model:history_token by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>model:history_token</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="model,history_token"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="doku8a69.html?id=model:history_token&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feedd021.php?mode=list&amp;ns=model"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="doku5913.html?do=export_xhtml&amp;id=model:history_token"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="history_token3b2f.txt?do=export_raw&amp;id=model:history_token"/>
+<link rel="canonical" href="doku311f.html?id=model:history_token"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='model';var JSINFO = {"id":"model:history_token","namespace":"model"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#table_history_token">Table history\_token</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#remarks">Remarks</a></div></li>
+<li class="level2"><div class="li"><a href="#schema">Schema</a></div></li>
+<li class="level2"><div class="li"><a href="#diagram">Diagram</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="table_history_token">Table history\_token</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Table history\_token" [0-24] -->
+<h2 class="sectionedit2" id="remarks">Remarks</h2>
+<div class="level2">
+
+<p>
+A flexible_element in an available project can have a value stored in  the table <a href="doku93f2.html?id=model:value" class="wikilink1" title="model:value">value</a>. But when a flexible element has its value replaced by another one, the old value is sent to the table <span class="curid"><a href="doku311f.html?id=model:history_token" class="wikilink1" title="model:history_token">history\_token</a></span>.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Remarks" [25-272] -->
+<h2 class="sectionedit3" id="schema">Schema</h2>
+<div class="level2">
+<div class="table sectionedit4"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> <strong>Name</strong> </td><td class="col1"> <strong>Type</strong> </td><td class="col2"> <strong>Not Null</strong> </td><td class="col3"> <strong>Primary Key</strong> </td><td class="col4"> <strong>Foreign Key</strong> </td><td class="col5"> <strong>Remarks</strong> </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">:———</td><td class="col1">:———</td><td class="col2">:————-</td><td class="col3">:—————-</td><td class="col4">:—————-</td><td class="col5">:————</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> id_history_token </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign"> X               </td><td class="col4 leftalign">                 </td><td class="col5"> This is the primary key of the table. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> history_date </td><td class="col1"> timestamp(0) </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This is the date of the action archived. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> id_element </td><td class="col1 leftalign"> bigint   </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This is a foreign key to the table flexible_element. This history_token belong to this flexible_element. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> id_project </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This column is linked to either the table project or the table partner. </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> change_type </td><td class="col1"> character varying(255) </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This column is like a java enum that can contains either ADD, REMOVE or EDIT. </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> value    </td><td class="col1 leftalign"> text     </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This columns contains an old value of the flexible element in a string representation </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> id_user </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="doku275a.html?id=model:userlogin" class="wikilink1" title="model:userlogin">userlogin</a>(userid) </td><td class="col5 leftalign"> This is a foreign key to the table userlogin. This user corresponds to the contributor on the flexible element associated.  </td>
+	</tr>
+</table></div>
+<!-- EDIT4 TABLE [287-1608] -->
+</div>
+<!-- EDIT3 SECTION "Schema" [273-1608] -->
+<h2 class="sectionedit5" id="diagram">Diagram</h2>
+<div class="level2">
+
+<p>
+<iframe title="" src="svg_load6a99.svg?file=history_token.svg" style="width:900px; height:550px" frameborder="0"></iframe>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Diagram" [1609-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=model:history_token by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:14 GMT -->
+</html>

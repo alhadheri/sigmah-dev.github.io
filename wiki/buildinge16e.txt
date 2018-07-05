@@ -1,0 +1,7 @@
+# Build up environment
+
+As a developer, you have to set up your environment in order to be able to get a copy, build and run Sigmah. This guide will help you towards those steps. We invite you to carefully follow those steps to make sure everything in your environment is as expected: environmental issues are difficult to identify and painful to solves and we really hope that this guide will help you to dodge those.
+
+  1. [Prepare your build environment](preparebuildenvironment): here you will learn how to get a the sigmah copy and obtain the famous ''BUILD SUCCESS''.
+  1. [Prepare your running environment](preparerunningenvironment): once the Sigmah package built, you will have some steps to do before seeing running in your browser
+  1. [Set up your IDE](setupide): some tips to fine-tune your IDE to work faster on Sigmah

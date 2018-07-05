@@ -1,0 +1,14 @@
+# Table layout\_constraint #
+## Remarks ##
+A layout constraint associates a flexible element to a layout group.
+
+## Schema ##
+| **Name** | **Type** | **Not Null** | **Primary Key** | **Foreign Key** | **Remarks** |
+|:---------|:---------|:-------------|:----------------|:----------------|:------------|
+| id\_layout\_constraint | bigint   | X            | X               |                 | This is the primary key of the table. |
+| sort\_order | integer  |              |                 |                 | It corresponds to the order the flexible element will be displayed. |
+| id\_flexible\_element | bigint   | X            |                 | [flexible\_element](flexible_element)(id\_flexible\_element) | This is a foreign key to the table flexible\_element |
+| id\_layout\_group | bigint   | X            |                 | [layout\_group](layout_group)(id\_layout\_group) | This is a foreign key to the table layout\_group. |
+
+## Diagram ##
+{{url>http://wiki.sigmah.org/svg_load.php?file=layout_constraint.svg 900px,550px noborder}}

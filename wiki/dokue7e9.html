@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?id=contributorguide:performanceoptimisation&do=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <title>✎ contributorguide:performanceoptimisation [Sigmah wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.sigmah.org/lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="http://wiki.sigmah.org/"/>
+<link rel="contents" href="http://wiki.sigmah.org/doku.php?id=contributorguide:performanceoptimisation&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://wiki.sigmah.org/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="http://wiki.sigmah.org/feed.php?mode=list&amp;ns=contributorguide"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://wiki.sigmah.org/doku.php?do=export_xhtml&amp;id=contributorguide:performanceoptimisation"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://wiki.sigmah.org/doku.php?do=export_raw&amp;id=contributorguide:performanceoptimisation"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.sigmah.org/lib/exe/css.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='contributorguide';var JSINFO = {"id":"contributorguide:performanceoptimisation","namespace":"contributorguide"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="http://wiki.sigmah.org/lib/exe/jquery.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="http://wiki.sigmah.org/lib/exe/js.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="http://wiki.sigmah.org/lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="http://wiki.sigmah.org/lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_edit tpl_dokuwiki     hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">skip to content</a></li>
+        </ul>
+
+        <h1><a href="http://wiki.sigmah.org/doku.php?id=start"  accesskey="h" title="[H]"><img src="http://wiki.sigmah.org/lib/tpl/dokuwiki/images/logo.png" width="64" height="64" alt="" /> <span>Sigmah wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li><a href="http://wiki.sigmah.org/doku.php?id=contributorguide:performanceoptimisation&amp;do=register"  class="action register" rel="nofollow" title="Register">Register</a></li><li><a href="http://wiki.sigmah.org/doku.php?id=contributorguide:performanceoptimisation&amp;do=login&amp;sectok="  class="action login" rel="nofollow" title="Log In">Log In</a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="http://wiki.sigmah.org/doku.php?id=start" accept-charset="utf-8" class="search" id="dw__search" method="get" role="search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" placeholder="Search" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" /><button type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="http://wiki.sigmah.org/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="contributorguide:performanceoptimisation" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="">Show page</option><option value="revisions">Old revisions</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Recent Changes</option><option value="media">Media Manager</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="login">Log In</option><option value="register">Register</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li><a href="http://wiki.sigmah.org/doku.php?id=contributorguide:performanceoptimisation&amp;do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Recent Changes [R]">Recent Changes</a></li><li><a href="http://wiki.sigmah.org/doku.php?id=contributorguide:performanceoptimisation&amp;do=media&amp;ns=contributorguide"  class="action media" rel="nofollow" title="Media Manager">Media Manager</a></li><li><a href="http://wiki.sigmah.org/doku.php?id=contributorguide:performanceoptimisation&amp;do=index"  class="action index" accesskey="x" rel="nofollow" title="Sitemap [X]">Sitemap</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <bdi><a href="http://wiki.sigmah.org/doku.php?id=model:user_unit"  class="breadcrumbs" title="model:user_unit">user_unit</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://wiki.sigmah.org/doku.php?id=model:user_unit_profiles"  class="breadcrumbs" title="model:user_unit_profiles">user_unit_profiles</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://wiki.sigmah.org/doku.php?id=model:value"  class="breadcrumbs" title="model:value">value</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://wiki.sigmah.org/doku.php?id=ssoc:ideas4gsoc2017"  class="breadcrumbs" title="ssoc:ideas4gsoc2017">ideas4gsoc2017</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://wiki.sigmah.org/doku.php?id=ssoc:ideas4gsoc2016"  class="breadcrumbs" title="ssoc:ideas4gsoc2016">ideas4gsoc2016</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://wiki.sigmah.org/doku.php?id=ssoc:ideas4soc2015"  class="breadcrumbs" title="ssoc:ideas4soc2015">ideas4soc2015</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://wiki.sigmah.org/doku.php?id=ssoc:ideas4gsoc2014"  class="breadcrumbs" title="ssoc:ideas4gsoc2014">ideas4gsoc2014</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://wiki.sigmah.org/doku.php?id=ssoc:ideas4gsoc2013"  class="breadcrumbs" title="ssoc:ideas4gsoc2013">ideas4gsoc2013</a></bdi> <span class="bcsep">•</span> <bdi><a href="http://wiki.sigmah.org/doku.php?id=ssoc:ideas4gsoc2012"  class="breadcrumbs" title="ssoc:ideas4gsoc2012">ideas4gsoc2012</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="http://wiki.sigmah.org/doku.php?id=ssoc:sigmahsummerofcode"  class="breadcrumbs" title="ssoc:sigmahsummerofcode">sigmahsummerofcode</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>contributorguide:performanceoptimisation</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    
+<p>
+This page is read only. You can view the source, but not change it. Ask your administrator if you think this is wrong.
+</p>
+    <div class="editBox" role="application">
+
+    <div class="toolbar group">
+        <div id="draft__status"></div>
+        <div id="tool__bar"></div>
+    </div>
+    <form id="dw__editform" method="post" action="#" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="" /><input type="hidden" name="id" value="contributorguide:performanceoptimisation" /><input type="hidden" name="rev" value="0" /><input type="hidden" name="date" value="1466411131" /><input type="hidden" name="prefix" value="." /><input type="hidden" name="suffix" value="" /><input type="hidden" name="changecheck" value="2e2940f648e9c757bbe87dd578982763" /><input type="hidden" name="target" value="section" /><textarea name="wikitext" id="wiki__text" dir="auto" class="edit" cols="80" rows="10" tabindex="1" readonly="readonly">
+Measuring performance
+=====================
+
+For everyone
+------------
+
+By activating the performance probes and sending reports, everyone can help to improve Sigmah. Reports contains informations about the time spent while doing common tasks like opening a project.
+
+If a functionality feels slow, send us your report to help us understand what takes time and how we can fix it.
+
+### Allowing an user to measure performances ###
+Performance measurement is a new user authorisation. It is deactivated by default and should be added to the user profiles by an administrator.
+
+If you own the `Manage users` authorisation, you can allow or disallow users to measure performance by doing the following steps:
+
+1. Open the `Users` tab of the Administration.
+2. Click on the `edit` button next to the user profile to authorize or deauthorize.
+3. Scroll down to the `Others` section of the `Global Authorizations`.
+4. Check or uncheck the `Probes management` authorization to allow or disallow the measurement of performances.
+
+{{:contributorguide:1_probes_management.gif|Profile edition}}
+
+### Activating probes ###
+When a user has the right to activate and deactivate probes, a new icon will appear for him at the top of the screen. Hover your mouse cursor over it to display the `probes management menu` and select `Enable trace mode` to activate measurement.
+
+{{:contributorguide:2_activate_probes.gif|Enable trace mode}}
+
+When active, the `probes management` icon will turn white:
+
+{{:contributorguide:3_probes_are_activated.gif|Trace mode is enabled}}
+
+At this point, Sigmah will measure the time taken when doing common tasks. These data are saved locally and won't be sent without your consent.
+
+### Sending reports ###
+To send a report, simply go to the `probe management menu` and click on the `Send report` button.
+
+{{:contributorguide:5_send_report.png|}}
+
+The reports will be sent to you and to the Sigmah development team. To configure who can receive reports, see the configuration section.
+
+The mail sent will include 2 files:
+
+  * A plain-text file following the [Markdown syntax](https://daringfireball.net/projects/markdown/syntax) with the minimum, maximum and average time taken by every scenario.
+  * A raw report containing detailed information for the Sigmah development team.
+
+
+For developers
+----------------
+
+When contributing to Sigmah, you can measure the impact of your developments by frequently running the automated tests. By comparing the generated reports, you will be able to see how your changes affected the performances of Sigmah.
+
+### Running the automated tests ###
+The automated tests are using Selenium to simulate a user browsing Sigmah. For more information about Selenium, you can visit [Selenium home page](http://www.seleniumhq.org).
+
+You can run the automated tests on your computer or use the pre-configured virtual machine available on [sigmah.org](http://sigmah.org).
+
+If you choose to use the virtual machine, you can skip the installation and configuration phase.
+
+#### Installing Selenium
+Selenium require Firefox to run.
+
+From Firefox, visit the [add-on installation page](https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/) of Selenium IDE. Click on `Add to Firefox` to install Selenium:
+
+{{:contributorguide:install-selenium.gif|Selenium IDE install page}}
+
+#### Adding support for `while` and `endWhile` to Selenium
+
+Download this [user-extension.js](https://doc-0o-c8-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/qm44n34veas1jfjhsf767tuiqtk9beli/1466164800000/13072740796266983643/*/0B6vnknygMB3ISHBYODA3UDUtS0U?e=download) file.
+
+Open Selenium IDE preferences and select the file you just downloaded into the `Selenium Core Extensions` field:
+
+{{:contributorguide:userextension.png|Selenium IDE preferences}}
+
+#### Running the script
+You are now ready to run the automated tests.
+
+Open Firefox. In the menubar, select `Tools` then `Selenium IDE` to open Selenium.
+
+Copy the following script in the `Source` tab of Selenium and edit the following values:
+
+  * Replace `https://optimisation.sigmah.org/#login` by the URL of your instance of Sigmah.
+  * Replace `user@sigmah.org` by the login of the user to use.
+  * Replace `yourpassword` by the password to use.
+  * Optionally you can also increment or decrement the number of time to run the tests by changing the limit defined by `index &amp;lt; 10;` (note: `&amp;lt;` means `less than`).
+
+When you are done, switch to the `table` tab and hit `play` to let Selenium execute the tests.
+
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+    &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+    &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;
+    &lt;head profile=&quot;http://selenium-ide.openqa.org/profiles/test-case&quot;&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;link rel=&quot;selenium.base&quot; href=&quot;https://optimisation.sigmah.org/#login&quot; /&gt;
+    &lt;title&gt;Boucle-10-ID&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;table cellpadding=&quot;1&quot; cellspacing=&quot;1&quot; border=&quot;1&quot;&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;&lt;td rowspan=&quot;1&quot; colspan=&quot;3&quot;&gt;Boucle-10-ID&lt;/td&gt;&lt;/tr&gt;
+    &lt;/thead&gt;&lt;tbody&gt;
+    
+    &lt;!-- Identification	--&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;open&lt;/td&gt;
+    	&lt;td&gt;/#login&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;type&lt;/td&gt;
+    	&lt;td&gt;id=loginEmailId&lt;/td&gt;
+    	&lt;td&gt;user@sigmah.org&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;type&lt;/td&gt;
+    	&lt;td&gt;id=loginPasswordId&lt;/td&gt;
+    	&lt;td&gt;yourpassword&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;clickAndWait&lt;/td&gt;
+    	&lt;td&gt;css=button.x-btn-text&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- Activation	trace	--&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;click&lt;/td&gt;
+    	&lt;td&gt;id=activeDesactiveButtonId&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- Début de boucle	--&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;getEval&lt;/td&gt;
+    	&lt;td&gt;index = 0;&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;while&lt;/td&gt;
+    	&lt;td&gt;index &amp;lt; 10;&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;storeEval&lt;/td&gt;
+    	&lt;td&gt;index&lt;/td&gt;
+    	&lt;td&gt;value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;echo&lt;/td&gt;
+    	&lt;td&gt;${value}&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- Ouverture projet	--&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;click&lt;/td&gt;
+    	&lt;td&gt;id=projectCodeColumnId_-45917&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- Ouverture agenda --&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;click&lt;/td&gt;
+    	&lt;td&gt;id=agendaSubMenuId&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- Fermeture projet--&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;selectWindow&lt;/td&gt;
+    	&lt;td&gt;null&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;click&lt;/td&gt;
+    	&lt;td&gt;id=dashboardProjectTabId5917&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;getEval&lt;/td&gt;
+    	&lt;td&gt;index++;&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- Fin de boucle	--&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;endWhile&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- Désactivation trace--&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;click&lt;/td&gt;
+    	&lt;td&gt;id=activeDesactiveButtonId&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- Envoi du rapport	--&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;click&lt;/td&gt;
+    	&lt;td&gt;id=sendReportButtonId&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- Fin d'identification	--&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;click&lt;/td&gt;
+    	&lt;td&gt;link=Fermer session&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    	&lt;td&gt;click&lt;/td&gt;
+    	&lt;td&gt;//table[@id='yesButtonId']/tbody/tr[2]/td[2]/em/button&lt;/td&gt;
+    	&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;&lt;/table&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+
+#### Recording your own automated test
+You can record your own test by clicking on the `record` button in the Selenium IDE window.
+See [Selenium help page](http://www.seleniumhq.org/docs/02_selenium_ide.jsp#building-test-cases) for more information.
+
+### Adding probes to your own code ###
+
+1. Add a new case to the `Scenario` enumeration.
+2. Use the `Profiler` to define the start and end points of your `Scenario`
+3. Surround the important parts of your code with checkpoints to better understand what takes time.
+
+See the **Probe API** section for more information about the code required.
+
+### Understanding the raw report ###
+When running a `Scenario`, the start time, duration of every checkpoint is saved in IndexedDB. The raw report is a JSON export of the entire database.
+
+{{:contributorguide:4_trace_are_recorded.png|IndexedDB content}}
+
+Each entry is the result of an execution of a scenario. For each execution, the following fields are saved:
+
+  * `applicationCacheStatus`: the state of ApplicationCache. You should ignore execution results when the state is not `IDLE`. Performances are badly hurt when ApplicationCache is working. Hopefully, this only happen once every new version update.
+  * `checkpoints`: Name, start time and duration of each checkpoint.
+  * `date`: Start date of the execution.
+  * `duration`: Total duration of the execution.
+  * `id`: Execution identifier in the local database. Can be safely ignored.
+  * `online`: Tells if the user was online or offline when the execution started. Offline mode is usually faster so you should avoid mixing the results of online and offline mode.
+  * `scenario`: Name of the executed scenario.
+  * `userAgent`: User-agent of the web browser used.
+  * `versionNumber`: Version of Sigmah used.
+
+Configuration
+-------------
+Inside of the `sigmah.properties`, locate the `mail.optimisation` entries. They define what will be sent by email and who will receive the reports:
+
+    mail.optimisation.to.address=osarrat@urd.org
+    mail.optimisation.copy.address=
+    mail.optimisation.markdownfile.name=sigmah_performance_report.md
+    mail.optimisation.jsonfile.name=sigmah_performance_raw_values.json
+
+  * `mail.optimisation.to.address` and `mail.optimisation.copy.address` are email addresses fields. You can define multiple addresses by separating them with a semicolon (';'). All of theses addresses will receive every reports sent by users. If you want the Sigmah team to receive your reports you should ensure that `osarrat@urd.org` is present in one of those two fields.
+  * `mail.optimisation.markdownfile.name` is the name of the main report. It is a plain-text file following the [Markdown syntax](https://daringfireball.net/projects/markdown/syntax).
+  * `mail.optimisation.jsonfile.name` is the name of the raw report. It is a json file and is not intended to be understood as is. It contains the raw value measured by the probes. If you are a developer and are interested in understanding this file, see the [Understanding the raw report](#Understanding%20the%20raw%20report) section.
+
+You can edit this file will Sigmah is running. The changes will be taken right away, no reboot of the server is required.
+
+Existing scenarios
+==================
+Currently Sigmah records the duration of the following actions:
+
+  * Time spent opening a project from the dashboard and loading the content of its current phase.
+  * Time spent opening the calendar of a project and loading the events of the current month.
+
+Probe API
+=========
+The probe API is located in the `org.sigmah.client.util.profiler`.
+
+Here is a quick list of the objects to use:
+
+  * Profiler
+  * Scenario
+  * Checkpoint
+  * Execution
+
+Throughout this section we will see how to create a scenario named *Update Reminder* that record the time taken to mark a reminder as done/todo.
+
+How to declare a new scenario
+-----------------------------
+Open the `Scenario` enum and add a case for your new scenario. To respect the coding conventions, you should name your scenario in all capital cases and replace spaces by underscores.
+
+For our example, we will add a new case named *UPDATE_REMINDER* to the enum:
+
+    public enum Scenario {	
+    	AGENDA,
+    	OPEN_PROJECT,
+    	UPDATE_REMINDER; // Our new scenario
+    }
+
+Marking the start and the end of your scenario
+----------------------------------------------
+In your code, use the `startScenario(Scenario)` method of the `Profiler` to start the recording of a new execution of any scenario. Only one execution can be recorded at a time. If an execution is running, starting a new one will lose any unsaved information.
+
+To end the execution and save its data inside the database, use the `endScenario(Scenario)` method of the `Profiler`.
+
+You can also pause and resume execution with the `pauseScenario(Scenario)` and `resumeScenario(Scenario)` if your scenario require user interaction to continue. You should avoid recording waits for user interaction to ensure that the recorded time reflect the time spent by Sigmah.
+
+For our example, we will edit the `ProjectDashboardPresenter` and start the scenario when the user clicks on the check:
+
+	// --
+	// Reminders / Monitored Points edit update event handlers.
+	// --
+    
+	view.getRemindersGrid().getStore().addListener(Store.Update, new Listener&lt;StoreEvent&lt;ReminderDTO&gt;&gt;() {
+    
+		@Override
+		public void handleEvent(final StoreEvent&lt;ReminderDTO&gt; event) {
+    
+			// Manages only edit event.
+			if (event.getOperation() == RecordUpdate.EDIT) {
+			    // Starting the scenario
+				Profiler.INSTANCE.startScenario(Scenario.UPDATE_REMINDER);
+				onReminderUpdate(event.getModel());
+			}
+		}
+	});
+
+The end of our scenario happens when the `UpdateReminders` command ends with success:
+
+	// Updates points.
+	dispatch.execute(new UpdateReminders(edited), new CommandResultHandler&lt;ListResult&lt;ReminderDTO&gt;&gt;() {
+    
+		@Override
+		public void onCommandFailure(final Throwable e) {
+            // ...
+		}
+    
+		@Override
+		public void onCommandSuccess(final ListResult&lt;ReminderDTO&gt; result) {
+    
+			view.getRemindersGrid().getStore().commitChanges();
+    
+			for (final ReminderDTO point : result.getList()) {
+				point.setIsCompleted();
+				view.getRemindersGrid().getStore().update(point);
+			}
+    
+			N10N.notification(I18N.CONSTANTS.infoConfirmation(), I18N.CONSTANTS.reminderUpdateConfirm(), MessageType.INFO);
+			// Ending the scenario
+			Profiler.INSTANCE.endScenario(Scenario.UPDATE_REMINDER);
+		}
+
+At this point, you can already try and see the time taken to update a reminder.
+
+Using checkpoints to gather more precise information
+----------------------------------------------------
+You can use the `markCheckpoint(Scenario, String)` method of the `Profiler` to measure the time taken by a specific code block. Just surround the desired block with 2 checkpoints (usually named *&quot;before [function]&quot;* and *&quot;after [function]&quot;*). 
+
+For our example, we will measure the time taken to update the user interface:
+
+	@Override
+	public void onCommandSuccess(final ListResult&lt;ReminderDTO&gt; result) {
+    
+        // Before UI update checkpoint
+		Profiler.INSTANCE.markCheckpoint(Scenario.UPDATE_REMINDER, &quot;Before UI update&quot;);
+		view.getRemindersGrid().getStore().commitChanges();
+    
+		for (final ReminderDTO point : result.getList()) {
+			point.setIsCompleted();
+			view.getRemindersGrid().getStore().update(point);
+		}
+		// After UI update checkpoint
+		Profiler.INSTANCE.markCheckpoint(Scenario.UPDATE_REMINDER, &quot;After UI update&quot;);
+    
+		N10N.notification(I18N.CONSTANTS.infoConfirmation(), I18N.CONSTANTS.reminderUpdateConfirm(), MessageType.INFO);
+		// Ending the scenario
+		Profiler.INSTANCE.endScenario(Scenario.UPDATE_REMINDER);
+	}</textarea>
+<div id="wiki__editbar" class="editBar">
+<div id="size__ctl">
+</div>
+</div>
+</div></form>
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>contributorguide/performanceoptimisation.txt</bdi> · Last modified: 2016/06/20 10:25 by <bdi>rca</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li><a href="http://wiki.sigmah.org/doku.php?id=contributorguide:performanceoptimisation&amp;do="  class="action show" accesskey="v" rel="nofollow" title="Show page [V]"><span>Show page</span></a></li><li><a href="http://wiki.sigmah.org/doku.php?id=contributorguide:performanceoptimisation&amp;do=revisions"  class="action revs" accesskey="o" rel="nofollow" title="Old revisions [O]"><span>Old revisions</span></a></li><li><a href="http://wiki.sigmah.org/doku.php?id=contributorguide:performanceoptimisation&amp;do=backlink"  class="action backlink" rel="nofollow" title="Backlinks"><span>Backlinks</span></a></li><li><a href="#dokuwiki__top"  class="action top" accesskey="t" rel="nofollow" title="Back to top [T]"><span>Back to top</span></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    <div class="license">Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" class="urlextern">CC Attribution-Share Alike 4.0 International</a></bdi></div>
+    <div class="buttons">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license"><img src="http://wiki.sigmah.org/lib/images/license/button/cc-by-sa.png" alt="CC Attribution-Share Alike 4.0 International" /></a>        <a href="http://www.dokuwiki.org/donate" title="Donate" ><img
+            src="http://wiki.sigmah.org/lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="http://php.net/" title="Powered by PHP" ><img
+            src="http://wiki.sigmah.org/lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="http://validator.w3.org/check/referer" title="Valid HTML5" ><img
+            src="http://wiki.sigmah.org/lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" ><img
+            src="http://wiki.sigmah.org/lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="http://dokuwiki.org/" title="Driven by DokuWiki" ><img
+            src="http://wiki.sigmah.org/lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="http://wiki.sigmah.org/lib/exe/indexer.php?id=contributorguide%3Aperformanceoptimisation&amp;1530809049" width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?id=contributorguide:performanceoptimisation&do=edit by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:10 GMT -->
+</html>

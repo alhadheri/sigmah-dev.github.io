@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=ssoc:ideas4gsoc2016 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>ssoc:ideas4gsoc2016</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="ssoc,ideas4gsoc2016"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="doku442c.html?id=ssoc:ideas4gsoc2016&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feedb5f2.php?mode=list&amp;ns=ssoc"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="dokuf0ea.html?do=export_xhtml&amp;id=ssoc:ideas4gsoc2016"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="ideas4gsoc201674f2.txt?do=export_raw&amp;id=ssoc:ideas4gsoc2016"/>
+<link rel="canonical" href="doku3948.html?id=ssoc:ideas4gsoc2016"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='ssoc';var JSINFO = {"id":"ssoc:ideas4gsoc2016","namespace":"ssoc"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#introduction">Introduction</a></div></li>
+<li class="level1"><div class="li"><a href="#sigmah_project">Sigmah project</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#the_project_and_its_current_users">The project and its current users</a></div></li>
+<li class="level2"><div class="li"><a href="#technical_details">Technical details</a></div></li>
+<li class="level2"><div class="li"><a href="#sigmah_project_and_gsoc2016">Sigmah project and GSoC2016</a></div></li>
+<li class="level2"><div class="li"><a href="#resources_for_new_contributors">Resources for new contributors</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#project_ideas">Project ideas</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#project_idea_1full-featured_calendars">Project idea 1: Full-featured calendars</a></div></li>
+<li class="level2"><div class="li"><a href="#project_idea_2easier_project_model_management">Project idea 2: Easier project model management</a></div></li>
+<li class="level2"><div class="li"><a href="#project_idea_3search">Project idea 3: Search</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="introduction">Introduction</h1>
+<div class="level1">
+
+<p>
+This page is targeting the potential student candidates to contribute on the Sigmah project as part of the Google Summer of Code 2016 programme.
+It provides context about the Sigmah project and above all ideas for them to build their project from. Those ideas have been collected from Sigmah users working in humanitarian NGOs. They represent their short-term priorities for new features in their software.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Introduction" [2-429] -->
+<h1 class="sectionedit2" id="sigmah_project">Sigmah project</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT2 SECTION "Sigmah project" [430-448] -->
+<h2 class="sectionedit3" id="the_project_and_its_current_users">The project and its current users</h2>
+<div class="level2">
+
+<p>
+<strong><a href="http://www.sigmah.org/" class="urlextern" title="http://www.sigmah.org/" rel="nofollow">Sigmah</a> is open source software for the shared  management of international aid projects</strong>.
+</p>
+
+<p>
+Available in 3 langues (English, French, Spanish) version 2.1 is currently in adoption by 7 NGOs <strong>like Handicap International, CARE Nederland or Luexmbourg Red Cross</strong>.
+</p>
+
+<p>
+Users in Haiti, France, Pakistan or Afghanistan report new needs of features frequently because project is still young, and the <a href="http://www.sigmah.org/issues/roadmap_page.php" class="urlextern" title="http://www.sigmah.org/issues/roadmap_page.php" rel="nofollow">roadmap</a> of the project keeps growing.
+</p>
+
+<p>
+To understand Sigmah in a minute, look at this less than 2 minutes video:
+</p>
+<iframe src="http://www.dailymotion.com/embed/video/x34m1mq" height="350" width="425" class="vshare__none" allowfullscreen="" frameborder="0" scrolling="no"></iframe>
+</div>
+<!-- EDIT3 SECTION "The project and its current users" [449-1101] -->
+<h2 class="sectionedit4" id="technical_details">Technical details</h2>
+<div class="level2">
+
+<p>
+Sigmah software is developed in Java using GWT + ExtJS. Access to database is done with Hibernate. Sigmah application forge is available at <a href="https://github.com/sigmah-dev/sigmah" class="urlextern" title="https://github.com/sigmah-dev/sigmah" rel="nofollow">https://github.com/sigmah-dev/sigmah</a>. Sigmah application is a very large and rich application. A strong effort to learn how to work on it is absolutely necessary. Don&#039;t expect to be able to do anything meaningful before one month of full time work to get easy with all functional and technical concepts. But.. if you like big challenges, you&#039;ll definetly get a rewarding one with this application!
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Technical details" [1102-1665] -->
+<h2 class="sectionedit5" id="sigmah_project_and_gsoc2016">Sigmah project and GSoC2016</h2>
+<div class="level2">
+
+<p>
+For Google Summer of Code 2016, Sigmah will be represented by  <a href="http://www.urd.org/" class="urlextern" title="http://www.urd.org/" rel="nofollow">Groupe URD</a>, functional project leader which will play the role of organization administrator.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Sigmah project and GSoC2016" [1666-1881] -->
+<h2 class="sectionedit6" id="resources_for_new_contributors">Resources for new contributors</h2>
+<div class="level2">
+
+<p>
+After having taken a look to potential projects you may have on Sigmah, if you want to know more, you can join the <strong>#sigmah channel on irc.freenode.net</strong> (people will be idling around mostly during French business hours). Or as many open-source project, you can use the following resources more or less in the given order:
+</p>
+<ol>
+<li class="level1"><div class="li">   Take a look at the <a href="http://www.sigmah.org/print/book/export/html/219" class="urlextern" title="http://www.sigmah.org/print/book/export/html/219" rel="nofollow">Sigmah User Guide</a> to have a better idea of what the software is about, and at the <a href="http://demo.sigmah.org/" class="urlextern" title="http://demo.sigmah.org/" rel="nofollow">demo</a> to know how it looks like.</div>
+</li>
+<li class="level1"><div class="li">   Go through the <a href="doku4692.html?id=contributorguide:contributorguide" class="wikilink1" title="contributorguide:contributorguide">Contributor Guide</a> on the  wiki of the project to better understand how the project id technically set up, and how you can concretely work on it.</div>
+</li>
+<li class="level1"><div class="li">   Install your own development environment and download your copy of the source code by following <a href="dokua44f.html?id=contributorguide:building" class="wikilink1" title="contributorguide:building">this procedure</a>  (on the Contributor Guide as well).</div>
+</li>
+<li class="level1"><div class="li">   If ready to dive, send an “hello world!” on <a href="http://groups.google.com/group/sigmah-dev" class="urlextern" title="http://groups.google.com/group/sigmah-dev" rel="nofollow">sigmah-dev mailing list</a> to start collaborating with other developers !</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT6 SECTION "Resources for new contributors" [1882-3015] -->
+<h1 class="sectionedit7" id="project_ideas">Project ideas</h1>
+<div class="level1">
+
+<p>
+This project ideas list is just given as a suggestion. As written in the introduction, those ideas do however represent the short-term priorities of real users working in humanitarian NGOs. When describing a project idea, a <em>User Priority</em> is attributed to each feature request associated with it, to reflect its importance in the eyes of the users.
+</p>
+
+<p>
+But user priority might not be GSoC volunteer priority… A new important feature requested urgently by some users may be felt as boring to develop by a GSoC volunteer. We just give those <em>User priority</em> because we believe that an exciting thing about contributing to Sigmah is that you&#039;re helping real users to work more efficiently in their daily work at managing humanitarian projects, and knowing where your help would be the most appreciated by users might be useful.
+</p>
+
+<p>
+As a consequence, if a student wants to write its own proposal by mixing some of those projects or taking some inspiration from the <a href="http://www.sigmah.org/issues/roadmap_page.php" class="urlextern" title="http://www.sigmah.org/issues/roadmap_page.php" rel="nofollow">roadmap of the project</a>  , he&#039;s also welcomed to do so.
+</p>
+
+<p>
+Finally, for each project idea, we provide a <em>Development Difficulty</em> level to give an hint about how easy or challenging it would be to deal with this idea.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Project ideas" [3016-4256] -->
+<h2 class="sectionedit8" id="project_idea_1full-featured_calendars">Project idea 1: Full-featured calendars</h2>
+<div class="level2">
+
+<p>
+<em>Project Difficulty:</em> Medium
+</p>
+
+<p>
+<strong>Presentation</strong>
+</p>
+
+<p>
+Sigmah already offers calendars for its users. But those calendars lack some advanced features and a higher level of integration between them, and integration with external calendar tools to reveal their full potential. As an example, when we make a demonstration of Sigmah to new users, 2 out 3 ask us: “Does the calendar integrate with Outlook?”.
+</p>
+
+<p>
+More than a restrictive list of new features, this project idea reach to provide a richer calendar experience within Sigmah with a well-designed set of new functionalities. For example the exact way to provide the integration with Outlook is open to proposition to see which calendar should be exported: a new user calendar ? each individual project calendar ? And how then to limit the burden for the user to have too many calendars to export ? A good user experience is strongly expected and good propositions are more than welcome!
+</p>
+
+<p>
+<strong>Examples</strong>
+</p>
+
+<p>
+<em>User Prority:</em> 1
+</p>
+<ul>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=521" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=521" rel="nofollow">#521 Aggregating linked projects calendars</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=522" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=522" rel="nofollow">#522 Aggregating sub-orgunits calendars</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=824" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=824" rel="nofollow">#824 Calendars export to other devices</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=117" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=117" rel="nofollow">#117 User aggregated calendar</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=78" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=78" rel="nofollow">#78 Add a project and annual view in the calendar</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=852" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=852" rel="nofollow">#852 Advanced calendar component</a></div>
+</li>
+</ul>
+
+<p>
+<em>User Prority:</em> 2
+</p>
+<ul>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=508" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=508" rel="nofollow">#508 Merge &quot;todo&quot; and &quot;pending&quot; reminders</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=520" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=520" rel="nofollow">#520 New date field option: saved in calendar</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=534" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=534" rel="nofollow">#534 Field-linked reminders incentives</a></div>
+</li>
+</ul>
+
+<p>
+<strong>Impact</strong>
+</p>
+
+<p>
+The impact of the implementation of this project idea will be a better time management for NGOs: less forgotten deadline, less uncertainty on some key dates, etc. 
+</p>
+
+<p>
+<strong>Knowledge prerequisite</strong>
+</p>
+
+<p>
+Java/GWT.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Project idea 1: Full-featured calendars" [4257-6348] -->
+<h2 class="sectionedit9" id="project_idea_2easier_project_model_management">Project idea 2: Easier project model management</h2>
+<div class="level2">
+
+<p>
+<em>Project Difficulty:</em> Medium
+</p>
+
+<p>
+<strong>Presentation</strong>
+</p>
+
+<p>
+Sigmah&#039;s most fundamental feature is the flexibility it gives to organization in the way they can configure it. With this flexibility provided through project models management, organizations are able to design their project information system by themselves, through a graphical interface they&#039;re able to use and not by configuration files which scare them in most of the case.
+</p>
+
+<p>
+Sigmah flexibility is already provided a great service to its users, but it needs to be enhanced to reply to new needs expressed by users.
+</p>
+
+<p>
+<strong>Examples</strong>
+</p>
+
+<p>
+<em>User Prority:</em> 1
+</p>
+<ul>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=853" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=853" rel="nofollow">#853 Project/orgunit model export/import through an XML format</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=514" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=514" rel="nofollow">#514 Hypertext link in field titles</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=276" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=276" rel="nofollow">#276 Add a &quot;Groups&quot; tab in project/orgunit model management</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=430" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=430" rel="nofollow">#430 Delete group of fields</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=511" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=511" rel="nofollow">#511 Category modification flexibility</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=854" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=854" rel="nofollow">#854 Docked toolbar for project/orgunit model fields table</a></div>
+</li>
+</ul>
+
+<p>
+<em>User Prority:</em> 2
+</p>
+<ul>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=390" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=390" rel="nofollow">#390 Renaming project/orgunit default fields</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=537" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=537" rel="nofollow">#537 Fold by default option for groups</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=120" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=120" rel="nofollow">#120 Multilingual project, orgunit, report models &amp; categorie</a></div>
+</li>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=527" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=527" rel="nofollow">#527 Twin fields</a></div>
+</li>
+</ul>
+
+<p>
+<strong>Impact</strong>
+</p>
+
+<p>
+By developing a project idea of that sort, the GSoC volunteer will contribute to allow new usages of Sigmah by its users. It will help Sigmah adoption in wider parts of organization already adopting it.
+</p>
+
+<p>
+<strong>Knowledge prerequisite</strong>
+</p>
+
+<p>
+Java/GWT.
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Project idea 2: Easier project model management" [6349-8262] -->
+<h2 class="sectionedit10" id="project_idea_3search">Project idea 3: Search</h2>
+<div class="level2">
+
+<p>
+<em>Project Difficulty:</em> Hard
+</p>
+
+<p>
+<em>Difficulty comment</em>: Hard project idea for the full-text search engine (which is only user priority 2) becauxe it will require a knowledge of Apache Solr and strong capability to integrate with Sigmah. And this work with Apache Solr to produce a rich search engine has been estimated to a total of 74 man-days of work by experienced Sigmah developers: those 74 days might be reduced if we reduce the expectation of the full-text search engine, so it can fit in 12 weeks (60 man-days) time period of a summer of code.
+</p>
+
+<p>
+<strong>Presentation</strong>
+</p>
+
+<p>
+Currently, Sigmah offers almost no way to search among projects. Two features have been requested by users to improve Sigmah search capabilities (see examples below). And more can be imagined!
+</p>
+
+<p>
+<strong>Examples</strong>
+</p>
+
+<p>
+<em>User Prority:</em> 1
+</p>
+<ul>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=536" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=536" rel="nofollow">#536 Dashboard project table extra searchable columns</a></div>
+</li>
+</ul>
+
+<p>
+<em>User Prority:</em> 2
+</p>
+<ul>
+<li class="level1"><div class="li"><a href="http://www.sigmah.org/issues/view.php?id=535" class="urlextern" title="http://www.sigmah.org/issues/view.php?id=535" rel="nofollow">#535 Full text search engine</a></div>
+</li>
+</ul>
+
+<p>
+<strong>Impact</strong>
+</p>
+
+<p>
+Improved search capabilities would dramatically improved the user experience and the perceived interest to use Sigmah.
+</p>
+
+<p>
+<strong>Knowledge prerequisite</strong>
+</p>
+
+<p>
+Java/GWT, and Apache Solr for user priority 2 full text search engine.
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Project idea 3: Search" [8263-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=ssoc:ideas4gsoc2016 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:30 GMT -->
+</html>

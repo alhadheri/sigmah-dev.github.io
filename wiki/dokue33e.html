@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=contributorguide:versioncycle by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:55:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>contributorguide:versioncycle</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="contributorguide,versioncycle"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="dokuf770.html?id=contributorguide:versioncycle&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feed3c04.php?mode=list&amp;ns=contributorguide"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="dokue33e.html?do=export_xhtml&amp;id=contributorguide:versioncycle"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="versioncycle568e.txt?do=export_raw&amp;id=contributorguide:versioncycle"/>
+<link rel="canonical" href="doku8376.html?id=contributorguide:versioncycle"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='contributorguide';var JSINFO = {"id":"contributorguide:versioncycle","namespace":"contributorguide"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+
+<h1 class="sectionedit1" id="versions_cycle">Versions cycle</h1>
+<div class="level1">
+
+<p>
+Each sprint should have its own version number.
+</p>
+
+<p>
+Sigmah follows a <code>x.y.z</code> version scheme:
+</p>
+<ul>
+<li class="level1"><div class="li"><code>x</code> is a major version, including major changes in the code base (technical stack replacement, major refactoring, UI revamping…)</div>
+</li>
+<li class="level1"><div class="li"><code>y</code> is for an evolution whenever database schema changes or any other breaking changes beyond a drop-in update</div>
+</li>
+<li class="level1"><div class="li"><code>z</code> is for others evolutions</div>
+</li>
+</ul>
+
+<p>
+At the end of a sprint, result should be released as release candidate (rc). If the release candidate version if rejected, a new release candidate version has to delivered. And this processe loops until a release candidate is accepted.
+</p>
+
+<p>
+At the end of the process, when the release candidate is accepted, the software is released a last time with the final release number (without “rc<code>*</code>” in its version number), and the source code repository is tagged with the final version number as well.
+</p>
+
+<p>
+In the issue tracker, release candidates are not followed independently, and all tickets must be attached to the full version number associated with the sprint, not to the release candidate one.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Versions cycle" [0-1081] -->
+<h2 class="sectionedit2" id="typical_scenario">Typical scenario</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">Sprint 3 is planned to output version 0.6.3.</div>
+</li>
+<li class="level1"><div class="li">At the end of the sprint, the team delivers v0.6.3rc1 . Both the software and the source code repository are tagged with label “v0.6.3rc1”.</div>
+</li>
+<li class="level1"><div class="li">A few minor bugs are detected in this version. Issue tracking tickets are not yet closed, and the team produces a few more commits linked to open tickets attached to targeted version 0.6.3 in the roadmap. The team delivers a new version v0.6.3rc2 . Both the software and the source code repository are tagged with label “v0.6.3rc2”.</div>
+</li>
+<li class="level1"><div class="li">This version is finally accepted. The team delivers the final version v0.6.3 for this sprint, and both the software and the source code repository are tagged with the final label “v0.6.3”.
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Typical scenario" [1082-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=contributorguide:versioncycle by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:55:40 GMT -->
+</html>

@@ -1,0 +1,8 @@
+<settings>
+  <!-- ... -->
+  <servers>
+    <server>
+      <id>github</id>
+      <privateKey>1111111111111111111111111111111111111111</privateKey> <!-- replace this by your token -->
+  </servers>
+</settings>

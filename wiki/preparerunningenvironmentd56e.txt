@@ -1,0 +1,60 @@
+# Step 1 : create sample data in your local database
+
+Now you should have a PostgreSQL server installed. To be able to test your development with Sigmah, you will need to add sample data to your database (mainly, an organization).
+This can be done through a simple call to the SQL function ''create\_new\_organization'' .
+
+Call this function on your database. You can use command ''psql -U sigmah -d sigmah -c "select create\_new\_organization('p\_organization\_name', 'p\_organization\_logo\_filename', 'p\_headquarters\_country\_code', 'p\_user\_email', 'p\_user\_name', 'p\_user\_first\_name',  'p\_user\_locale');"''.
+
+Here are the description of the parameters:
+
+^ Parameter ^ Description^
+| p\_organization\_name       | The name of your organization |
+| p\_organization\_logo\_filename | The filename of the logo (i.e. logo.png) |
+| p\_headquarters\_country\_code | Use an ISO 2-letters code like "AF" from [Officially assigned code elements](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) |
+| p\_user\_email              | Your mail address |
+| p\_user\_name               | Your name       |
+| p\_user\_first\_name          | Your first name |
+| p\_user\_locale             | Must be "fr" or "en" or "es" don't include quotes (") |
+
+Instead of using the ''psql'' command-line tool, you may feel more confortable using the graphical PgAdmin tool. You must first connect to the ''sigmah'' database.
+
+{{:contributorguide:22_pgadminiii.png?nolink|}}
+
+Then open the "Run SQL" insterface, copy-paste the command "''select create\_new\_organization('p\_organization\_name', 'p\_organization\_logo\_filename', 'p\_headquarters\_country\_code', 'p\_user\_email', 'p\_user\_name', 'p\_user\_first\_name',  'p\_user\_locale');''" here and run it.
+
+{{:contributorguide:25_pgadminiii.png?nolink|}}
+
+# Step 2 : deploy and start Sigmah
+
+You need Tomcat 8, if you don't have it already, you can download it from the [[http://tomcat.apache.org/|official tomcat page]]. Sigmah won't work in Tomcat 7.
+
+  # extract the archive
+  unzip apache-tomcat-8.0.30.zip
+  
+  # enter the main directory
+  cd apache-tomcat-8.0.30
+  
+  # make the script executables
+  chmod +x bin/*.sh
+
+Once Tomcat 8 is installed, build the sigmah war file.
+
+  mvn clean package -Psigmah-dev
+  
+Deploy the application
+
+  mv target/sigmah-XXX.war /path/to/tomcat/webapps
+
+Start tomcat (go back to tomcat directory)
+
+  ./bin/startup.sh
+
+You can now open your web browser and open URL
+
+  http://localhost:8080/sigmah/
+
+If it doesn't work, have a look in the tomcat `logs` directory.
+
+Once finished, stop tomcat properly:
+
+  ./bin/shutdown.sh

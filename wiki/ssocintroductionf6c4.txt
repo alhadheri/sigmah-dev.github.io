@@ -1,0 +1,55 @@
+====== Welcome! ======
+
+Google Summer of Code applicants on the Sigmah project, welcome !
+
+Two key informations for you here:
+  - to get familiar with contributing on Sigmah, take a look at the [[contributorguide:contributorguide|Contributor Guide]]
+  - to prepare your application and catch Ideas for your proposal, go through the [[ssoc:ideas4gsoc2017|GSoC2017 Ideas page]]
+
+====== Summer of Code key phases ======
+
+===== 1. Application =====
+
+First of all, as you may have guessed, the given project ideas will be mainly the core of the actual contribution you would be able to give to the Sigmah project. The process in which we are now is more the setting of a team to work this summer together on the Sigmah project (each member with his own core responsibility) than a set of individuals working totally individually on their own separate topic. Outside your main contribution (the project idea(s)) you've chosen to work on, you can thus already select some features you would like to develop and list them in your application. The roadmap is full of them. All of those issues are suggested originally by the NGOs using Sigmah and are looking for their contributors!
+
+Look at this page for [[ssoc:ideas4gsoc2017|GSoC2017 Ideas page]].
+
+
+==== Patches are expected as part of the application ====
+
+On the Sigmah project, we ask all contributors to send one or more patch as part of their application, to evaluate their technical level. We also do this for Google Summer of Code candidates .
+Patches (pull requests) must be submitted with the issue id they are solving in their title.
+
+==== … and also a Skype meeting ====
+ 
+If you are selected, we will be working together all summer! A videocall meeting will help to get to know each other. These meetings will be part of the first selection round and will be organized with all the students who have submitted an application.
+
+
+===== 2. Program launch =====
+
+The program launch will include:
+  * a presentation of the application to all developers
+  * refining each developer’s project, and dividing large and complex projects into smaller tasks
+  * an online meeting between the users and the developers: first explain to the users once again their need, and the second the solution they will develop : this meeting will take place during a Steering Cooperative meeting so that every member of the project can get to know each other.
+  * an online launch event with all the selected developers and mentors!
+
+===== 3. Summer of code =====
+
+Apart from coding and getting support from mentors ([[https://www.teamviewer.com/en/|TeamViewer]] has been identified as a very reliable solution for remote mentor support), the tasks of the developers during this phase will be:
+  * Logging on to the #sigmah IRC every day: the #sigmah IRC is like your office – sometimes you can go to the office for a whole day without saying a word, just listening to your colleagues’ bad jokes! But from time to time you will need help, or you might have something to share – if so, an open space office is the best place to be!
+  * weekly activity report by email on sigmah-dev (one thread per developer)
+  * monthly team video meeting: every month, we will have a meeting to tell each other how our work has progressed, etc.
+  * before the monthly meeting, developers revise their availability timetable  for the upcoming month
+  * meetings between two developers (one playing the role of a user) to improve the work of the developers and help build a better UI
+  * communication channel prioritization:
+    - through mantis issues notes
+    - with sigmah-dev
+    - with the mentor through direct email
+
+===== 4. Program closure =====
+
+At the end of the program:
+  * there will be an individual developer debriefing meeting with the mentor and one of the org admin
+  * optionally, if developers are interested, a student-only debriefing meeting could take place to propose improvements that could be made to the program
+  * a mentors’ debriefing meeting will take place to debrief the general program
+  * an online closure event to allow each developer to do a demo , to give the conclusions of the debriefing, and to celebrate!

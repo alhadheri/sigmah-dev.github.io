@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=contributorguide:preparebuildenvironment by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:55:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>contributorguide:preparebuildenvironment</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="contributorguide,preparebuildenvironment"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="doku9725.html?id=contributorguide:preparebuildenvironment&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feed3c04.php?mode=list&amp;ns=contributorguide"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="doku9a31.html?do=export_xhtml&amp;id=contributorguide:preparebuildenvironment"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="preparebuildenvironment3b5c.txt?do=export_raw&amp;id=contributorguide:preparebuildenvironment"/>
+<link rel="canonical" href="dokub007.html?id=contributorguide:preparebuildenvironment"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='contributorguide';var JSINFO = {"id":"contributorguide:preparebuildenvironment","namespace":"contributorguide"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#step_0prerequisites">Step 0: prerequisites</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#environment_and_tooling">Environment and tooling</a></div></li>
+<li class="level2"><div class="li"><a href="#creating_a_database_to_store_sigmah_data">Creating a database to store Sigmah data</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#windows">Windows</a></div></li>
+<li class="level3"><div class="li"><a href="#linux">Linux</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#creating_a_folder_to_store_sigmah_files">Creating a folder to store Sigmah files</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#step_1fork_the_official_github_repository">Step 1: fork the official Github repository</a></div></li>
+<li class="level1"><div class="li"><a href="#step_2get_a_local_copy_of_the_source">Step 2: get a local copy of the source</a></div></li>
+<li class="level1"><div class="li"><a href="#step_3your_first_build">Step 3: your first build</a></div></li>
+<li class="level1"><div class="li"><a href="#step_4create_the_database_schema">Step 4: create the database schema</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="step_0prerequisites">Step 0: prerequisites</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Step 0: prerequisites" [0-24] -->
+<h2 class="sectionedit2" id="environment_and_tooling">Environment and tooling</h2>
+<div class="level2">
+
+<p>
+If you want to start developing on sigmah, you need to set your environment up. If you develop Java application on a regular basis, you may already fulfill all the requirements. Any Sigmah developer needs the following:
+</p>
+<ul>
+<li class="level1"><div class="li"> JDK 1.6*</div>
+</li>
+<li class="level1"><div class="li"> Postgresql 9</div>
+</li>
+<li class="level1"><div class="li"> Maven 3</div>
+</li>
+<li class="level1"><div class="li"> Git 2.7</div>
+</li>
+</ul>
+
+<p>
+Before continuing, make sure everything is properly installed.
+</p>
+
+<p>
+<em>*JDK 1.6</em> : JDK8 is actually better for use with Sigmah since it removes some headaches related to memory management. However, the syntax is limited to Java 6 in the client and shared packages due to the outdated version of GWT required by GXT. So any JDK from JDK6 will do the job, but new syntax added in JDK7 and JDK8 should not be used in the client and shared packages.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Environment and tooling" [25-772] -->
+<h2 class="sectionedit3" id="creating_a_database_to_store_sigmah_data">Creating a database to store Sigmah data</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT3 SECTION "Creating a database to store Sigmah data" [773-816] -->
+<h3 class="sectionedit4" id="windows">Windows</h3>
+<div class="level3">
+
+<p>
+Now you should have a PostgreSQL server and pgAdmin III installed. To be able to test your development with Sigmah, you will need to create now a test database.
+</p>
+<ul>
+<li class="level1"><div class="li">Open pgAdmin III.</div>
+</li>
+</ul>
+
+<p>
+<img src="lib/exe/22_pgadminiii8bd4.png_%3b?media=contributorguide:22_pgadminiii.png" class="media" alt="" />
+</p>
+<ul>
+<li class="level1"><div class="li">Connect to your server, and add a new database.</div>
+</li>
+</ul>
+
+<p>
+<img src="lib/exe/23_pgadminiiiea39.png_%3b?media=contributorguide:23_pgadminiii.png" class="media" alt="" />
+</p>
+<ul>
+<li class="level1"><div class="li">Name it “sigmah”, keep “postgres” as the owner, and UTF8 encoding.</div>
+</li>
+</ul>
+
+<p>
+Install the <a href="https://www.postgresql.org/docs/current/static/pgtrgm.html" class="urlextern" title="https://www.postgresql.org/docs/current/static/pgtrgm.html" rel="nofollow">pg_trgm postgresql extension</a> (required so Sigmah can full-text search). Connect to the Sigmah database and run:
+</p>
+<dl class="file">
+<dt><a href="snippet5f0e.sql?do=export_code&amp;id=contributorguide:preparebuildenvironment&amp;codeblock=0" title="Download Snippet" class="mediafile mf_sql">snippet.sql</a></dt>
+<dd><pre class="code file sql"><span class="kw1">CREATE</span> EXTENSION <span class="kw1">IF</span> <span class="kw1">NOT</span> <span class="kw1">EXISTS</span> pg_trgm;</pre>
+</dd></dl>
+
+</div>
+<!-- EDIT4 SECTION "Windows" [817-1485] -->
+<h3 class="sectionedit5" id="linux">Linux</h3>
+<div class="level3">
+
+<p>
+Connect as the postgres user, it&#039;s required for anything about your local PosgreSQL instance.
+</p>
+<dl class="file">
+<dt><a href="snippet3e02.bash?do=export_code&amp;id=contributorguide:preparebuildenvironment&amp;codeblock=1" title="Download Snippet" class="mediafile mf_bash">snippet.bash</a></dt>
+<dd><pre class="code file bash"><span class="kw2">sudo</span> <span class="kw2">su</span> postgres</pre>
+</dd></dl>
+
+<p>
+We will create a PostgreSQL user, let&#039;s call him “sigmah” and give it the right to create a database
+</p>
+<dl class="file">
+<dt><a href="snippet04d4.bash?do=export_code&amp;id=contributorguide:preparebuildenvironment&amp;codeblock=2" title="Download Snippet" class="mediafile mf_bash">snippet.bash</a></dt>
+<dd><pre class="code file bash">createuser sigmah <span class="re5">--createdb</span> <span class="re5">--pwprompt</span></pre>
+</dd></dl>
+
+<p>
+You will be prompted a password, let&#039;s enter 
+</p>
+<pre class="code">hamsig</pre>
+
+<p>
+That&#039;s all we need to do as postgres, log out from postgres user and continue as your everyday user.
+</p>
+
+<p>
+Now the user is created, let&#039;s create him a database (with UTF-8 encoding)
+</p>
+<dl class="file">
+<dt><a href="snippet8775.bash?do=export_code&amp;id=contributorguide:preparebuildenvironment&amp;codeblock=3" title="Download Snippet" class="mediafile mf_bash">snippet.bash</a></dt>
+<dd><pre class="code file bash">createdb <span class="re5">-U</span> sigmah sigmah <span class="re5">-E</span> utf-<span class="nu0">8</span></pre>
+</dd></dl>
+
+<p>
+Now, log out from postgres user.
+</p>
+
+<p>
+Let&#039;s check everything is OK by connecting:
+</p>
+<dl class="file">
+<dt><a href="snippet9e12.bash?do=export_code&amp;id=contributorguide:preparebuildenvironment&amp;codeblock=4" title="Download Snippet" class="mediafile mf_bash">snippet.bash</a></dt>
+<dd><pre class="code file bash">psql sigmah <span class="re5">-U</span> sigmah</pre>
+</dd></dl>
+
+<p>
+Enter the hamsig password. If you connected successfully, everything is OK.
+</p>
+
+<p>
+Install the <a href="https://www.postgresql.org/docs/current/static/pgtrgm.html" class="urlextern" title="https://www.postgresql.org/docs/current/static/pgtrgm.html" rel="nofollow">pg_trgm postgresql extension</a> (required so Sigmah can full-text search):
+</p>
+<dl class="file">
+<dt><a href="snippet591d.bash?do=export_code&amp;id=contributorguide:preparebuildenvironment&amp;codeblock=5" title="Download Snippet" class="mediafile mf_bash">snippet.bash</a></dt>
+<dd><pre class="code file bash">psql <span class="re5">--username</span> postgres sigmah <span class="re5">--command</span> <span class="st0">&quot;CREATE EXTENSION IF NOT EXISTS pg_trgm;&quot;</span></pre>
+</dd></dl>
+
+</div>
+<!-- EDIT5 SECTION "Linux" [1486-2496] -->
+<h2 class="sectionedit6" id="creating_a_folder_to_store_sigmah_files">Creating a folder to store Sigmah files</h2>
+<div class="level2">
+
+<p>
+Create any folder in your filesystem to store Sigmah application files: organisation logo, files attachment and archives workdir.
+In the rest of this procedure, we&#039;ll consider that this folder will be a Windows folder <code>C:\Sigmah\files\sigmah_lightdev</code>.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Creating a folder to store Sigmah files" [2497-2796] -->
+<h1 class="sectionedit7" id="step_1fork_the_official_github_repository">Step 1: fork the official Github repository</h1>
+<div class="level1">
+
+<p>
+The main Sigmah repository is hosted at github. To contribute, you should fork the project first.
+</p>
+
+<p>
+Go to <a href="https://github.com/sigmah-dev/sigmah" class="urlextern" title="https://github.com/sigmah-dev/sigmah" rel="nofollow">https://github.com/sigmah-dev/sigmah</a> and click “Fork”. Github will create your own repository, with its own <abbr title="Uniform Resource Locator">URL</abbr> like: <a href="https://github.com/" class="urlextern" title="https://github.com/" rel="nofollow">https://github.com/</a><strong>your-github-account</strong>/sigmah.git
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Step 1: fork the official Github repository" [2797-3121] -->
+<h1 class="sectionedit8" id="step_2get_a_local_copy_of_the_source">Step 2: get a local copy of the source</h1>
+<div class="level1">
+
+<p>
+You can now get the source on your local machine, by using command-line:
+</p>
+<pre class="code">git clone https://github.com/your-github-account/sigmah.git</pre>
+
+<p>
+<strong>[Optional] If you are under Windows</strong>, type also now the following config command to avoid end-of-line issues while committing:
+</p>
+<pre class="code">git config --global core.autocrlf true</pre>
+
+</div>
+<!-- EDIT8 SECTION "Step 2: get a local copy of the source" [3122-3474] -->
+<h1 class="sectionedit9" id="step_3your_first_build">Step 3: your first build</h1>
+<div class="level1">
+
+<p>
+Our build process is based on maven. Since you are a developer, we made the things simple for you. There is a maven profile named <code>sigmah-dev</code>. It will reduce compilation time among others simplifications to ease your daily workflow.
+</p>
+
+<p>
+Now, remember that maven must be aware of your configuration so you must create a <code>settings.xml</code> file in your Maven user directory <code>.m2</code> subfolder (ie: <code>C:\Users\MyUserName\\.m2\</code> on Windows) with the following lines, which will at build time automatically override the values of the matching properties of the central Sigmah Maven <code>pom.xml</code> file:
+</p>
+<dl class="code">
+<dt><a href="settings10f8.xml?do=export_code&amp;id=contributorguide:preparebuildenvironment&amp;codeblock=6" title="Download Snippet" class="mediafile mf_xml">settings.xml</a></dt>
+<dd><pre class="code xml"><span class="sc3"><span class="re1">&lt;settings<span class="re2">&gt;</span></span></span> 
+  <span class="sc3"><span class="re1">&lt;profiles<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;profile<span class="re2">&gt;</span></span></span>
+            <span class="sc3"><span class="re1">&lt;id<span class="re2">&gt;</span></span></span>sigmah-dev<span class="sc3"><span class="re1">&lt;/id<span class="re2">&gt;</span></span></span>
+            <span class="sc3"><span class="re1">&lt;properties<span class="re2">&gt;</span></span></span>
+                <span class="sc3"><span class="re1">&lt;sigmah.database.url<span class="re2">&gt;</span></span></span>jdbc:postgresql://localhost:5432/sigmah<span class="sc3"><span class="re1">&lt;/sigmah.database.url<span class="re2">&gt;</span></span></span>
+                <span class="sc3"><span class="re1">&lt;sigmah.database.user<span class="re2">&gt;</span></span></span>sigmah<span class="sc3"><span class="re1">&lt;/sigmah.database.user<span class="re2">&gt;</span></span></span>
+                <span class="sc3"><span class="re1">&lt;sigmah.database.password<span class="re2">&gt;</span></span></span>hamsig<span class="sc3"><span class="re1">&lt;/sigmah.database.password<span class="re2">&gt;</span></span></span>
+                <span class="sc3"><span class="re1">&lt;files.repository.name<span class="re2">&gt;</span></span></span>C:\\Sigmah\\files\\sigmah_dev<span class="sc3"><span class="re1">&lt;/files.repository.name<span class="re2">&gt;</span></span></span>
+                <span class="sc3"><span class="re1">&lt;archives.repository.name<span class="re2">&gt;</span></span></span>C:\\Sigmah\\files\\sigmah_dev\\archives<span class="sc3"><span class="re1">&lt;/archives.repository.name<span class="re2">&gt;</span></span></span>
+            <span class="sc3"><span class="re1">&lt;/properties<span class="re2">&gt;</span></span></span>
+        <span class="sc3"><span class="re1">&lt;/profile<span class="re2">&gt;</span></span></span>
+   <span class="sc3"><span class="re1">&lt;/profiles<span class="re2">&gt;</span></span></span>
+<span class="sc3"><span class="re1">&lt;/settings<span class="re2">&gt;</span></span></span> </pre>
+</dd></dl>
+
+<p>
+You can build the application using the following, traditional maven command.
+</p>
+<pre class="code">mvn install -Psigmah-dev</pre>
+
+</div>
+<!-- EDIT9 SECTION "Step 3: your first build" [3475-4858] -->
+<h1 class="sectionedit10" id="step_4create_the_database_schema">Step 4: create the database schema</h1>
+<div class="level1">
+
+<p>
+We rely on the Flyway database migration framework to keep everyone&#039;s postgresql instance up-to-date with every change made on the schema. Flyway can tell you the precise state or your database.
+</p>
+<pre class="code">mvn flyway:info -Psigmah-dev</pre>
+
+<p>
+Here is an example output.
+</p>
+<pre class="code">[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Sigmah 2.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- flyway-maven-plugin:3.2.1:info (default-cli) @ sigmah ---
+[INFO] Flyway 3.2.1 by Boxfuse
+[INFO] Database: jdbc:postgresql://localhost:5432/sigmah (PostgreSQL 9.3)
+[INFO]
++---------+----------------------------------------+---------------------+---------+
+| Version | Description                            | Installed on        | State   |
++---------+----------------------------------------+---------------------+---------+
+| 1       | sigmah minimum data kit for sigmah 2.0 | 2016-09-01 10:09:57 | Success |
+| 2       | computation field                      | 2016-09-01 10:09:59 | Success |
+| 3       | project team                           | 2016-09-01 10:09:59 | Success |
+| 4       | secondary org units                    | 2016-09-01 10:09:59 | Success |
+| 5       | project model framework                | 2016-09-01 10:09:59 | Success |
+| 6       | contacts model                         | 2016-09-01 10:09:59 | Success |
+| 7       | contacts                               | 2016-09-01 10:09:59 | Success |
+| 8       | contact list element                   | 2016-09-01 10:09:59 | Success |
+| 9       | dedupe contacts                        |                     | Pending |
+| 10      | group iterations                       |                     | Pending |
+| 11      | iterations history token               |                     | Pending |
+| 12      | global contact export                  |                     | Pending |
++---------+----------------------------------------+---------------------+---------+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.927 s
+[INFO] Finished at: 2016-09-01T11:17:05+02:00
+[INFO] Final Memory: 14M/205M
+[INFO] ------------------------------------------------------------------------</pre>
+
+<p>
+We can see that there is a <strong>pending</strong> migration. Let&#039;s run it by running 
+</p>
+<pre class="code">mvn flyway:migrate -Psigmah-dev</pre>
+
+<p>
+When you upgrade sigmah, always check <code>flyway:info</code> to see if there is any pending migration (and run <code>flyway:migrate</code> if necessary). If you don&#039;t do so, you may encounter random bugs due to the fact that the database schema is not quite like your sigmah version expect it.
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Step 4: create the database schema" [4859-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=contributorguide:preparebuildenvironment by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:55:41 GMT -->
+</html>

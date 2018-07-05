@@ -1,0 +1,31 @@
+# Audience #
+
+This guide is for those who wish deploy and run Sigmah on their own server.
+
+
+# Required hardware #
+
+To run a Sigmah Server, you will need to have a machine with the following requirements:
+
+
+| **Application type** | Java web application (for information: 115MB .war file) |
+|:---------------------|:-------------------------------------------------------|
+| **Server type**      | Java application server (Tomcat recommended but working also with Jetty) accepting Hibernate, or dedicated server |
+| **Database type**    | The current version has been tested with PostGreSQL 9.2 (and higher). It is possible to configure Sigmah to work with [other databases](http://community.jboss.org/wiki/SupportedDatabases), but these have not been tested and would require some adaptation on SQL functions. |
+| **Processor**        | 2Ghz recommended, dual-core if possible                |
+| **Live memory**      | 2GB recommended                                        |
+| **Hard drive**       | At least 50GB, but depends strongly on the volume of data and files stored by the user of the organization |
+
+
+
+# Instructions to install Sigmah #
+[Instructions to install Sigmah](installingsigmah)
+
+# Instructions to upgrade Sigmah database #
+Link to [[contributorguide:schemachangelog|schema change log]] where all steps to upgrade your database are explained.
+
+# Data separation #
+[How to use the data separation scripts](dataseparation)
+
+# Instructions to install Solr #
+[Installing Solr for enabling search within Sigmah](solrinstallation)

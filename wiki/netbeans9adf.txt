@@ -1,0 +1,71 @@
+# Netbeans
+
+## Download and install Netbeans
+
+Go to [[https://netbeans.org/downloads/index.html|Netbeans downloads]] and select latest version of "Netbeans with Java SE".
+Once the file is downloaded, run the installation wizard.
+
+{{:contributorguide:netbeans-installation-wizard.png?nolink|}}
+
+
+## Configure Netbeans
+
+Start Netbeans.
+
+### Configure indentation settings
+
+Open the Tools > Options dialog, and set the options as illustrated below for the "Editor" options:
+
+{{:contributorguide:netbeans-options-editor.png?nolink|}}
+
+### Enable automatic tomcat deployment
+
+  - Open the Tools > Plugins dialog.
+  - Select the "J2EE base" plugins in the list of plugins in the "Available plugins" tab, and click on "Install".
+  - Accept all confirmation messages and finalize by clicking on “Restart now”.
+
+{{:contributorguide:netbeans-toolsplugins-j2eebase.png?nolink|}}
+
+## Open Sigmah project in Netbeans
+
+Since Sigmah is maven-based, Netbeans can automatically open it. Just click on "Open project" and select the directory containing the ''pom.xml'' file (this is where you made your ''git clone'').
+
+If you're more comfortable with your IDE, you can create the project and clone the source from it. For example, with Netbeans:
+
+  - Open the Team > Git > Clone... dialog.
+  - Use this URL as Repository URL: https://github.com/your-github-account/sigmah.git
+{{:contributorguide:netbeans-gitclonerepo.png?nolink|}}
+  - Select the //master*// remote branch.
+  - Wait a little bit to clone the full repo.
+
+## Build and Run
+
+  - Select “sigmah-dev” Maven profile in the combobox located in the main toolbar (next to the redo button).
+{{:contributorguide:netbeans-mavenprofile-selection.png?nolink|}}
+
+  - Click on "Run > Build Project (Sigmah)" to make your first “Build” !
+  - Open the "Services" tab in the Navigator panel, right-click on "Servers" to open the contextual menu, and on click on "Add Server...".
+{{:contributorguide:netbeans-addj2eeserver.png?nolink|}}
+
+  - Chooser server "Apache Tomcat or TomEE" and click on "Next".
+  - Set up the link to the server as described in the following screenshot, and click on "Finish".
+{{:contributorguide:netbeans-tomcatmanagerconfiguration.png?nolink|}}
+
+  - Finally, click on "Run > Run Project (Sigmah)" to do your first run!
+{{:contributorguide:netbeans-selectdeploymentserver.png?nolink|}}
+
+
+**Congratulations! You have your Sigmah developer environment fully configured with Netbeans!**
+
+Below are just a few other Netbeans configuration improvements to make you life a little bit easier with coding Sigmah with Netbeans.
+
+## Recommended Netbeans parameters /recommendations for more comfort
+
+  * Uncheck “Deploy on Save” in Sigmah > right-click > Properties > Run
+  * Use “Clean & Build” instead of only “Build” because GWT generates javascript files with unique different filenames at each build which won’t be replaced: this recommendation will save a lot of disk space.
+  * Click on the “Settings” button in the Tools>Template Manager, and uncomment + edit the “user” param to provide your own name and email address so that new classes will be authored with your name.
+  * Open the “Default License” template in the Tools>Template Manager and empty the file. Licensing in Sigmah is currently made through a unique file at the root file of the source code.
+  * End-of-line management: Sigmah uses LF as standard character for end-of-line. In addition to the git config [[contributorguide:preparebuildenvironment#step_2get_a_local_copy_of_the_source|command recommended for Windows users when preparing their build environment]] , you can install the "Show and change line endings" plugin.
+  * Unicode escape characters (ie: ''\u00e9'') management: Sigmah uses lower case Unicode escape characters. So when editing a properties file which has Unicode escape characters, you can use the command "Convert unicode chars to lowercase" available in the context menu. This command has to be installed through the plugin "Change case of unicode characters".
+  * Open “Goals…” in Sigmah > right-click > Custom > Goals… and create the new following specific maven execution goals combination which is useful after adding any i18n string
+{{:contributorguide:netbeans-mavenexecutioncombinationgoal.png?nolink|}}

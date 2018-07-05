@@ -1,0 +1,35 @@
+====== Mockups guidelines ======
+
+
+Sigmah is a project promoting user autonomy. The aim is that users can use the tool for daily activities without any training. So each screen must have a **very intuitive graphical design**.
+
+To have a intuitive graphical design, a good practice is to draw mockups of new screens and iterate with feedbacks from users or other people until the graphical design is perceived as intuitive by most people.
+
+This wiki page is here to collect and share all lessons learnt on mockuping for Sigmah.
+
+===== Lessons learnt =====
+
+==== General lessons learnt ====
+
+  * **The more realistic a mockup, the better**
+    * If you are a developer and you get a mockup which has too be respected with the precision of a pixel, it will reduce all uncertainties and you will be able to focus on your main aim: developing the feature so that it works the best, and with your source code style suiting well all Sigmah source code guidelines. So getting a very realistic mockup is always better. And during the discussion on the mockup, having a very realistic mockup will also help users immerse themselves in the screen, and be sure for all of what will look exactly the screen in the end.
+  * **The more realistic and complete the sample data used, the better**
+    * To be sure to match at least the most common use cases in terms of completeness and constraints of data to be displayed and manipulated in the screen it is always a good habit to try to get the most realistic and complete data sample.
+  * **Use scenarios to present behaviors**
+    * In case of complex screens to mockup, using a mockuped scenario of several screens is a good lesson learnt. It will help understand and illustrate how the screen or set of screens should work.
+
+==== Concrete advices ====
+  * **Start from a screen capture**
+    * It is an easy and good start to make your mockup more realistic.
+
+===== Software =====
+Anyone is free to use any software for mockuping.
+But to respect easily the "realistic objective" explained above, a good solution is to use the open-source solution **Pencil**: http://pencil.evolus.vn/
+
+Pencil is full of plugins, including "stencils" useful to have directly ExtJs-looking graphical components.
+The two following can be used : 
+  * https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/evoluspencil/ExtJs.GUI_v14.zip
+  * https://googledrive.com/host/0B3r4pjcouweYYnF6MXNFNFo2Q00/ExtJSKitchenSink-Neptune-v0.9.zip
+
+
+

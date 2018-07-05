@@ -1,0 +1,1 @@
+mvn install -Psigmah-check-bundles-integrity

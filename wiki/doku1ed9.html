@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=contributorguide:codekeeperguide by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>contributorguide:codekeeperguide</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="contributorguide,codekeeperguide"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="doku9b50.html?id=contributorguide:codekeeperguide&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feed3c04.php?mode=list&amp;ns=contributorguide"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="doku1ed9.html?do=export_xhtml&amp;id=contributorguide:codekeeperguide"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="codekeeperguideec60.txt?do=export_raw&amp;id=contributorguide:codekeeperguide"/>
+<link rel="canonical" href="doku0d9f.html?id=contributorguide:codekeeperguide"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='contributorguide';var JSINFO = {"id":"contributorguide:codekeeperguide","namespace":"contributorguide"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#code_keeper_guide">Code Keeper Guide</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#who_is_the_code_keeper_and_what_is_his_role">Who is the code keeper and what is his role</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#prerequisites">Prerequisites</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#make_it_easy_for_everyone_to_build_and_run_sigmah_on_its_local_development_environment">Make it easy for everyone to build and run Sigmah on its local development environment</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#why">Why?</a></div></li>
+<li class="level3"><div class="li"><a href="#how">How?</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#making_sure_that_official_sigmah_repository_is_sane">Making sure that official sigmah repository is sane</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#why1">Why?</a></div></li>
+<li class="level3"><div class="li"><a href="#how1">How?</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#keep_the_code_base_clean">Keep the code base clean</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#why2">Why?</a></div></li>
+<li class="level3"><div class="li"><a href="#how2">How?</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#releasing">Releasing</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#prepare_your_release_environment">Prepare your release environment</a></div></li>
+<li class="level3"><div class="li"><a href="#release_process">Release process</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="code_keeper_guide">Code Keeper Guide</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Code Keeper Guide" [0-20] -->
+<h2 class="sectionedit2" id="who_is_the_code_keeper_and_what_is_his_role">Who is the code keeper and what is his role</h2>
+<div class="level2">
+
+<p>
+As the code keeper, you are not working as a developer on the project but your work is to make the developers life easy, and to keep the contributing process enjoyable.
+</p>
+
+<p>
+As the code keeper, you are in charge of
+</p>
+<ul>
+<li class="level1"><div class="li">Make it easy for everyone to build and run Sigmah on its local development environment</div>
+</li>
+<li class="level1"><div class="li">Making sure that official sigmah repository is sane</div>
+</li>
+<li class="level1"><div class="li">Keep the source code clean</div>
+</li>
+<li class="level1"><div class="li">Maintaining a release process which ensure delivered artifacts are high-quality</div>
+</li>
+<li class="level1"><div class="li">Releasing</div>
+</li>
+</ul>
+
+<p>
+Your role is critical, especially since Sigmah is developed by multiple organisations and individuals. Your goal is to make everyone work together, easily, withtout friction and headaches.
+</p>
+
+<p>
+This guide is here to help you achieving this and above goals are detailed below.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Who is the code keeper and what is his role" [21-830] -->
+<h3 class="sectionedit3" id="prerequisites">Prerequisites</h3>
+<div class="level3">
+
+<p>
+As the code keeper guide, you are not a developer on the project but you managing developers so you are expecting to be a developer or to have practiced development as a day-to-day activity. A past experience working on the Sigmah codebase would be a big plus. Also, knowledge of the technical stack (Java, GWT, Hibernate, etc.) is a must-have.
+</p>
+
+<p>
+Since you will be working on the build, knowing <a href="https://maven.apache.org/maven-release" class="urlextern" title="https://maven.apache.org/maven-release" rel="nofollow">Maven and its release process</a> will help.
+</p>
+
+<p>
+Collaboration on team is based on git SCM and github as a collaboration platform, so you should be at ease with those tools.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Prerequisites" [831-1453] -->
+<h2 class="sectionedit4" id="make_it_easy_for_everyone_to_build_and_run_sigmah_on_its_local_development_environment">Make it easy for everyone to build and run Sigmah on its local development environment</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT4 SECTION "Make it easy for everyone to build and run Sigmah on its local development environment" [1454-1544] -->
+<h3 class="sectionedit5" id="why">Why?</h3>
+<div class="level3">
+
+<p>
+We want everyone to easily become a contributor so, as a code-keeper guide, you must care about that the very firsts steps of a wannabe contributor won&#039;t be discouraged by having to take 3 days to make something work.
+</p>
+
+<p>
+The motto here is “anybody can get the sources and build successfully at anytime”.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Why?" [1545-1857] -->
+<h3 class="sectionedit6" id="how">How?</h3>
+<div class="level3">
+
+<p>
+You have to make sure the master branch of the official repo (this is the HEAD so, this is what anybody who is cloning the repo will get) is always ready to build effortlessly. People want to works on their issue, not going deep in a cluttered build process or a fighing for a dependency resolution.
+</p>
+
+<p>
+There is a <a href="https://travis-ci.org/sigmah-dev/sigmah" class="urlextern" title="https://travis-ci.org/sigmah-dev/sigmah" rel="nofollow">travis build</a> that check that. The code keeper must maintain it. Be aware that the build is not stand-alone and rely on a postgresql instance with a proper, up-to-date schema is here: see <a href="https://github.com/sigmah-dev/sigmah/blob/master/.travis.yml" class="urlextern" title="https://github.com/sigmah-dev/sigmah/blob/master/.travis.yml" rel="nofollow">`.travis.yml`</a> file and <a href="https://docs.travis-ci.com/user/database-setup/#PostgreSQL" class="urlextern" title="https://docs.travis-ci.com/user/database-setup/#PostgreSQL" rel="nofollow">travis postgresql database setup documentation</a> for details.
+</p>
+
+<p>
+If the build fail, find the culprit! Travis keep an history of all the builds and a build is made after each push so it would be easy to find which commit broke the build.
+</p>
+
+<p>
+Run a build locally to make sure you have the same error as given be travis-ci. If not, it may be an environmental issue (your database is in a different state, Java versions differ, Maven versions differ… that sometimes hard to guess).
+</p>
+
+<p>
+Running Sigmah require a database, we tried to ease that for developer by providing a one-line command way to create all the database schema. Check that it works, all the flyway migration files should be self-sufficient for Sigmah to work properly!
+</p>
+
+</div>
+<!-- EDIT6 SECTION "How?" [1858-3282] -->
+<h2 class="sectionedit7" id="making_sure_that_official_sigmah_repository_is_sane">Making sure that official sigmah repository is sane</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT7 SECTION "Making sure that official sigmah repository is sane" [3283-3338] -->
+<h3 class="sectionedit8" id="why1">Why?</h3>
+<div class="level3">
+
+<p>
+The source code repository is more than a way for the developers to synchronize. The repository gathers more precious information than only the last version of the code.
+</p>
+
+<p>
+The git history provide many information about the way Sigmah have been gradually built. When the code is not self-explenatory, the history may reveal a lot about the intentions, the errors, the whys. The history of all the commits made on the project forms a huge base of information that may be of great help to find the source of bugs.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Why?" [3339-3859] -->
+<h3 class="sectionedit9" id="how1">How?</h3>
+<div class="level3">
+
+<p>
+As the code keeper, your are also responsible for keeping the history clean and relevant to what really occured during the development process.
+</p>
+<ul>
+<li class="level1"><div class="li">check that every commit author is the actual author, so we can reach someone for help</div>
+</li>
+<li class="level1"><div class="li">merge one thing at once, so that each possible state of the source-code has its own commit. If you want to fix something while merging, commit on the branch first. The merge commit should have no other modification than
+  conflict-resolutions</div>
+</li>
+<li class="level1"><div class="li">keep the graph linear as far as possible: merge branches in master, avoir creating branches bases and branches and merge everything into everything, keep the branches short-lived: a branch with no commit since days should be merged or deleted.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT9 SECTION "How?" [3860-4600] -->
+<h2 class="sectionedit10" id="keep_the_code_base_clean">Keep the code base clean</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT10 SECTION "Keep the code base clean" [4601-4629] -->
+<h3 class="sectionedit11" id="why2">Why?</h3>
+<div class="level3">
+
+<p>
+Well, this one is obvious. It&#039;s easier and funnier to work on a application well-designed, with a solid architecture and maintenable code. Noone enjoy creating something when everyline is puzzling.
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Why?" [4630-4838] -->
+<h3 class="sectionedit12" id="how2">How?</h3>
+<div class="level3">
+
+<p>
+As the code-keeper, you are not a developer, so can&#039;t control the quality of the code written but, at least, you can check it.
+</p>
+
+<p>
+The github pull-requests mechanism is a great tool for that.
+</p>
+<ul>
+<li class="level1"><div class="li">you can comment every code contributed and ask for corrections, it&#039;s a way to ensure that all the developers share a common set of practices (which one doesn&#039;t matter, consistency over the code base matters)</div>
+</li>
+<li class="level1"><div class="li">developers may have opinions, preferences, habits, it&#039;s understandable, but consistency matters. If something have been designed with immutability, statelessness, or with another concern, respect the choice. Noone can&#039;t rewrite everything.</div>
+</li>
+<li class="level1"><div class="li">as explained above, we want to keep Sigmah easy to deploy so if a code change require a modification of the schema, a migration file is present and in a path making it suitable for flyway to detect and run it</div>
+</li>
+</ul>
+
+<p>
+Some common stuffs to review on the code:
+</p>
+<ul>
+<li class="level1"><div class="li">missing comments on complex code</div>
+</li>
+<li class="level1"><div class="li">numerous conditional cases algorithm without future-proof catch-all (ie, switch whitout defaulting to something like <code>throw new IllegalStateException()</code>).</div>
+</li>
+<li class="level1"><div class="li">cryptic variables/method name</div>
+</li>
+<li class="level1"><div class="li">no respect for basic code conventions (like <code>lowerCaseForVariableNames</code>)</div>
+</li>
+<li class="level1"><div class="li">smart usage of the JDK (use the suitable Collection implementation)</div>
+</li>
+<li class="level1"><div class="li">immutability is prefererred over mutability (<code>final</code> everywhere, value objects without setters)</div>
+</li>
+<li class="level1"><div class="li">does the application still work in deconnected mode?</div>
+</li>
+<li class="level1"><div class="li">could unit test be added (with a reasonable cost/quality earned ratio)?</div>
+</li>
+<li class="level1"><div class="li">could preconditions be added (should the application fail if this parameter is <code>null</code>)?</div>
+</li>
+<li class="level1"><div class="li">are all the opened ressources lead to a <code>Closeable#close()</code> call in a <code>finally</code> statement?</div>
+</li>
+</ul>
+
+<p>
+This list could be infinitly extended, it&#039;s a life of development. You may complete this lists with the problem you found in the incoming PR.
+</p>
+
+<p>
+Don&#039;t forget that <em>talking about what is wrong with the developer, so he can&#039;t do better next time</em> is a better attitude than <em>let&#039;s fix this now without telling anyone and merge</em>. The long term goal here is that developers should submit pull-requests with confidence and everything should be OK at the first try.
+</p>
+
+<p>
+You may read ancient pull-requests to get examples of discussion. It&#039;s discussion so everyone can improve (you could lean new things!), it&#039;s not developer-shaming. Remembre that code is wrong, not coders.
+</p>
+
+</div>
+<!-- EDIT12 SECTION "How?" [4839-7215] -->
+<h2 class="sectionedit13" id="releasing">Releasing</h2>
+<div class="level2">
+
+<p>
+The pom version should be set according to <a href="doku8376.html?id=contributorguide:versioncycle" class="wikilink1" title="contributorguide:versioncycle">versions cycle</a>.
+</p>
+
+</div>
+<!-- EDIT13 SECTION "Releasing" [7216-7322] -->
+<h3 class="sectionedit14" id="prepare_your_release_environment">Prepare your release environment</h3>
+<div class="level3">
+
+<p>
+Since the release process upload stuff to github, maven will need a token to authenticate on github.
+</p>
+
+<p>
+Connect to github and in settings, choose “Personnal access token”. Create a new token and make sure the scope <code>public_repo</code> is checked.
+</p>
+
+<p>
+Put the generated token in you maven <code>settings.xml</code> file, like so:
+</p>
+<dl class="file">
+<dt><a href="snippet0c3c.xml?do=export_code&amp;id=contributorguide:codekeeperguide&amp;codeblock=0" title="Download Snippet" class="mediafile mf_xml">snippet.xml</a></dt>
+<dd><pre class="code file xml"><span class="sc3"><span class="re1">&lt;settings<span class="re2">&gt;</span></span></span>
+  <span class="sc-1">&lt;!-- ... --&gt;</span>
+  <span class="sc3"><span class="re1">&lt;servers<span class="re2">&gt;</span></span></span>
+    <span class="sc3"><span class="re1">&lt;server<span class="re2">&gt;</span></span></span>
+      <span class="sc3"><span class="re1">&lt;id<span class="re2">&gt;</span></span></span>github<span class="sc3"><span class="re1">&lt;/id<span class="re2">&gt;</span></span></span>
+      <span class="sc3"><span class="re1">&lt;privateKey<span class="re2">&gt;</span></span></span>1111111111111111111111111111111111111111<span class="sc3"><span class="re1">&lt;/privateKey<span class="re2">&gt;</span></span></span> <span class="sc-1">&lt;!-- replace this by your token --&gt;</span>
+  <span class="sc3"><span class="re1">&lt;/servers<span class="re2">&gt;</span></span></span>
+<span class="sc3"><span class="re1">&lt;/settings<span class="re2">&gt;</span></span></span></pre>
+</dd></dl>
+
+</div>
+<!-- EDIT14 SECTION "Prepare your release environment" [7323-7890] -->
+<h3 class="sectionedit15" id="release_process">Release process</h3>
+<div class="level3">
+
+<p>
+Run a first build to make sure everything is OK.
+</p>
+
+<p>
+Make sure no file miss its license header (if headers are added, commit those changes):
+</p>
+<dl class="file">
+<dt><a href="snippet5afb.bash?do=export_code&amp;id=contributorguide:codekeeperguide&amp;codeblock=1" title="Download Snippet" class="mediafile mf_bash">snippet.bash</a></dt>
+<dd><pre class="code file bash">mvn license:update-file-header</pre>
+</dd></dl>
+
+<p>
+If it&#039;s not an RC release, enable the <code>sigmah-check-bundles-integrity</code> profile.
+</p>
+<dl class="file">
+<dt><a href="snippetea96.bash?do=export_code&amp;id=contributorguide:codekeeperguide&amp;codeblock=2" title="Download Snippet" class="mediafile mf_bash">snippet.bash</a></dt>
+<dd><pre class="code file bash">mvn <span class="kw2">install</span> <span class="re5">-Psigmah-check-bundles-integrity</span></pre>
+</dd></dl>
+
+<p>
+<strong>Automatic publication of basic version release</strong>
+</p>
+
+<p>
+<em>If the release is a basic version release (to be discussed with Sigmah product owner), you can proceed with following steps to automatically publish the release .war file on Github.</em>
+</p>
+
+<p>
+On branch master,
+</p>
+<dl class="file">
+<dt><a href="snippetf874.bash?do=export_code&amp;id=contributorguide:codekeeperguide&amp;codeblock=3" title="Download Snippet" class="mediafile mf_bash">snippet.bash</a></dt>
+<dd><pre class="code file bash">mvn release:prepare
+mvn release:perform</pre>
+</dd></dl>
+
+<p>
+The .war file with be published to <a href="https://github.com/sigmah-dev/sigmah/releases" class="urlextern" title="https://github.com/sigmah-dev/sigmah/releases" rel="nofollow">github releases page</a>.
+</p>
+
+</div>
+<!-- EDIT15 SECTION "Release process" [7891-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=contributorguide:codekeeperguide by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:10 GMT -->
+</html>

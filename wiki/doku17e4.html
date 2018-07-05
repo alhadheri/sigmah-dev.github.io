@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=model:log_frame by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8" />
+  <title>model:log_frame</title>
+<meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="model,log_frame"/>
+<link rel="search" type="application/opensearchdescription+xml" href="lib/exe/opensearch.php" title="Sigmah wiki"/>
+<link rel="start" href="index.html"/>
+<link rel="contents" href="dokua77b.html?id=model:log_frame&amp;do=index" title="Sitemap"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="feedd021.php?mode=list&amp;ns=model"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="doku17e4.html?do=export_xhtml&amp;id=model:log_frame"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="log_frame5cf2.txt?do=export_raw&amp;id=model:log_frame"/>
+<link rel="canonical" href="dokue652.html?id=model:log_frame"/>
+<link rel="stylesheet" type="text/css" href="lib/exe/cssaf43.css?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='model';var JSINFO = {"id":"model:log_frame","namespace":"model"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jquery1d4f.php?tseed=23f888679b4f1dc26eef34902aca964f"></script>
+<script type="text/javascript" charset="utf-8" src="lib/exe/jsaf43.php?t=dokuwiki&amp;tseed=74cd2fc0434d10331b9bc01ea3827dea"></script>
+<!--<![endif]-->
+</head>
+<body>
+<div class="dokuwiki export">
+<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#table_log_frame">Table log\_frame</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#remarks">Remarks</a></div></li>
+<li class="level2"><div class="li"><a href="#schema">Schema</a></div></li>
+<li class="level2"><div class="li"><a href="#diagram">Diagram</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="table_log_frame">Table log\_frame</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Table log\_frame" [0-20] -->
+<h2 class="sectionedit2" id="remarks">Remarks</h2>
+<div class="level2">
+
+<p>
+A log_frame corresponds to a logical framework related to a model of logical framework. It belongs to a project.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Remarks" [21-149] -->
+<h2 class="sectionedit3" id="schema">Schema</h2>
+<div class="level2">
+<div class="table sectionedit4"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> <strong>Name</strong> </td><td class="col1"> <strong>Type</strong> </td><td class="col2"> <strong>Not Null</strong> </td><td class="col3"> <strong>Primary Key</strong> </td><td class="col4"> <strong>Foreign Key</strong> </td><td class="col5"> <strong>Remarks</strong> </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0">:———</td><td class="col1">:———</td><td class="col2">:————-</td><td class="col3">:—————-</td><td class="col4">:—————-</td><td class="col5">:————</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> id_log_frame </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign"> X               </td><td class="col4 leftalign">                 </td><td class="col5"> This is the primary key of the table. </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> main_objective </td><td class="col1 leftalign"> text     </td><td class="col2 leftalign">              </td><td class="col3 leftalign">                 </td><td class="col4 leftalign">                 </td><td class="col5"> This is a sentence that describes the main objective of the project </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> id_log_frame_model </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="doku937c.html?id=model:log_frame_model" class="wikilink1" title="model:log_frame_model">log\_frame\_model</a>(id_log_frame) </td><td class="col5"> This is a foreign key to the table log_frame_model. The log_frame_model related corresponds to the model of this logical framework. </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> id_project </td><td class="col1 leftalign"> integer  </td><td class="col2 leftalign"> X            </td><td class="col3 leftalign">                 </td><td class="col4"> <a href="dokub780.html?id=model:project" class="wikilink1" title="model:project">project</a>(databaseid) </td><td class="col5"> This is a foreign key to the table project. </td>
+	</tr>
+</table></div>
+<!-- EDIT4 TABLE [164-1016] -->
+</div>
+<!-- EDIT3 SECTION "Schema" [150-1016] -->
+<h2 class="sectionedit5" id="diagram">Diagram</h2>
+<div class="level2">
+
+<p>
+<iframe title="" src="svg_loadde53.svg?file=log_frame.svg" style="width:900px; height:550px" frameborder="0"></iframe>
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Diagram" [1017-] --></div>
+</body>
+
+<!-- Mirrored from wiki.sigmah.org/doku.php?do=export_xhtml&id=model:log_frame by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jul 2018 16:56:21 GMT -->
+</html>
