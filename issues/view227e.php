@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=997&history=1 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:02:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.html" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Wed, 25 Jul 2018 15:26:58 GMT" />
+	<link rel="shortcut icon" href="images/favicon.html" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.html?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.html?type=id" />	<title>0000997: Execution error on budget ratio after migration with dedicated Java tool - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.html"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.html" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_page5845.html?return=%2Fissues%2Fview.php%3Fid%3D997%26history%3D1">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-25 17:26 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issuesd41d.xml?"><img src="images/rss.html" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table><br /><table class="width100" cellspacing="1"><tr><td class="form-title" colspan="3">View Issue Details&#160;<span class="small"><span class="bracket-link">[&#160;<a href="#bugnotes">Jump to Notes</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="#changesets">Related Changesets</a>&#160;]</span> </span></td><td class="center"><span class="small"></span></td><td class="right" colspan="2"><span class="small"><span class="bracket-link">[&#160;<a href="view227e.php?id=997&amp;history=1#history">Issue History</a>&#160;]</span> </span><span class="small"><span class="bracket-link">[&#160;<a href="print_bug_page81ab.php?bug_id=997">Print</a>&#160;]</span> </span></td></tr><tr><td class="category" width="15%">ID</td><td class="category" width="20%">Project</td><td class="category" width="15%">Category</td><td class="category" width="15%">View Status</td><td class="category" width="15%">Date Submitted</td><td class="category" width="20%">Last Update</td></tr><tr class="row-1"><td>0000997</td><td>sigmah</td><td>[All Projects] General</td><td>public</td><td>2016-10-14 18:36</td><td>2016-11-21 15:57</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category">Reporter</td><td>osarrat</td><td colspan="4">&#160;</td></tr><tr class="row-1"><td class="category">Assigned To</td><td>osarrat</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Priority</td><td>normal</td><td class="category">Severity</td><td>major</td><td class="category">Reproducibility</td><td>always</td></tr><tr class="row-1"><td class="category">Status</td><td bgcolor="#c9ccc4">closed</td><td class="category">Resolution</td><td>fixed</td><td colspan="2">&#160;</td></tr><tr class="row-2"><td class="category">Platform</td><td></td><td class="category">OS</td><td></td><td class="category">OS Version</td><td></td></tr><tr class="row-1"><td class="category">Product Version</td><td>2.2</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Target Version</td><td>2.2</td><td class="category">Fixed in Version</td><td>2.2</td><td colspan="2">&#160;</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category">Summary</td><td colspan="5">0000997: Execution error on budget ratio after migration with dedicated Java tool</td></tr><tr class="row-2"><td class="category">Description</td><td colspan="5">On v2.2-rc1, we get &quot;No budget ratio element was found for project&quot; errors on v2.1 database on which we have runned the budget ratio java tool.<br />
+<br />
+This tool should be debugged at least in the case provided below, or better should be replaced by a set of SQL commands as all other existing data updates solution so far (see : <a href="http://wiki.sigmah.org/doku.php?id=contributorguide:schemachangelog#existing_data_updates">http://wiki.sigmah.org/doku.php?id=contributorguide:schemachangelog#existing_data_updates</a> [<a href="http://wiki.sigmah.org/doku.php?id=contributorguide:schemachangelog#existing_data_updates" target="_blank">^</a>] )</td></tr><tr class="row-1"><td class="category">Steps To Reproduce</td><td colspan="5"><b>Restore first the database provided as attached file</b><br />
+<br />
+<b>On Java tool execution, we get information that everything went fine, including for project #1639:</b> (see full migration_budget_field.log for more details)<br />
+6/ BudgetElement [id=325, divisor=2987, dividend=2979, projetId=1639, divisorVal=234000, dividendVal=0, layoutOrder=4, l<br />
+ayoutGroupId=340, userId=35, DividendVarId=0, DividendSchModId=0, DivisorVarId=0, DivisorSchModId=0]<br />
+<br />
+<b>After the Java migration tool, no error while passing all other required SQL commands</b><br />
+SQL commands available here : <a href="http://wiki.sigmah.org/doku.php?id=contributorguide:schemachangelog#sql_commands_for_other_existing_data">http://wiki.sigmah.org/doku.php?id=contributorguide:schemachangelog#sql_commands_for_other_existing_data</a> [<a href="http://wiki.sigmah.org/doku.php?id=contributorguide:schemachangelog#sql_commands_for_other_existing_data" target="_blank">^</a>]<br />
+<br />
+<b>But when running the app v2.2-rc1 for the first time on this database, I get this error</b><br />
+[ERROR] {14/10/2016 17:55:35.564} [http-apr-8080-exec-6] o.s.s.handler.util.ProjectMapper - No budget ratio element was found for project #1639<br />
+javax.persistence.NoResultException: No entity found for query<br />
+&#160;&#160;&#160;&#160;at org.hibernate.ejb.QueryImpl.getSingleResult(QueryImpl.java:290) ~[hibernate-entitymanager-4.2.14.Final.jar:4.2.14.Final]<br />
+&#160;&#160;&#160;&#160;at org.sigmah.server.handler.util.ProjectMapper.fillBudget(ProjectMapper.java:347) [ProjectMapper.class:na]<br />
+&#160;&#160;&#160;&#160;at org.sigmah.server.handler.util.ProjectMapper.map(ProjectMapper.java:248) [ProjectMapper.class:na]<br />
+&#160;&#160;&#160;&#160;at org.sigmah.server.handler.GetProjectsFromIdHandler.execute(GetProjectsFromIdHandler.java:117) [GetProjectsFromIdHandler.class:na]<br />
+</td></tr><tr class="row-2"><td class="category">Tags</td><td colspan="5">No tags attached.</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category">User Report URL</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">OS</td><td colspan="5">NA</td></tr><tr class="row-1"><td class="category">Other OS</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">Browser</td><td colspan="5">NA</td></tr><tr class="row-1"><td class="category">Other browser</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">ScreenURL</td><td colspan="5"></td></tr><tr class="row-1"><td class="category">(ActivityInfo) Noticed in revision</td><td colspan="5"></td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category"><a name="attachments" id="attachments" />Attached Files</td><td colspan="5"><a href="file_download9e5d.php?file_id=345&amp;type=bug"><img src="images/fileicons/zip.gif" alt="zip file icon" width="16" height="16" border="0" /></a>&#160;<a href="file_download9e5d.php?file_id=345&amp;type=bug">sigmah_2.2-DemoData--withoutAnyExistingDataUpdate.sql.zip</a> [<a href="file_download9e5d.php?file_id=345&amp;type=bug" target="_blank">^</a>] (166,729 bytes) <span class="italic">2016-10-14 18:36</span><br />
+<a href="file_download6b34.php?file_id=346&amp;type=bug"><img src="images/fileicons/text.html" alt="log file icon" width="16" height="16" border="0" /></a>&#160;<a href="file_download6b34.php?file_id=346&amp;type=bug">migration_budget_field.log</a> [<a href="file_download6b34.php?file_id=346&amp;type=bug" target="_blank">^</a>] (2,477 bytes) <span class="italic">2016-10-14 18:38</span></td></tr><tr align="center"><td align="center" colspan="6"><table><tr class="vcenter"><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td></tr></table></td></tr></table><br />
+
+<div id="relationships_open"><table class="width100" cellspacing="1">
+<tr class="row-2" valign="top">
+	<td width="15%" class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;Relationships	</td>
+</tr>
+<tr>
+	<td colspan="2"></td>
+</tr>
+</table>
+
+</div><div id="relationships_closed" class="hidden"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;Relationships	</td>
+</tr>
+</table>
+
+</div>
+<a name="bugnotes" id="bugnotes" /><br />
+
+<div id="bugnotes_open"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;		Notes	</td>
+</tr>
+<tr class="bugnote" id="c2150">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view5379.html?id=997#c2150" title="Direct link to note">0002150)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2016-10-17 10:29</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Issue assigned to myself to develop a SQL migration tool easier to integrate with other SQL migration commands.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c2167">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view5379.html?id=997#c2167" title="Direct link to note">0002167)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2016-10-21 18:00</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Fix committed to master branch.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c2220">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view5379.html?id=997#c2220" title="Direct link to note">0002220)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2016-11-21 15:57</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Issue closed because correct behavior checked on v2.2-SNAPSHOT built after v2.2-rc1 release.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+</table>
+
+</div><div id="bugnotes_closed" class="hidden">
+<table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;		Notes	</td>
+</tr>
+</table>
+</div><div id="Source_open"><br/>
+<a name="changesets"/>
+<table class="width100" cellspacing="1">
+
+<tr>
+	<td class="form-title"><a href="#" onclick="ToggleDiv( 'Source' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;Related Changesets</td>
+</tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="2">
+	<a name="changeset2159">sigmah: master 1ca23967</a>
+	<br/><span class="small">Timestamp: 2016-10-18 17:56:58</span>
+	<br/><span class="small">Author: <a href="view_user_page0b30.html?id=2">osarrat</a></span>
+	<br/><span class="small">Committer: GitHub</span>		<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin8f5f.php?page=Source/view&amp;id=2159">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/1ca23967cf00c3f1f1943d87afe19417d1c91df2">Diff</a>&#160;]</span> </td>
+<td colspan="3">Fixes Execution error on budget ratio after migration<br />
+<br />
+Fixes <a href="view5379.html?id=997" title="[closed] Execution error on budget ratio after migration with dedicated Java tool" class="resolved">0000997</a> with a SQL function for budget ratio migration instead of an external Java tool</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - scripts/sql/Sigmah_MigrateBudgetFields.sql</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/1ca23967cf00c3f1f1943d87afe19417d1c91df2">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/1ca23967cf00c3f1f1943d87afe19417d1c91df2/scripts/sql/Sigmah_MigrateBudgetFields.sql">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="2">
+	<a name="changeset2158">sigmah: master 18cba50b</a>
+	<br/><span class="small">Timestamp: 2016-10-19 12:32:30</span>
+	<br/><span class="small">Author: <a href="view_user_page0b30.html?id=2">osarrat</a></span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin8080.php?page=Source/view&amp;id=2158">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/18cba50b18d42c94166607839db04899af913c33">Diff</a>&#160;]</span> </td>
+<td colspan="3">Add bigint management + call to MigrateBudgetField<br />
+<br />
+issue <a href="view5379.html?id=997" title="[closed] Execution error on budget ratio after migration with dedicated Java tool" class="resolved">0000997</a> (Execution error on budget ratio after migration with<br />
+dedicated Java tool)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - scripts/sql/Sigmah_MigrateBudgetFields.sql</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/18cba50b18d42c94166607839db04899af913c33">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/18cba50b18d42c94166607839db04899af913c33/scripts/sql/Sigmah_MigrateBudgetFields.sql">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="1">
+	<a name="changeset2157">sigmah: master 99b57448</a>
+	<br/><span class="small">Timestamp: 2016-10-19 15:23:03</span>
+	<br/><span class="small">Author: <a href="view_user_page0b30.html?id=2">osarrat</a></span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin4683.php?page=Source/view&amp;id=2157">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/99b57448ac0989a2b72f0f693234210c75fae39e">Diff</a>&#160;]</span> </td>
+<td colspan="3">Fixes history issue on migrate budget fields<br />
+<br />
+And move the SQL script to Flyway dir.<br />
+issue <a href="view5379.html?id=997" title="[closed] Execution error on budget ratio after migration with dedicated Java tool" class="resolved">0000997</a></td>
+</tr>
+
+		<tr><td class="spacer"></td></tr>
+		</table>
+</div><div id="Source_closed" class="hidden"><br/>
+<table class="width100" cellspacing="1">
+
+<tr>
+	<td class="form-title"><a href="#" onclick="ToggleDiv( 'Source' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;Related Changesets</td>
+</tr>
+
+</table>
+</div>
+<a name="history" id="history" /><br />
+
+<div id="history_open"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;Issue History	</td>
+</tr>
+<tr class="row-category-history">
+	<td class="small-caption">
+		Date Modified	</td>
+	<td class="small-caption">
+		Username	</td>
+	<td class="small-caption">
+		Field	</td>
+	<td class="small-caption">
+		Change	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-10-14 18:36	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		New Issue	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-10-14 18:36	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		new =&gt; assigned	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-10-14 18:36	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		 =&gt; rcalabro	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-10-14 18:36	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		File Added: sigmah_2.2-DemoData--withoutAnyExistingDataUpdate.sql.zip	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-10-14 18:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		File Added: migration_budget_field.log	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-10-17 10:29	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0002150	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-10-17 10:29	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		rcalabro =&gt; osarrat	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-10-21 18:00	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Changeset attached	</td>
+	<td class="small-caption">
+		 =&gt; sigmah master 99b57448	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-10-21 18:00	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Changeset attached	</td>
+	<td class="small-caption">
+		 =&gt; sigmah master 18cba50b	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-10-21 18:00	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Changeset attached	</td>
+	<td class="small-caption">
+		 =&gt; sigmah master 1ca23967	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-10-21 18:00	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0002167	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-10-21 18:00	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		assigned =&gt; resolved	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-10-21 18:00	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Resolution	</td>
+	<td class="small-caption">
+		open =&gt; fixed	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-11-21 15:57	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0002220	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-11-21 15:57	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		resolved =&gt; closed	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-11-21 15:57	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Fixed in Version	</td>
+	<td class="small-caption">
+		 =&gt; 2.2	</td>
+</tr>
+</table>
+</div><div id="history_closed" class="hidden"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+	<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;Issue History	</td>
+</tr>
+</table>
+
+</div>	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.html" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=997&history=1 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:02:28 GMT -->
+</html>

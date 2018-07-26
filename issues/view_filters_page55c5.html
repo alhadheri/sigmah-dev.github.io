@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/view_filters_page.php?for_screen=1&view_type=advanced&target_field=custom_field_2%5B%5D by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 15:58:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.html" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Wed, 25 Jul 2018 15:23:04 GMT" />
+	<link rel="shortcut icon" href="images/favicon.html" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.html?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.html?type=id" />	<title>Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.html"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.html" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_pagec920.html?return=%2Fissues%2Fview_filters_page.php%3Ffor_screen%3D1%26view_type%3Dadvanced%26target_field%3Dcustom_field_2%255B%255D">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-25 17:23 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issues2478.xml?project_id=0"><img src="images/rss.html" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table>		<body onload="SetInitialFocus();">
+
+		<script type="text/javascript" language="JavaScript">
+		<!--
+		function SetInitialFocus() {
+			field_to_focus = null;			if ( field_to_focus ) {
+				eval( "document.filters['" + field_to_focus + "'].focus()" );
+			}
+
+			SwitchDateFields();
+		}
+
+		function SwitchDateFields() {
+		    // All fields need to be enabled to go back to the script
+			document.filters.start_month.disabled = ! document.filters.do_filter_by_date.checked;document.filters.start_day.disabled = ! document.filters.do_filter_by_date.checked;document.filters.start_year.disabled = ! document.filters.do_filter_by_date.checked;document.filters.end_month.disabled = ! document.filters.do_filter_by_date.checked;document.filters.end_day.disabled = ! document.filters.do_filter_by_date.checked;document.filters.end_year.disabled = ! document.filters.do_filter_by_date.checked;
+		    return true;
+		}
+		// -->
+		</script>
+
+		<br />
+<form method="post" name="filters" action="http://www.sigmah.org/issues/view_all_set.php?f=3">
+<input type="hidden" name="type" value="1" />
+<input type="hidden" name="view_type" value="advanced" />
+<table class="width100" cellspacing="1">
+<tr>
+	<td class="right" colspan="64">
+	<span class="bracket-link">[&#160;<a href="view_filters_pagee1e2.html?target_field=&amp;view_type=simple">Simple Filters</a>&#160;]</span> 	</td>
+</tr>
+<tr class="row-category2">
+	<td class="small-caption" colspan="8">Reporter</td>
+	<td class="small-caption" colspan="8">Monitored By</td>
+	<td class="small-caption" colspan="8">Assigned To</td>
+	<td class="small-caption" colspan="16">Category</td>
+	<td class="small-caption" colspan="8">Severity</td>
+	<td class="small-caption" colspan="8">Resolution</td>
+	<td class="small-caption" colspan="8">Profile</td>
+	<!-- <td colspan="0">&#160;</td> -->
+</tr>
+<tr class="row-1">
+	<!-- Reporter -->
+	<td valign="top" colspan="8">
+				<select multiple="multiple" size="10"  name="reporter_id[]">
+				<option value="0"  selected="selected" >[any]</option>
+		<option value="28" >aakashgargnsit</option><option value="41" >abdoul</option><option value="7" >abertram</option><option value="23" >abhinav26</option><option value="86" >adakoul</option><option value="109" >aditya_mukherjee</option><option value="13" >akbertram</option><option value="38" >Akki101192</option><option value="103" >anton1983</option><option value="60" >anubhav</option><option value="24" >aponcon</option><option value="88" >Assistcom</option><option value="87" >assistforma</option><option value="104" >assisturd</option><option value="112" >baldwinjj</option><option value="108" >bastiaan</option><option value="92" >bleny</option><option value="52" >bogdan.tam</option><option value="97" >bourzigs</option><option value="57" >BritneyCar</option><option value="73" >Ch28H</option><option value="127" >chl</option><option value="82" >cristian.totolin</option><option value="116" >cyrilg</option><option value="58" >dash</option><option value="49" >davwise</option><option value="6" >dcolliot</option><option value="79" >devang.only</option><option value="76" >devansh</option><option value="80" >devansh.sharma</option><option value="132" >Diaexcasp</option><option value="94" >dimplepatel</option><option value="19" >doretheal579</option><option value="75" >ebellegia</option><option value="59" >enigma</option><option value="21" >ewach</option><option value="30" >exilonX</option><option value="130" >Felix</option><option value="77" >felix.evbota1</option><option value="99" >Fenn-CS</option><option value="100" >ftavin</option><option value="27" >gantu</option><option value="54" >ge303</option><option value="106" >Gimhani</option><option value="121" >glen101</option><option value="43" >Guerline</option><option value="89" >hima_hima3024</option><option value="42" >himanshumohan</option><option value="118" >indianauthority97</option><option value="68" >jason90</option><option value="74" >jbriand</option><option value="91" >jcarlier</option><option value="50" >Jerenus</option><option value="47" >joeltjames</option><option value="129" >jt</option><option value="131" >Judith Aneke</option><option value="15" >kmacaj</option><option value="128" >krizhan1997</option><option value="17" >maghaei</option><option value="119" >mangal1995</option><option value="83" >manishvishnoi2</option><option value="20" >margoriem186</option><option value="12" >Marieke</option><option value="101" >mcarrier</option><option value="33" >mercedezalexander172</option><option value="18" >mguilment</option><option value="36" >mngham</option><option value="133" >Monkino</option><option value="56" >najat</option><option value="34" >nikhil</option><option value="93" >nikita</option><option value="63" >Nilesh.Jagtap</option><option value="11" >nrebiai</option><option value="53" >Obsitos</option><option value="3" >omojahed</option><option value="2" >osarrat</option><option value="95" >parag00991</option><option value="16" >pbrunet</option><option value="122" >pearl101</option><option value="90" >pgrange</option><option value="61" >phi162.nguyen</option><option value="39" >piyushbansal</option><option value="44" >pponakala</option><option value="40" >pratikzambani</option><option value="113" >Pratyush</option><option value="46" >pravinpatil</option><option value="67" >pubci</option><option value="85" >Rashi007</option><option value="4" >rcalabro</option><option value="123" >reachme_ankita</option><option value="29" >renatoaf</option><option value="114" >rileyL6122428</option><option value="62" >rush52</option><option value="98" >rwakeman</option><option value="115" >sagar.shah</option><option value="84" >sahil</option><option value="135" >Sakmosjr</option><option value="96" >salma.f25</option><option value="111" >sarahrandford</option><option value="110" >sarandford</option><option value="35" >scwhittle</option><option value="117" >seal98</option><option value="125" >serdar</option><option value="22" >sherieryan187</option><option value="31" >sherzod</option><option value="32" >shyyko.serhiy</option><option value="48" >sidchat_04</option><option value="126" >singh_8</option><option value="64" >somzzz</option><option value="26" >spM</option><option value="78" >ssn155</option><option value="105" >stevenevans</option><option value="134" >Stewartgiree</option><option value="55" >studentblue13</option><option value="9" >svn_mantis-robot</option><option value="107" >tdegivry</option><option value="51" >tharindum</option><option value="71" >theking</option><option value="5" >tmiette</option><option value="136" >toladata</option><option value="69" >trakson</option><option value="25" >vathsala</option><option value="70" >vdjeudjam</option><option value="45" >vishrut009</option><option value="81" >vladp</option><option value="66" >vladuanamaria</option><option value="124" >yatharthshahjpr</option><option value="120" >zakaria_amine</option><option value="72" >ZamZam</option><option value="14" >zhe.hu32</option>		</select>
+			</td>
+	<!-- Monitored by -->
+	<td valign="top" colspan="8">
+			<!-- Monitored by -->
+		<select multiple="multiple" size="10"  name="user_monitor[]">
+			<option value="0"  selected="selected" >[any]</option>
+					</select>
+			</td>
+	<!-- Handler -->
+	<td valign="top" colspan="8">
+				<!-- Handler -->
+		<select multiple="multiple" size="10"  name="handler_id[]">
+			<option value="0"  selected="selected" >[any]</option>
+						<option value="-2" >[none]</option>
+			<option value="7" >abertram</option><option value="38" >Akki101192</option><option value="24" >aponcon</option><option value="88" >Assistcom</option><option value="87" >assistforma</option><option value="104" >assisturd</option><option value="92" >bleny</option><option value="97" >bourzigs</option><option value="127" >chl</option><option value="116" >cyrilg</option><option value="6" >dcolliot</option><option value="99" >Fenn-CS</option><option value="100" >ftavin</option><option value="106" >Gimhani</option><option value="43" >Guerline</option><option value="118" >indianauthority97</option><option value="68" >jason90</option><option value="74" >jbriand</option><option value="91" >jcarlier</option><option value="15" >kmacaj</option><option value="83" >manishvishnoi2</option><option value="93" >nikita</option><option value="11" >nrebiai</option><option value="3" >omojahed</option><option value="2" >osarrat</option><option value="39" >piyushbansal</option><option value="46" >pravinpatil</option><option value="67" >pubci</option><option value="4" >rcalabro</option><option value="29" >renatoaf</option><option value="114" >rileyL6122428</option><option value="62" >rush52</option><option value="115" >sagar.shah</option><option value="117" >seal98</option><option value="125" >serdar</option><option value="31" >sherzod</option><option value="64" >somzzz</option><option value="26" >spM</option><option value="78" >ssn155</option><option value="55" >studentblue13</option><option value="9" >svn_mantis-robot</option><option value="107" >tdegivry</option><option value="51" >tharindum</option><option value="5" >tmiette</option><option value="136" >toladata</option><option value="70" >vdjeudjam</option><option value="72" >ZamZam</option><option value="14" >zhe.hu32</option>		</select>
+			</td>
+	<!-- Category -->
+	<td valign="top" colspan="16">
+				<!-- Category -->
+		<select multiple="multiple" size="10"  name="show_category[]">
+			<option value="0"  selected="selected" >[any]</option>
+			<option value="Administration">Administration</option><option value="Calendar">Calendar</option><option value="Categories">Categories</option><option value="Contact">Contact</option><option value="Dashboard">Dashboard</option><option value="Data framework">Data framework</option><option value="Documents">Documents</option><option value="General">General</option><option value="Global exports">Global exports</option><option value="Import">Import</option><option value="Indicator Entry">Indicator Entry</option><option value="Indicator Management">Indicator Management</option><option value="Logframe">Logframe</option><option value="Map">Map</option><option value="New instance">New instance</option><option value="Offline">Offline</option><option value="OrgUnit">OrgUnit</option><option value="PivotTable">PivotTable</option><option value="Project">Project</option><option value="Reports">Reports</option><option value="Tech">Tech</option><option value="Upgrade instance">Upgrade instance</option>		</select>
+			</td>
+    <!-- Severity -->
+    <td valign="top" colspan="8">
+		<!-- Severity -->
+			<select multiple="multiple" size="10"  name="show_severity[]">
+				<option value="0"  selected="selected" >[any]</option>
+				<option value="10">feature</option><option value="20">trivial</option><option value="30">text</option><option value="40">tweak</option><option value="50">minor</option><option value="60">major</option><option value="70">crash</option><option value="80">block</option>			</select>
+		    </td>
+	<!-- Resolution -->
+	<td valign="top" colspan="8">
+		<!-- Resolution -->
+			<select multiple="multiple" size="10"  name="show_resolution[]">
+				<option value="0"  selected="selected" >[any]</option>
+				<option value="10">open</option><option value="20">fixed</option><option value="30">reopened</option><option value="40">unable to reproduce</option><option value="50">not fixable</option><option value="60">duplicate</option><option value="70">no change required</option><option value="80">suspended</option><option value="90">won't fix</option>			</select>
+			</td>
+	<!-- Profile -->
+	<td valign="top" colspan="8">
+		<!-- Profile -->
+		<select multiple="multiple" size="10"  name="show_profile[]">
+			<option value="0"  selected="selected" >[any]</option>
+			<option value=""></option><option value="1">Microsoft Windows Windows XP Profesionnal Service Pack 3</option>		</select>
+			</td>
+	<!-- <td colspan="0">&#160;</td> -->
+</tr>
+
+<tr class="row-category2">
+	<td class="small-caption" colspan="8">Status</td>
+	<td class="small-caption" colspan="8">
+	&#160;	</td>
+	<td class="small-caption" colspan="8">Product Build</td>
+			<td class="small-caption" colspan="16">&#160;</td>
+		<td class="small-caption" colspan="8">&#160;</td>
+		<td class="small-caption" colspan="8">Priority</td>
+		<td class="small-caption" colspan="8">&#160;</td>
+	</tr>
+<tr class="row-1">
+	<!-- Status -->
+	<td valign="top" colspan="8">
+			<!-- Status -->
+			<select multiple="multiple" size="10"  name="show_status[]">
+				<option value="0"  selected="selected" >[any]</option>
+				<option value="10">new</option><option value="20">feedback</option><option value="30">acknowledged</option><option value="40">confirmed</option><option value="50">assigned</option><option value="80">resolved</option><option value="90">closed</option>			</select>
+			</td>
+	<!-- Hide Status -->
+	<td valign="top" colspan="8">
+	&#160;	</td>
+	<!-- Build -->
+	<td valign="top" colspan="8">
+			</td>
+	<!-- Version -->
+	<td valign="top" colspan="16">
+		&#160;	</td>
+	<!-- Fixed in Version -->
+	<td valign="top" colspan="8">
+		&#160; 	</td>
+	<!-- Priority -->
+	<td valign="top" colspan="8">
+		<!-- Priority -->
+    <select multiple="multiple" size="10"  name="show_priority[]">
+			<option value="0"  selected="selected" >[any]</option>
+			<option value="10">none</option><option value="20">low</option><option value="30">normal</option><option value="40">high</option><option value="50">urgent</option><option value="60">immediate</option>    </select>
+			</td>
+	<!-- Target Version -->
+	<td valign="top" colspan="8">
+		&#160; 	</td>
+</tr>
+
+<tr class="row-category2">
+	<td class="small-caption" colspan="8">Show</td>
+	<td class="small-caption" colspan="8">View Status</td>
+	<td class="small-caption" colspan="8">Show Sticky Issues</td>
+	<td class="small-caption" colspan="8">Changed(hrs)</td>
+	<td class="small-caption" colspan="24">
+		<input type="checkbox" name="do_filter_by_date" onclick="SwitchDateFields();" />
+		Use Date Filters	</td>
+	<td class="small-caption" colspan="8">
+		Relationships	</td>
+	<!-- <td colspan="0">&#160;</td> -->
+</tr>
+<tr class="row-2">
+	<!-- Number of bugs per page -->
+	<td valign="top" colspan="8">
+		<!-- Number of bugs per page -->
+		<input type="text" name="per_page" size="3" maxlength="7" value="50" />
+			</td>
+	<!-- View Status -->
+	<td valign="top" colspan="8">
+		<!-- View Status -->
+		<select name="view_state">
+			<option value="0"  selected="selected" >[any]</option><option value="10" >public</option><option value="50" >private</option>		</select>
+			</td>
+	<!-- Show Sticky bugs -->
+	<td valign="top" colspan="8">
+		<!-- Show or hide sticky bugs -->
+			<input type="checkbox" name="sticky_issues"  checked="checked"  />
+			</td>
+	<!-- Highlight changed bugs -->
+	<td valign="top" colspan="8">
+		<!-- Highlight changed bugs -->
+			<input type="text" name="highlight_changed" size="3" maxlength="7" value="6" />
+			</td>
+	<td valign="top" class="left" colspan="24">
+				<table cellspacing="0" cellpadding="0">
+		
+		<!-- Start date -->
+		<tr>
+			<td>
+			Start Date:
+			</td>
+			<td nowrap="nowrap">
+			<select name="start_year" disabled ><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option></select>
+<select name="start_month" disabled ><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select>
+<select name="start_day" disabled ><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+			</td>
+		</tr>
+		<!-- End date -->
+		<tr>
+			<td>
+			End Date:
+			</td>
+			<td>
+			<select name="end_year" disabled ><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option></select>
+<select name="end_month" disabled ><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select>
+<select name="end_day" disabled ><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+			</td>
+		</tr>
+		</table>
+			</td>
+	<td valign="top" colspan="8">
+        <select name="relationship_type">
+<option value="-1"  selected="selected">[any]</option>
+<option value="2">parent of</option>
+<option value="3">child of</option>
+<option value="0">duplicate of</option>
+<option value="4">has duplicate</option>
+<option value="1">related to</option>
+</select>
+<input type="text" name="relationship_bug" size="5" maxlength="10" value="0" />	</td>
+	<!-- <td colspan="0">&#160;</td> -->
+</tr>
+
+			<tr class="row-category2">
+			<td class="small-caption" colspan="8">Browser</td><td class="small-caption" colspan="8">OS</td><td class="small-caption" colspan="8">Other OS</td><td class="small-caption" colspan="8">Other browser</td><td class="small-caption" colspan="8">ScreenURL</td><td class="small-caption" colspan="8">User Report URL</td><td class="small-caption" colspan="8">&#160;</td><td class="small-caption" colspan="8">&#160;</td>			</tr>
+			<tr class="row-2">
+			<td colspan="8"><select multiple="multiple" size="10"  name="custom_field_4[]"><option value="0"  selected="selected" >[any]</option><option value="NA" >NA</option>
+<option value="Mozilla Firefox 3.0 (Gran Paradiso)" >Mozilla Firefox 3.0 (Gran Paradiso)</option>
+<option value="Mozilla Firefox 3.5 (Shiretoko)" >Mozilla Firefox 3.5 (Shiretoko)</option>
+<option value="Mozilla Firefox 3.6 (Namoroka)" >Mozilla Firefox 3.6 (Namoroka)</option>
+<option value="Mozilla Firefox 4.0" >Mozilla Firefox 4.0</option>
+<option value="Mozilla Firefox 5.0" >Mozilla Firefox 5.0</option>
+<option value="Mozilla Firefox 6.0" >Mozilla Firefox 6.0</option>
+<option value="Mozilla Firefox 7.0" >Mozilla Firefox 7.0</option>
+<option value="Mozilla Firefox 8.0" >Mozilla Firefox 8.0</option>
+<option value="Mozilla Firefox 9.0" >Mozilla Firefox 9.0</option>
+<option value="Mozilla Firefox 10.0" >Mozilla Firefox 10.0</option>
+<option value="Mozilla Firefox 11.0" >Mozilla Firefox 11.0</option>
+<option value="Google Chrome 1.0" >Google Chrome 1.0</option>
+<option value="Google Chrome 2.0" >Google Chrome 2.0</option>
+<option value="Google Chrome 3.0" >Google Chrome 3.0</option>
+<option value="Google Chrome 4.0" >Google Chrome 4.0</option>
+<option value="Google Chrome 5.0" >Google Chrome 5.0</option>
+<option value="Google Chrome 6.0" >Google Chrome 6.0</option>
+<option value="Google Chrome 7.0" >Google Chrome 7.0</option>
+<option value="Google Chrome 8.0" >Google Chrome 8.0</option>
+<option value="Internet Explorer 6" >Internet Explorer 6</option>
+<option value="Internet Explorer 7" >Internet Explorer 7</option>
+<option value="Internet Explorer 8" >Internet Explorer 8</option>
+<option value="Internet Explorer 9" >Internet Explorer 9</option>
+<option value="Apple Safari 1" >Apple Safari 1</option>
+<option value="Apple Safari 2" >Apple Safari 2</option>
+<option value="Apple Safari 3" >Apple Safari 3</option>
+<option value="Apple Safari 4" >Apple Safari 4</option>
+<option value="Apple Safari 5" >Apple Safari 5</option>
+<option value="Opera 9" >Opera 9</option>
+<option value="Opera 10" >Opera 10</option>
+<option value="Other" >Other</option>
+</select></td><td colspan="8"><select multiple="multiple" size="10"  name="custom_field_2[]"><option value="0"  selected="selected" >[any]</option><option value="NA" >NA</option>
+<option value="Windows XP" >Windows XP</option>
+<option value="Windows 2000" >Windows 2000</option>
+<option value="Windows Vista" >Windows Vista</option>
+<option value="Windows 7" >Windows 7</option>
+<option value="Windows 8" >Windows 8</option>
+<option value="Mac OS X 10.0 (Cheetah)" >Mac OS X 10.0 (Cheetah)</option>
+<option value="Mac OS X 10.1 (Puma)" >Mac OS X 10.1 (Puma)</option>
+<option value="Mac OS X 10.2 (Jaguar)" >Mac OS X 10.2 (Jaguar)</option>
+<option value="Mac OS X 10.3 (Panther)" >Mac OS X 10.3 (Panther)</option>
+<option value="Mac OS X 10.4 (Tiger)" >Mac OS X 10.4 (Tiger)</option>
+<option value="Mac OS X 10.5 (Leopard)" >Mac OS X 10.5 (Leopard)</option>
+<option value="Mac OS X 10.6 (Snow Leopard)" >Mac OS X 10.6 (Snow Leopard)</option>
+<option value="Ubuntu 7.04 (Feisty Fawn)" >Ubuntu 7.04 (Feisty Fawn)</option>
+<option value="Ubuntu 7.10 (Gutsy Gibbon)" >Ubuntu 7.10 (Gutsy Gibbon)</option>
+<option value="Ubuntu 8.04 LTS (Hardy Heron)" >Ubuntu 8.04 LTS (Hardy Heron)</option>
+<option value="Ubuntu 8.10 (Intrepid Ibex)" >Ubuntu 8.10 (Intrepid Ibex)</option>
+<option value="Ubuntu 9.04 (Jaunty Jackalope)" >Ubuntu 9.04 (Jaunty Jackalope)</option>
+<option value="Ubuntu 9.10 (Karmic Koala)" >Ubuntu 9.10 (Karmic Koala)</option>
+<option value="Ubuntu 10.04 LTS (Lucid Lynx)" >Ubuntu 10.04 LTS (Lucid Lynx)</option>
+<option value="Ubuntu 10.10 (Maverick Meerkat)" >Ubuntu 10.10 (Maverick Meerkat)</option>
+<option value="Ubuntu 11.04 (Natty Narwhal)" >Ubuntu 11.04 (Natty Narwhal)</option>
+<option value="Debian GNU/Linux 3.0 (Woody)" >Debian GNU/Linux 3.0 (Woody)</option>
+<option value="Debian GNU/Linux 3.1 (Sarge)" >Debian GNU/Linux 3.1 (Sarge)</option>
+<option value="Debian GNU/Linux 4.0 (Etch)" >Debian GNU/Linux 4.0 (Etch)</option>
+<option value="Debian GNU/Linux 5.0 (Lenny)" >Debian GNU/Linux 5.0 (Lenny)</option>
+<option value="Debian GNU/Linux 6.0 (Squeeze)" >Debian GNU/Linux 6.0 (Squeeze)</option>
+<option value="Red Hat Enterprise Linux 3 (Taroon)" >Red Hat Enterprise Linux 3 (Taroon)</option>
+<option value="Red Hat Enterprise Linux 4 (Nahant)" >Red Hat Enterprise Linux 4 (Nahant)</option>
+<option value="Red Hat Enterprise Linux 5 (Tikanga)" >Red Hat Enterprise Linux 5 (Tikanga)</option>
+<option value="Other" >Other</option>
+</select></td><td colspan="8"><select multiple="multiple" size="10"  name="custom_field_3[]"><option value="0"  selected="selected" >[any]</option><option value="-2" >[none]</option><option value="Windows 10" >Windows 10</option>
+</select></td><td colspan="8"><select multiple="multiple" size="10"  name="custom_field_5[]"><option value="0"  selected="selected" >[any]</option><option value="-2" >[none]</option><option value="FIREFOX" >FIREFOX</option>
+<option value="Firefox 10.1, Google Chrome 17" >Firefox 10.1, Google Chrome 17</option>
+<option value="Firefox 41.0.2" >Firefox 41.0.2</option>
+<option value="Firefox 54.0.1" >Firefox 54.0.1</option>
+<option value="Google Chrome 17" >Google Chrome 17</option>
+<option value="Google Chrome 8.0" >Google Chrome 8.0</option>
+<option value="Mozilla 48" >Mozilla 48</option>
+<option value="Mozilla Firefox 18.0.2" >Mozilla Firefox 18.0.2</option>
+</select></td><td colspan="8"><select multiple="multiple" size="10"  name="custom_field_8[]"><option value="0"  selected="selected" >[any]</option><option value="-2" >[none]</option></select></td><td colspan="8"><select multiple="multiple" size="10"  name="custom_field_9[]"><option value="0"  selected="selected" >[any]</option><option value="-2" >[none]</option><option value="http://www.sigmah.org/?q=fr/node/91" >http://www.sigmah.org/?q=fr/node/91</option>
+<option value="http://www.sigmah.org/?q=node/13" >http://www.sigmah.org/?q=node/13</option>
+<option value="http://www.sigmah.org/?q=node/13#comment-24" >http://www.sigmah.org/?q=node/...24</option>
+<option value="http://www.sigmah.org/?q=node/15" >http://www.sigmah.org/?q=node/15</option>
+<option value="http://www.sigmah.org/?q=node/16" >http://www.sigmah.org/?q=node/16</option>
+<option value="http://www.sigmah.org/?q=node/17" >http://www.sigmah.org/?q=node/17</option>
+<option value="http://www.sigmah.org/?q=node/20" >http://www.sigmah.org/?q=node/20</option>
+<option value="http://www.sigmah.org/?q=node/24" >http://www.sigmah.org/?q=node/24</option>
+<option value="http://www.sigmah.org/?q=node/26" >http://www.sigmah.org/?q=node/26</option>
+<option value="http://www.sigmah.org/?q=node/91" >http://www.sigmah.org/?q=node/91</option>
+<option value="http://www.sigmah.org/?q=node/92" >http://www.sigmah.org/?q=node/92</option>
+<option value="http://www.sigmah.org/fr/comment/reply/553/211#comment-211" >http://www.sigmah.org/fr/comment/...211</option>
+<option value="http://www.sigmah.org/fr/node/460" >http://www.sigmah.org/fr/node/460</option>
+<option value="http://www.sigmah.org/fr/node/469" >http://www.sigmah.org/fr/node/469</option>
+<option value="http://www.sigmah.org/fr/node/546" >http://www.sigmah.org/fr/node/546</option>
+<option value="http://www.sigmah.org/fr/node/550" >http://www.sigmah.org/fr/node/550</option>
+<option value="http://www.sigmah.org/fr/node/551" >http://www.sigmah.org/fr/node/551</option>
+<option value="http://www.sigmah.org/fr/node/553" >http://www.sigmah.org/fr/node/553</option>
+<option value="http://www.sigmah.org/node/1264" >http://www.sigmah.org/node/1264</option>
+<option value="http://www.sigmah.org/node/306" >http://www.sigmah.org/node/306</option>
+<option value="http://www.sigmah.org/node/389" >http://www.sigmah.org/node/389</option>
+<option value="http://www.sigmah.org/node/389#comment-71" >http://www.sigmah.org/node/...71</option>
+<option value="http://www.sigmah.org/node/498" >http://www.sigmah.org/node/498</option>
+<option value="http://www.sigmah.org/node/500" >http://www.sigmah.org/node/500</option>
+<option value="http://www.sigmah.org/node/508#comment-119" >http://www.sigmah.org/node/...119</option>
+<option value="http://www.sigmah.org/node/514" >http://www.sigmah.org/node/514</option>
+<option value="http://www.sigmah.org/node/515" >http://www.sigmah.org/node/515</option>
+<option value="http://www.sigmah.org/node/517" >http://www.sigmah.org/node/517</option>
+<option value="http://www.sigmah.org/node/519" >http://www.sigmah.org/node/519</option>
+<option value="http://www.sigmah.org/node/519#comment-139" >http://www.sigmah.org/node/...139</option>
+<option value="http://www.sigmah.org/node/527" >http://www.sigmah.org/node/527</option>
+<option value="http://www.sigmah.org/node/527#comment-144" >http://www.sigmah.org/node/...144</option>
+<option value="http://www.sigmah.org/node/537" >http://www.sigmah.org/node/537</option>
+<option value="http://www.sigmah.org/node/539" >http://www.sigmah.org/node/539</option>
+<option value="http://www.sigmah.org/node/553#comment-322" >http://www.sigmah.org/node/...322</option>
+<option value="http://www.sigmah.org/node/573" >http://www.sigmah.org/node/573</option>
+<option value="http://www.sigmah.org/node/577#comment-222" >http://www.sigmah.org/node/...222</option>
+<option value="http://www.sigmah.org/node/578" >http://www.sigmah.org/node/578</option>
+<option value="http://www.sigmah.org/node/583 &amp; http://www.sigmah.org/node/707" >http://www.sigmah.org/node/583 &amp; ...707</option>
+<option value="http://www.sigmah.org/node/592" >http://www.sigmah.org/node/592</option>
+<option value="http://www.sigmah.org/node/601" >http://www.sigmah.org/node/601</option>
+<option value="http://www.sigmah.org/node/601#comment-284" >http://www.sigmah.org/node/...284</option>
+<option value="http://www.sigmah.org/node/612" >http://www.sigmah.org/node/612</option>
+<option value="http://www.sigmah.org/node/615#comment-316" >http://www.sigmah.org/node/...316</option>
+<option value="http://www.sigmah.org/node/670" >http://www.sigmah.org/node/670</option>
+<option value="http://www.sigmah.org/node/672" >http://www.sigmah.org/node/672</option>
+<option value="http://www.sigmah.org/node/674" >http://www.sigmah.org/node/674</option>
+<option value="http://www.sigmah.org/node/675" >http://www.sigmah.org/node/675</option>
+<option value="http://www.sigmah.org/node/675#comment-341" >http://www.sigmah.org/node/...341</option>
+<option value="http://www.sigmah.org/node/677" >http://www.sigmah.org/node/677</option>
+<option value="http://www.sigmah.org/node/682" >http://www.sigmah.org/node/682</option>
+<option value="http://www.sigmah.org/node/682 &amp; http://www.sigmah.org/node/709" >http://www.sigmah.org/node/682 &amp; ...709</option>
+<option value="http://www.sigmah.org/node/682#comment-347" >http://www.sigmah.org/node/...347</option>
+<option value="http://www.sigmah.org/node/685" >http://www.sigmah.org/node/685</option>
+<option value="http://www.sigmah.org/node/692" >http://www.sigmah.org/node/692</option>
+<option value="http://www.sigmah.org/node/694" >http://www.sigmah.org/node/694</option>
+<option value="http://www.sigmah.org/node/697" >http://www.sigmah.org/node/697</option>
+<option value="http://www.sigmah.org/node/706" >http://www.sigmah.org/node/706</option>
+<option value="http://www.sigmah.org/node/710" >http://www.sigmah.org/node/710</option>
+<option value="http://www.sigmah.org/node/711" >http://www.sigmah.org/node/711</option>
+<option value="http://www.sigmah.org/node/713" >http://www.sigmah.org/node/713</option>
+<option value="http://www.sigmah.org/node/723" >http://www.sigmah.org/node/723</option>
+<option value="http://www.sigmah.org/node/737" >http://www.sigmah.org/node/737</option>
+<option value="http://www.sigmah.org/node/738" >http://www.sigmah.org/node/738</option>
+<option value="http://www.sigmah.org/node/739" >http://www.sigmah.org/node/739</option>
+<option value="http://www.sigmah.org/node/741" >http://www.sigmah.org/node/741</option>
+<option value="http://www.sigmah.org/node/747" >http://www.sigmah.org/node/747</option>
+<option value="http://www.sigmah.org/node/751" >http://www.sigmah.org/node/751</option>
+<option value="http://www.sigmah.org/node/762" >http://www.sigmah.org/node/762</option>
+<option value="http://www.sigmah.org/node/769" >http://www.sigmah.org/node/769</option>
+<option value="http://www.sigmah.org/node/771" >http://www.sigmah.org/node/771</option>
+<option value="http://www.sigmah.org/node/772" >http://www.sigmah.org/node/772</option>
+<option value="http://www.sigmah.org/node/773" >http://www.sigmah.org/node/773</option>
+<option value="http://www.sigmah.org/node/773#comment-441" >http://www.sigmah.org/node/...441</option>
+<option value="http://www.sigmah.org/node/773#comment-460" >http://www.sigmah.org/node/...460</option>
+<option value="http://www.sigmah.org/node/777" >http://www.sigmah.org/node/777</option>
+<option value="http://www.sigmah.org/node/777#comment-450" >http://www.sigmah.org/node/...450</option>
+<option value="http://www.sigmah.org/node/785" >http://www.sigmah.org/node/785</option>
+<option value="http://www.sigmah.org/node/788" >http://www.sigmah.org/node/788</option>
+<option value="http://www.sigmah.org/node/792" >http://www.sigmah.org/node/792</option>
+<option value="http://www.sigmah.org/node/796" >http://www.sigmah.org/node/796</option>
+<option value="http://www.sigmah.org/node/873" >http://www.sigmah.org/node/873</option>
+<option value="http://www.sigmah.org/node/883" >http://www.sigmah.org/node/883</option>
+<option value="http://www.sigmah.org/node/896" >http://www.sigmah.org/node/896</option>
+<option value="https://sigmah.handicap-international.fr/" >https://sigmah.handicap-international...</option>
+</select></td><td colspan="8">&#160;</td><td colspan="8">&#160;</td>			</tr>
+			
+<tr class="row-1">
+	<td class="small-caption" colspan="8" valign="top">
+		Sort by:
+	</td>
+	<td valign="top" colspan="32">
+		<select name="sort_0"><option value=""></option><option value="priority">Priority</option><option value="id">Issue ID</option><option value="category_id">Category</option><option value="severity">Severity</option><option value="status">Status</option><option value="last_updated" selected="selected" >Updated</option><option value="summary">Summary</option></select><select name="dir_0"><option value=""></option><option value="ASC">Ascending</option><option value="DESC" selected="selected" >Descending</option></select>, <select name="sort_1"><option value="" selected="selected" ></option><option value="priority">Priority</option><option value="id">Issue ID</option><option value="category_id">Category</option><option value="severity">Severity</option><option value="status">Status</option><option value="last_updated">Updated</option><option value="summary">Summary</option></select><select name="dir_1"><option value="" selected="selected" ></option><option value="ASC">Ascending</option><option value="DESC">Descending</option></select>	</td>
+				<td class="small-caption" colspan="8" valign="top">
+				Project:
+			</td>
+			<td valign="top" colspan="16">
+						<!-- Project -->
+		<select multiple="multiple" size="10"  name="project_id[]">
+			<option value="-3" >[current]</option>
+			<option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+		</select>
+					</td>
+	</tr>
+
+
+<tr class="row-category2">
+<td class="small-caption" colspan="8">Search</td>
+<td class="small-caption" colspan="48">Tags</td>
+<td class="small-caption" colspan="8"></td>
+</tr>
+<tr class="row-1">
+	<!-- Search field -->
+	<td colspan="8">
+		<input type="text" size="16" name="search" value="" />
+	</td>
+
+	<td class="small-caption" colspan="48">		<input type="hidden" id="tag_separator" value="," />
+		<input type="text" name="tag_string" id="tag_string" size="40" value="LowHangingFruits" />
+		<select tabindex="1" name="tag_select" id="tag_select">
+			<option value="0">Existing tags</option><option value="2" title="Complete finance follow-up">Complete finance follow-up</option><option value="9" title="Data importation">Data importation</option><option value="5" title="Enhanced calendars and reminders">Enhanced calendars and reminders</option><option value="12" title="Enhanced dashboard project table">Enhanced dashboard project table</option><option value="11" title="Enhanced user session and rights">Enhanced user session and rights</option><option value="15" title="LowHangingFruits">LowHangingFruits - Easiest issues to pi</option><option value="3" title="Minimum complete data processing capabilities">Minimum complete data processing capabilities</option><option value="7" title="Minimum complete export capabilities">Minimum complete export capabilities</option><option value="1" title="More versatile &amp; flexible models">More versatile &amp; flexible models</option><option value="8" title="Offline mode">Offline mode</option><option value="10" title="Project versionning">Project versionning</option><option value="6" title="Revised indicator management">Revised indicator management</option><option value="13" title="Safer data management">Safer data management</option><option value="4" title="Search">Search</option><option value="16" title="TestLinkable">TestLinkable</option><option value="14" title="User interface improvement">User interface improvement</option>		</select>
+		</td>
+
+	<!-- Submit button -->
+	<td class="right" colspan="8">
+		<input type="submit" name="filter" class="button" value="Apply Filter" />
+	</td>
+</tr>
+</table>
+</form>
+
+	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.html" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/view_filters_page.php?for_screen=1&view_type=advanced&target_field=custom_field_2%5B%5D by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 15:58:24 GMT -->
+</html>

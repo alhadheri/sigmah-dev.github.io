@@ -1,0 +1,561 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=546&nbn=9 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Jul 2018 14:45:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Tue, 24 Jul 2018 13:33:11 GMT" />
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.php?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.php?type=id" />	<title>0000546: User edition popup doesn't load user invitation language and password - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.js"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.png" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_page14e0.html?return=%2Fissues%2Fview.php%3Fid%3D546%26nbn%3D9">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-24 15:33 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issuesd41d.xml?"><img src="images/rss.png" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table><br /><table class="width100" cellspacing="1"><tr><td class="form-title" colspan="3">View Issue Details&#160;<span class="small"><span class="bracket-link">[&#160;<a href="#bugnotes">Jump to Notes</a>&#160;]</span> </span></td><td class="center"><span class="small"></span></td><td class="right" colspan="2"><span class="small"><span class="bracket-link">[&#160;<a href="view0cb0.html?id=546&amp;history=1#history">Issue History</a>&#160;]</span> </span><span class="small"><span class="bracket-link">[&#160;<a href="print_bug_pagea011.html?bug_id=546">Print</a>&#160;]</span> </span></td></tr><tr><td class="category" width="15%">ID</td><td class="category" width="20%">Project</td><td class="category" width="15%">Category</td><td class="category" width="15%">View Status</td><td class="category" width="15%">Date Submitted</td><td class="category" width="20%">Last Update</td></tr><tr class="row-1"><td>0000546</td><td>sigmah</td><td>Administration</td><td>public</td><td>2013-02-28 18:01</td><td>2013-07-02 18:08</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category">Reporter</td><td>osarrat</td><td colspan="4">&#160;</td></tr><tr class="row-1"><td class="category">Assigned To</td><td>Guerline</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Priority</td><td>high</td><td class="category">Severity</td><td>major</td><td class="category">Reproducibility</td><td>always</td></tr><tr class="row-1"><td class="category">Status</td><td bgcolor="#c9ccc4">closed</td><td class="category">Resolution</td><td>fixed</td><td colspan="2">&#160;</td></tr><tr class="row-2"><td class="category">Platform</td><td></td><td class="category">OS</td><td></td><td class="category">OS Version</td><td></td></tr><tr class="row-1"><td class="category">Product Version</td><td>1.1.1</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Target Version</td><td>1.2</td><td class="category">Fixed in Version</td><td>1.2</td><td colspan="2">&#160;</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category">Summary</td><td colspan="5">0000546: User edition popup doesn't load user invitation language and password</td></tr><tr class="row-2"><td class="category">Description</td><td colspan="5">When you want to edit an user (e.g. give him new profiles) you always have to change the invitation language (which isn't properly loaded).<br />
+Much more serious, since the password is neither loaded, if the user clicks on save without entering the password, it will empty the password... and allow to enter the application just with an email without entering any password!</td></tr><tr class="row-1"><td class="category">Steps To Reproduce</td><td colspan="5">Scenario for the password part of the issue:<br />
+(i) add a new user. The user can be connected with its own password<br />
+(ii) Edit the user in &quot;users&quot; screen. Change only the profile without changing the password or even change nothing just save.<br />
+(iii) Logout and try to connect to the user : you can connected with no password or any wrong password.</td></tr><tr class="row-2"><td class="category">Tags</td><td colspan="5">No tags attached.</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category">User Report URL</td><td colspan="5"><a href="http://www.sigmah.org/node/682">http://www.sigmah.org/node/682</a> [<a href="http://www.sigmah.org/node/682" target="_blank">^</a>] &amp; <a href="http://www.sigmah.org/node/709">http://www.sigmah.org/node/709</a> [<a href="http://www.sigmah.org/node/709" target="_blank">^</a>]</td></tr><tr class="row-2"><td class="category">OS</td><td colspan="5">NA</td></tr><tr class="row-1"><td class="category">Other OS</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">Browser</td><td colspan="5">NA</td></tr><tr class="row-1"><td class="category">Other browser</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">ScreenURL</td><td colspan="5"></td></tr><tr class="row-1"><td class="category">(ActivityInfo) Noticed in revision</td><td colspan="5"></td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category"><a name="attachments" id="attachments" />Attached Files</td><td colspan="5"></td></tr><tr align="center"><td align="center" colspan="6"><table><tr class="vcenter"><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td></tr></table></td></tr></table><br />
+
+<div id="relationships_open"><table class="width100" cellspacing="1">
+<tr class="row-2" valign="top">
+	<td width="15%" class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/minus.png" alt="-" /></a>&#160;Relationships	</td>
+</tr>
+<tr>
+	<td colspan="2"></td>
+</tr>
+</table>
+
+</div><div id="relationships_closed" class="hidden"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/plus.png" alt="+" /></a>&#160;Relationships	</td>
+</tr>
+</table>
+
+</div>
+<a name="bugnotes" id="bugnotes" /><br />
+
+<div id="bugnotes_open"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/minus.png" alt="-" /></a>&#160;		Notes	</td>
+</tr>
+<tr class="bugnote" id="c1149">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewecbe.html?id=546#c1149" title="Direct link to note">0001149)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2013-05-03 18:38</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Extending the issue with the similar and more important problem related to password.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1181">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewecbe.html?id=546#c1181" title="Direct link to note">0001181)</a></span><br />
+		<a href="view_user_page2580.html?id=43">Guerline</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2013-05-21 16:32</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		The password problem is because an empty string in Java is saved as NULL in the database. Since NULL = ? always returns true, any password can be used. Should we forbid the empty string password or check that if the password is NULL, it should be considered as an empty string?	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1182">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewecbe.html?id=546#c1182" title="Direct link to note">0001182)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2013-05-22 15:34</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		But would it be possible to load the full password in protected characters in the User edition popup?<br />
+That would be the best solution to my opinion.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1184">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewecbe.html?id=546#c1184" title="Direct link to note">0001184)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2013-05-22 16:06</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		In my opinion, both the password and its confirmation should be loaded. So no need to confirm the password each time if the user doesn't change it.<br />
+<br />
+The problem of the empty string is only a problem when the password can be left empty without the conscious approval of the admin. If an admin decides to have an empty password and have a weak security for any reason, it is not so far a big problem in my opinion.<br />
+<br />
+Is it ok for you?	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1185">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewecbe.html?id=546#c1185" title="Direct link to note">0001185)</a></span><br />
+		<a href="view_user_page2580.html?id=43">Guerline</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2013-05-22 16:16</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Oops, sorry, I deleted my last note because it is actually not possible to load the original password. What we have is the hashed password from which we can't get the clear password. <br />
+<br />
+What we can do is maybe give the admin the choice to change the password or not when he is editing the user. What do you think?<br />
+<br />
+What I thought was problematic is that anything can get the user connected, even though the only password that should be correct should be the empty string.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1186">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewecbe.html?id=546#c1186" title="Direct link to note">0001186)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2013-05-22 16:33</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		It is a good idea to give the choice to the admin to change the password. At best, I would imagine that the user edition popup would be loaded by default with an hypertext link &quot;Change password&quot;. If the admin clicks on this link, the link would be replaced dynamically by two fields for password and password confirmation without loading again the full popup. That would be the best solution.. but is it easy to implement?<br />
+<br />
+To solve the problematic issue you mention that with an empty string as password, not only the empty string but any string can actually be used to log in, I would then suggest to ban the use of empty string for password. It is a new control to add while saving a password: if the password is empty, a non-empty password should be entered.<br />
+Is that ok for you?	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1187">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewecbe.html?id=546#c1187" title="Direct link to note">0001187)</a></span><br />
+		<a href="view_user_page2580.html?id=43">Guerline</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2013-05-22 17:01</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Yes, I like the idea and it shouldn't be complicated to implement.<br />
+<br />
+Ok, it's fine for me.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1214">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewecbe.html?id=546#c1214" title="Direct link to note">0001214)</a></span><br />
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2013-06-03 14:34</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Patch by Guerline : avoids the set the password to null if it is not modified (fixes issue <a href="viewecbe.html?id=546" title="[closed] User edition popup doesn't load user invitation language and password" class="resolved">0000546</a>).<br />
+<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/page/admin/users/form/UserSigmahForm.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/server/policy/UserPolicy.java<br />
+	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1267">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewecbe.html?id=546#c1267" title="Direct link to note">0001267)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2013-07-02 18:08</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Issue closed because correct behavior checked on v1.2-rc3.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+</table>
+
+</div><div id="bugnotes_closed" class="hidden">
+<table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/plus.png" alt="+" /></a>&#160;		Notes	</td>
+</tr>
+</table>
+</div>
+<a name="history" id="history" /><br />
+
+<div id="history_open"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/minus.png" alt="-" /></a>&#160;Issue History	</td>
+</tr>
+<tr class="row-category-history">
+	<td class="small-caption">
+		Date Modified	</td>
+	<td class="small-caption">
+		Username	</td>
+	<td class="small-caption">
+		Field	</td>
+	<td class="small-caption">
+		Change	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-02-28 18:01	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		New Issue	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-03 18:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		User Report URL	</td>
+	<td class="small-caption">
+		<a href="http://www.sigmah.org/node/682">http://www.sigmah.org/node/682</a> [<a href="http://www.sigmah.org/node/682" target="_blank">^</a>] =&gt; <a href="http://www.sigmah.org/node/682">http://www.sigmah.org/node/682</a> [<a href="http://www.sigmah.org/node/682" target="_blank">^</a>] &amp; <a href="http://www.sigmah.org/node/709">http://www.sigmah.org/node/709</a> [<a href="http://www.sigmah.org/node/709" target="_blank">^</a>]	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-03 18:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001149	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-03 18:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Priority	</td>
+	<td class="small-caption">
+		normal =&gt; high	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-03 18:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Severity	</td>
+	<td class="small-caption">
+		minor =&gt; major	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-03 18:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Target Version	</td>
+	<td class="small-caption">
+		2.0 =&gt; 1.2	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-03 18:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Summary	</td>
+	<td class="small-caption">
+		User edition popup doesn't load user invitation language =&gt; User edition popup doesn't load user invitation language and password	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-03 18:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Description Updated	</td>
+	<td class="small-caption">
+		<a href="bug_revision_view_page005e.html?rev_id=374#r374">View Revisions</a>	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-03 18:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Steps to Reproduce Updated	</td>
+	<td class="small-caption">
+		<a href="bug_revision_view_pagecb3e.html?rev_id=376#r376">View Revisions</a>	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-21 14:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		 =&gt; Guerline	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-21 14:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		new =&gt; assigned	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-21 16:32	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001181	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-21 16:32	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		Guerline =&gt; osarrat	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-21 16:32	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		assigned =&gt; feedback	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-22 15:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001182	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-22 15:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		feedback =&gt; assigned	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-22 15:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		osarrat =&gt; Guerline	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-22 15:50	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001183	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-22 16:06	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Note Deleted: 0001183	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-22 16:06	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001184	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-22 16:16	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001185	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-22 16:33	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001186	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-22 17:01	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001187	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-06-03 14:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Checkin	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-06-03 14:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001214	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-06-03 14:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		assigned =&gt; resolved	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-06-03 14:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Resolution	</td>
+	<td class="small-caption">
+		open =&gt; fixed	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-07-02 18:08	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001267	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-07-02 18:08	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		resolved =&gt; closed	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-07-02 18:08	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Fixed in Version	</td>
+	<td class="small-caption">
+		 =&gt; 1.2	</td>
+</tr>
+</table>
+</div><div id="history_closed" class="hidden"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+	<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/plus.png" alt="+" /></a>&#160;Issue History	</td>
+</tr>
+</table>
+
+</div>	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.png" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=546&nbn=9 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Jul 2018 14:45:52 GMT -->
+</html>

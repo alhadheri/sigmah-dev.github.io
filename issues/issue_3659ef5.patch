@@ -1,0 +1,92 @@
+Index: sigmah/src/main/java/org/sigmah/client/page/admin/model/common/element/LayoutGroupSigmahForm.java
+===================================================================
+--- sigmah/src/main/java/org/sigmah/client/page/admin/model/common/element/LayoutGroupSigmahForm.java	(revision 1561)
++++ sigmah/src/main/java/org/sigmah/client/page/admin/model/common/element/LayoutGroupSigmahForm.java	(working copy)
+@@ -6,6 +6,7 @@
+ package org.sigmah.client.page.admin.model.common.element;
+ 
+ import java.util.HashMap;
++import java.util.List;
+ 
+ import com.extjs.gxt.ui.client.data.BaseModelData;
+ import com.extjs.gxt.ui.client.event.BaseEvent;
+@@ -56,6 +57,7 @@
+ 	
+ 	private final Dispatcher dispatcher;
+ 	private HashMap<String, Object> newPrivacyGroupProperties;
++	private HashMap<Integer, String> availableVerticalPositions; 
+ 	
+ 	private final static int LABEL_WIDTH = 90;
+ 	
+@@ -149,15 +151,34 @@
+ 						 container = ((OrgUnitDetailsDTO)containerList.getValue()).getLayout();
+ 					 }
+ 				 }
+-				 if(container != null){
++				 if(container != null){					
++					 
+ 					 rowField.removeAll();
+-					 for(int i=0; i<=container.getRowsCount();i++){						 						 
++					 availableVerticalPositions = new HashMap<Integer,String>();
++					
++					 for(int i=0; i<=container.getRowsCount();i++){					 
++						 for(LayoutGroupDTO lg : container.getLayoutGroupsDTO()){
++							 //Mark all vertical positions(using a HashMap) which are taken up by other groups in the same container
++							 if(lg.getRow()==i){
++								 availableVerticalPositions.put(i, lg.getTitle());
++							 }
++						 }
+ 						 rowField.add(i);
+ 					 }
++					 
+ 				 }				 
+ 			}
+ 		});
+ 		
++		rowField.addListener(Events.Select, new Listener<BaseEvent>() {			
++			@Override
++			public void handleEvent(BaseEvent be) {
++				if(availableVerticalPositions.get(rowField.getSimpleValue())!=null){
++					MessageBox.alert(I18N.CONSTANTS.verticalPositionConflict(), I18N.MESSAGES.verticalPositionConflict(availableVerticalPositions.get(rowField.getSimpleValue())),null);
++				}
++			}
++		});
++		
+ 		add(containerList);		
+ 		add(rowField);
+ 			
+@@ -166,7 +187,7 @@
+         createButton.addListener(Events.OnClick, new Listener<ButtonEvent>() {
+             @Override
+             public void handleEvent(ButtonEvent be) {
+-                createLayoutGroup(callback);
++            	createLayoutGroup(callback); 
+             }
+         });
+         add(createButton);
+Index: sigmah/src/main/java/org/sigmah/client/i18n/UIMessages.properties
+===================================================================
+--- sigmah/src/main/java/org/sigmah/client/i18n/UIMessages.properties	(revision 1561)
++++ sigmah/src/main/java/org/sigmah/client/i18n/UIMessages.properties	(working copy)
+@@ -233,4 +233,7 @@
+ #Heading for the reviewing the details imported for a project/org unit
+ importConfirmationDetailsHeading=Confirm importation details for {0}
+ #Notification that the importation has been successful
+-importSuccessful=The importation was successful for  ''{0}''
+\ No newline at end of file
++importSuccessful=The importation was successful for  ''{0}''
++
++#Vertical position conflict message for two groups in the same container
++verticalPositionConflict=The group called ''{0}'' in this container is set to the same vertical position you desire. One of the two groups will not appear when you will create a an object from this model. 
+Index: sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties
+===================================================================
+--- sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties	(revision 1561)
++++ sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties	(working copy)
+@@ -2387,5 +2387,7 @@
+ categoryOthers = Others
+ #Name for permission not included in any catebory
+ categoryNotMapped = Not in any Category
++#UI conflict message on Vertical Position Conflict between two groups in the same container
++verticalPositionConflict = Vertical Position Conflict
+ 
+ 

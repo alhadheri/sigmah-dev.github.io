@@ -1,0 +1,900 @@
+### Eclipse Workspace Patch 1.0
+#P Sigmah
+Index: src/main/java/org/sigmah/shared/dto/element/DefaultFlexibleElementDTO.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/shared/dto/element/DefaultFlexibleElementDTO.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/shared/dto/element/DefaultFlexibleElementDTO.java	(working copy)
+@@ -87,7 +87,16 @@
+ 	public ListStore<UserDTO> getManagersStore() {
+ 		return usersStore;
+ 	}
++	
++	@Override
++	public String getFormattedLabel() {
++		return getLabel() != null ? getLabel() : getTypeLabel();
++	}
+ 
++	public String getTypeLabel() {
++		return DefaultFlexibleElementType.getName(getType());
++	}
++	
+ 	@Override
+ 	protected Component getComponent(ValueResult valueResult, boolean enabled) {
+ 		if (valueResult != null && valueResult.isValueDefined())
+@@ -141,8 +150,7 @@
+ 			}
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectName());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+@@ -165,8 +173,7 @@
+ 			}
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectFullName());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+@@ -193,8 +200,7 @@
+ 			}
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectStartDate());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+@@ -220,8 +226,7 @@
+ 			}
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectEndDate());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+@@ -336,8 +341,7 @@
+ 			}
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectCountry());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+@@ -347,8 +351,7 @@
+ 			final LabelField labelField = createLabelField();
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectOwner());
+-			labelField.setFieldLabel(getLabel());
++			labelField.setFieldLabel(getFormattedLabel());
+ 
+ 			// Sets the value to the field.
+ 			labelField.setValue(container.getOwnerFirstName() != null ? container.getOwnerFirstName() + " "
+@@ -556,8 +559,7 @@
+ 			}
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectManager());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+@@ -1035,8 +1037,7 @@
+ 			}
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.orgunit());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+@@ -1073,8 +1074,7 @@
+ 			}
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectName());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+@@ -1097,8 +1097,7 @@
+ 			}
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectFullName());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+@@ -1125,8 +1124,7 @@
+ 			}
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectStartDate());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+@@ -1152,8 +1150,7 @@
+ 			}
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectEndDate());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+@@ -1185,8 +1182,7 @@
+ 			});
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectCountry());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 
+@@ -1197,8 +1193,7 @@
+ 			final LabelField labelField = createLabelField();
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectOwner());
+-			labelField.setFieldLabel(getLabel());
++			labelField.setFieldLabel(getFormattedLabel());
+ 
+ 			// Sets the value to the field.
+ 			labelField.setValue(valueResult.getValueObject());
+@@ -1237,8 +1232,7 @@
+ 							});
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.projectManager());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+@@ -1272,8 +1266,7 @@
+ 			});
+ 
+ 			// Sets the field label.
+-			setLabel(I18N.CONSTANTS.orgunit());
+-			field.setFieldLabel(getLabel());
++			field.setFieldLabel(getFormattedLabel());
+ 
+ 			component = field;
+ 		}
+Index: src/main/java/org/sigmah/client/page/admin/model/common/element/ElementForm.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/admin/model/common/element/ElementForm.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/admin/model/common/element/ElementForm.java	(working copy)
+@@ -484,7 +484,6 @@
+ 		commonPanel.setHeaderVisible(false);
+ 
+ 		htmlArea = new HtmlEditor();
+-		htmlArea.hide();
+ 		htmlArea.setEnableAlignments(false);
+ 		htmlArea.setEnableLinks(false);
+ 		htmlArea.setEnableFont(false);
+@@ -493,45 +492,29 @@
+ 		htmlArea.setSourceEditMode(false);
+ 		htmlArea.setHeight(75);
+ 		htmlArea.setFieldLabel(constants.adminFlexibleName());
+-		if (flexibleElement != null && flexibleElement.getLabel() != null) {
+-			htmlArea.setValue(flexibleElement.getLabel());
+-			oldFieldProperties.put(AdminUtil.PROP_FX_NAME, flexibleElement.getLabel());
++		if (flexibleElement != null && flexibleElement.getFormattedLabel() != null) {
++			htmlArea.setValue(flexibleElement.getFormattedLabel());
++			oldFieldProperties.put(AdminUtil.PROP_FX_NAME, flexibleElement.getFormattedLabel());
+ 		}
+ 
+-		LabelField label = new LabelField();
+-		label.hide();
+-		label.setFieldLabel(constants.adminFlexibleName());
+-
+ 		if (flexibleElement != null && flexibleElement.getElementType() != null) {
+ 			if (ElementTypeEnum.DEFAULT.equals(flexibleElement.getElementType())) {
+-				label.setText(DefaultFlexibleElementType.getName(((DefaultFlexibleElementDTO) flexibleElement)
+-				                .getType()));
+-				label.show();
+-				oldFieldProperties.put(AdminUtil.PROP_FX_NAME, DefaultFlexibleElementType
+-				                .getName(((DefaultFlexibleElementDTO) flexibleElement).getType()));
+-				htmlArea.setValue(DefaultFlexibleElementType.getName(((DefaultFlexibleElementDTO) flexibleElement)
+-				                .getType()));
+ 				if (DefaultFlexibleElementType.BUDGET.equals(((DefaultFlexibleElementDTO) flexibleElement).getType())) {
+ 					final BudgetElementDTO budgetElement = (BudgetElementDTO) flexibleElement;
+ 					upBudgetSubFieldCombo.addListener(Events.OnChange, new Listener<BaseEvent>() {
+-
+ 						@Override
+ 						public void handleEvent(BaseEvent be) {
+ 							updateRatioCombos(upBudgetSubFieldCombo);
+-
+ 						}
+-
+ 					});
+ 
+ 					downBudgetSubFieldCombo.addListener(Events.OnChange, new Listener<BaseEvent>() {
+-
+ 						@Override
+ 						public void handleEvent(BaseEvent be) {
+ 							updateRatioCombos(downBudgetSubFieldCombo);
+-
+ 						}
+-
+ 					});
++					
+ 					updateElementFormForBudgetElement(budgetElement);
+ 
+ 					final Window window = new Window();
+@@ -542,7 +525,6 @@
+ 					window.setLayout(new FitLayout());
+ 
+ 					anchorAddSubField.addClickHandler(new ClickHandler() {
+-
+ 						@Override
+ 						public void onClick(ClickEvent event) {
+ 							final BudgetSubFieldForm budgetSubFieldForm = new BudgetSubFieldForm(dispatcher, null,
+@@ -649,17 +631,10 @@
+ 							window.show();
+ 						}
+ 					});
+-
+ 				}
+-
+-			} else {
+-				htmlArea.show();
+ 			}
+-		} else {
+-			htmlArea.show();
+ 		}
+ 
+-		commonPanel.add(label);
+ 		commonPanel.add(htmlArea);
+ 
+ 		typeList = new SimpleComboBox<String>();
+Index: src/main/java/org/sigmah/shared/dto/element/FlexibleElementDTO.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/shared/dto/element/FlexibleElementDTO.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/shared/dto/element/FlexibleElementDTO.java	(working copy)
+@@ -491,6 +491,10 @@
+         }
+         return type;
+     }
++    
++    public String getFormattedLabel() {
++    	return getLabel(); // may be overridden
++    }
+ 
+     public LayoutGroupDTO getGroup() {
+         return get("group");
+Index: src/main/java/org/sigmah/client/ui/GlobalExportSettingsForm.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/client/ui/GlobalExportSettingsForm.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/client/ui/GlobalExportSettingsForm.java	(working copy)
+@@ -13,16 +13,13 @@
+ import org.sigmah.client.dispatch.monitor.MaskingAsyncMonitor;
+ import org.sigmah.client.i18n.I18N;
+ import org.sigmah.client.page.admin.AdminUtil;
+-import org.sigmah.client.page.admin.model.common.element.ElementTypeEnum;
+ import org.sigmah.client.util.Notification;
+ import org.sigmah.shared.command.GetGlobalExportSettings;
+ import org.sigmah.shared.command.result.VoidResult;
+-import org.sigmah.shared.domain.element.DefaultFlexibleElementType;
+ import org.sigmah.shared.dto.ExportUtils;
+ import org.sigmah.shared.dto.GlobalExportSettingsDTO;
+ import org.sigmah.shared.dto.ProjectModelDTO;
+ import org.sigmah.shared.dto.UpdateGlobalExportSettings;
+-import org.sigmah.shared.dto.element.DefaultFlexibleElementDTO;
+ import org.sigmah.shared.dto.element.FlexibleElementDTO;
+ 
+ import com.extjs.gxt.ui.client.Style.Orientation;
+@@ -362,11 +359,7 @@
+ 			@Override
+ 			public Object render(FlexibleElementDTO model, String property, ColumnData config, int rowIndex,
+ 			                int colIndex, ListStore<FlexibleElementDTO> store, Grid<FlexibleElementDTO> grid) {
+-				String title = null;
+-				if (ElementTypeEnum.DEFAULT.equals(model.getElementType()))
+-					title = DefaultFlexibleElementType.getName(((DefaultFlexibleElementDTO) model).getType());
+-				else
+-					title = model.getLabel();
++				String title = model.getFormattedLabel();
+ 				final Text text = AdminUtil.createGridText(title);
+ 				text.setTitle(title);
+ 				return text;
+Index: src/main/java/org/sigmah/client/page/dashboard/ElementExtractedValueGrid.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/dashboard/ElementExtractedValueGrid.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/dashboard/ElementExtractedValueGrid.java	(working copy)
+@@ -9,14 +9,12 @@
+ import org.sigmah.shared.command.result.ValueResultUtils;
+ import org.sigmah.shared.domain.ElementExtractedValue;
+ import org.sigmah.shared.domain.element.BudgetSubFieldType;
+-import org.sigmah.shared.domain.element.DefaultFlexibleElementType;
+ import org.sigmah.shared.dto.ElementExtractedValueStatus;
+ import org.sigmah.shared.dto.EntityDTO;
+ import org.sigmah.shared.dto.OrgUnitDTOLight;
+ import org.sigmah.shared.dto.ProjectDTO;
+ import org.sigmah.shared.dto.element.BudgetElementDTO;
+ import org.sigmah.shared.dto.element.BudgetSubFieldDTO;
+-import org.sigmah.shared.dto.element.DefaultFlexibleElementDTO;
+ import org.sigmah.shared.dto.element.QuestionChoiceElementDTO;
+ import org.sigmah.shared.dto.element.QuestionElementDTO;
+ import org.sigmah.shared.dto.element.TextAreaElementDTO;
+@@ -111,12 +109,8 @@
+ 						}
+ 					}
+ 					elementLabel = budgetSubFieldNames;
+-				} else if (model.getElement() instanceof DefaultFlexibleElementDTO) {
+-					DefaultFlexibleElementDTO defaultElement = (DefaultFlexibleElementDTO) model.getElement();
+-					elementLabel = DefaultFlexibleElementType.getName(defaultElement.getType());
+-
+ 				} else {
+-					elementLabel = model.getElement().getLabel();
++					elementLabel = model.getElement().getFormattedLabel();
+ 				}
+ 				return elementLabel;
+ 			}
+Index: src/main/java/org/sigmah/client/page/admin/model/common/importation/AdminImportationSchemeModelsView.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/admin/model/common/importation/AdminImportationSchemeModelsView.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/admin/model/common/importation/AdminImportationSchemeModelsView.java	(working copy)
+@@ -7,7 +7,6 @@
+ import org.sigmah.client.dispatch.monitor.MaskingAsyncMonitor;
+ import org.sigmah.client.i18n.I18N;
+ import org.sigmah.client.icon.IconImageBundle;
+-import org.sigmah.client.page.admin.model.common.element.ElementTypeEnum;
+ import org.sigmah.client.page.admin.model.common.importation.AdminImportationSchemeModelsPresenter.View;
+ import org.sigmah.client.page.common.grid.ConfirmCallback;
+ import org.sigmah.client.page.common.toolbar.UIActions;
+@@ -15,10 +14,8 @@
+ import org.sigmah.shared.command.GetImportationSchemes;
+ import org.sigmah.shared.command.result.CreateResult;
+ import org.sigmah.shared.command.result.ImportationSchemeListResult;
+-import org.sigmah.shared.domain.element.DefaultFlexibleElementType;
+ import org.sigmah.shared.dto.EntityDTO;
+ import org.sigmah.shared.dto.OrgUnitDTO;
+-import org.sigmah.shared.dto.element.DefaultFlexibleElementDTO;
+ import org.sigmah.shared.dto.importation.ImportationSchemeDTO;
+ import org.sigmah.shared.dto.importation.ImportationSchemeModelDTO;
+ import org.sigmah.shared.dto.importation.VariableBudgetElementDTO;
+@@ -174,13 +171,7 @@
+ 			public Object render(VariableFlexibleElementDTO model, String property, ColumnData config, int rowIndex,
+ 			                int colIndex, ListStore<VariableFlexibleElementDTO> store,
+ 			                Grid<VariableFlexibleElementDTO> grid) {
+-				if (model.getFlexibleElementDTO().getElementType() == ElementTypeEnum.DEFAULT) {
+-					DefaultFlexibleElementDTO defaultElementDTO = (DefaultFlexibleElementDTO) model
+-					                .getFlexibleElementDTO();
+-					return DefaultFlexibleElementType.getName(defaultElementDTO.getType());
+-				} else {
+-					return model.getFlexibleElementDTO().getLabel();
+-				}
++				return model.getFlexibleElementDTO().getFormattedLabel();
+ 			}
+ 		});
+ 		configs.add(column);
+@@ -425,15 +416,7 @@
+ 		} else {
+ 			String confirmMessage = "";
+ 			for (VariableFlexibleElementDTO variableFlexibleElementsToDelete : getVariableFlexibleElementsSelection()) {
+-				String elementLabel = "";
+-				if (ElementTypeEnum.DEFAULT.equals(variableFlexibleElementsToDelete.getFlexibleElementDTO()
+-				                .getElementType())) {
+-					elementLabel = DefaultFlexibleElementType
+-					                .getName(((DefaultFlexibleElementDTO) variableFlexibleElementsToDelete
+-					                                .getFlexibleElementDTO()).getType());
+-				} else {
+-					elementLabel = variableFlexibleElementsToDelete.getFlexibleElementDTO().getElementLabel();
+-				}
++				String elementLabel = variableFlexibleElementsToDelete.getFlexibleElementDTO().getFormattedLabel();
+ 				confirmMessage += elementLabel + ", ";
+ 			}
+ 			if (!confirmMessage.isEmpty()) {
+Index: src/main/java/org/sigmah/server/endpoint/export/sigmah/Importer.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/server/endpoint/export/sigmah/Importer.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/server/endpoint/export/sigmah/Importer.java	(working copy)
+@@ -16,7 +16,6 @@
+ import javax.servlet.ServletException;
+ 
+ import org.dozer.Mapper;
+-import org.sigmah.client.page.admin.model.common.element.ElementTypeEnum;
+ import org.sigmah.server.Translator;
+ import org.sigmah.server.UIConstantsTranslator;
+ import org.sigmah.server.endpoint.export.sigmah.spreadsheet.GlobalExportDataProvider;
+@@ -349,7 +348,7 @@
+ 			if (Log.isDebugEnabled()) {
+ 				Log.debug("Key identification is " + cellValue.toString());
+ 			}
+-			String fleName = getFlexibleElementLabel(fleDTO);
++			String fleName = ExporterUtil.getFlexibleElementLabel(fleDTO, translator, locale);
+ 
+ 			Map<EntityDTO, List<ElementExtractedValue>> mapEntityCorrespondances = new HashMap<EntityDTO, List<ElementExtractedValue>>();
+ 
+@@ -733,56 +732,6 @@
+ 		return value;
+ 	}
+ 
+-	/**
+-	 * Gets the label of the flexible element
+-	 * 
+-	 * @param fleDTO
+-	 * @return
+-	 */
+-	public String getFlexibleElementLabel(FlexibleElementDTO fleDTO) {
+-		String fleName = null;
+-		if (ElementTypeEnum.DEFAULT.equals(fleDTO.getElementType())) {
+-			DefaultFlexibleElementDTO defaultElementDTO = (DefaultFlexibleElementDTO) fleDTO;
+-			switch (defaultElementDTO.getType()) {
+-			case BUDGET:
+-				fleName = translator.translate("projectBudget", locale);
+-				break;
+-			case CODE:
+-				fleName = translator.translate("projectName", locale);
+-				break;
+-			case COUNTRY:
+-				fleName = translator.translate("projectCountry", locale);
+-				break;
+-			case END_DATE:
+-				fleName = translator.translate("projectEndDate", locale);
+-				break;
+-			case MANAGER:
+-				fleName = translator.translate("projectManager", locale);
+-				break;
+-			case ORG_UNIT:
+-				fleName = translator.translate("orgUnit", locale);
+-				break;
+-			case OWNER:
+-				fleName = translator.translate("projectOwner", locale);
+-				break;
+-			case START_DATE:
+-				fleName = translator.translate("projectStartDate", locale);
+-				break;
+-			case TITLE:
+-				fleName = translator.translate("projectFullName", locale);
+-				break;
+-			default:
+-				break;
+-
+-			}
+-		} else {
+-			fleName = fleDTO.getLabel();
+-		}
+-		return fleName;
+-	}
+-
+-	
+-
+ 	protected int getColumnFromReference(String reference) {
+ 		int column = 0;
+ 		Pattern MY_PATTERN = Pattern.compile("[a-zA-Z]+\\.?");
+Index: src/main/java/org/sigmah/client/page/admin/model/common/element/AdminFlexibleElementsView.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/admin/model/common/element/AdminFlexibleElementsView.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/admin/model/common/element/AdminFlexibleElementsView.java	(working copy)
+@@ -15,10 +15,8 @@
+ import org.sigmah.shared.command.result.CreateResult;
+ import org.sigmah.shared.command.result.UpdateModelResult;
+ import org.sigmah.shared.domain.ProjectModelStatus;
+-import org.sigmah.shared.domain.element.DefaultFlexibleElementType;
+ import org.sigmah.shared.dto.OrgUnitModelDTO;
+ import org.sigmah.shared.dto.ProjectModelDTO;
+-import org.sigmah.shared.dto.element.DefaultFlexibleElementDTO;
+ import org.sigmah.shared.dto.element.FlexibleElementDTO;
+ import org.sigmah.shared.dto.layout.LayoutGroupDTO;
+ import org.sigmah.shared.dto.profile.PrivacyGroupDTO;
+@@ -275,12 +273,7 @@
+ 				
+ 				if((projectModel != null && ProjectModelStatus.DRAFT.equals(projectModel.getStatus()))
+ 						|| (orgUnitModel != null && ProjectModelStatus.DRAFT.equals(orgUnitModel.getStatus()))){
+-					final Anchor nameHyperlink ;
+-					if(ElementTypeEnum.DEFAULT.equals(model.getElementType())){
+-						nameHyperlink = new Anchor(DefaultFlexibleElementType.getName(((DefaultFlexibleElementDTO)model).getType()), true);	
+-					}			
+-					else
+-						nameHyperlink = new Anchor(model.getLabel(), true);
++					final Anchor nameHyperlink = new Anchor(model.getFormattedLabel(), true);
+ 	                nameHyperlink.addStyleName("credits-partner-url");
+ 	                nameHyperlink.addClickHandler(new ClickHandler(){
+ 
+@@ -291,11 +284,8 @@
+ 	                	
+ 	                });
+ 	                return nameHyperlink;
+-				}else{				
+-					if(ElementTypeEnum.DEFAULT.equals(model.getElementType()))
+-						return AdminUtil.createGridText(DefaultFlexibleElementType.getName(((DefaultFlexibleElementDTO)model).getType()));
+-					else
+-						return AdminUtil.createGridText(model.getLabel());					
++				} else {		
++					return AdminUtil.createGridText(model.getFormattedLabel());				
+ 				}
+ 			}
+         });
+@@ -485,16 +475,12 @@
+ 	public void confirmDeleteSelected(final ConfirmCallback confirmCallback) {
+ 		List<FlexibleElementDTO> deleteElements = getDeleteSelection();
+ 		String names = "";
+-		for(FlexibleElementDTO s : deleteElements){			
+-			if(s instanceof DefaultFlexibleElementDTO){
+-				names += DefaultFlexibleElementType.getName(((DefaultFlexibleElementDTO)s).getType()) + ", ";
+-			}else{
+-				names += s.getLabel() + ", ";
+-			}
++		for (FlexibleElementDTO s : deleteElements) {			
++			names += s.getFormattedLabel() + ", ";
+ 		}
+-		if(names.isEmpty()){
++		if (names.isEmpty()) {
+ 			MessageBox.alert(I18N.CONSTANTS.delete(), I18N.MESSAGES.adminFlexibleDeleteNone(), null);
+-		}else{
++		} else {
+ 			names = names.substring(0, names.lastIndexOf(", "));
+ 			MessageBox.confirm(I18N.CONSTANTS.delete(), I18N.MESSAGES.adminFlexibleConfirmDelete(names), new Listener<MessageBoxEvent>() {
+ 				
+@@ -506,7 +492,5 @@
+ 				}
+ 			});
+ 		}
+-		
+-				
+ 	}
+ }
+Index: src/main/java/org/sigmah/client/page/admin/model/common/importation/VariableFlexibleElementForm.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/admin/model/common/importation/VariableFlexibleElementForm.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/admin/model/common/importation/VariableFlexibleElementForm.java	(working copy)
+@@ -72,8 +72,8 @@
+ 		}
+ 		for (FlexibleElementDTO fle : allElements) {
+ 			if (fle instanceof DefaultFlexibleElementDTO) {
+-				((DefaultFlexibleElementDTO) fle).setLabel(DefaultFlexibleElementType
+-				                .getName(((DefaultFlexibleElementDTO) fle).getType()));
++				DefaultFlexibleElementDTO dfle = (DefaultFlexibleElementDTO) fle;
++				dfle.setLabel(dfle.getFormattedLabel());
+ 				if (fle instanceof BudgetElementDTO) {
+ 
+ 					BudgetElementDTO budgetElementDTO = (BudgetElementDTO) fle;
+Index: src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/GlobalExportDataProvider.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/GlobalExportDataProvider.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/GlobalExportDataProvider.java	(working copy)
+@@ -20,6 +20,7 @@
+ import org.sigmah.server.UIConstantsTranslator;
+ import org.sigmah.server.dao.GlobalExportDAO;
+ import org.sigmah.server.dao.hibernate.GlobalExportHibernateDAO;
++import org.sigmah.server.endpoint.export.sigmah.ExporterUtil;
+ import org.sigmah.server.endpoint.export.sigmah.spreadsheet.ExportConstants.MultiItemText;
+ import org.sigmah.server.endpoint.export.sigmah.spreadsheet.data.LogFrameExportData;
+ import org.sigmah.server.endpoint.gwtrpc.handler.GetValueHandler;
+@@ -454,7 +455,7 @@
+ 	                final Translator translator) {
+ 
+ 		Object value = null;
+-		String label = null;
++		String label = ExporterUtil.getFlexibleElementLabel(element, translator, locale);
+ 
+ 		final DefaultFlexibleElement defaultElement = (DefaultFlexibleElement) element;
+ 
+@@ -462,8 +463,6 @@
+ 
+ 		switch (defaultElement.getType()) {
+ 		case CODE: {
+-
+-			label = translator.translate("projectName", locale);
+ 			if (hasValue) {
+ 				value = valueResult.getValueObject();
+ 			} else {
+@@ -472,7 +471,6 @@
+ 		}
+ 			break;
+ 		case TITLE: {
+-			label = translator.translate("projectFullName", locale);
+ 			if (hasValue) {
+ 				value = valueResult.getValueObject();
+ 			} else {
+@@ -481,7 +479,6 @@
+ 		}
+ 			break;
+ 		case START_DATE: {
+-			label = translator.translate("projectStartDate", locale);
+ 			if (hasValue) {
+ 				value = new Date(Long.parseLong(valueResult.getValueObject()));
+ 			} else {
+@@ -490,7 +487,6 @@
+ 		}
+ 			break;
+ 		case END_DATE: {
+-			label = translator.translate("projectEndDate", locale);
+ 			if (hasValue) {
+ 				value = new Date(Long.parseLong(valueResult.getValueObject()));
+ 			} else {
+@@ -501,7 +497,6 @@
+ 		}
+ 			break;
+ 		case BUDGET: {
+-			label = translator.translate("projectBudget", locale);
+ 			BudgetElement budgetElement = (BudgetElement) element;
+ 
+ 			Double pb = 0d;
+@@ -527,7 +522,6 @@
+ 		}
+ 			break;
+ 		case COUNTRY: {
+-			label = translator.translate("projectCountry", locale);
+ 			if (hasValue) {
+ 				int countryId = Integer.parseInt(valueResult.getValueObject());
+ 				value = entityManager.find(Country.class, countryId).getName();
+@@ -537,7 +531,6 @@
+ 		}
+ 			break;
+ 		case OWNER: {
+-			label = translator.translate("projectOwner", locale);
+ 			if (hasValue) {
+ 				value = valueResult.getValueObject();
+ 			} else {
+@@ -546,7 +539,6 @@
+ 		}
+ 			break;
+ 		case MANAGER: {
+-			label = translator.translate("projectManager", locale);
+ 			if (hasValue) {
+ 				int userId = Integer.parseInt(valueResult.getValueObject());
+ 				value = getUserName(entityManager.find(User.class, userId));
+@@ -556,7 +548,6 @@
+ 		}
+ 			break;
+ 		case ORG_UNIT: {
+-			label = translator.translate("orgunit", locale);
+ 			int orgUnitId = -1;
+ 			if (hasValue) {
+ 				orgUnitId = Integer.parseInt(valueResult.getValueObject());
+@@ -580,9 +571,8 @@
+ 	public ValueLabel getDefElementPair(final ValueResult valueResult, final FlexibleElement element,
+ 	                final OrgUnit orgUnit, final EntityManager entityManager, final Locale locale,
+ 	                final Translator translator) {
+-
+ 		Object value = null;
+-		String label = null;
++		String label = ExporterUtil.getFlexibleElementLabel(element, translator, locale);
+ 
+ 		final DefaultFlexibleElement defaultElement = (DefaultFlexibleElement) element;
+ 
+@@ -590,8 +580,6 @@
+ 
+ 		switch (defaultElement.getType()) {
+ 		case CODE: {
+-
+-			label = translator.translate("projectName", locale);
+ 			if (hasValue) {
+ 				value = valueResult.getValueObject();
+ 			} else {
+@@ -600,7 +588,6 @@
+ 		}
+ 			break;
+ 		case TITLE: {
+-			label = translator.translate("projectFullName", locale);
+ 			if (hasValue) {
+ 				value = valueResult.getValueObject();
+ 			} else {
+@@ -610,7 +597,6 @@
+ 			break;
+ 
+ 		case BUDGET: {
+-			label = translator.translate("projectBudget", locale);
+ 			BudgetElement budgetElement = (BudgetElement) element;
+ 
+ 			Double pb = 0d;
+@@ -636,7 +622,6 @@
+ 		}
+ 			break;
+ 		case COUNTRY: {
+-			label = translator.translate("projectCountry", locale);
+ 			if (hasValue) {
+ 				int countryId = Integer.parseInt(valueResult.getValueObject());
+ 				value = entityManager.find(Country.class, countryId).getName();
+@@ -646,7 +631,6 @@
+ 		}
+ 			break;
+ 		case MANAGER: {
+-			label = translator.translate("projectManager", locale);
+ 			if (hasValue) {
+ 				int userId = Integer.parseInt(valueResult.getValueObject());
+ 				value = getUserName(entityManager.find(User.class, userId));
+@@ -656,14 +640,12 @@
+ 		}
+ 			break;
+ 		case ORG_UNIT: {
+-			label = translator.translate("orgunit", locale);
+ 			OrgUnit parentOrgUnit = orgUnit.getParent();
+ 			if (parentOrgUnit == null)
+ 				parentOrgUnit = orgUnit;
+ 			value = parentOrgUnit.getName() + " - " + parentOrgUnit.getFullName();
+ 		}
+ 			break;
+-
+ 		}
+ 		return new ValueLabel(label, value);
+ 	}
+Index: src/main/java/org/sigmah/server/endpoint/export/sigmah/ExporterUtil.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/server/endpoint/export/sigmah/ExporterUtil.java	(revision 0)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/server/endpoint/export/sigmah/ExporterUtil.java	(working copy)
+@@ -0,0 +1,92 @@
++package org.sigmah.server.endpoint.export.sigmah;
++
++import java.util.Locale;
++
++import org.sigmah.server.Translator;
++import org.sigmah.shared.domain.element.DefaultFlexibleElement;
++import org.sigmah.shared.domain.element.DefaultFlexibleElementType;
++import org.sigmah.shared.domain.element.FlexibleElement;
++import org.sigmah.shared.dto.element.DefaultFlexibleElementDTO;
++import org.sigmah.shared.dto.element.FlexibleElementDTO;
++
++public class ExporterUtil {
++	/**
++	 * Gets the label of the flexible element
++	 * 
++	 * @param fleDTO
++	 * @param translator
++	 * @param locale
++	 * @return
++	 */
++	public static String getFlexibleElementLabel(FlexibleElementDTO fleDTO, Translator translator, Locale locale) {
++		String fleName = null;
++		if (fleDTO.getLabel() != null) {
++			fleName = fleDTO.getLabel();
++		} else if (fleDTO instanceof DefaultFlexibleElementDTO) {
++			fleName = getFlexibleElementLabel(((DefaultFlexibleElementDTO) fleDTO).getType(), translator, locale);
++		}
++		return fleName;
++	}
++
++	/**
++	 * Gets the label of the flexible element
++	 * 
++	 * @param fle
++	 * @param translator
++	 * @param locale
++	 * @return
++	 */
++	public static String getFlexibleElementLabel(FlexibleElement fle, Translator translator, Locale locale) {
++		String fleName = null;
++		if (fle.getLabel() != null) {
++			fleName = fle.getLabel();
++		} else if (fle instanceof DefaultFlexibleElement) {
++			fleName = getFlexibleElementLabel(((DefaultFlexibleElement) fle).getType(), translator, locale);
++		}
++		return fleName;
++	}
++
++	/**
++	 * Gets the label of the default flexible element type
++	 * 
++	 * @param type
++	 * @param translator
++	 * @param locale
++	 * @return
++	 */
++	public static String getFlexibleElementLabel(DefaultFlexibleElementType type, Translator translator, Locale locale) {
++		String fleName = null;
++		switch (type) {
++		case BUDGET:
++			fleName = translator.translate("projectBudget", locale);
++			break;
++		case CODE:
++			fleName = translator.translate("projectName", locale);
++			break;
++		case COUNTRY:
++			fleName = translator.translate("projectCountry", locale);
++			break;
++		case END_DATE:
++			fleName = translator.translate("projectEndDate", locale);
++			break;
++		case MANAGER:
++			fleName = translator.translate("projectManager", locale);
++			break;
++		case ORG_UNIT:
++			fleName = translator.translate("orgUnit", locale);
++			break;
++		case OWNER:
++			fleName = translator.translate("projectOwner", locale);
++			break;
++		case START_DATE:
++			fleName = translator.translate("projectStartDate", locale);
++			break;
++		case TITLE:
++			fleName = translator.translate("projectFullName", locale);
++			break;
++		default:
++			break;
++		}
++		return fleName;
++	}
++}
+Index: src/main/java/org/sigmah/shared/dto/element/BudgetElementDTO.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/shared/dto/element/BudgetElementDTO.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/shared/dto/element/BudgetElementDTO.java	(working copy)
+@@ -177,8 +177,7 @@
+ 		fieldset.add(ratioLabel);
+ 
+ 		// Sets the field label.
+-		setLabel(I18N.CONSTANTS.projectBudget());
+-		fieldset.setHeading(getLabel());
++		fieldset.setHeading(getFormattedLabel());
+ 
+ 		component = fieldset;
+ 		return component;
+Index: src/main/java/org/sigmah/client/page/admin/model/common/element/AdminFlexibleElementActionListener.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/admin/model/common/element/AdminFlexibleElementActionListener.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/admin/model/common/element/AdminFlexibleElementActionListener.java	(working copy)
+@@ -5,14 +5,13 @@
+ 
+ import org.sigmah.client.dispatch.Dispatcher;
+ import org.sigmah.client.i18n.I18N;
++import org.sigmah.client.page.admin.model.common.element.AdminFlexibleElementsPresenter.View;
+ import org.sigmah.client.page.common.grid.ConfirmCallback;
+ import org.sigmah.client.page.common.toolbar.ActionListener;
+ import org.sigmah.client.page.common.toolbar.UIActions;
+-import org.sigmah.client.page.admin.model.common.element.AdminFlexibleElementsPresenter.View;
+ import org.sigmah.client.util.Notification;
+ import org.sigmah.shared.command.DeleteFlexibleElements;
+ import org.sigmah.shared.command.result.VoidResult;
+-import org.sigmah.shared.domain.element.DefaultFlexibleElementType;
+ import org.sigmah.shared.dto.element.DefaultFlexibleElementDTO;
+ import org.sigmah.shared.dto.element.FlexibleElementDTO;
+ 
+@@ -50,9 +49,9 @@
+ 		String names = "";
+ 		for(FlexibleElementDTO s : selection){
+ 			ids.add(s.getId());
+-			names = s.getLabel() + ", " + names;
+-			if(s instanceof DefaultFlexibleElementDTO){
+-				notDeletableNames += DefaultFlexibleElementType.getName(((DefaultFlexibleElementDTO)s).getType()) + ", ";
++			names = s.getFormattedLabel() + ", " + names;
++			if (s instanceof DefaultFlexibleElementDTO){
++				notDeletableNames += s.getFormattedLabel() + ", ";
+ 			}
+ 		}
+ 		
+Index: src/main/java/org/sigmah/client/page/admin/users/AdminPrivacyGroupsActionListener.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/admin/users/AdminPrivacyGroupsActionListener.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/client/page/admin/users/AdminPrivacyGroupsActionListener.java	(working copy)
+@@ -118,7 +118,7 @@
+ 											if( flexibleElement.getPrivacyGroup() != null && flexibleElement.getPrivacyGroup().getId() == selectedPrivacyGroup.getId()){
+ 												canBeDeleted = false;
+ 												if(flexibleElement instanceof DefaultFlexibleElementDTO){
+-													elementNamesList += DefaultFlexibleElementType.getName(((DefaultFlexibleElementDTO)flexibleElement).getType()) + ", ";
++													elementNamesList += flexibleElement.getFormattedLabel() + ", " + I18N.CONSTANTS.flexibleElementDefault();
+ 												}
+ 												elementNamesList += flexibleElement instanceof DefaultFlexibleElementDTO? I18N.CONSTANTS.flexibleElementDefault() :  flexibleElement.getElementLabel() + " ( Model : " + projectModel.getName()+ "), ";
+ 											} 
+@@ -129,7 +129,7 @@
+ 										for(FlexibleElementDTO flexibleElement : orgUnitModel.getAllElements()){
+ 											if( flexibleElement.getPrivacyGroup() != null && flexibleElement.getPrivacyGroup().getId() == selectedPrivacyGroup.getId()){
+ 												canBeDeleted = false;
+-												elementNamesList += flexibleElement.getLabel() + " ( OrgUnit : " + orgUnitModel.getName() + "), ";
++												elementNamesList += flexibleElement.getFormattedLabel() + " ( OrgUnit : " + orgUnitModel.getName() + "), ";
+ 											} 
+ 										}
+ 									}

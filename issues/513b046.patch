@@ -1,0 +1,280 @@
+Index: src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/GlobalExportDataProvider.java
+===================================================================
+--- src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/GlobalExportDataProvider.java	(revision 1581)
++++ src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/GlobalExportDataProvider.java	(working copy)
+@@ -36,6 +36,8 @@
+ import org.sigmah.shared.domain.ProjectModelStatus;
+ import org.sigmah.shared.domain.User;
+ import org.sigmah.shared.domain.element.BudgetElement;
++import org.sigmah.shared.domain.element.BudgetSubField;
++import org.sigmah.shared.domain.element.BudgetSubFieldType;
+ import org.sigmah.shared.domain.element.DefaultFlexibleElement;
+ import org.sigmah.shared.domain.element.FlexibleElement;
+ import org.sigmah.shared.domain.element.QuestionChoiceElement;
+@@ -201,16 +203,16 @@
+ 			pModelExportDataMap.put(pModelName, exportData);
+ 
+ 			// field titles
+-			final String[] titles = new String[elements.size()];
++			final ArrayList<String> titles = new ArrayList<String>();
+ 
+ 			boolean isFirstLine = true;
+ 			// projects
+ 			for (final Project project : pModelProjectsMap.get(pModelName)) {
+-
+-				final String[] values = new String[elements.size()];
++				
++				ArrayList<ValueLabel> pairs = new ArrayList<ValueLabel>();
++				
++				final ArrayList<String> values = new ArrayList<String>();
+ 
+-				int titleIndex = 0;
+-				int valueIndex = 0;
+ 
+ 				// fields
+ 				for (final FlexibleElement element : elements) {
+@@ -224,51 +226,65 @@
+ 						// prepare value and label
+ 						ValueLabel pair = null;
+ 						/* DEF FLEXIBLE */
+-						if (elementName.equals("element.DefaultFlexibleElement")
+-						                || elementName.equals("element.BudgetElement")) {
+-							pair = getDefElementPair(valueResult, element, project, entityManager, locale, translator);
++						if (elementName.equals("element.DefaultFlexibleElement")) {
+ 
+-						} else /* CHECKBOX */if (elementName.equals("element.CheckboxElement")) {
++							pair = getDefElementPair(valueResult, element, project, entityManager, locale, translator);
++							pairs.add(pair);
++							
++						} else /* BUDGET ElEMENT */ if(elementName.equals("element.BudgetElement")){
++							
++							pairs.addAll(getBudgetElementPairs(valueResult, element, project, entityManager, locale, translator));
++							
++						}else /* CHECKBOX */if (elementName.equals("element.CheckboxElement")) {
+ 							pair = getCheckboxElementPair(valueResult, element, locale, translator);
++							pairs.add(pair);
+ 						} else /* TEXT AREA */if (elementName.equals("element.TextAreaElement")) {
+ 							pair = getTextAreaElementPair(valueResult, element);
++							pairs.add(pair);
+ 
+ 						}/* TRIPLET */
+ 						if (elementName.equals("element.TripletsListElement")) {
+ 							pair = getTripletPair(element, valueResult);
++							pairs.add(pair);
+ 
+ 						}/* CHOICE */
+ 						if (elementName.equals("element.QuestionElement")) {
+ 							pair = getChoicePair(element, valueResult);
++							pairs.add(pair);
+ 						}
+-
+-						// titles
+-
+-						if (isFirstLine) {
+-							titles[titleIndex++] = pair != null ? pair.getFormattedLabel() : null;
+-						}
+-
+-						// values
+-						String valueStr = null;
+-						if (pair != null) {
+-							Object value = pair.getValue();
+-							if (value == null) {
+-								valueStr = null;
+-							} else if (value instanceof String) {
+-								valueStr = (String) value;
+-							} else if (value instanceof Double) {
+-								Double d = (Double) value;
+-								valueStr = LogFrameExportData.AGGR_AVG_FORMATTER.format(d.doubleValue());
+-							} else if (value instanceof Long) {
+-								Long l = (Long) value;
+-								valueStr = LogFrameExportData.AGGR_SUM_FORMATTER.format(l.longValue());
+-							} else { // date
+-								valueStr = ExportConstants.EXPORT_DATE_FORMAT.format((Date) value);
++						
++						//Adding an arraylist of valuelabels so that inidividual elements have the ability to add multiple fields to the spreadsheet
++						for(ValueLabel V :pairs){
++							pair = V;
++						
++							// titles
++							if (isFirstLine) {
++									titles.add(pair != null ? pair.getFormattedLabel() : null);
+ 							}
++	
++							// values
++							String valueStr = null;
++							if (pair != null) {
++								Object value = pair.getValue();
++								if (value == null) {
++									valueStr = null;
++								} else if (value instanceof String) {
++									valueStr = (String) value;
++								} else if (value instanceof Double) {
++									Double d = (Double) value;
++									valueStr = LogFrameExportData.AGGR_AVG_FORMATTER.format(d.doubleValue());
++								} else if (value instanceof Long) {
++									Long l = (Long) value;
++									valueStr = LogFrameExportData.AGGR_SUM_FORMATTER.format(l.longValue());
++								} else { // date
++									valueStr = ExportConstants.EXPORT_DATE_FORMAT.format((Date) value);
++								}
++							}
++	
++							values.add(valueStr);
++						
+ 						}
+ 
+-						values[valueIndex++] = valueStr;
+-
+ 					} catch (CommandException e) {
+ 						Log.error("Failed to get element value" + e.getMessage());
+ 					}
+@@ -277,12 +293,12 @@
+ 
+ 				// add titles
+ 				if (isFirstLine) {
+-					exportData.add(titles);
++					exportData.add(titles.toArray(new String[titles.size()]));
+ 					isFirstLine = false;
+ 				}
+ 
+ 				// add values
+-				exportData.add(values);
++				exportData.add(values.toArray(new String[values.size()]));
+ 
+ 			}// projects
+ 
+@@ -438,6 +454,50 @@
+ 
+ 		return name;
+ 	}
++	
++	public ArrayList<ValueLabel> getBudgetElementPairs(final ValueResult valueResult, final FlexibleElement element,
++            final Project project, final EntityManager entityManager, final Locale locale,
++            final Translator translator) {
++		
++		ArrayList<ValueLabel> pairs = new ArrayList<ValueLabel>();
++
++		Object value = null;
++		String label = null;
++		
++		final DefaultFlexibleElement defaultElement = (DefaultFlexibleElement) element;
++		
++		boolean hasValue = valueResult != null && valueResult.isValueDefined();
++		
++		label = translator.translate("projectBudget",locale);
++		BudgetElement budgetElement = (BudgetElement) element;
++
++		Double sb = 0d; // spent budget
++		Double pb = 0d; // planned budget
++		Double rb = 0d; // received budget 
++		
++		if (hasValue) {
++			final Map<Integer, String> values = ValueResultUtils.splitMapElements(valueResult.getValueObject());
++			
++			for(BudgetSubField b : budgetElement.getBudgetSubFields()){
++				if(values.get(b.getId().intValue()) != null){
++					if(BudgetSubFieldType.PLANNED.equals(b.getType())){
++						pb = Double.valueOf(values.get(b.getId().intValue()));
++					}
++					else if(BudgetSubFieldType.SPENT.equals(b.getType())){
++						sb = Double.valueOf(values.get(b.getId().intValue()));
++					}
++					else if(BudgetSubFieldType.RECEIVED.equals(b.getType())){
++						rb = Double.valueOf(values.get(b.getId().intValue()));
++					}
++			}
++		}
++		}
++		pairs.add(new ValueLabel("Budget Spent", sb));
++		pairs.add(new ValueLabel("Budget Planned", pb));
++		pairs.add(new ValueLabel("Budget Received", rb));
++		
++		return pairs;
++	}
+ 
+ 	public ValueLabel getDefElementPair(final ValueResult valueResult, final FlexibleElement element,
+ 	                final Object object, final Class clazz, final EntityManager entityManager, final Locale locale,
+@@ -500,32 +560,6 @@
+ 			}
+ 		}
+ 			break;
+-		case BUDGET: {
+-			label = translator.translate("projectBudget", locale);
+-			BudgetElement budgetElement = (BudgetElement) element;
+-
+-			Double pb = 0d;
+-			Double sb = 0d;
+-			if (hasValue) {
+-				final Map<Integer, String> values = ValueResultUtils.splitMapElements(valueResult.getValueObject());
+-
+-				if (budgetElement.getRatioDividend() != null) {
+-					if (values.get(budgetElement.getRatioDividend().getId().intValue()) != null) {
+-						pb = Double.valueOf(values.get(budgetElement.getRatioDividend().getId().intValue()));
+-
+-					}
+-				}
+-
+-				if (budgetElement.getRatioDivisor() != null) {
+-					if (values.get(budgetElement.getRatioDivisor().getId().intValue()) != null) {
+-						sb = Double.valueOf(values.get(budgetElement.getRatioDivisor().getId().intValue()));
+-
+-					}
+-				}
+-			}
+-			value = sb + " / " + pb;
+-		}
+-			break;
+ 		case COUNTRY: {
+ 			label = translator.translate("projectCountry", locale);
+ 			if (hasValue) {
+@@ -608,33 +642,6 @@
+ 			}
+ 		}
+ 			break;
+-
+-		case BUDGET: {
+-			label = translator.translate("projectBudget", locale);
+-			BudgetElement budgetElement = (BudgetElement) element;
+-
+-			Double pb = 0d;
+-			Double sb = 0d;
+-			if (hasValue) {
+-				final Map<Integer, String> values = ValueResultUtils.splitMapElements(valueResult.getValueObject());
+-
+-				if (budgetElement.getRatioDividend() != null) {
+-					if (values.get(budgetElement.getRatioDividend().getId()) != null) {
+-						pb = Double.valueOf(values.get(budgetElement.getRatioDividend().getId()));
+-
+-					}
+-				}
+-
+-				if (budgetElement.getRatioDivisor() != null) {
+-					if (values.get(budgetElement.getRatioDivisor().getId()) != null) {
+-						pb = Double.valueOf(values.get(budgetElement.getRatioDivisor().getId()));
+-
+-					}
+-				}
+-			}
+-			value = sb + " / " + pb;
+-		}
+-			break;
+ 		case COUNTRY: {
+ 			label = translator.translate("projectCountry", locale);
+ 			if (hasValue) {
+Index: src/main/java/org/sigmah/client/i18n/UIConstants.properties
+===================================================================
+--- src/main/java/org/sigmah/client/i18n/UIConstants.properties	(revision 1581)
++++ src/main/java/org/sigmah/client/i18n/UIConstants.properties	(working copy)
+@@ -1649,6 +1649,12 @@
+ 
+ projectBudget = Budget
+ 
++projectBudgetSpent = Budget Spent
++
++projectBudgetReceived = Budget Received
++
++projectBudgetPlanned = Planned Budget
++
+ projectCannotActivate = All the required fields of the active phase must be filled and saved before activating this phase.
+ 
+ projectCannotClose = All the required fields of this phase must be filled and saved before closing it.

@@ -1,0 +1,3 @@
+Id,Project,Reporter,Assigned To,Priority,Severity,Reproducibility,Product Version,Category,Date Submitted,OS,OS Version,Platform,View Status,Updated,Summary,Status,Resolution,Fixed in Version
+0000516,sigmah,osarrat,,normal,feature,N/A,1.1.1,General,2013-02-25,,,,public,2013-02-27,General User Interface improvement,new,open,
+0000312,sigmah,nrebiai,,normal,feature,always,,Dashboard,2011-06-10,,,,public,2013-02-26,Keep memory of columns display and filters applied on Dashboard,new,open,

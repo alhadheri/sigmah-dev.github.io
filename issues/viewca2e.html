@@ -1,0 +1,784 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=208 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 15:09:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.html" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Wed, 25 Jul 2018 14:06:00 GMT" />
+	<link rel="shortcut icon" href="images/favicon.html" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.html?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.html?type=id" />	<title>0000208: Changing of Project's OrgUnit - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.html"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.html" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_pagebaf1.html?return=%2Fissues%2Fview.php%3Fid%3D208">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-25 16:06 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issuesd41d.xml?"><img src="images/rss.html" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table><br /><table class="width100" cellspacing="1"><tr><td class="form-title" colspan="3">View Issue Details&#160;<span class="small"><span class="bracket-link">[&#160;<a href="#bugnotes">Jump to Notes</a>&#160;]</span> </span></td><td class="center"><span class="small"></span></td><td class="right" colspan="2"><span class="small"><span class="bracket-link">[&#160;<a href="view760c.html?id=208&amp;history=1#history">Issue History</a>&#160;]</span> </span><span class="small"><span class="bracket-link">[&#160;<a href="print_bug_page1958.html?bug_id=208">Print</a>&#160;]</span> </span></td></tr><tr><td class="category" width="15%">ID</td><td class="category" width="20%">Project</td><td class="category" width="15%">Category</td><td class="category" width="15%">View Status</td><td class="category" width="15%">Date Submitted</td><td class="category" width="20%">Last Update</td></tr><tr class="row-1"><td>0000208</td><td>sigmah</td><td>Project</td><td>public</td><td>2011-04-22 15:01</td><td>2011-10-17 12:44</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category">Reporter</td><td>osarrat</td><td colspan="4">&#160;</td></tr><tr class="row-1"><td class="category">Assigned To</td><td>zhe.hu32</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Priority</td><td>normal</td><td class="category">Severity</td><td>feature</td><td class="category">Reproducibility</td><td>N/A</td></tr><tr class="row-1"><td class="category">Status</td><td bgcolor="#c9ccc4">closed</td><td class="category">Resolution</td><td>fixed</td><td colspan="2">&#160;</td></tr><tr class="row-2"><td class="category">Platform</td><td></td><td class="category">OS</td><td></td><td class="category">OS Version</td><td></td></tr><tr class="row-1"><td class="category">Product Version</td><td>0.9</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Target Version</td><td>1.1</td><td class="category">Fixed in Version</td><td>1.1</td><td colspan="2">&#160;</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category">Summary</td><td colspan="5">0000208: Changing of Project's OrgUnit</td></tr><tr class="row-2"><td class="category">Description</td><td colspan="5">In order to better manage project's organizational unit in relation with indicators' sites, the following change are required:<br />
+1. the project model default flexible element &quot;Country&quot; should become read-only (to be used for display in the banner or anywhere else): it should not be possible to change the country of a project, only the organizational unit should be changeable<br />
+2. when modifying a project's organizational unit: <br />
+(i)if no indicator has yet been created for the project, the project's organizational unit can be changed without any notice<br />
+(ii)if indicators have yet been created for the project, the project's organizational unit can be changed but the user will have to confirm after reading that the project will remain attached to the current country for indicators' sites management and not the country linked to the new OrgUnit (this message appears of course only if the 2 countries are different)<br />
+</td></tr><tr class="row-1"><td class="category">Tags</td><td colspan="5">No tags attached.</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category">User Report URL</td><td colspan="5"></td></tr><tr class="row-1"><td class="category">OS</td><td colspan="5">Windows Vista</td></tr><tr class="row-2"><td class="category">Other OS</td><td colspan="5"></td></tr><tr class="row-1"><td class="category">Browser</td><td colspan="5">Mozilla Firefox 4.0</td></tr><tr class="row-2"><td class="category">Other browser</td><td colspan="5"></td></tr><tr class="row-1"><td class="category">ScreenURL</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">(ActivityInfo) Noticed in revision</td><td colspan="5"></td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category"><a name="attachments" id="attachments" />Attached Files</td><td colspan="5"></td></tr><tr align="center"><td align="center" colspan="6"><table><tr class="vcenter"><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td></tr></table></td></tr></table><br />
+
+<div id="relationships_open"><table class="width100" cellspacing="1">
+<tr class="row-2" valign="top">
+	<td width="15%" class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;Relationships	</td>
+</tr>
+<tr>
+	<td colspan="2"><table border="0" width="100%" cellpadding="0" cellspacing="1"><tr bgcolor="#c9ccc4"><td><span class="nowrap">related to</span>&#160;</td><td><a href="view920d.html?id=404">0000404</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_page6fb5.html?id=31">sherzod</a></span>&#160;</td><td>Impossible to set the Country of an organizational unit&#160;</td></tr>
+</table></td>
+</tr>
+</table>
+
+</div><div id="relationships_closed" class="hidden"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;Relationships	</td>
+</tr>
+</table>
+
+</div>
+<a name="bugnotes" id="bugnotes" /><br />
+
+<div id="bugnotes_open"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;		Notes	</td>
+</tr>
+<tr class="bugnote" id="c614">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c614" title="Direct link to note">0000614)</a></span><br />
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-07-28 15:49</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		What relation among a site in indicators , the country of a project , the orgUnit of a project.<br />
+<br />
+For example, when I want to create a new site in the Indicators Management page,we need the country or OrgUnit information ?	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c615">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c615" title="Direct link to note">0000615)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2011-07-28 16:00</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		1. When creating a project, user has to choose an OrgUnit<br />
+2. By default, the project get links to the country of the OrgUnit<br />
+3. When creating sites in the project in the Indicators Management sub-tab, the user will have to put his sites in the country set for the project<br />
+<br />
+Does it reply to your question?	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c616">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c616" title="Direct link to note">0000616)</a></span><br />
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-07-28 16:22</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Ok.Your answers are very clear.<br />
+<br />
+For your third point, how to put the sites in the country set for the project. I just have seen a google map when I open the site-creating window.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c617">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c617" title="Direct link to note">0000617)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2011-07-28 16:26</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		The country set for the project has an impact on the administrative elements available for the site.<br />
+If you create a project on the country &quot;Congo (Democratic Republic)&quot;, you will see much more options when creating a site.<br />
+The country set for the project has not yet any impact on the position of the point on the Google Map.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c618">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c618" title="Direct link to note">0000618)</a></span><br />
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-07-28 16:47</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		I understand. I have test on demo by creating a new project set country &quot;Congo RD&quot;. I have seen many options when creating a site. I have created one site for test.<br />
+<br />
+Then I changed the country into &quot;Australia&quot; and go back to the Indicator Management. I open the site-editing window and found that all options related to &quot;Congo&quot; are lost. So I guess,in the current Sigmah, the sites by default is always linked to the country of current project. The site has no its own country property. Is that right? I do not have database, so that is my imagination.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c620">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c620" title="Direct link to note">0000620)</a></span><br />
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-08-22 12:43</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Project's country is not allowed to change any more and only the OrgUnit is changeable.<br />
+- fixes issue <a href="viewca2e.html?id=208" title="[closed] Changing of Project's OrgUnit" class="resolved">0000208</a>: Changing of Project's OrgUnit<br />
+<br />
+Added : /trunk/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/GetSitesCountHandler.java<br />
+Added : /trunk/sigmah/src/main/java/org/sigmah/shared/command/GetSitesCount.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/shared/command/result/SiteResult.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/shared/dto/element/DefaultFlexibleElementDTO.java<br />
+	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c638">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c638" title="Direct link to note">0000638)</a></span><br />
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-08-30 12:26</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Rollback the combox value when &quot;No&quot; is clicked by user in the confirmation window.<br />
+<br />
+- fixes issue <a href="viewca2e.html?id=208" title="[closed] Changing of Project's OrgUnit" class="resolved">0000208</a>: Changing of Project's OrgUnit<br />
+<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/shared/dto/element/DefaultFlexibleElementDTO.java<br />
+	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c748">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c748" title="Direct link to note">0000748)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2011-09-30 18:49</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Issue half fixed.<br />
+When changing the orgunit if no indicators created so far, there is no warning message as expected... but the country linked with the project is not changed when the OrgUnit of the project is changed.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c750">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c750" title="Direct link to note">0000750)</a></span><br />
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-10-02 13:48</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		I thought we should give a warning message when there are some sites already created on the Indicators Management regardless of the indicators. So I just check the sites list for current project not the Indicators for current project. <br />
+<br />
+I have seen the sub-tab Indicators Management a little. I have found that only creating a site needs the information of the country. So I just link the site's country to project's country. Project's country is not changeable,so I give a warning message to inform the current sits and future sits will still link to the current project's country not the country of the new orgunit.<br />
+<br />
+Did I misunderstand your needs ? Sorry, I do not know much about the indicators part of Sigmah.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c752">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c752" title="Direct link to note">0000752)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2011-10-02 22:15</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Indicator management is the most tricky part of Sigmah. It is not easy to understand it completely !<br />
+<br />
+This feature description has 3 parts (described above) : 1. , 2.(i), 2.(ii) .<br />
+You've developed sucessfully the 1., and the 2.(ii).<br />
+But the 2.(i) is uncomplete. You've correctly understood that user should be allowed to change of OrgUnit without any warning message when no indicators have created. But you have forgotten to set the country of the project to the country linked with the new OrgUnit.<br />
+Ex of behavior expected: <br />
+a. Project linked with OrgUnit &quot;Mission Tanzania&quot; (country=Tanzania), and no indicators created for project<br />
+b. User change OrgUnit of the project from &quot;Mission Tanzania&quot; (country=Tanzania) to &quot;Desk East Africa&quot; (country=Kenya)<br />
+c. When he clicks on Save :<br />
+- Project OrgUnit becomes &quot;Desk East Africa&quot;<br />
+- Project country becomes Kenya<br />
+<br />
+Is that clearer ?	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c753">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c753" title="Direct link to note">0000753)</a></span><br />
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-10-02 23:24</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		I have two parts to confirm:<br />
+<br />
+1. You are telling to check if there are 'Indicators' created for the project. But for the current moment, I just check if there are 'Sites'created for the project. Is that correct ?<br />
+<br />
+2. I think I have understood better you needs. You mean if there is no 'Indicators'('Sites' ?) created for the project. Just make user save the changes as usual. Project's unit and project's country will be changed at same time. Is that correct ?	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c755">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c755" title="Direct link to note">0000755)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2011-10-02 23:51</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		1.=&gt; Actually, we should check that there are both. But checking only that there are &quot;Sites&quot; is enough for the time being. You can continue to test only the existence of &quot;Sites&quot; for the project.<br />
+<br />
+2.=&gt; That's right. All your development is almost already perfect: the only thing missing is that when a user changes the OrgUnit of a project having yet no Sites attached, the country of the project should change as well.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c757">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c757" title="Direct link to note">0000757)</a></span><br />
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-10-03 00:37</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Thank you very much. I will complete the correction  as soon as possible.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c781">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c781" title="Direct link to note">0000781)</a></span><br />
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-10-09 22:42</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		<br />
+Allow the change of the country of project if there is not site already created<br />
+<br />
+- fixes issue <a href="viewca2e.html?id=208" title="[closed] Changing of Project's OrgUnit" class="resolved">0000208</a>: Changing of Project's OrgUnit<br />
+<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/page/project/ProjectPresenter.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsPresenter.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/UpdateProjectHandler.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/shared/command/UpdateProject.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/shared/dto/element/DefaultFlexibleElementDTO.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/shared/dto/element/handler/ValueEvent.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/shared/dto/element/handler/ValueEventWrapper.java<br />
+	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c822">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewca2e.html?id=208#c822" title="Direct link to note">0000822)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2011-10-17 12:44</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Issue closed because correct behavior checked on v1.1-rc3.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+</table>
+
+</div><div id="bugnotes_closed" class="hidden">
+<table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;		Notes	</td>
+</tr>
+</table>
+</div>
+<a name="history" id="history" /><br />
+
+<div id="history_open"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;Issue History	</td>
+</tr>
+<tr class="row-category-history">
+	<td class="small-caption">
+		Date Modified	</td>
+	<td class="small-caption">
+		Username	</td>
+	<td class="small-caption">
+		Field	</td>
+	<td class="small-caption">
+		Change	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-04-22 15:01	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		New Issue	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-05-29 17:44	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		 =&gt; tmiette	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-05-29 17:44	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		new =&gt; assigned	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-05-29 17:44	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Target Version	</td>
+	<td class="small-caption">
+		0.9.1 =&gt; 1.0	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-06-22 12:19	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Target Version	</td>
+	<td class="small-caption">
+		1.0 =&gt; 1.0.1	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-07-06 19:13	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		tmiette =&gt; 	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-07-06 19:13	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		assigned =&gt; new	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-07-13 12:01	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		 =&gt; zhe.hu32	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-07-13 12:01	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		new =&gt; assigned	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-07-28 15:49	</td>
+	<td class="small-caption">
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000614	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-07-28 16:00	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000615	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-07-28 16:22	</td>
+	<td class="small-caption">
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000616	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-07-28 16:26	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000617	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-07-28 16:47	</td>
+	<td class="small-caption">
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000618	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-08-22 12:43	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Checkin	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-08-22 12:43	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000620	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-08-22 12:43	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		assigned =&gt; resolved	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-08-22 12:43	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Resolution	</td>
+	<td class="small-caption">
+		open =&gt; fixed	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-08-30 12:26	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Checkin	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-08-30 12:26	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000638	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-08-31 10:50	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Target Version	</td>
+	<td class="small-caption">
+		1.0.1 =&gt; 1.1	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-30 18:49	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000748	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-09-30 18:49	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		resolved =&gt; confirmed	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-30 18:50	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Resolution	</td>
+	<td class="small-caption">
+		fixed =&gt; reopened	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-10-02 13:48	</td>
+	<td class="small-caption">
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000750	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-10-02 22:03	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Description Updated	</td>
+	<td class="small-caption">
+		<a href="bug_revision_view_page854f.html?rev_id=156#r156">View Revisions</a>	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-10-02 22:05	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Description Updated	</td>
+	<td class="small-caption">
+		<a href="bug_revision_view_pagec92e.html?rev_id=157#r157">View Revisions</a>	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-10-02 22:15	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000752	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-10-02 23:24	</td>
+	<td class="small-caption">
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000753	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-10-02 23:51	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000755	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-10-03 00:37	</td>
+	<td class="small-caption">
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000757	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-10-09 22:42	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Checkin	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-10-09 22:42	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000781	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-10-09 22:42	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		confirmed =&gt; resolved	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-10-09 22:42	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Resolution	</td>
+	<td class="small-caption">
+		reopened =&gt; fixed	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-10-17 12:44	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000822	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-10-17 12:44	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		resolved =&gt; closed	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-10-17 12:44	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Fixed in Version	</td>
+	<td class="small-caption">
+		 =&gt; 1.1	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-10-17 14:54	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		related to 0000404	</td>
+</tr>
+</table>
+</div><div id="history_closed" class="hidden"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+	<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;Issue History	</td>
+</tr>
+</table>
+
+</div>	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.html" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=208 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 15:09:23 GMT -->
+</html>

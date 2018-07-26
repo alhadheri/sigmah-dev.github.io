@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/plugin.php?page=Source%2Fsearch_page by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:24:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.html" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Wed, 25 Jul 2018 15:55:05 GMT" />
+	<link rel="shortcut icon" href="images/favicon.html" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.html?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.html?type=id" />	<title>Source Control Integration - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.html"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.html" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_page67ee.html?return=%2Fissues%2Fplugin.php%3Fpage%3DSource%252Fsearch_page">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-25 17:55 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issues2478.xml?project_id=0"><img src="images/rss.html" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table>
+
+<br/>
+<form action="http://www.sigmah.org/issues/plugin.php" method="get">
+<input type="hidden" name="page" value="Source/search"/>
+<table class="width75 SourceFilters" align="center" cellspacing="1">
+
+<tr>
+<td class="form-title" colspan="2">Search Changesets</td>
+<td class="right" colspan="5">
+<span class="bracket-link">[&#160;<a href="pluginde5e.html?page=Source/search_page">New Search</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="plugina0e2.html?page=Source/index">Back to Index</a>&#160;]</span> </tr>
+
+<tr class="row-category">
+<td>Type</td>
+<td>Repository</td>
+<td>Branch</td>
+<td>Action</td>
+</tr>
+
+<tr class="row-1">
+<td class="center"><select name="repo_type[]" class="SourceType" multiple="multiple" size="6"><option class="SourceAny" value="">[any]</option><option value="github">GitHub</option></select></td>
+<td class="center"><select name="repo_id[]" class="SourceRepo" multiple="multiple" size="6"><option class="SourceAny" value="">[any]</option><option class="SourceTypegithub" value="3">sigmah</option></select></td>
+<td class="center"><select name="branch[]" class="SourceBranch" multiple="multiple" size="6"><option class="SourceAny" value="">[any]</option><option class="SourceRepo3" value="master">master</option></select></td>
+<td class="center"><select name="file_action[]" multiple="multiple" size="6"><option value="">[any]</option><option value="add">add</option><option value="mod">mod</option><option value="rm">rm</option></select></td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+
+<tr class="row-category">
+<td>Username</td>
+<td>Author</td>
+<td>Revision</td>
+<td>Issue</td>
+</tr>
+
+<tr class="row-2">
+<td class="center"><select name="user_id"><option value="">[any]</option><option value="13">akbertram</option><option value="92">bleny</option><option value="106">Gimhani</option><option value="118">indianauthority97</option><option value="93">nikita</option><option value="2">osarrat</option><option value="4">rcalabro</option><option value="117">seal98</option><option value="107">tdegivry</option><option value="5">tmiette</option></select></td>
+<td class="center"><select name="author"><option value="">[any]</option><option value="akbertram">akbertram</option><option value="Alex">Alex</option><option value="AurÃ©lien PonÃ§on">AurÃ©lien PonÃ§on</option><option value="Aurelien Poncon">Aurelien Poncon</option><option value="Brendan Le Ny">Brendan Le Ny</option><option value="Brendan LN">Brendan LN</option><option value="daeke">daeke</option><option value="Denis Colliot">Denis Colliot</option><option value="FranÃ§ois Tavin">FranÃ§ois Tavin</option><option value="GimhaniU">GimhaniU</option><option value="indianauthority97">indianauthority97</option><option value="JB Guerline">JB Guerline</option><option value="jdavhen">jdavhen</option><option value="Joseph">Joseph</option><option value="kmacaj">kmacaj</option><option value="kramojeanluc">kramojeanluc</option><option value="Nadia Rebiai">Nadia Rebiai</option><option value="Nikita Jibhkate">Nikita Jibhkate</option><option value="Olivier Sarrat">Olivier Sarrat</option><option value="osarrat">osarrat</option><option value="RaphaÃ«l">RaphaÃ«l</option><option value="RaphaÃ«l Calabro">RaphaÃ«l Calabro</option><option value="Raphael Calabro">Raphael Calabro</option><option value="S.P. Mohanty">S.P. Mohanty</option><option value="Seal98">Seal98</option><option value="Sherzod Muratov">Sherzod Muratov</option><option value="SP Mohanty">SP Mohanty</option><option value="Thibault Degivry">Thibault Degivry</option><option value="Thomas Broyer">Thomas Broyer</option><option value="Tom Miette">Tom Miette</option><option value="vdelesse">vdelesse</option><option value="Xavier Calland">Xavier Calland</option><option value="Zhe Hu">Zhe Hu</option></select></td>
+<td class="center"><input name="revision" size="10" value=""/></td>
+<td class="center"><input name="bug_id" size="10" value=""/></td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+
+<tr class="row-1">
+<td class="category">Beginning Date</td>
+<td colspan="3"><input type="hidden" name="date_start_default" value="2009-1-1"/><select name="date_start_year"><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009" selected="selected">2009</option></select> <select name="date_start_month"><option value="1" selected="selected">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select> <select name="date_start_day"><option value="1" selected="selected">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select> </td>
+</tr>
+
+<tr class="row-2">
+<td class="category">Ending Date</td>
+<td colspan="3"><input type="hidden" name="date_end_default" value="2018-7-25"/><select name="date_end_year"><option value="2018" selected="selected">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option></select> <select name="date_end_month"><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7" selected="selected">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select> <select name="date_end_day"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25" selected="selected">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select> </td>
+</tr>
+
+<tr class="row-1">
+<td class="category">Porting Status</td>
+<td colspan="3"><select name="ported[]" multiple="multiple"><option value="">[any]</option><option value="-1">Pending</option><option value="0">N/A</option><option value="-2">Ported</option></select></td>
+</tr>
+
+<tr class="spacer"><td></td></tr>
+
+<tr class="row-2">
+<td class="category">Message</td>
+<td colspan="6"><input name="message" size="40" value=""/></td>
+</tr>
+
+<tr class="row-1">
+<td class="category">Filename</td>
+<td colspan="6"><input name="filename" size="40" value=""/></td>
+</tr>
+
+<tr>
+<td class="center" colspan="7"><input type="submit" value="Search"/></td>
+</tr>
+
+</table>
+</form>
+
+	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.html" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/plugin.php?page=Source%2Fsearch_page by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:24:09 GMT -->
+</html>

@@ -1,0 +1,266 @@
+Index: src/main/java/org/sigmah/client/i18n/UIConstants.properties
+===================================================================
+--- src/main/java/org/sigmah/client/i18n/UIConstants.properties	(Revision 1519)
++++ src/main/java/org/sigmah/client/i18n/UIConstants.properties	(Arbeitskopie)
+@@ -2375,6 +2375,7 @@
+ categoryAdministration = Administration
+ #Name for categories related to projects
+ categoryProject = Project
++categoryProjectContinued = Project continued
+ #Name for categories related to neither administration nor projects
+ categoryOthers = Others
+ #Name for permission not included in any catebory
+Index: src/main/java/org/sigmah/client/page/admin/users/form/ProfileSigmahForm.java
+===================================================================
+--- src/main/java/org/sigmah/client/page/admin/users/form/ProfileSigmahForm.java	(Revision 1519)
++++ src/main/java/org/sigmah/client/page/admin/users/form/ProfileSigmahForm.java	(Arbeitskopie)
+@@ -77,7 +77,7 @@
+ 	private final static String PRIVACY_GROUP = "idPrivacyGroup";
+ 
+ 	public ProfileSigmahForm(Dispatcher dispatcher, UserLocalCache userCache,
+-	                final AsyncCallback<CreateResult> callback, ProfileDTO profileToUpdate) {
++					final AsyncCallback<CreateResult> callback, ProfileDTO profileToUpdate) {
+ 
+ 		this.dispatcher = dispatcher;
+ 		this.profileToUpdate = profileToUpdate;
+@@ -111,7 +111,7 @@
+ 		middle.setLayout(layoutMiddle);
+ 
+ 		LayoutContainer right = new LayoutContainer();
+-		right.setStyleAttribute("padding", "5px 0px 5px 0px");
++		right.setStyleAttribute("padding", "0px 0px 5px 0px");
+ 		FormLayout layoutRight = new FormLayout();
+ 		layoutRight.setLabelAlign(LabelAlign.TOP);
+ 		// right.setStyleAttribute("margin", "3px 0px 0px 3px");
+@@ -153,6 +153,14 @@
+ 		checkGPGroupProject.setFieldLabel(I18N.CONSTANTS.categoryProject());
+ 		checkGPGroupProject.setLabelStyle("font-weight:bold;");
+ 
++		CheckBoxGroup checkGPGroupProject2 = new CheckBoxGroup();
++		checkGPGroupProject2.setOrientation(Orientation.VERTICAL);
++		// checkGPGroupProject2.setFieldLabel(I18N.CONSTANTS.categoryProjectContinued());
++		// checkGPGroupProject2.setFieldLabel("");
++		// checkGPGroupProject2.setLabelSeparator("");
++		checkGPGroupProject2.setHideLabel(true);
++		checkGPGroupProject2.setLabelStyle("font-weight:bold;");
++
+ 		CheckBoxGroup checkGPGroupOthers = new CheckBoxGroup();
+ 		checkGPGroupOthers.setOrientation(Orientation.VERTICAL);
+ 		checkGPGroupOthers.setFieldLabel(I18N.CONSTANTS.categoryOthers());
+@@ -166,11 +174,12 @@
+ 		boolean notMappedEmpty = true;
+ 
+ 		String label = "";
++		int count = 0;
+ 		for (GlobalPermissionEnum enumItem : GlobalPermissionEnum.values()) {
+ 			label = GlobalPermissionEnum.getName(enumItem);
+ 			CheckBox box = createCheckBox(enumItem.toString(), label);
+ 			if (profileToUpdate != null && profileToUpdate.getGlobalPermissions() != null
+-			                && profileToUpdate.getGlobalPermissions().contains(enumItem)) {
++							&& profileToUpdate.getGlobalPermissions().contains(enumItem)) {
+ 				box.setValue(true);
+ 			}
+ 			if (GlobalPermissionEnum.getCategory(enumItem).equals(I18N.CONSTANTS.categoryAdministration())) {
+@@ -179,7 +188,14 @@
+ 			}
+ 
+ 			if (GlobalPermissionEnum.getCategory(enumItem).equals(I18N.CONSTANTS.categoryProject())) {
+-				checkGPGroupProject.add(box);
++				if (count < 10) {
++					checkGPGroupProject.add(box);
++					count++;
++				} else {
++					checkGPGroupProject2.add(box);
++					count++;
++
++				}
+ 				continue;
+ 			}
+ 			if (GlobalPermissionEnum.getCategory(enumItem).equals(I18N.CONSTANTS.categoryOthers())) {
+@@ -194,6 +210,8 @@
+ 		}
+ 		checkGlobalPermissions.add(checkGPGroupAdmin);
+ 		checkGlobalPermissions.add(checkGPGroupProject);
++		if (count >= 10)
++			checkGlobalPermissions.add(checkGPGroupProject2);
+ 		checkGlobalPermissions.add(checkGPGroupOthers);
+ 		if (!notMappedEmpty)
+ 			checkGlobalPermissions.add(checkGPGroupNotMapped);
+@@ -204,6 +222,8 @@
+ 		middle.add(checkGPGroupProject);
+ 
+ 		// right.add(new Label(I18N.CONSTANTS.categoryAdministration()));
++		if (count >= 10)
++			right.add(checkGPGroupProject2);
+ 		right.add(checkGPGroupAdmin);
+ 
+ 		// right.add(new Label(I18N.CONSTANTS.categoryOthers()));
+@@ -237,7 +257,7 @@
+ 					pglabel.removeFromParent();
+ 
+ 					selectedPrivacyGroupsIds.remove(new Integer(((PrivacyGroupDTO) pglabel.getData(PRIVACY_GROUP))
+-					                .getId()));
++									.getId()));
+ 					if (privacyGroupsPerms.containsKey((PrivacyGroupDTO) pglabel.getData(PRIVACY_GROUP))) {
+ 					}
+ 					privacyGroupsPerms.remove((PrivacyGroupDTO) pglabel.getData(PRIVACY_GROUP));
+@@ -297,7 +317,7 @@
+ 		privacyGroupsAddSelectionGrid.setCellPadding(0);
+ 		privacyGroupsAddSelectionGrid.setCellSpacing(0);
+ 		privacyGroupsAddSelectionGrid
+-		                .setWidget(0, 0, new LabelField(I18N.CONSTANTS.adminProfilesPrivacyGroups() + ":"));
++						.setWidget(0, 0, new LabelField(I18N.CONSTANTS.adminProfilesPrivacyGroups() + ":"));
+ 		privacyGroupsAddSelectionGrid.setWidget(0, 1, privacyGroupsListCombo);
+ 		privacyGroupsAddSelectionGrid.setWidget(0, 2, privacyGroupsPermissionsListCombo);
+ 		privacyGroupsListCombo.setHideLabel(false);
+@@ -321,22 +341,22 @@
+ 						if (num < MAX_PRIVACY_GROUPS_TENTATIVES_PER_USER) {
+ 							selectedPrivacyGroups.get(num).setData(PRIVACY_GROUP, privacyGroupsListCombo.getValue());
+ 							selectedPrivacyGroups.get(num).setText(
+-							                privacyGroupsListCombo.getValue().getCode()
+-							                                + "-"
+-							                                + privacyGroupsListCombo.getValue().getTitle()
+-							                                + " : "
+-							                                + privacyGroupsPermissionsListCombo.getValue()
+-							                                                .getPermission());
++											privacyGroupsListCombo.getValue().getCode()
++															+ "-"
++															+ privacyGroupsListCombo.getValue().getTitle()
++															+ " : "
++															+ privacyGroupsPermissionsListCombo.getValue()
++																			.getPermission());
+ 							selectedPrivacyGroups.get(num).show();
+ 							num++;
+ 							selectedPrivacyGroupsIds.add(new Integer(privacyGroupsListCombo.getValue().getId()));
+ 							privacyGroupsPerms.put(privacyGroupsListCombo.getValue(), PrivacyGroupPermissionEnum
+-							                .translatePGPermission(privacyGroupsPermissionsListCombo.getValue()
+-							                                .getPermission()));
++											.translatePGPermission(privacyGroupsPermissionsListCombo.getValue()
++															.getPermission()));
+ 
+ 						} else {
+ 							MessageBox.alert(I18N.CONSTANTS.adminMaxAttempts(),
+-							                I18N.CONSTANTS.adminMaxAttemptsProfiles(), null);
++											I18N.CONSTANTS.adminMaxAttemptsProfiles(), null);
+ 							ProfileSigmahForm.this.hide();
+ 						}
+ 					}
+@@ -354,17 +374,17 @@
+ 				if (num < MAX_PRIVACY_GROUPS_TENTATIVES_PER_USER) {
+ 					selectedPrivacyGroups.get(num).setData(PRIVACY_GROUP, usedPrivacyGroup);
+ 					selectedPrivacyGroups.get(num).setText(
+-					                usedPrivacyGroup.getCode()
+-					                                + "-"
+-					                                + usedPrivacyGroup.getTitle()
+-					                                + " : "
+-					                                + PrivacyGroupPermissionEnum.getName(profileToUpdate
+-					                                                .getPrivacyGroups().get(usedPrivacyGroup)));
++									usedPrivacyGroup.getCode()
++													+ "-"
++													+ usedPrivacyGroup.getTitle()
++													+ " : "
++													+ PrivacyGroupPermissionEnum.getName(profileToUpdate
++																	.getPrivacyGroups().get(usedPrivacyGroup)));
+ 					selectedPrivacyGroups.get(num).show();
+ 					num++;
+ 				} else {
+ 					MessageBox.alert("Maximum Attempts",
+-					                "Maximum attempts to modify user's profiles have been reached. Try again", null);
++									"Maximum attempts to modify user's profiles have been reached. Try again", null);
+ 					ProfileSigmahForm.this.hide();
+ 				}
+ 			}
+@@ -403,7 +423,7 @@
+ 
+ 		if (!this.isValid()) {
+ 			MessageBox.alert(I18N.CONSTANTS.createFormIncomplete(),
+-			                I18N.MESSAGES.createFormIncompleteDetails(I18N.MESSAGES.adminStandardProfile()), null);
++							I18N.MESSAGES.createFormIncompleteDetails(I18N.MESSAGES.adminStandardProfile()), null);
+ 			unmask();
+ 			return;
+ 		}
+@@ -432,9 +452,9 @@
+ 		dispatcher.execute(new CreateEntity("Profile", newProfileProperties), null, new AsyncCallback<CreateResult>() {
+ 			public void onFailure(Throwable caught) {
+ 				MessageBox.alert(
+-				                I18N.CONSTANTS.adminProfileCreationBox(),
+-				                I18N.MESSAGES.adminStandardCreationFailure(I18N.MESSAGES.adminStandardProfile() + " '"
+-				                                + name + "'"), null);
++								I18N.CONSTANTS.adminProfileCreationBox(),
++								I18N.MESSAGES.adminStandardCreationFailure(I18N.MESSAGES.adminStandardProfile() + " '"
++												+ name + "'"), null);
+ 				callback.onFailure(caught);
+ 				unmask();
+ 			}
+@@ -445,23 +465,23 @@
+ 					callback.onSuccess(result);
+ 					if (profileToUpdate != null) {
+ 						Notification.show(
+-						                I18N.CONSTANTS.adminProfileCreationBox(),
+-						                I18N.MESSAGES.adminStandardUpdateSuccess(I18N.MESSAGES.adminStandardProfile()
+-						                                + " '" + result.getEntity().get("name") + "'"));
++										I18N.CONSTANTS.adminProfileCreationBox(),
++										I18N.MESSAGES.adminStandardUpdateSuccess(I18N.MESSAGES.adminStandardProfile()
++														+ " '" + result.getEntity().get("name") + "'"));
+ 					} else {
+ 						Notification.show(
+-						                I18N.CONSTANTS.adminProfileCreationBox(),
+-						                I18N.MESSAGES.adminStandardCreationSuccess(I18N.MESSAGES.adminStandardProfile()
+-						                                + " '" + result.getEntity().get("name") + "'"));
++										I18N.CONSTANTS.adminProfileCreationBox(),
++										I18N.MESSAGES.adminStandardCreationSuccess(I18N.MESSAGES.adminStandardProfile()
++														+ " '" + result.getEntity().get("name") + "'"));
+ 					}
+ 
+ 				} else {
+ 					Throwable t = new Throwable("ProfileSigmahForm : creation result is null");
+ 					callback.onFailure(t);
+ 					MessageBox.alert(
+-					                I18N.CONSTANTS.adminProfileCreationBox(),
+-					                I18N.MESSAGES.adminStandardCreationNull(I18N.MESSAGES.adminStandardProfile() + " '"
+-					                                + name + "'"), null);
++									I18N.CONSTANTS.adminProfileCreationBox(),
++									I18N.MESSAGES.adminStandardCreationNull(I18N.MESSAGES.adminStandardProfile() + " '"
++													+ name + "'"), null);
+ 				}
+ 				unmask();
+ 			}
+Index: src/main/java/org/sigmah/shared/domain/profile/GlobalPermissionEnum.java
+===================================================================
+--- src/main/java/org/sigmah/shared/domain/profile/GlobalPermissionEnum.java	(Revision 1519)
++++ src/main/java/org/sigmah/shared/domain/profile/GlobalPermissionEnum.java	(Arbeitskopie)
+@@ -235,6 +235,34 @@
+ 		case VALID_AMENDEMENT:
+ 			gpCategory = I18N.CONSTANTS.categoryProject();
+ 			break;
++		case VIEW_LOGFRAME:
++			gpCategory = I18N.CONSTANTS.categoryProject();
++			break;
++		case EDIT_LOGFRAME:
++			gpCategory = I18N.CONSTANTS.categoryProject();
++			break;
++		case VIEW_AGENDA:
++			gpCategory = I18N.CONSTANTS.categoryProject();
++			break;
++		case EDIT_AGENDA:
++			gpCategory = I18N.CONSTANTS.categoryProject();
++			break;
++		case EDIT_ALL_REMINDERS:
++			gpCategory = I18N.CONSTANTS.categoryProject();
++			break;
++		case EDIT_OWN_REMINDERS:
++			gpCategory = I18N.CONSTANTS.categoryProject();
++			break;
++		case VIEW_INDICATOR:
++			gpCategory = I18N.CONSTANTS.categoryProject();
++			break;
++		case MANAGE_INDICATOR:
++			gpCategory = I18N.CONSTANTS.categoryProject();
++			break;
++		case EDIT_INDICATOR:
++			gpCategory = I18N.CONSTANTS.categoryProject();
++			break;
++
+ 		case GLOBAL_EXPORT:
+ 			gpCategory = I18N.CONSTANTS.categoryOthers();
+ 			break;

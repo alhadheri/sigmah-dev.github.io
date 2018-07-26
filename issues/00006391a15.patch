@@ -1,0 +1,135 @@
+### Eclipse Workspace Patch 1.0
+#P sigmah
+Index: src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties
+===================================================================
+--- src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties	(revision 1593)
++++ src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties	(working copy)
+@@ -99,6 +99,7 @@
+ adminLogFrameEnableOSGroups=Utiliser des groupes d'OS ?
+ adminLogFrameEnablePGroups=Utiliser des groupes de P ?
+ adminLogFrameEnableRAGroups=Utiliser des groupes de RA ?
++adminLogFrameEnableRisksAndAssumptions=Utiliser Risques et hypoth\u00E8ses
+ adminLogFrameMaxA=Nombre maximum d'A
+ adminLogFrameMaxAGroups=Nombre maximum de groupe d'A
+ adminLogFrameMaxAPerGroup=Nombre maximum d'A par groupe
+Index: src/main/java/org/sigmah/client/i18n/UIConstants_es.properties
+===================================================================
+--- src/main/java/org/sigmah/client/i18n/UIConstants_es.properties	(revision 1593)
++++ src/main/java/org/sigmah/client/i18n/UIConstants_es.properties	(working copy)
+@@ -99,6 +99,7 @@
+ adminLogFrameEnableOSGroups=\u00BFActivar grupos de OE?
+ adminLogFrameEnablePGroups=\u00BFActivar grupos de P?
+ adminLogFrameEnableRAGroups=\u00BFActivar grupos de PA?
++adminLogFrameEnableRisksAndAssumptions=Activar Riesgos y hip\u00F3tesis
+ adminLogFrameMaxA=N\u00FAmero m\u00E1ximo de A
+ adminLogFrameMaxAGroups=N\u00FAmero m\u00E1ximo de grupos de A 
+ adminLogFrameMaxAPerGroup=N\u00FAmero m\u00E1ximo de A por grupo
+Index: src/main/java/org/sigmah/shared/dto/logframe/LogFrameModelDTO.java
+===================================================================
+--- src/main/java/org/sigmah/shared/dto/logframe/LogFrameModelDTO.java	(revision 1593)
++++ src/main/java/org/sigmah/shared/dto/logframe/LogFrameModelDTO.java	(working copy)
+@@ -19,7 +19,8 @@
+      * is missing.
+      */
+     private static final boolean DEFAULT_VISIBILITY_GROUP_POLICY = false;
+-
++    private static final String DEFAULT_RISKS_AND_ASSUMPTIONS = "No";
++    
+     @Override
+     public String getEntityName() {
+         return "logframe.LogFrameModel";
+@@ -130,6 +131,15 @@
+     public void setEnableActivitiesGroups(Boolean enableActivitiesGroups) {
+         set("enableActivitiesGroups", enableActivitiesGroups);
+     }
++    
++    public String getEnableRisksAndAssumptions() {
++    	final String b = get("enableRisksAndAssumptions");
++    	return b != null ? b :DEFAULT_RISKS_AND_ASSUMPTIONS;
++    }
++    
++    public void setEnableRisksAndAssumptions(String enableRisksAndAssumptions) {
++    	set("enableRisksAndAssumptions", enableRisksAndAssumptions);
++    }
+ 
+     public Integer getActivitiesMax() {
+         return get("activitiesMax");
+Index: src/main/java/org/sigmah/client/i18n/UIConstants.properties
+===================================================================
+--- src/main/java/org/sigmah/client/i18n/UIConstants.properties	(revision 1593)
++++ src/main/java/org/sigmah/client/i18n/UIConstants.properties	(working copy)
+@@ -208,6 +208,8 @@
+ 
+ adminLogFrameEnableRAGroups = Enable ER groups?
+ 
++adminLogFrameEnableRisksAndAssumptions=Enable Risks & Assumptions
++
+ adminLogFrameMaxA = Max number of A
+ 
+ adminLogFrameMaxAGroups = Max number of A groups
+Index: src/main/java/org/sigmah/client/i18n/UIConstants_en.properties
+===================================================================
+--- src/main/java/org/sigmah/client/i18n/UIConstants_en.properties	(revision 1593)
++++ src/main/java/org/sigmah/client/i18n/UIConstants_en.properties	(working copy)
+@@ -99,6 +99,7 @@
+ adminLogFrameEnableOSGroups=Enable SO groups ?
+ adminLogFrameEnablePGroups=Enable P groups ?
+ adminLogFrameEnableRAGroups=Enable ER groups?
++adminLogFrameEnableRisksAndAssumptions=Enable Risks & Assumptions
+ adminLogFrameMaxA=Max. number of As
+ adminLogFrameMaxAGroups=Max. number of A groups
+ adminLogFrameMaxAPerGroup=Max. number of As per group
+@@ -675,7 +676,7 @@
+ logFrameGroupsDisabledA=This kind of logical framework does not allow groups to be created for Activities.
+ logFrameGroupsDisabledER=This kind of logical framework does not allow groups to be created for Expected Results.
+ logFrameGroupsDisabledOS=This kind of logical framework does not allow groups to be created for Specific Objectives.
+-logFrameGroupsDisabledP=This kind of logical framework does not allow groups to be created for Prerequisites.
++logFrameGroupsDisabledP=This kind of logical framework does Fnot allow groups to be created for Prerequisites.
+ logFrameGroupsMaxReachedA=The maximum number of groups for Activities has been reached for this kind of logical framework.
+ logFrameGroupsMaxReachedER=The maximum number of groups for Expected Results has been reached for this kind of logical framework.
+ logFrameGroupsMaxReachedOS=The maximum number of groups for Specific Objectives has been reached for this kind of logical framework.
+Index: src/main/java/org/sigmah/client/page/admin/model/project/logframe/AdminLogFrameView.java
+===================================================================
+--- src/main/java/org/sigmah/client/page/admin/model/project/logframe/AdminLogFrameView.java	(revision 1593)
++++ src/main/java/org/sigmah/client/page/admin/model/project/logframe/AdminLogFrameView.java	(working copy)
+@@ -60,6 +60,7 @@
+     private final SimpleComboBox<String> activities_max_groups;
+     private final FormPanel activitiesThirdPanel;
+     private final SimpleComboBox<String> activities_max_per_group;
++    private final SimpleComboBox<String> activities_enable_risks;
+     private final ContentPanel resultsPanel;
+     private final FormPanel resultsFirstPanel;
+     private final SimpleComboBox<String> results_max;
+@@ -245,6 +246,14 @@
+         activities_max_per_result.add(values);
+         activities_max_per_result.setTriggerAction(TriggerAction.ALL);
+         activities_max_per_result.addListener(Events.Change, listener);
++        
++        activities_enable_risks = new SimpleComboBox<String>();
++        activities_enable_risks.setFieldLabel(I18N.CONSTANTS.adminLogFrameEnableRisksAndAssumptions());
++        activities_enable_risks.add("Yes");
++        activities_enable_risks.add("No");
++        activities_enable_risks.setTriggerAction(TriggerAction.ALL);
++        activities_enable_risks.setLabelSeparator("");
++        activities_enable_risks.addListener(Events.Change, listener);
+ 
+         activitiesThirdPanel = new FormPanel();
+         activitiesThirdPanel.setHeaderVisible(false);
+@@ -252,6 +261,7 @@
+         activitiesThirdPanel.setHeight(150);
+ 
+         activitiesThirdPanel.add(activities_max_per_result);
++        activitiesThirdPanel.add(activities_enable_risks);
+ 
+         activitiesPanel.add(activitiesThirdPanel, new HBoxLayoutData(0, 4, 0, 0));
+ 
+@@ -487,6 +497,9 @@
+             if (logFrameModel.getEnableActivitiesGroups() != null) {
+                 activities_enable_groups.setSimpleValue(logFrameModel.getEnableActivitiesGroups());
+             }
++            if (logFrameModel.getEnableRisksAndAssumptions() != null) {
++            	activities_enable_risks.setSimpleValue(logFrameModel.getEnableRisksAndAssumptions());
++            }
+             if (logFrameModel.getExpectedResultsMax() != null) {
+                 results_max.setSimpleValue(logFrameModel.getExpectedResultsMax().toString());
+             } else {

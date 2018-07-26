@@ -1,0 +1,1910 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=634&nbn=8 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Jul 2018 14:24:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Tue, 24 Jul 2018 13:29:48 GMT" />
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.php?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.php?type=id" />	<title>0000634: Contacts database (aka &quot;CRM&quot;) - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.js"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.png" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_page29b2.html?return=%2Fissues%2Fview.php%3Fid%3D634%26nbn%3D8">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-24 15:29 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issuesd41d.xml?"><img src="images/rss.png" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table><br /><table class="width100" cellspacing="1"><tr><td class="form-title" colspan="3">View Issue Details&#160;<span class="small"><span class="bracket-link">[&#160;<a href="#bugnotes">Jump to Notes</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="#changesets">Related Changesets</a>&#160;]</span> </span></td><td class="center"><span class="small"></span></td><td class="right" colspan="2"><span class="small"><span class="bracket-link">[&#160;<a href="view1f55.html?id=634&amp;history=1#history">Issue History</a>&#160;]</span> </span><span class="small"><span class="bracket-link">[&#160;<a href="print_bug_page2806.html?bug_id=634">Print</a>&#160;]</span> </span></td></tr><tr><td class="category" width="15%">ID</td><td class="category" width="20%">Project</td><td class="category" width="15%">Category</td><td class="category" width="15%">View Status</td><td class="category" width="15%">Date Submitted</td><td class="category" width="20%">Last Update</td></tr><tr class="row-1"><td>0000634</td><td>sigmah</td><td>Contact</td><td>public</td><td>2014-09-01 15:15</td><td>2017-11-20 10:49</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category">Reporter</td><td>osarrat</td><td colspan="4">&#160;</td></tr><tr class="row-1"><td class="category">Assigned To</td><td>ftavin</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Priority</td><td>normal</td><td class="category">Severity</td><td>feature</td><td class="category">Reproducibility</td><td>N/A</td></tr><tr class="row-1"><td class="category">Status</td><td bgcolor="#c9ccc4">closed</td><td class="category">Resolution</td><td>fixed</td><td colspan="2">&#160;</td></tr><tr class="row-2"><td class="category">Platform</td><td></td><td class="category">OS</td><td></td><td class="category">OS Version</td><td></td></tr><tr class="row-1"><td class="category">Product Version</td><td>1.2</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Target Version</td><td>2.2</td><td class="category">Fixed in Version</td><td>2.2</td><td colspan="2">&#160;</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category">Summary</td><td colspan="5">0000634: Contacts database (aka &quot;CRM&quot;)</td></tr><tr class="row-2"><td class="category">Description</td><td colspan="5">Several organisations have requested to able to track in Sigmah persons and organisations with who their projects bring them in contact. As a consequence, a &quot;contact database&quot; should be added in Sigmah. This kind of database is also known as a Customer Relation Management (CRM), or Constituent Relation Management. This feature should actually be developed to be able to be integrated easily with external full CRM for future usage.</td></tr><tr class="row-1"><td class="category">Additional Information</td><td colspan="5">This feature should add a new concept inside Sigmah in addition to Project and Orgunit: Contact.<br />
+<br />
+A contact can be of 2 types: an Individual or an Organisation.<br />
+Contacts are as flexible as Projects and Orgunits: all contacts must be created from Contact Models. And the admin can create as many Contact Models as desired. A Contact Model must be either from the Individual or the Organization type. Each Contact Model can have as many fields of characteristics as desired.<br />
+Each Contact Model has 2 non-deletable default fields: &quot;Name&quot;, and &quot;Creation date&quot;. If the contact model is an indivual, the &quot;Name&quot; field will be renamed &quot;Last name&quot;, and a 3rd default field will be created: &quot;First name&quot;. For all contact, 3 deletable default fields are also added: &quot;Email address&quot;, &quot;Phone number&quot;, &quot;Street address&quot;.<br />
+<br />
+This features adds a new field type: Contact relationship. This field can be configured to accept contacts only from a specific type (individual/organisation) or one or several contact models. This field can also be configured to accept a freely defined limit of number of contacts. This field is available for Project, Orgunit and Contact models. For Contact model, an additionnal optional can be set if the accepted contacts are only organisations for the field: &quot;is membership&quot;.<br />
+<br />
+An organisation contact page will have up to 4 sub-tabs: Characteristics, Child organisations, Members, Other relationships. The &quot;Child organisations&quot; and &quot;Members&quot; sub-tab will be filled with contact list of all contacts having a &quot;membership&quot; link with the organisation. If no organisation membership is possible, there will be no &quot;Child organisation&quot; sub-tab. Same for no &quot;Members&quot; if no individual membership.<br />
+The &quot;Other relationships&quot; sub-tab will list all other relationships with all contacts, projects and orgunits.<br />
+<br />
+An individual contact page will look as an organisation contact page, but with only 2 sub-tabs: &quot;Characteristics&quot; and &quot;Relationships&quot;.<br />
+<br />
+A &quot;Contacts&quot; table should be added on the Main Dashboard if contact models are defined. This group will take half of the room taken by the &quot;Organisation chart&quot; group. This table will list all contacts ordered by last modification date. This list will paginated. Several buttons are available: &quot;Add new contact&quot;, &quot;Delete contact&quot;, &quot;Import&quot;, and &quot;Export all&quot;. This &quot;Export all&quot; should export in OpenDocumentSpreadsheet/Excel format, and potentially also in ANSI SQL so that people will have a full relation database easily queriable.<br />
+<br />
+In terms of rights:<br />
+- each contact is attached to a unique organisational unit<br />
+- the contact is visible by all users having the right to see its parent organisational unit<br />
+- a contact can contain fields having a privacy group, and privacy group fields should behave as privacy groups fields for projects or orgunits<br />
+- if a user is attached to several orgunits (see <a href="view0445.html?id=243" title="[closed] User attached to several OrgUnit" class="resolved">0000243</a>), its Contacts table on the dashboard will have its content updated according to the checked status of the &quot;Display only my main organisational unit&quot; checkbox: if checked (by default), only the contacts direct or indirect children of the main orgunit will be displayed, and if not all contacts direct or indirect children of all orgunits attached to the user will be displayed<br />
+<br />
+<br />
+This feature can be used with the Groupe iterations feature to be able to produce richly detailed relationships.</td></tr><tr class="row-2"><td class="category">Tags</td><td colspan="5">No tags attached.</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category">User Report URL</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">OS</td><td colspan="5">NA</td></tr><tr class="row-1"><td class="category">Other OS</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">Browser</td><td colspan="5">NA</td></tr><tr class="row-1"><td class="category">Other browser</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">ScreenURL</td><td colspan="5"></td></tr><tr class="row-1"><td class="category">(ActivityInfo) Noticed in revision</td><td colspan="5"></td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category"><a name="attachments" id="attachments" />Attached Files</td><td colspan="5"><a href="organization-1286eeb.png?file_id=223&amp;type=bug"><img src="images/fileicons/png.gif" alt="png file icon" width="16" height="16" border="0" /></a>&#160;<a href="organization-1286eeb.png?file_id=223&amp;type=bug">organization-128.png</a> [<a href="organization-1286eeb.png?file_id=223&amp;type=bug" target="_blank">^</a>] (2,528 bytes) <span class="italic">2014-09-05 11:22</span>
+<br /><a href="organization-1286eeb.png?file_id=223&amp;type=bug"><img alt="" style="border: 0; max-height:250px;" src="organization-128c5fb.png?file_id=223&amp;type=bug&amp;show_inline=1&amp;file_show_inline_token=20180724b49ebe35bb95efca077d7bd914619be42791381e" /></a><br />
+<br /><a href="person-1287922.png?file_id=224&amp;type=bug"><img src="images/fileicons/png.gif" alt="png file icon" width="16" height="16" border="0" /></a>&#160;<a href="person-1287922.png?file_id=224&amp;type=bug">person-128.png</a> [<a href="person-1287922.png?file_id=224&amp;type=bug" target="_blank">^</a>] (1,661 bytes) <span class="italic">2014-09-05 11:22</span>
+<br /><a href="person-1287922.png?file_id=224&amp;type=bug"><img alt="" style="border: 0; max-height:250px;" src="person-1288492.png?file_id=224&amp;type=bug&amp;show_inline=1&amp;file_show_inline_token=20180724efa52b2ac62488b4e015d25f606b332444c6bc7e" /></a><br />
+<br /><a href="Gestion%2520de%2520contacts%2520-%2520634563c.pdf?file_id=316&amp;type=bug"><img src="images/fileicons/pdf.gif" alt="pdf file icon" width="16" height="16" border="0" /></a>&#160;<a href="Gestion%2520de%2520contacts%2520-%2520634563c.pdf?file_id=316&amp;type=bug">Gestion de contacts - 634.pdf</a> [<a href="Gestion%2520de%2520contacts%2520-%2520634563c.pdf?file_id=316&amp;type=bug" target="_blank">^</a>] (117,383 bytes) <span class="italic">2016-07-07 12:37</span><br />
+<a href="Contact_Relationships_20160822115851a3c6.xls?file_id=332&amp;type=bug"><img src="images/fileicons/xls.gif" alt="xls file icon" width="16" height="16" border="0" /></a>&#160;<a href="Contact_Relationships_20160822115851a3c6.xls?file_id=332&amp;type=bug">Contact_Relationships_20160822115851.xls</a> [<a href="Contact_Relationships_20160822115851a3c6.xls?file_id=332&amp;type=bug" target="_blank">^</a>] (32,768 bytes) <span class="italic">2016-08-22 12:47</span><br />
+<a href="Project_synthesis_2016082412201175e0.xls?file_id=335&amp;type=bug"><img src="images/fileicons/xls.gif" alt="xls file icon" width="16" height="16" border="0" /></a>&#160;<a href="Project_synthesis_2016082412201175e0.xls?file_id=335&amp;type=bug">Project_synthesis_20160824122011.xls</a> [<a href="Project_synthesis_2016082412201175e0.xls?file_id=335&amp;type=bug" target="_blank">^</a>] (38,400 bytes) <span class="italic">2016-08-24 17:51</span></td></tr><tr align="center"><td align="center" colspan="6"><table><tr class="vcenter"><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td></tr></table></td></tr></table><br />
+
+<div id="relationships_open"><table class="width100" cellspacing="1">
+<tr class="row-2" valign="top">
+	<td width="15%" class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/minus.png" alt="-" /></a>&#160;Relationships	</td>
+</tr>
+<tr>
+	<td colspan="2"><table border="0" width="100%" cellpadding="0" cellspacing="1"><tr bgcolor="#c9ccc4"><td><span class="nowrap">related to</span>&#160;</td><td><a href="viewf88b.html?id=501">0000501</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Group iterations&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view503e.html?id=890">0000890</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Bigger Contacts list component&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view7f4e.html?id=891">0000891</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Contact default fields not matching requirements&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewf941.html?id=898">0000898</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Impossible to select an orgunit different from HQ while creating a contact&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view2d56.html?id=899">0000899</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_paged5b4.html?id=107">tdegivry</a></span>&#160;</td><td>Impossible to create a contact from the Main Dashboard&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewf611.html?id=900">0000900</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Contact sheet presentation not respecting mockup&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="vieweaf3.html?id=897">0000897</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Add a &quot;Contact type&quot; column in contact models list&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewe77b.html?id=901">0000901</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Contact History tab not sorted correcty and cannot be sorted&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewb2de.html?id=904">0000904</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>No &quot;Login&quot; field required while creating a contact&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewf651.html?id=905">0000905</a></td><td><span class="issue-status" title="unable to reproduce">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Unexpected error while creating a contact from contact list field&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewe601.html?id=908">0000908</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Groups not displayed in Project/Contact details tab&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view517b.html?id=909">0000909</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Contact History tab not refreshed after a field modification&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view25ab.html?id=913">0000913</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Impossible to create and organisation contact&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewb235.html?id=915">0000915</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Missing email address field in Contact creation popup&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewec48.html?id=916">0000916</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Unexpected error while creating a contact even if duplicates found&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view3f6b.html?id=917">0000917</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Missing delete Contact button&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewc424.html?id=918">0000918</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Update contact on duplicate found after modification does not update contact&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewdb19.html?id=919">0000919</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Contact relationships &quot;Type&quot; column content not matching requirements&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view3284.html?id=954">0000954</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Contact table on Dashboard should be ordered by last modification descending date&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewa991.html?id=955">0000955</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Organisation filters no working on Dashboard contact table&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view786d.html?id=982">0000982</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>No saving of content of contact list field with individual/organisation limitation&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewc1ca.html?id=983">0000983</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Missing &quot;Cancel&quot; button in &quot;Possible duplicates found&quot; popup&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view7ba9.html?id=984">0000984</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Rename contacts &quot;Global export&quot; popup into &quot;Global export of contacts&quot;&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view6f94.html?id=985">0000985</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Contact global export file type not set from its configuration screen&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewf653.html?id=988">0000988</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>&quot;Common list of relationships&quot; in Relationships export not checked by default&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewbdd2.html?id=989">0000989</a></td><td><span class="issue-status" title="unable to reproduce">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Bad display of Contact Relationships tab &quot;member&quot; buttons&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewbbf1.html?id=1041">0001041</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Unexpected error when creating a contact from the Main Dashboard&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view3a3f.html?id=1049">0001049</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_paged5b4.html?id=107">tdegivry</a></span>&#160;</td><td>Top parent organisation should be updated on Direct parent modification&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view1960.html?id=1048">0001048</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_paged5b4.html?id=107">tdegivry</a></span>&#160;</td><td>Missing ban on creation of contact without main orgunit&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewc283.html?id=1052">0001052</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_paged5b4.html?id=107">tdegivry</a></span>&#160;</td><td>Contact history table scrollbar and size varying strangey&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view2905.html?id=1053">0001053</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Bad Message field display in Contact Details sub-tab&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="viewde3f.html?id=1034">0001034</a></td><td><span class="issue-status" title="won't fix">closed</span></td><td><span class="nowrap"><a href="view_user_pageb182.html?id=100">ftavin</a></span>&#160;</td><td>Offline contact modification&#160;</td></tr>
+</table></td>
+</tr>
+</table>
+
+</div><div id="relationships_closed" class="hidden"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/plus.png" alt="+" /></a>&#160;Relationships	</td>
+</tr>
+</table>
+
+</div>
+<a name="bugnotes" id="bugnotes" /><br />
+
+<div id="bugnotes_open"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/minus.png" alt="-" /></a>&#160;		Notes	</td>
+</tr>
+<tr class="bugnote" id="c1500">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewf5dd.html?id=634#c1500" title="Direct link to note">0001500)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2014-09-05 11:23</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Added possible icons for Organisation and Individual contacts.<br />
+Icon from Github under MIT license found on <a href="https://www.iconfinder.com/iconsets/octicons">https://www.iconfinder.com/iconsets/octicons</a> [<a href="https://www.iconfinder.com/iconsets/octicons" target="_blank">^</a>]	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c2030">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewf5dd.html?id=634#c2030" title="Direct link to note">0002030)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2016-08-22 12:48</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Attachment to the issue of an example of the &quot;Contact relationships&quot; export.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c2036">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewf5dd.html?id=634#c2036" title="Direct link to note">0002036)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2016-08-24 17:51</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Attachment to the issue of an example of the modified &quot;Project synthesis&quot; export with exported contacts in case of contacts in an iterative group.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c2281">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewf5dd.html?id=634#c2281" title="Direct link to note">0002281)</a></span><br />
+		<a href="view_user_pagec3c9.html?id=8">anonymous</a>		<span class="small">(viewer)</span>
+				<br />
+		<span class="small">2017-01-11 13:00</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Fix committed to master branch.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c2515">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewf5dd.html?id=634#c2515" title="Direct link to note">0002515)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2017-09-12 17:44</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Issue closed because globally satisfactory behavior checked on v2.2-rc6.<br />
+Several bugs pending for resolution, but resolution accepted to be postponed to v2.3 in order to release v2.2 not any later.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c2516">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewf5dd.html?id=634#c2516" title="Direct link to note">0002516)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2017-09-12 17:44</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		AND MANY MANY CONGRATS FOR FTAVIN AND ALL ATOLCD TEAM FOR THIS GREAT WORK ON THIS BIG FEATURE !!!	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c2550">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewf5dd.html?id=634#c2550" title="Direct link to note">0002550)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2017-09-25 12:40</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Add a clarification on contact visibility for general documentation.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c2587">
+        <td class="bugnote-public">
+				<span class="small">(<a href="viewf5dd.html?id=634#c2587" title="Direct link to note">0002587)</a></span><br />
+		<a href="view_user_pagec3c9.html?id=8">anonymous</a>		<span class="small">(viewer)</span>
+				<br />
+		<span class="small">2017-11-20 10:49</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Fix committed to master branch.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+</table>
+
+</div><div id="bugnotes_closed" class="hidden">
+<table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/plus.png" alt="+" /></a>&#160;		Notes	</td>
+</tr>
+</table>
+</div><div id="Source_open"><br/>
+<a name="changesets"/>
+<table class="width100" cellspacing="1">
+
+<tr>
+	<td class="form-title"><a href="#" onclick="ToggleDiv( 'Source' ); return false;"
+			><img border="0" src="images/minus.png" alt="-" /></a>&#160;Related Changesets</td>
+</tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="2">
+	<a name="changeset2020">sigmah: master ca98b65b</a>
+	<br/><span class="small">Timestamp: 2016-09-01 11:54:40</span>
+	<br/><span class="small">Author: <a href="view_user_pagef3bc.html?id=92">bleny</a></span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin77ee.html?page=Source/view&amp;id=2020">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/ca98b65bb6643256af42191ad86d34722d627b2e">Diff</a>&#160;]</span> </td>
+<td colspan="3">PostgreSQL extension &quot;pg_trgm&quot; will become a prerequisite, install it on travis building environment<br />
+<br />
+see PR <a href="viewcdef.html?id=38" title="[new] Export a calendar to a printable version">0000038</a>, issue <a href="viewf5dd.html?id=634" title="[closed] Contacts database (aka &quot;CRM&quot;)" class="resolved">0000634</a></td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - .travis.yml</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/ca98b65bb6643256af42191ad86d34722d627b2e">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/ca98b65bb6643256af42191ad86d34722d627b2e/.travis.yml">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="13">
+	<a name="changeset2331">sigmah: master 81e9b5ba</a>
+	<br/><span class="small">Timestamp: 2016-12-19 17:32:57</span>
+	<br/><span class="small">Author: FranÃ§ois Tavin</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugine149.html?page=Source/view&amp;id=2331">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> </td>
+<td colspan="3">Add importation schemes tab to admin of contact models<br />
+<br />
+(resolves <a href="viewf5dd.html?id=634" title="[closed] Contacts database (aka &quot;CRM&quot;)" class="resolved">0000634</a>)<br />
+<br />
+Change-Id: I445c56459bc199dd5fcdb9e90183a53b3af64edb</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/presenter/admin/models/contact/ContactModelsAdminPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/81e9b5bac1d224d74ec5600c300cd84d888d8478/src/main/java/org/sigmah/client/ui/presenter/admin/models/contact/ContactModelsAdminPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/presenter/admin/models/importer/AddImportationSchemeModelsAdminPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/81e9b5bac1d224d74ec5600c300cd84d888d8478/src/main/java/org/sigmah/client/ui/presenter/admin/models/importer/AddImportationSchemeModelsAdminPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/presenter/admin/models/importer/AddMatchingRuleImportationShemeModelsAdminPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/81e9b5bac1d224d74ec5600c300cd84d888d8478/src/main/java/org/sigmah/client/ui/presenter/admin/models/importer/AddMatchingRuleImportationShemeModelsAdminPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/domain/importation/ImportationSchemeModel.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/81e9b5bac1d224d74ec5600c300cd84d888d8478/src/main/java/org/sigmah/server/domain/importation/ImportationSchemeModel.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/handler/GetImportationSchemeModelsHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/81e9b5bac1d224d74ec5600c300cd84d888d8478/src/main/java/org/sigmah/server/handler/GetImportationSchemeModelsHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/handler/GetImportationSchemesHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/81e9b5bac1d224d74ec5600c300cd84d888d8478/src/main/java/org/sigmah/server/handler/GetImportationSchemesHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/service/ImportationSchemeModelService.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/81e9b5bac1d224d74ec5600c300cd84d888d8478/src/main/java/org/sigmah/server/service/ImportationSchemeModelService.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/command/GetImportationSchemeModels.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/81e9b5bac1d224d74ec5600c300cd84d888d8478/src/main/java/org/sigmah/shared/command/GetImportationSchemeModels.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/command/GetImportationSchemes.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/81e9b5bac1d224d74ec5600c300cd84d888d8478/src/main/java/org/sigmah/shared/command/GetImportationSchemes.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/dto/importation/ImportationSchemeModelDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/81e9b5bac1d224d74ec5600c300cd84d888d8478/src/main/java/org/sigmah/shared/dto/importation/ImportationSchemeModelDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/resources/db/migration/V23__contact_imports.sql</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/81e9b5bac1d224d74ec5600c300cd84d888d8478/src/main/resources/db/migration/V23__contact_imports.sql">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/resources/dozer/dozer-schema-mapping.xml</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/81e9b5bac1d224d74ec5600c300cd84d888d8478">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/81e9b5bac1d224d74ec5600c300cd84d888d8478/src/main/resources/dozer/dozer-schema-mapping.xml">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="2">
+	<a name="changeset2211">sigmah: master fcf30696</a>
+	<br/><span class="small">Timestamp: 2017-01-05 11:18:32</span>
+	<br/><span class="small">Author: FranÃ§ois Tavin</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin7cf0.html?page=Source/view&amp;id=2211">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/fcf3069627ae11f582b4df3852cc5a24fe9a3edb">Diff</a>&#160;]</span> </td>
+<td colspan="3">Fix : error when sorting newly created contacts<br />
+<br />
+(resolves <a href="viewf5dd.html?id=634" title="[closed] Contacts database (aka &quot;CRM&quot;)" class="resolved">0000634</a>)<br />
+<br />
+Change-Id: I18a7adc9662b3813aebf930956d6daa804da1938</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/view/contact/dashboardlist/PagingContactsProxy.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/fcf3069627ae11f582b4df3852cc5a24fe9a3edb">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/fcf3069627ae11f582b4df3852cc5a24fe9a3edb/src/main/java/org/sigmah/client/ui/view/contact/dashboardlist/PagingContactsProxy.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="26">
+	<a name="changeset2313">sigmah: master d345b774</a>
+	<br/><span class="small">Timestamp: 2017-01-30 10:30:33</span>
+	<br/><span class="small">Author: FranÃ§ois Tavin</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin825e.html?page=Source/view&amp;id=2313">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> </td>
+<td colspan="3">Offline mode for contact<br />
+<br />
+(refs <a href="viewf5dd.html?id=634" title="[closed] Contacts database (aka &quot;CRM&quot;)" class="resolved">0000634</a>)<br />
+<br />
+Change-Id: I86dd634e4f0337aa151e14cc6c5d9b6cfa5f22eb</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/offline/dao/ContactAsyncDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/dao/ContactAsyncDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/offline/dao/ContactHistoryAsyncDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/dao/ContactHistoryAsyncDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/offline/dao/ContactListElementAsyncDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/dao/ContactListElementAsyncDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/offline/dao/ContactRelationshipAsyncDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/dao/ContactRelationshipAsyncDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/dao/ValueAsyncDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/dao/ValueAsyncDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/offline/handler/CheckContactDuplicationAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/handler/CheckContactDuplicationAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/handler/CreateEntityAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/handler/CreateEntityAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/offline/handler/GetContactHistoryAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/handler/GetContactHistoryAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/offline/handler/GetContactRelationshipsAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/handler/GetContactRelationshipsAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/offline/handler/UpdateContactAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/handler/UpdateContactAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/indexeddb/Store.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/indexeddb/Store.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/inject/OfflineModule.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/inject/OfflineModule.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ContactCardJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/js/ContactCardJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ContactDetailsJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/js/ContactDetailsJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ContactHistoryJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/js/ContactHistoryJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ContactJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/js/ContactJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ContactListElementJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/js/ContactListElementJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ContactModelJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/js/ContactModelJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ContactRelationshipJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/js/ContactRelationshipJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/offline/js/UpdateContactJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/js/UpdateContactJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ValueJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/js/ValueJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ValueJSIdentifierFactory.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/offline/js/ValueJSIdentifierFactory.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/command/UpdateContact.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/shared/command/UpdateContact.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/command/result/ContactHistory.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/shared/command/result/ContactHistory.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/command/result/ContactRelationship.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d345b77444637cad6fc54776398bb80a47033eb9">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d345b77444637cad6fc54776398bb80a47033eb9/src/main/java/org/sigmah/shared/command/result/ContactRelationship.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="54">
+	<a name="changeset2311">sigmah: master f946e569</a>
+	<br/><span class="small">Timestamp: 2017-06-08 14:57:01</span>
+	<br/><span class="small">Author: vdelesse</span>
+	<br/><span class="small">Committer: FranÃ§ois Tavin</span>		<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin90d6.html?page=Source/view&amp;id=2311">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> </td>
+<td colspan="3">Bug fixes for offline mode<br />
+<br />
+(refs <a href="viewf5dd.html?id=634" title="[closed] Contacts database (aka &quot;CRM&quot;)" class="resolved">0000634</a> <a href="viewf88b.html?id=501" title="[closed] Group iterations" class="resolved">0000501</a>)<br />
+<br />
+Change-Id: Ieabe0f56c7a757c7eb411de678b3acfbda25b557</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/presenter/DashboardPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/client/ui/presenter/DashboardPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/presenter/contact/ContactDetailsPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/client/ui/presenter/contact/ContactDetailsPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/presenter/contact/ContactHistoryPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/client/ui/presenter/contact/ContactHistoryPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/presenter/contact/dashboardlist/ContactsListWidget.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/client/ui/presenter/contact/dashboardlist/ContactsListWidget.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/presenter/orgunit/OrgUnitDetailsPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/client/ui/presenter/orgunit/OrgUnitDetailsPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/presenter/orgunit/OrgUnitPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/client/ui/presenter/orgunit/OrgUnitPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/presenter/project/ProjectDetailsPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/client/ui/presenter/project/ProjectDetailsPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/presenter/project/dashboard/PhasesPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/client/ui/presenter/project/dashboard/PhasesPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/view/contact/dashboardlist/ContactsListView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/client/ui/view/contact/dashboardlist/ContactsListView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/widget/form/ContactListComboBox.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/client/ui/widget/form/ContactListComboBox.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/widget/form/Forms.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/client/ui/widget/form/Forms.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/widget/form/IterableGroupPanel.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/client/ui/widget/form/IterableGroupPanel.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/dao/LayoutGroupIterationsAsyncDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/dao/LayoutGroupIterationsAsyncDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/dao/ProjectAsyncDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/dao/ProjectAsyncDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/handler/DeleteAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/handler/DeleteAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/offline/handler/GetContactAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/handler/GetContactAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/offline/handler/GetContactsAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/handler/GetContactsAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/handler/GetLayoutGroupIterationsAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/handler/GetLayoutGroupIterationsAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/handler/GetMonitoredPointsAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/handler/GetMonitoredPointsAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/handler/GetValueFromLinkedProjectsAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/handler/GetValueFromLinkedProjectsAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/handler/UpdateLayoutGroupIterationsAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/handler/UpdateLayoutGroupIterationsAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/handler/UpdateProjectAsyncHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/handler/UpdateProjectAsyncHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/inject/OfflineModule.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/inject/OfflineModule.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/CommandJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/js/CommandJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ContactCardJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/js/ContactCardJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ContactDetailsJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/js/ContactDetailsJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ContactJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/js/ContactJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ContactModelJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/js/ContactModelJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/FlexibleElementJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/js/FlexibleElementJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/LayoutGroupJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/js/LayoutGroupJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ValueJS.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/js/ValueJS.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/js/ValueJSIdentifierFactory.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/js/ValueJSIdentifierFactory.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/sync/Synchronizer.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/sync/Synchronizer.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/offline/sync/UpdateDates.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/offline/sync/UpdateDates.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/domain/element/ContactListElement.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/server/domain/element/ContactListElement.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/domain/layout/Layout.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/server/domain/layout/Layout.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/domain/layout/LayoutGroup.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/server/domain/layout/LayoutGroup.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/handler/CheckContactDuplicationHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/server/handler/CheckContactDuplicationHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/handler/GetContactsHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/server/handler/GetContactsHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/handler/GetOrgUnitsHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/server/handler/GetOrgUnitsHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/handler/GetProjectHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/server/handler/GetProjectHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/handler/GetUserUnitsByUserHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/server/handler/GetUserUnitsByUserHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/handler/GetUsersByOrgUnitHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/server/handler/GetUsersByOrgUnitHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/service/AmendmentService.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/server/service/AmendmentService.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/service/ValueService.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/server/service/ValueService.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/util/EntityLogicalElementTypes.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/server/util/EntityLogicalElementTypes.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/command/UpdateProject.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/shared/command/UpdateProject.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/dto/ContactDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/shared/dto/ContactDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/dto/element/ContactListElementDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/shared/dto/element/ContactListElementDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/dto/element/FlexibleElementDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/java/org/sigmah/shared/dto/element/FlexibleElementDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/resources/org/sigmah/client/i18n/UIConstants.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/resources/org/sigmah/client/i18n/UIConstants.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/resources/org/sigmah/client/i18n/UIConstants_en_GB.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/resources/org/sigmah/client/i18n/UIConstants_en_GB.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/resources/org/sigmah/client/i18n/UIConstants_fr.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f946e569bc1b0d2fc018b83b7e7be456e17870be">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f946e569bc1b0d2fc018b83b7e7be456e17870be/src/main/resources/org/sigmah/client/i18n/UIConstants_fr.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="10">
+	<a name="changeset2342">sigmah: master 89e839d7</a>
+	<br/><span class="small">Timestamp: 2017-09-04 15:02:55</span>
+	<br/><span class="small">Author: <a href="view_user_paged5b4.html?id=107">tdegivry</a></span>
+	<br/><span class="small">Committer: FranÃ§ois Tavin</span>		<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin41da.html?page=Source/view&amp;id=2342">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89e839d786ec1a505ad99c98175cfadde1702208">Diff</a>&#160;]</span> </td>
+<td colspan="3">Add Contact export in Frameworks<br />
+<br />
+(refs <a href="viewf5dd.html?id=634" title="[closed] Contacts database (aka &quot;CRM&quot;)" class="resolved">0000634</a>)<br />
+<br />
+Change-Id: I85652eace8669256a4a2f3202cbfe47cfad0d4c6</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/dao/FrameworkFulfillmentDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89e839d786ec1a505ad99c98175cfadde1702208">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89e839d786ec1a505ad99c98175cfadde1702208/src/main/java/org/sigmah/server/dao/FrameworkFulfillmentDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/dao/ValueDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89e839d786ec1a505ad99c98175cfadde1702208">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89e839d786ec1a505ad99c98175cfadde1702208/src/main/java/org/sigmah/server/dao/ValueDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/dao/impl/FrameworkFulfillmentHibernateDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89e839d786ec1a505ad99c98175cfadde1702208">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89e839d786ec1a505ad99c98175cfadde1702208/src/main/java/org/sigmah/server/dao/impl/FrameworkFulfillmentHibernateDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/dao/impl/ValueHibernateDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89e839d786ec1a505ad99c98175cfadde1702208">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89e839d786ec1a505ad99c98175cfadde1702208/src/main/java/org/sigmah/server/dao/impl/ValueHibernateDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/server/handler/GetContactRelationshipsInFrameworkHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89e839d786ec1a505ad99c98175cfadde1702208">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89e839d786ec1a505ad99c98175cfadde1702208/src/main/java/org/sigmah/server/handler/GetContactRelationshipsInFrameworkHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/inject/CommandHandlerModule.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89e839d786ec1a505ad99c98175cfadde1702208">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89e839d786ec1a505ad99c98175cfadde1702208/src/main/java/org/sigmah/server/inject/CommandHandlerModule.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/security/impl/AccessRights.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89e839d786ec1a505ad99c98175cfadde1702208">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89e839d786ec1a505ad99c98175cfadde1702208/src/main/java/org/sigmah/server/security/impl/AccessRights.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/servlet/exporter/utils/ContactsSynthesisUtils.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89e839d786ec1a505ad99c98175cfadde1702208">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89e839d786ec1a505ad99c98175cfadde1702208/src/main/java/org/sigmah/server/servlet/exporter/utils/ContactsSynthesisUtils.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - src/main/java/org/sigmah/shared/command/GetContactRelationshipsInFramework.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89e839d786ec1a505ad99c98175cfadde1702208">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89e839d786ec1a505ad99c98175cfadde1702208/src/main/java/org/sigmah/shared/command/GetContactRelationshipsInFramework.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="12">
+	<a name="changeset2330">sigmah: master f8ca3483</a>
+	<br/><span class="small">Timestamp: 2017-09-22 00:23:32</span>
+	<br/><span class="small">Author: FranÃ§ois Tavin</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin0a53.html?page=Source/view&amp;id=2330">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f8ca348363f5024cc495e8f041511fb1c37d8ce0">Diff</a>&#160;]</span> </td>
+<td colspan="3">Modify general importation mechanism to include contact imports<br />
+<br />
+(resolves <a href="viewf5dd.html?id=634" title="[closed] Contacts database (aka &quot;CRM&quot;)" class="resolved">0000634</a>)<br />
+<br />
+Change-Id: I883fc4e0d6ecce1cd64ac41f68b4c2d338397697</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/presenter/importation/ImportationPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f8ca348363f5024cc495e8f041511fb1c37d8ce0">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f8ca348363f5024cc495e8f041511fb1c37d8ce0/src/main/java/org/sigmah/client/ui/presenter/importation/ImportationPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/view/importation/ElementExtractedValuePopup.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f8ca348363f5024cc495e8f041511fb1c37d8ce0">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f8ca348363f5024cc495e8f041511fb1c37d8ce0/src/main/java/org/sigmah/client/ui/view/importation/ElementExtractedValuePopup.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/client/ui/view/importation/ImportDetailsPopup.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f8ca348363f5024cc495e8f041511fb1c37d8ce0">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f8ca348363f5024cc495e8f041511fb1c37d8ce0/src/main/java/org/sigmah/client/ui/view/importation/ImportDetailsPopup.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/handler/UpdateProjectHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f8ca348363f5024cc495e8f041511fb1c37d8ce0">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f8ca348363f5024cc495e8f041511fb1c37d8ce0/src/main/java/org/sigmah/server/handler/UpdateProjectHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/servlet/exporter/utils/ExporterUtil.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f8ca348363f5024cc495e8f041511fb1c37d8ce0">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f8ca348363f5024cc495e8f041511fb1c37d8ce0/src/main/java/org/sigmah/server/servlet/exporter/utils/ExporterUtil.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/servlet/importer/AutomatedImporter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f8ca348363f5024cc495e8f041511fb1c37d8ce0">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f8ca348363f5024cc495e8f041511fb1c37d8ce0/src/main/java/org/sigmah/server/servlet/importer/AutomatedImporter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/server/servlet/importer/Importer.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f8ca348363f5024cc495e8f041511fb1c37d8ce0">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f8ca348363f5024cc495e8f041511fb1c37d8ce0/src/main/java/org/sigmah/server/servlet/importer/Importer.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/dto/ElementExtractedValue.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f8ca348363f5024cc495e8f041511fb1c37d8ce0">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f8ca348363f5024cc495e8f041511fb1c37d8ce0/src/main/java/org/sigmah/shared/dto/ElementExtractedValue.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/dto/element/DefaultContactFlexibleElementDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f8ca348363f5024cc495e8f041511fb1c37d8ce0">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f8ca348363f5024cc495e8f041511fb1c37d8ce0/src/main/java/org/sigmah/shared/dto/element/DefaultContactFlexibleElementDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/java/org/sigmah/shared/dto/referential/ImportStatusCode.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f8ca348363f5024cc495e8f041511fb1c37d8ce0">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f8ca348363f5024cc495e8f041511fb1c37d8ce0/src/main/java/org/sigmah/shared/dto/referential/ImportStatusCode.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - src/main/resources/org/sigmah/client/i18n/UIConstants.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/f8ca348363f5024cc495e8f041511fb1c37d8ce0">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/f8ca348363f5024cc495e8f041511fb1c37d8ce0/src/main/resources/org/sigmah/client/i18n/UIConstants.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		</table>
+</div><div id="Source_closed" class="hidden"><br/>
+<table class="width100" cellspacing="1">
+
+<tr>
+	<td class="form-title"><a href="#" onclick="ToggleDiv( 'Source' ); return false;"
+			><img border="0" src="images/plus.png" alt="+" /></a>&#160;Related Changesets</td>
+</tr>
+
+</table>
+</div>
+<a name="history" id="history" /><br />
+
+<div id="history_open"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/minus.png" alt="-" /></a>&#160;Issue History	</td>
+</tr>
+<tr class="row-category-history">
+	<td class="small-caption">
+		Date Modified	</td>
+	<td class="small-caption">
+		Username	</td>
+	<td class="small-caption">
+		Field	</td>
+	<td class="small-caption">
+		Change	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2014-09-01 15:15	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		New Issue	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2014-09-01 15:16	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		related to 0000501	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2014-09-01 15:16	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Target Version	</td>
+	<td class="small-caption">
+		2.0 =&gt; unplanned	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2014-09-01 15:29	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Additional Information Updated	</td>
+	<td class="small-caption">
+		<a href="bug_revision_view_page624e.html?rev_id=483#r483">View Revisions</a>	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2014-09-01 16:05	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Additional Information Updated	</td>
+	<td class="small-caption">
+		<a href="bug_revision_view_page4da0.html?rev_id=484#r484">View Revisions</a>	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2014-09-05 11:22	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		File Added: organization-128.png	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2014-09-05 11:22	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		File Added: person-128.png	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2014-09-05 11:23	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001500	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-02-12 12:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		 =&gt; aponcon	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-02-12 12:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		new =&gt; assigned	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-02-12 12:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Target Version	</td>
+	<td class="small-caption">
+		unplanned =&gt; next-but-one	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-05-12 16:53	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Target Version	</td>
+	<td class="small-caption">
+		next-but-one =&gt; 2.2	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-07-07 12:37	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		File Added: Gestion de contacts - 634.pdf	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-07-25 16:00	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Category	</td>
+	<td class="small-caption">
+		General =&gt; Contact	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-10 18:02	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000890	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-10 18:22	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000891	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-10 18:26	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000892	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-11 15:59	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000898	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-11 16:07	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000899	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-11 16:13	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000900	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-11 16:19	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000897	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-11 16:26	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000901	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-11 16:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		related to 0000902	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-11 16:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000903	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-11 16:51	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000904	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-11 17:54	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000905	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-12 12:53	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000908	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-12 12:53	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000909	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-12 15:22	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000910	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-12 16:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000913	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-12 16:40	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000914	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-12 16:48	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000915	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-12 16:56	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000916	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-12 17:03	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000917	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-12 17:08	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000918	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-22 12:47	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		aponcon =&gt; ftavin	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-22 12:47	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		File Added: Contact_Relationships_20160822115851.xls	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-22 12:48	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0002030	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-22 12:56	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000919	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-24 17:51	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		File Added: Project_synthesis_20160824122011.xls	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-24 17:51	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0002036	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-08-28 16:55	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		related to 0000920	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-08-28 19:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		related to 0000921	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-09-01 12:00	</td>
+	<td class="small-caption">
+		<a href="view_user_pagef3bc.html?id=92">bleny</a>	</td>
+	<td class="small-caption">
+		Changeset attached	</td>
+	<td class="small-caption">
+		 =&gt; sigmah master ca98b65b	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-09-07 10:54	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000924	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-09-27 21:43	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000954	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-09-27 21:46	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000955	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-10-07 11:02	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000982	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-10-07 11:16	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000983	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-10-07 11:42	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000984	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-10-07 11:51	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000985	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-10-07 15:12	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000988	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-10-07 15:18	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000989	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2016-10-12 16:53	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0000996	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2016-11-28 14:57	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		related to 0000921	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-01-11 13:00	</td>
+	<td class="small-caption">
+			</td>
+	<td class="small-caption">
+		Changeset attached	</td>
+	<td class="small-caption">
+		 =&gt; sigmah master fcf30696	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-01-11 13:00	</td>
+	<td class="small-caption">
+		<a href="view_user_pagec3c9.html?id=8">anonymous</a>	</td>
+	<td class="small-caption">
+		Note Added: 0002281	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-01-11 13:00	</td>
+	<td class="small-caption">
+		<a href="view_user_pagec3c9.html?id=8">anonymous</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		assigned =&gt; resolved	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-01-11 13:00	</td>
+	<td class="small-caption">
+		<a href="view_user_pagec3c9.html?id=8">anonymous</a>	</td>
+	<td class="small-caption">
+		Resolution	</td>
+	<td class="small-caption">
+		open =&gt; fixed	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-01-12 17:44	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0001041	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-01-12 18:08	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0001042	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-01-12 18:24	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0001043	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-01-18 16:55	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0001049	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-01-18 16:55	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0001048	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-01-18 17:40	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		related to 0001051	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-01-19 10:42	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0001052	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-01-19 11:26	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		related to 0001053	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-01-19 11:26	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		related to 0001053	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-01-19 11:26	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0001053	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-09-09 09:00	</td>
+	<td class="small-caption">
+			</td>
+	<td class="small-caption">
+		Changeset attached	</td>
+	<td class="small-caption">
+		 =&gt; sigmah master f946e569	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-09-09 09:00	</td>
+	<td class="small-caption">
+			</td>
+	<td class="small-caption">
+		Changeset attached	</td>
+	<td class="small-caption">
+		 =&gt; sigmah master d345b774	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-09-12 17:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		parent of 0000903	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-09-12 17:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		parent of 0000892	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-09-12 17:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		parent of 0000910	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-09-12 17:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		parent of 0000914	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-09-12 17:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		parent of 0000924	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-09-12 17:38	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		parent of 0000996	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-09-12 17:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		parent of 0001042	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-09-12 17:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		parent of 0001043	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-09-12 17:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		related to 0000902	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-09-12 17:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		related to 0000920	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-09-12 17:42	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship deleted	</td>
+	<td class="small-caption">
+		related to 0001051	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-09-12 17:44	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0002515	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-09-12 17:44	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		resolved =&gt; closed	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-09-12 17:44	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Fixed in Version	</td>
+	<td class="small-caption">
+		 =&gt; 2.2	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-09-12 17:44	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0002516	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-09-15 11:08	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		parent of 0001034	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-09-25 12:40	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0002550	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-09-25 12:40	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Additional Information Updated	</td>
+	<td class="small-caption">
+		<a href="bug_revision_view_page7fa9.html?rev_id=1066#r1066">View Revisions</a>	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-11-20 10:49	</td>
+	<td class="small-caption">
+			</td>
+	<td class="small-caption">
+		Changeset attached	</td>
+	<td class="small-caption">
+		 =&gt; sigmah master f8ca3483	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-11-20 10:49	</td>
+	<td class="small-caption">
+			</td>
+	<td class="small-caption">
+		Changeset attached	</td>
+	<td class="small-caption">
+		 =&gt; sigmah master 81e9b5ba	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2017-11-20 10:49	</td>
+	<td class="small-caption">
+		<a href="view_user_paged5b4.html?id=107">tdegivry</a>	</td>
+	<td class="small-caption">
+		Changeset attached	</td>
+	<td class="small-caption">
+		 =&gt; sigmah master 89e839d7	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2017-11-20 10:49	</td>
+	<td class="small-caption">
+		<a href="view_user_pagec3c9.html?id=8">anonymous</a>	</td>
+	<td class="small-caption">
+		Note Added: 0002587	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+</table>
+</div><div id="history_closed" class="hidden"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+	<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/plus.png" alt="+" /></a>&#160;Issue History	</td>
+</tr>
+</table>
+
+</div>	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.png" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=634&nbn=8 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Jul 2018 14:24:48 GMT -->
+</html>

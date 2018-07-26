@@ -1,0 +1,197 @@
+Index: /src/main/java/org/sigmah/client/i18n/UIConstants.properties
+===================================================================
+--- /src/main/java/org/sigmah/client/i18n/UIConstants.properties	(revision 1582)
++++ /src/main/java/org/sigmah/client/i18n/UIConstants.properties	(working copy)
+@@ -1134,6 +1134,8 @@
+ 
+ help = Help
+ 
++projectWithNoSitesWarning = You must create at least one site in the "Map" sub-tab before being able to enter values for your indicators.
++
+ # History
+ history = History
+ 
+Index: /src/main/java/org/sigmah/client/page/config/design/IndicatorDialog.java
+===================================================================
+--- /src/main/java/org/sigmah/client/page/config/design/IndicatorDialog.java	(revision 1582)
++++ /src/main/java/org/sigmah/client/page/config/design/IndicatorDialog.java	(working copy)
+@@ -1,5 +1,7 @@
+ package org.sigmah.client.page.config.design;
+ 
++import java.util.ArrayList;
++
+ import org.sigmah.client.EventBus;
+ import org.sigmah.client.dispatch.Dispatcher;
+ import org.sigmah.client.dispatch.monitor.MaskingAsyncMonitor;
+@@ -8,12 +10,22 @@
+ import org.sigmah.client.i18n.I18N;
+ import org.sigmah.client.page.common.dialog.FormDialogCallback;
+ import org.sigmah.shared.command.BatchCommand;
++import org.sigmah.shared.command.GetSites;
+ import org.sigmah.shared.command.UpdateEntity;
+ import org.sigmah.shared.command.result.BatchResult;
++import org.sigmah.shared.command.result.SiteResult;
++import org.sigmah.shared.dao.Filter;
+ import org.sigmah.shared.dto.IndicatorDTO;
++import org.sigmah.shared.dto.SiteDTO;
++import org.sigmah.shared.report.model.DimensionType;
+ 
++import com.extjs.gxt.ui.client.event.ComponentEvent;
++import com.extjs.gxt.ui.client.event.Events;
++import com.extjs.gxt.ui.client.event.Listener;
++import com.extjs.gxt.ui.client.event.MessageBoxEvent;
+ import com.extjs.gxt.ui.client.Style.Scroll;
+ import com.extjs.gxt.ui.client.widget.Dialog;
++import com.extjs.gxt.ui.client.widget.MessageBox;
+ import com.extjs.gxt.ui.client.widget.TabItem;
+ import com.extjs.gxt.ui.client.widget.TabPanel;
+ import com.extjs.gxt.ui.client.widget.button.Button;
+@@ -54,7 +66,7 @@
+ 		indicatorForm.setHeaderVisible(false);
+ 		indicatorForm.setScrollMode(Scroll.AUTOY);
+ 		indicatorForm.setStyleAttribute("backgroundColor", "white");
+-
++		
+ 		String title = "";
+ 
+ 		title = "Definition";
+@@ -67,6 +79,11 @@
+ 		tabPanel.add(defTab);
+ 
+ 		valuesTab = new TabItem(I18N.CONSTANTS.value());
++		valuesTab.addListener(Events.Select, new Listener<ComponentEvent>() {
++			public void handleEvent(ComponentEvent be) {
++				onValuesTabSelected();
++			}
++		});
+ 		valuesTab.setLayout(new FitLayout());
+ 		valuesTab.add(pivotPanel);
+ 		tabPanel.add(valuesTab);
+@@ -139,6 +156,41 @@
+ 		                });
+ 	}
+ 
++	private void onValuesTabSelected() {
++
++		// GWT DialogBox / PopupPanel cannot be displayed on top of
++		// IndicatorDialog. Keep GXT components until the application
++		// is migrated to pure GWT ui.
++
++		Filter filter = new Filter();
++		filter.addRestriction(DimensionType.Database, indicator.getDatabaseId());
++
++		GetSites cmd = new GetSites();
++		cmd.setFilter(filter);
++
++		dispatcher.execute(cmd, null, new AsyncCallback<SiteResult>() {
++			@Override
++			public void onFailure(Throwable caught) {
++			}
++
++			@Override
++			public void onSuccess(SiteResult result) {
++				if (((ArrayList<SiteDTO>) result.getData()).size() == 0) {
++					MessageBox box = new MessageBox();
++					box.setButtons(MessageBox.OK);
++					box.setIcon(MessageBox.INFO);
++					box.addCallback(new Listener<MessageBoxEvent>() {
++						public void handleEvent(MessageBoxEvent ce) {
++							ce.getButtonClicked();
++						}
++					});
++					box.setMessage(I18N.CONSTANTS.projectWithNoSitesWarning());
++					box.show();
++				}
++			}
++		});
++	}
++
+ 	public void removeDef() {
+ 		tabPanel.remove(defTab);
+ 	}
+Index: /src/main/java/org/sigmah/client/page/project/pivot/ProjectPivotContainer.java
+===================================================================
+--- /src/main/java/org/sigmah/client/page/project/pivot/ProjectPivotContainer.java	(revision 1582)
++++ /src/main/java/org/sigmah/client/page/project/pivot/ProjectPivotContainer.java	(working copy)
+@@ -1,5 +1,7 @@
+ package org.sigmah.client.page.project.pivot;
+ 
++import java.util.ArrayList;
++
+ import org.sigmah.client.EventBus;
+ import org.sigmah.client.dispatch.Dispatcher;
+ import org.sigmah.client.dispatch.monitor.MaskingAsyncMonitor;
+@@ -23,9 +25,12 @@
+ import org.sigmah.shared.command.GenerateElement;
+ import org.sigmah.shared.command.GetIndicators;
+ import org.sigmah.shared.command.GetProject;
++import org.sigmah.shared.command.GetSites;
+ import org.sigmah.shared.command.result.BatchResult;
+ import org.sigmah.shared.command.result.IndicatorListResult;
++import org.sigmah.shared.command.result.SiteResult;
+ import org.sigmah.shared.domain.profile.GlobalPermissionEnum;
++import org.sigmah.shared.dao.Filter;
+ import org.sigmah.shared.dto.IndicatorDTO;
+ import org.sigmah.shared.dto.ProjectDTO;
+ import org.sigmah.shared.dto.SiteDTO;
+@@ -633,7 +638,7 @@
+ 		gridPanel.getStore().rejectChanges();
+ 		toolBar.setDirty(false);
+ 	}
+-
++	
+ 	@Override
+ 	public Component getView() {
+ 		return this;
+@@ -647,6 +652,38 @@
+ 	@Override
+ 	public void viewDidAppear() {
+ 
++		if (gridPanel.hasIndicatorsInStore()) {
++
++			Filter filter = new Filter();
++			filter.addRestriction(DimensionType.Database, currentDatabaseId);
++
++			GetSites request = new GetSites();
++			request.setFilter(filter);
++
++			dispatcher.execute(request, null, new AsyncCallback<SiteResult>() {
++
++				@Override
++				public void onFailure(Throwable caught) {
++				}
++
++				@Override
++				public void onSuccess(SiteResult result) {
++					if (result.getData().size() == 0) {
++						MessageBox box = new MessageBox();
++						box.setButtons(MessageBox.OK);
++						box.setIcon(MessageBox.INFO);
++						box.addCallback(new Listener<MessageBoxEvent>() {
++							public void handleEvent(MessageBoxEvent ce) {
++								ce.getButtonClicked();
++							}
++						});
++						box.setMessage(I18N.CONSTANTS.projectWithNoSitesWarning());
++						box.show();
++					}
++				}
++			});
++		}
++
+ 	}
+ 
+ 	@Override
+Index: /src/main/java/org/sigmah/client/page/table/PivotGridPanel.java
+===================================================================
+--- /src/main/java/org/sigmah/client/page/table/PivotGridPanel.java	(revision 1582)
++++ /src/main/java/org/sigmah/client/page/table/PivotGridPanel.java	(working copy)
+@@ -502,4 +502,8 @@
+ 	public EditorTreeGrid<PivotTableRow> getGrid() {
+ 		return grid;
+ 	}
++	
++	public boolean hasIndicatorsInStore() {
++		return (indicators != null && indicators.size() != 0);
++	}
+ }

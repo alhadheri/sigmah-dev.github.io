@@ -1,0 +1,87 @@
+<html> 
+
+<!-- Mirrored from www.sigmah.org/issues/mockups/DataImportation/PMMTab.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:50:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<script src="js/jquery-2.0.2.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.js" type="text/javascript"></script>
+<script src="js/jquery.ui.dialog.js" type="text/javascript"></script>
+<script src="js/Tools.js" type="text/javascript"></script>
+<script src="js/mainModel.html" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<title> Project Model Management tab </title>
+</head>
+<body>
+	<div id="left_section" style="text-align:left;">
+	<div class="toolbar">
+		<button type="button"  onclick="popup_add()" id="button_add_schema"><img src="img/clear.cache.html" style="width: 16px; height: 16px; background-image: url(img/C18C262E36AA02F700CC477F30CB85A2.cache.html); background-position: -1012px 0px; background-repeat: no-repeat no-repeat;" border="0" role="presentation" class=" x-btn-image">Add schema</button>
+		<button type="button"><img src="img/clear.cache.html" style="width: 16px; height: 16px; background-image: url(img/C18C262E36AA02F700CC477F30CB85A2.cache.html); background-position: -692px 0px; background-repeat: no-repeat no-repeat;" border="0" role="presentation" class=" x-btn-image">Delete</button>
+	</div>
+	<form class="form_section">
+		<table class="content_table_home" id="content_table_schemas"> 
+			<tr><th class="large_th">Schema</th></tr>
+			<tr><td>Schema1</td></tr>
+		</table>
+	</form>
+	
+	<div id="dialog_add_schema">
+		<table>
+			<tr><td>Importation scheme : 
+				</td><td><select id="select_schema">
+				</select>
+			</td></tr>
+		</table>
+		<button type="button" class="home_button" onclick="addModelScheme()">Save</button>
+	</div>
+	</div>
+	<div id="right_section">
+	<div class="toolbar" >
+		<button type="button" onclick="createAssociation()" id="button_add_variable"><img src="img/clear.cache.html" style="width: 16px; height: 16px; background-image: url(img/C18C262E36AA02F700CC477F30CB85A2.cache.html); background-position: -1012px 0px; background-repeat: no-repeat no-repeat;" border="0" role="presentation" class=" x-btn-image">Add association</button>
+		<button type="button"><img src="img/clear.cache.html" style="width: 16px; height: 16px; background-image: url(img/C18C262E36AA02F700CC477F30CB85A2.cache.html); background-position: -692px 0px; background-repeat: no-repeat no-repeat;" border="0" role="presentation" class=" x-btn-image">Delete</button>
+	</div>
+	<form class="form_section">
+		<table class="content_table_home"> 
+			<tr>
+				<th></th>
+				<th> Field </th>
+				<th> Variable </th>
+				<th></th>
+			</tr>
+		</table> </br>
+		</form>
+		<div id="dialog_add_association" >
+			
+	<form class="form_section_dialog">
+			<table> 
+				<tr>
+					<td><label>Field : </label></td>
+					<td>
+						<select id="select_field" onclick="disableKey()">
+						</select>
+					</td>
+				</tr>
+				<tr id="variable_input_field">
+					<td><label>Variable : </label></td>
+					<td>
+						<select id="select_variable">
+						</select>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<table id="table_budget_fields">
+			</table>
+			<div id="id_key"><input type="checkbox" /><label>  Identification Key </label><br/><span class="explications"></span></div>
+			<button type="button" onclick="saveAssociation()">Save association</button>
+		</form>
+		</div>
+		<div id="dialog_warn_id">
+			You need to specify a variable corresponding to the project for defining this importation scheme as an updating one.
+			<button type="button">Change it to CREATE</button><button type="button" title="close">Assign a variable to the id</button>
+		</div>
+	</form>
+	</div>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/mockups/DataImportation/PMMTab.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:50:58 GMT -->
+</html>

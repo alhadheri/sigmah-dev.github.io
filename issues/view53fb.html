@@ -1,0 +1,668 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=575 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 15:17:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.html" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Wed, 25 Jul 2018 14:07:53 GMT" />
+	<link rel="shortcut icon" href="images/favicon.html" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.html?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.html?type=id" />	<title>0000575: Auto-export schedule frequency improvement - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.html"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.html" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_page812f.html?return=%2Fissues%2Fview.php%3Fid%3D575">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-25 16:07 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issuesd41d.xml?"><img src="images/rss.html" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table><br /><table class="width100" cellspacing="1"><tr><td class="form-title" colspan="3">View Issue Details&#160;<span class="small"><span class="bracket-link">[&#160;<a href="#bugnotes">Jump to Notes</a>&#160;]</span> </span></td><td class="center"><span class="small"></span></td><td class="right" colspan="2"><span class="small"><span class="bracket-link">[&#160;<a href="view38a7-2.html?id=575&amp;history=1#history">Issue History</a>&#160;]</span> </span><span class="small"><span class="bracket-link">[&#160;<a href="print_bug_pageaafd.html?bug_id=575">Print</a>&#160;]</span> </span></td></tr><tr><td class="category" width="15%">ID</td><td class="category" width="20%">Project</td><td class="category" width="15%">Category</td><td class="category" width="15%">View Status</td><td class="category" width="15%">Date Submitted</td><td class="category" width="20%">Last Update</td></tr><tr class="row-1"><td>0000575</td><td>sigmah</td><td>Project</td><td>public</td><td>2013-06-27 12:11</td><td>2015-04-07 12:47</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category">Reporter</td><td>osarrat</td><td colspan="4">&#160;</td></tr><tr class="row-1"><td class="category">Assigned To</td><td>spM</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Priority</td><td>normal</td><td class="category">Severity</td><td>feature</td><td class="category">Reproducibility</td><td>N/A</td></tr><tr class="row-1"><td class="category">Status</td><td bgcolor="#c2dfff">assigned</td><td class="category">Resolution</td><td>fixed</td><td colspan="2">&#160;</td></tr><tr class="row-2"><td class="category">Platform</td><td></td><td class="category">OS</td><td></td><td class="category">OS Version</td><td></td></tr><tr class="row-1"><td class="category">Product Version</td><td>1.2</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Target Version</td><td>next-but-one</td><td class="category">Fixed in Version</td><td></td><td colspan="2">&#160;</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category">Summary</td><td colspan="5">0000575: Auto-export schedule frequency improvement</td></tr><tr class="row-2"><td class="category">Description</td><td colspan="5">In v1.2, the auto-export schedule can only be set to: Not Scheduled, Daily, Every 3 days, Every 9 days, Every 15 days.<br />
+<br />
+An adoption focal point has reported that it would be more convenient to be able to set up the auto-export frequency to thinks like : every XX of each month, and/or every XX of each week.</td></tr><tr class="row-1"><td class="category">Tags</td><td colspan="5">No tags attached.</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category">User Report URL</td><td colspan="5"><a href="http://www.sigmah.org/node/773">http://www.sigmah.org/node/773</a> [<a href="http://www.sigmah.org/node/773" target="_blank">^</a>]</td></tr><tr class="row-1"><td class="category">OS</td><td colspan="5">NA</td></tr><tr class="row-2"><td class="category">Other OS</td><td colspan="5"></td></tr><tr class="row-1"><td class="category">Browser</td><td colspan="5">NA</td></tr><tr class="row-2"><td class="category">Other browser</td><td colspan="5"></td></tr><tr class="row-1"><td class="category">ScreenURL</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">(ActivityInfo) Noticed in revision</td><td colspan="5"></td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category"><a name="attachments" id="attachments" />Attached Files</td><td colspan="5"><a href="575e4eb.patch?file_id=158&amp;type=bug"><img src="images/fileicons/text.html" alt="patch file icon" width="16" height="16" border="0" /></a>&#160;<a href="575e4eb.patch?file_id=158&amp;type=bug">575.patch</a> [<a href="575e4eb.patch?file_id=158&amp;type=bug" target="_blank">^</a>] (15,882 bytes) <span class="italic">2014-03-13 19:22</span><script type="text/javascript" language="JavaScript">
+<!--
+function swap_content( span ) {
+displayType = ( document.getElementById( span ).style.display == 'none' ) ? '' : 'none';
+document.getElementById( span ).style.display = displayType;
+}
+
+ -->
+ </script> <span id="hideSection_158">[<a class="small" href='#' id='attmlink_158' onclick='swap_content("hideSection_158");swap_content("showSection_158");return false;'>Show Content</a>]</span> <span style='display:none' id="showSection_158">[<a class="small" href='#' id='attmlink_158' onclick='swap_content("hideSection_158");swap_content("showSection_158");return false;'>Hide Content</a>]<pre>Index: sigmah/src/main/java/org/sigmah/server/schedule/export/AutoExportJob.java
+===================================================================
+--- sigmah/src/main/java/org/sigmah/server/schedule/export/AutoExportJob.java	(revision 1561)
++++ sigmah/src/main/java/org/sigmah/server/schedule/export/AutoExportJob.java	(working copy)
+@@ -71,24 +71,46 @@
+ 				if(setting.getAutoExportFrequency()==null 
+ 						|| setting.getAutoExportFrequency()&lt;1) continue;
+ 				
+-				final Calendar systemCalendar = Calendar.getInstance();
+-				final Calendar scheduledCalendar = Calendar.getInstance();
++				final Calendar systemCalendar = Calendar.getInstance();			
+ 				
+- 				Date lastExportDate = setting.getLastExportDate();
+-				if(lastExportDate==null){
+-					lastExportDate = systemCalendar.getTime();
+-					setting.setLastExportDate(lastExportDate);
+-					em.merge(setting);
++				boolean doExport = false;
++									
++				if( (setting.getAutoExportFrequency()&gt;=31) &amp;&amp; (setting.getAutoExportFrequency()&lt;=58)){
++					//Case of Monthly Auto Export
++					if((setting.getAutoExportFrequency()-30) == systemCalendar.get(Calendar.DAY_OF_MONTH)){
++						doExport = true;
++					}
++				}else if((setting.getAutoExportFrequency() &gt;= 61) &amp;&amp; (setting.getAutoExportFrequency() &lt;=67)){
++					//Case of Weekly Auto Export
++					if((setting.getAutoExportFrequency()-60) == systemCalendar.get(Calendar.DAY_OF_WEEK)){
++						doExport = true;
++					}
++					
+ 				}else{
+-					scheduledCalendar.setTime(lastExportDate);
+-					// add scheduled days to the last exported date
+-					scheduledCalendar.add(Calendar.DAY_OF_MONTH,setting.getAutoExportFrequency());
++					//Regular Auto-Export every N-days
++					
++					final Calendar scheduledCalendar = Calendar.getInstance();
++	 				Date lastExportDate = setting.getLastExportDate();
++					if(lastExportDate==null){
++						lastExportDate = systemCalendar.getTime();
++						setting.setLastExportDate(lastExportDate);
++						em.merge(setting);
++					}else{
++						scheduledCalendar.setTime(lastExportDate);
++						// add scheduled days to the last exported date
++						scheduledCalendar.add(Calendar.DAY_OF_MONTH,setting.getAutoExportFrequency());
++					}
++													
++					final Date systemDate=getZeroTimeDate(systemCalendar.getTime());
++					final Date scheduledDate=getZeroTimeDate(scheduledCalendar.getTime());
++					
++					if(systemDate.compareTo(scheduledDate)&gt;=0){
++						doExport = true;
++					}
+ 				}
+-												
+-				final Date systemDate=getZeroTimeDate(systemCalendar.getTime());
+-				final Date scheduledDate=getZeroTimeDate(scheduledCalendar.getTime());
++				
+ 				 
+-				if(systemDate.compareTo(scheduledDate)&gt;=0){ 
++				if(doExport){ 
+ 					/*
+ 					 * Start auto export  
+ 					 */
+Index: sigmah/src/main/java/org/sigmah/client/ui/GlobalExportSettingsForm.java
+===================================================================
+--- sigmah/src/main/java/org/sigmah/client/ui/GlobalExportSettingsForm.java	(revision 1561)
++++ sigmah/src/main/java/org/sigmah/client/ui/GlobalExportSettingsForm.java	(working copy)
+@@ -27,6 +27,7 @@
+ 
+ import com.extjs.gxt.ui.client.Style.Orientation;
+ import com.extjs.gxt.ui.client.data.BaseModelData;
++import com.extjs.gxt.ui.client.event.BaseEvent;
+ import com.extjs.gxt.ui.client.event.ButtonEvent;
+ import com.extjs.gxt.ui.client.event.Events;
+ import com.extjs.gxt.ui.client.event.FieldEvent;
+@@ -96,15 +97,72 @@
+ 	private final Map&lt;Integer, Boolean&gt; fieldsMap;
+ 	private final List&lt;SimpleComboBoxData&gt; autoExportSchedules;
+ 	private final List&lt;SimpleComboBoxData&gt; autoDeleteSchedules;
++	private final List&lt;SimpleComboBoxData&gt; autoExportMonthlySchedules;
++	private final List&lt;SimpleComboBoxData&gt; autoExportWeeklySchedules;
++	
+ 	private final static Map&lt;Integer, SimpleComboBoxData&gt; exportScheduleMap;
+ 	private final static Map&lt;Integer, SimpleComboBoxData&gt; deleteScheduleMap;
++	private final static Map&lt;Integer, SimpleComboBoxData&gt; monthScheduleMap;
++	private final static Map&lt;Integer, SimpleComboBoxData&gt; weekScheduleMap;
++	
+ 	static {
+ 		exportScheduleMap = new HashMap&lt;Integer, SimpleComboBoxData&gt;();
+-		exportScheduleMap.put(0, new SimpleComboBoxData(0, I18N.CONSTANTS.notScheduled()));
++		exportScheduleMap.put(0, new SimpleComboBoxData(0,I18N.CONSTANTS.notScheduled()));
+ 		exportScheduleMap.put(1, new SimpleComboBoxData(1, I18N.CONSTANTS.daily()));
+ 		exportScheduleMap.put(3, new SimpleComboBoxData(3, I18N.MESSAGES.everyXDays(&quot;3&quot;)));
+ 		exportScheduleMap.put(9, new SimpleComboBoxData(9, I18N.MESSAGES.everyXDays(&quot;9&quot;)));
+ 		exportScheduleMap.put(15, new SimpleComboBoxData(15, I18N.MESSAGES.everyXDays(&quot;15&quot;)));
++		exportScheduleMap.put(31, new SimpleComboBoxData(31, I18N.CONSTANTS.everyMonth())); //In this case take value from monthMap
++		exportScheduleMap.put(61, new SimpleComboBoxData(61, I18N.CONSTANTS.everyWeek())); //In this case take value from weekMap
++
++		
++		// The number space of 31-58 is reserved for month dates in monthyExport settings. 
++		// 31 represents the first day of the month, 32 the second day and so on
++		// Only 28 days as considered as they are common in every month of the year
++		monthScheduleMap = new HashMap&lt;Integer, SimpleComboBoxData&gt;();
++		monthScheduleMap.put(31, new SimpleComboBoxData(31, I18N.CONSTANTS.number_1()));
++		monthScheduleMap.put(32, new SimpleComboBoxData(32, I18N.CONSTANTS.number_2()));
++		monthScheduleMap.put(33, new SimpleComboBoxData(33, I18N.CONSTANTS.number_3()));
++		monthScheduleMap.put(34, new SimpleComboBoxData(34, I18N.CONSTANTS.number_4()));
++		monthScheduleMap.put(35, new SimpleComboBoxData(35, I18N.CONSTANTS.number_5()));
++		monthScheduleMap.put(36, new SimpleComboBoxData(36, I18N.CONSTANTS.number_6()));
++		monthScheduleMap.put(37, new SimpleComboBoxData(37, I18N.CONSTANTS.number_7()));
++		monthScheduleMap.put(38, new SimpleComboBoxData(38, I18N.CONSTANTS.number_8()));
++		monthScheduleMap.put(39, new SimpleComboBoxData(39, I18N.CONSTANTS.number_9()));
++		monthScheduleMap.put(40, new SimpleComboBoxData(40, I18N.CONSTANTS.number_10()));
++		monthScheduleMap.put(41, new SimpleComboBoxData(41, I18N.CONSTANTS.number_11()));
++		monthScheduleMap.put(42, new SimpleComboBoxData(42, I18N.CONSTANTS.number_12()));
++		monthScheduleMap.put(43, new SimpleComboBoxData(43, I18N.CONSTANTS.number_13()));
++		monthScheduleMap.put(44, new SimpleComboBoxData(44, I18N.CONSTANTS.number_14()));
++		monthScheduleMap.put(45, new SimpleComboBoxData(45, I18N.CONSTANTS.number_15()));
++		monthScheduleMap.put(46, new SimpleComboBoxData(46, I18N.CONSTANTS.number_16()));
++		monthScheduleMap.put(47, new SimpleComboBoxData(47, I18N.CONSTANTS.number_17()));
++		monthScheduleMap.put(48, new SimpleComboBoxData(48, I18N.CONSTANTS.number_18()));
++		monthScheduleMap.put(49, new SimpleComboBoxData(49, I18N.CONSTANTS.number_19()));
++		monthScheduleMap.put(50, new SimpleComboBoxData(50, I18N.CONSTANTS.number_20()));
++		monthScheduleMap.put(51, new SimpleComboBoxData(51, I18N.CONSTANTS.number_21()));
++		monthScheduleMap.put(52, new SimpleComboBoxData(52, I18N.CONSTANTS.number_22()));
++		monthScheduleMap.put(53, new SimpleComboBoxData(53, I18N.CONSTANTS.number_23()));
++		monthScheduleMap.put(54, new SimpleComboBoxData(54, I18N.CONSTANTS.number_24()));
++		monthScheduleMap.put(55, new SimpleComboBoxData(55, I18N.CONSTANTS.number_25()));
++		monthScheduleMap.put(56, new SimpleComboBoxData(56, I18N.CONSTANTS.number_26()));
++		monthScheduleMap.put(57, new SimpleComboBoxData(57, I18N.CONSTANTS.number_27()));
++		monthScheduleMap.put(58, new SimpleComboBoxData(58, I18N.CONSTANTS.number_28()));
++		
++		
++		//The number space 61-67 is reserved to denote weekly export schedule 
++		// 61 represents sunday, 62 monday and so on
++		weekScheduleMap = new HashMap&lt;Integer, SimpleComboBoxData&gt;();
++		weekScheduleMap.put(61, new SimpleComboBoxData(61, I18N.CONSTANTS.dayName_1()));
++		weekScheduleMap.put(62, new SimpleComboBoxData(62, I18N.CONSTANTS.dayName_2()));
++		weekScheduleMap.put(63, new SimpleComboBoxData(63, I18N.CONSTANTS.dayName_3()));
++		weekScheduleMap.put(64, new SimpleComboBoxData(64, I18N.CONSTANTS.dayName_4()));
++		weekScheduleMap.put(65, new SimpleComboBoxData(65, I18N.CONSTANTS.dayName_5()));
++		weekScheduleMap.put(66, new SimpleComboBoxData(66, I18N.CONSTANTS.dayName_6()));
++		weekScheduleMap.put(67, new SimpleComboBoxData(67, I18N.CONSTANTS.dayName_7()));
++		
++		
++		
+ 
+ 		deleteScheduleMap = new HashMap&lt;Integer, SimpleComboBoxData&gt;();
+ 		deleteScheduleMap.put(0, new SimpleComboBoxData(0, I18N.CONSTANTS.notScheduled()));
+@@ -129,6 +187,17 @@
+ 		for (Integer value : deleteScheduleMap.keySet()) {
+ 			autoDeleteSchedules.add(deleteScheduleMap.get(value));
+ 		}
++		
++		autoExportMonthlySchedules = new ArrayList&lt;SimpleComboBoxData&gt;();
++		for (Integer value : monthScheduleMap.keySet()) {
++			autoExportMonthlySchedules.add(monthScheduleMap.get(value));
++		}
++		autoExportWeeklySchedules = new ArrayList&lt;SimpleComboBoxData&gt;();
++		for (Integer value : weekScheduleMap.keySet()) {
++			autoExportWeeklySchedules.add(weekScheduleMap.get(value));
++		}
++		
++		
+ 
+ 		final Window w = new Window();
+ 		w.setPlain(true);
+@@ -190,6 +259,37 @@
+ 		exportScheduleStore.commitChanges();
+ 		exportSchedulesBox.setValue(exportScheduleMap.get(0));
+ 		panel.add(exportSchedulesBox);
++		
++		// auto export monthly schedule
++		final ListStore&lt;SimpleComboBoxData&gt; exportMonthlyScheduleStore = new ListStore&lt;SimpleComboBoxData&gt;();
++		final ComboBox&lt;SimpleComboBoxData&gt; exportMonthlySchedulesBox = new ComboBox&lt;SimpleComboBoxData&gt;();
++		exportMonthlySchedulesBox.setFieldLabel(I18N.CONSTANTS.dayInMonth());
++		exportMonthlySchedulesBox.setStore(exportMonthlyScheduleStore);
++		exportMonthlySchedulesBox.setDisplayField(&quot;label&quot;);
++		exportMonthlySchedulesBox.setValueField(&quot;value&quot;);
++		exportMonthlySchedulesBox.setEditable(false);
++		exportMonthlySchedulesBox.setTriggerAction(TriggerAction.ALL);
++		exportMonthlyScheduleStore.add(autoExportMonthlySchedules);
++		exportMonthlyScheduleStore.commitChanges();
++		exportMonthlySchedulesBox.setValue(monthScheduleMap.get(31));
++		exportMonthlySchedulesBox.hide();
++		panel.add(exportMonthlySchedulesBox);
++		
++		// auto export Weekly schedule
++		final ListStore&lt;SimpleComboBoxData&gt; exportWeeklyScheduleStore = new ListStore&lt;SimpleComboBoxData&gt;();
++		final ComboBox&lt;SimpleComboBoxData&gt; exportWeeklySchedulesBox = new ComboBox&lt;SimpleComboBoxData&gt;();
++		exportWeeklySchedulesBox.setFieldLabel(I18N.CONSTANTS.dayInWeek());
++		exportWeeklySchedulesBox.setStore(exportWeeklyScheduleStore);
++		exportWeeklySchedulesBox.setDisplayField(&quot;label&quot;);
++		exportWeeklySchedulesBox.setValueField(&quot;value&quot;);
++		exportWeeklySchedulesBox.setEditable(false);
++		exportWeeklySchedulesBox.setTriggerAction(TriggerAction.ALL);
++		exportWeeklyScheduleStore.add(autoExportWeeklySchedules);
++		exportWeeklyScheduleStore.commitChanges();
++		exportWeeklySchedulesBox.setValue(weekScheduleMap.get(61));
++		exportWeeklySchedulesBox.hide();
++		panel.add(exportWeeklySchedulesBox);
++		
+ 
+ 		// auto delete schedule
+ 		final ListStore&lt;SimpleComboBoxData&gt; deleteScheduleStore = new ListStore&lt;SimpleComboBoxData&gt;();
+@@ -204,6 +304,27 @@
+ 		deleteScheduleStore.commitChanges();
+ 		deleteSchedulesBox.setValue(deleteScheduleMap.get(0));
+ 		panel.add(deleteSchedulesBox);
++		
++		
++		
++		//Add onChange handler for exportSchedulesBox
++		exportSchedulesBox.addListener(Events.Select, new Listener&lt;BaseEvent&gt;() {
++			@Override
++			public void handleEvent(BaseEvent be) {
++				exportMonthlySchedulesBox.hide();
++				exportWeeklySchedulesBox.hide();
++
++				if(exportSchedulesBox.getValue().getValue()==31){ //Case of Monthly Schedule
++					exportMonthlySchedulesBox.show();
++				}else if(exportSchedulesBox.getValue().getValue()==61){ //Case of Weekly Schedule
++					exportWeeklySchedulesBox.show();
++				}else{		
++					//Regular case of every N days
++				}
++			}
++		});
++		//onChange handler for exportSchedulesBox handled
++		
+ 
+ 		// button
+ 		final Button saveButton = new Button(I18N.CONSTANTS.saveExportConfiguration());
+@@ -221,7 +342,20 @@
+ 				if (exportSchedulesBox.getValue() == null || exportSchedulesBox.getValue().getValue() == 0) {
+ 					settings.setAutoExportFrequency(null);
+ 				} else {
+-					settings.setAutoExportFrequency(exportSchedulesBox.getValue().getValue());
++					
++					if(exportSchedulesBox.getValue().getValue()==31){ //Case of Monthly Schedule
++						// Push the value selected in the Monthly export schedule box
++						// Value between 31-38 (both inclusive)
++						settings.setAutoExportFrequency(exportMonthlySchedulesBox.getValue().getValue());
++					}else if(exportSchedulesBox.getValue().getValue()==61){ //Case of Weekly Schedule
++						// Value between 61-67 (both inclusive)
++						// Push the value selected in the Weekly export schedule box
++						settings.setAutoExportFrequency(exportWeeklySchedulesBox.getValue().getValue());
++					}else{
++						//Regular case of every N days
++						settings.setAutoExportFrequency(exportSchedulesBox.getValue().getValue());
++					}
++					
+ 				}
+ 				if (deleteSchedulesBox.getValue() == null || deleteSchedulesBox.getValue().getValue() == 0) {
+ 					settings.setAutoDeleteFrequency(null);
+@@ -283,8 +417,25 @@
+ 								modelsStore.commitChanges();
+ 
+ 								// auto export schdule
+-								if (exportScheduleMap.get(result.getAutoExportFrequency()) != null)
+-									exportSchedulesBox.setValue(exportScheduleMap.get(result.getAutoExportFrequency()));
++								if (exportScheduleMap.get(result.getAutoExportFrequency()) != null || monthScheduleMap.get(result.getAutoExportFrequency()) != null  ||  weekScheduleMap.get(result.getAutoExportFrequency()) != null){
++								
++									if(result.getAutoExportFrequency()&gt;=31 &amp;&amp; result.getAutoExportFrequency() &lt;=58 ){//Case of Monthly Update
++										exportSchedulesBox.setValue(exportScheduleMap.get(31));
++										exportMonthlySchedulesBox.show();	
++										
++										exportMonthlySchedulesBox.setValue(monthScheduleMap.get(result.getAutoExportFrequency()));	
++									}else if(result.getAutoExportFrequency()&gt;=61 &amp;&amp; result.getAutoExportFrequency()&lt;=67){//Case of Weekly Update
++										exportSchedulesBox.setValue(exportScheduleMap.get(61));
++										exportWeeklySchedulesBox.show();
++										
++										exportWeeklySchedulesBox.setValue(weekScheduleMap.get(result.getAutoExportFrequency()));				
++									}else{
++										//Regular case of every N-days
++										exportSchedulesBox.setValue(exportScheduleMap.get(result.getAutoExportFrequency()));
++									}
++									
++								}
++								
+ 								// auto delete schedule
+ 								if (deleteScheduleMap.get(result.getAutoDeleteFrequency()) != null) {
+ 									deleteSchedulesBox.setValue(deleteScheduleMap.get(result.getAutoDeleteFrequency()));
+Index: sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties
+===================================================================
+--- sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties	(revision 1561)
++++ sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties	(working copy)
+@@ -2388,4 +2388,48 @@
+ #Name for permission not included in any catebory
+ categoryNotMapped = Not in any Category
+ 
++#Numbers
++number_1 = 1
++number_2 = 2
++number_3 = 3
++number_4 = 4
++number_5 = 5
++number_6 = 6
++number_7 = 7
++number_8 = 8
++number_9 = 9
++number_10 = 10
++number_11 = 11
++number_12 = 12
++number_13 = 13
++number_14 = 14
++number_15 = 15
++number_16 = 16
++number_17 = 17
++number_18 = 18
++number_19 = 19
++number_20 = 20
++number_21 = 21
++number_22 = 22
++number_23 = 23
++number_24 = 24
++number_25 = 25
++number_26 = 26
++number_27 = 27
++number_28 = 28
++#day names in a week
++dayName_1 = Sunday
++dayName_2 = Monday
++dayName_3 = Tuesday
++dayName_4 = Wednesday
++dayName_5 = Thursday
++dayName_6 = Friday
++dayName_7 = Saturday
++#UI constants for export scheduler
++everyWeek = Every Week
++everyMonth = Every Month
++dayInMonth = Day in Month
++dayInWeek = Day in Week
++
++
+ 
+</pre></span>
+</td></tr><tr align="center"><td align="center" colspan="6"><table><tr class="vcenter"><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td></tr></table></td></tr></table><br />
+
+<div id="relationships_open"><table class="width100" cellspacing="1">
+<tr class="row-2" valign="top">
+	<td width="15%" class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;Relationships	</td>
+</tr>
+<tr>
+	<td colspan="2"></td>
+</tr>
+</table>
+
+</div><div id="relationships_closed" class="hidden"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;Relationships	</td>
+</tr>
+</table>
+
+</div>
+<a name="bugnotes" id="bugnotes" /><br />
+
+<div id="bugnotes_open"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;		Notes	</td>
+</tr>
+<tr class="bugnote" id="c1397">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view53fb.html?id=575#c1397" title="Direct link to note">0001397)</a></span><br />
+		<a href="view_user_page3162.html?id=26">spM</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2014-03-13 19:24</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Hi,<br />
+I attached a patch by the name 575.patch which adds the scheduling of auto-export every XX of each month and every XX of each week features.<br />
+(Only 28days in a month have been provided to avoid the possibility, that some one casually selects 31st of each month to take the auto-export, and in turn misses the auto export every alternate month almost)	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1483">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view53fb.html?id=575#c1483" title="Direct link to note">0001483)</a></span><br />
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2014-07-29 13:39</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Patch by spM : Auto-export schedule frequency improvement. (fixes issue <a href="view53fb.html?id=575" title="[assigned] Auto-export schedule frequency improvement">0000575</a>)<br />
+<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/ui/GlobalExportSettingsForm.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/server/schedule/export/AutoExportJob.java<br />
+	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1539">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view53fb.html?id=575#c1539" title="Direct link to note">0001539)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2015-02-20 10:22</span><br />
+		<span class="small">edited on:&#32;2015-02-20 10:22</span><br />		<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Issue set back from &quot;resolved&quot; to &quot;assigned&quot; because migration from 1.3 to 2.0 for the refactoring has broken this issue resolution (breaking commit: <a href="https://github.com/sigmah-dev/sigmah/commit/483e966b4b330ae79fd4110547476199d31f1e7e">https://github.com/sigmah-dev/sigmah/commit/483e966b4b330ae79fd4110547476199d31f1e7e</a> [<a href="https://github.com/sigmah-dev/sigmah/commit/483e966b4b330ae79fd4110547476199d31f1e7e" target="_blank">^</a>] ).<br />
+<br />
+In the present settings of project team, the easiest way to have this feature fixed would be that Mohanty you send a pull request with the corrected code to match the new 2.0 structure. All my apologies for this loss, but I believe this solution would be the easiest. Are you ready to provide this final fix on this issue?<br />
+<br />
+	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+</table>
+
+</div><div id="bugnotes_closed" class="hidden">
+<table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;		Notes	</td>
+</tr>
+</table>
+</div>
+<a name="history" id="history" /><br />
+
+<div id="history_open"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;Issue History	</td>
+</tr>
+<tr class="row-category-history">
+	<td class="small-caption">
+		Date Modified	</td>
+	<td class="small-caption">
+		Username	</td>
+	<td class="small-caption">
+		Field	</td>
+	<td class="small-caption">
+		Change	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-06-27 12:11	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		New Issue	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2014-03-13 19:22	</td>
+	<td class="small-caption">
+		<a href="view_user_page3162.html?id=26">spM</a>	</td>
+	<td class="small-caption">
+		File Added: 575.patch	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2014-03-13 19:24	</td>
+	<td class="small-caption">
+		<a href="view_user_page3162.html?id=26">spM</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001397	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2014-03-14 10:57	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		 =&gt; spM	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2014-03-14 10:57	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		new =&gt; assigned	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2014-07-29 13:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Checkin	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2014-07-29 13:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001483	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2014-07-29 13:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		assigned =&gt; resolved	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2014-07-29 13:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Resolution	</td>
+	<td class="small-caption">
+		open =&gt; fixed	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2014-08-13 16:44	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Target Version	</td>
+	<td class="small-caption">
+		next-but-one =&gt; 2.0	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2015-02-17 17:55	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Tag Attached: TestLinkable	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2015-02-20 10:07	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Tag Detached: TestLinkable	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2015-02-20 10:22	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001539	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2015-02-20 10:22	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		resolved =&gt; assigned	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2015-02-20 10:22	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Edited: 0001539	</td>
+	<td class="small-caption">
+		<a href="bug_revision_view_pagef581.html?bugnote_id=1539#r509">View Revisions</a>	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2015-04-07 12:47	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Target Version	</td>
+	<td class="small-caption">
+		2.0 =&gt; next-but-one	</td>
+</tr>
+</table>
+</div><div id="history_closed" class="hidden"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+	<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;Issue History	</td>
+</tr>
+</table>
+
+</div>	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.html" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=575 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 15:17:51 GMT -->
+</html>

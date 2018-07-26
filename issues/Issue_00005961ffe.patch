@@ -1,0 +1,87 @@
+### Eclipse Workspace Patch 1.0
+#P Sigmah
+Index: src/main/java/org/sigmah/client/i18n/UIMessages.properties
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/client/i18n/UIMessages.properties	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/client/i18n/UIMessages.properties	(working copy)
+@@ -233,4 +233,7 @@
+ #Heading for the reviewing the details imported for a project/org unit
+ importConfirmationDetailsHeading=Confirm importation details for {0}
+ #Notification that the importation has been successful
+-importSuccessful=The importation was successful for  ''{0}''
+\ No newline at end of file
++importSuccessful=The importation was successful for  ''{0}''
++
++#Prompted message for incompatible browser versions
++browserNotFullySupported = Your browser version is not fully supported by Sigmah, and for this reason some functions may not work correctly.
+\ No newline at end of file
+Index: src/main/java/org/sigmah/client/i18n/UIConstants.properties
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties	(working copy)
+@@ -2388,4 +2388,4 @@
+ #Name for permission not included in any catebory
+ categoryNotMapped = Not in any Category
+ 
+-
++attention = Attention
+Index: src/main/java/org/sigmah/client/SigmahEntryPoint.java
+===================================================================
+--- workspace_dev/Sigmah/src/main/java/org/sigmah/client/SigmahEntryPoint.java	(revision 1560)
++++ workspace_dev/Sigmah/src/main/java/org/sigmah/client/SigmahEntryPoint.java	(working copy)
+@@ -5,12 +5,17 @@
+ 
+ package org.sigmah.client;
+ 
++import org.sigmah.client.dispatch.remote.Authentication;
++import org.sigmah.client.i18n.I18N;
++import org.sigmah.client.ui.SigmahTheme;
++
+ import com.allen_sauer.gwt.log.client.Log;
+ import com.extjs.gxt.ui.client.GXT;
++import com.extjs.gxt.ui.client.event.Listener;
++import com.extjs.gxt.ui.client.event.MessageBoxEvent;
++import com.extjs.gxt.ui.client.widget.MessageBox;
+ import com.google.gwt.core.client.EntryPoint;
+ import com.google.gwt.core.client.GWT;
+-import org.sigmah.client.dispatch.remote.Authentication;
+-import org.sigmah.client.ui.SigmahTheme;
+ 
+ 
+ /**
+@@ -44,7 +49,7 @@
+         Log.trace("Application: GXT theme set");
+         
+         // Initialization
+-        SigmahInjector injector = GWT.create(SigmahInjector.class);
++        final SigmahInjector injector = GWT.create(SigmahInjector.class);
+ 
+         injector.getEventBus();
+         injector.getHistoryManager();
+@@ -74,9 +79,24 @@
+       
+ 
+         Log.info("Application: everyone plugged, firing Init event");
+-
+-        injector.getEventBus().fireEvent(AppEvents.Init);
++        
++        if (isBrowserCompatible()) {
++        	init(injector);
++        } else {
++        	MessageBox.alert(I18N.CONSTANTS.attention(), I18N.MESSAGES.browserNotFullySupported(), new Listener<MessageBoxEvent>() {
++				public void handleEvent(MessageBoxEvent be) {
++					init(injector);
++				}
++			});
++        }
+         //injector.getEventBus().fireEvent(new NavigationEvent(NavigationHandler.NavigationRequested, new ProjectListState()));
+     }
+ 
++    public static boolean isBrowserCompatible() {
++    	return !GXT.isIE;
++    }
++    
++    private static void init(SigmahInjector injector) {
++        injector.getEventBus().fireEvent(AppEvents.Init);
++    }
+ }

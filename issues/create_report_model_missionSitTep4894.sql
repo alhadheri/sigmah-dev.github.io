@@ -1,0 +1,88 @@
+
+-- Create Report Model
+INSERT INTO ProjectReportModel(name) VALUES ('Mission SitRep');
+
+-- Fill Report Model
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 1, 'Date', 1, NULL, MAX(id) FROM ProjectReportModel prm WHERE prm.name='Mission SitRep';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 2, 'Mission', 1, NULL, MAX(id) FROM ProjectReportModel prm WHERE prm.name='Mission SitRep';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 3, 'Environnement', 0, NULL, MAX(id) FROM ProjectReportModel prm WHERE prm.name='Mission SitRep';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 4, 'Environnement global', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Environnement';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 5, 'Sécurité', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Environnement';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 6, 'Déplacements', 0, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Environnement';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 7, 'Effectués', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Déplacements';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 8, 'Prévus', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Déplacements';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 9, 'Logistique', 0, NULL, MAX(id) FROM ProjectReportModel prm WHERE prm.name='Mission SitRep';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 10, 'Bureaux / stock', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Logistique';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 11, 'Véhicule', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Logistique';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 12, 'Fournisseurs', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Logistique';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 13, 'Admin', 0, NULL, MAX(id) FROM ProjectReportModel prm WHERE prm.name='Mission SitRep';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 14, 'Suivi Comptable', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Admin';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 15, 'Suivi Financier', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Admin';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 16, 'Suivi Trésorerie', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Admin';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 17, 'Banque', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Admin';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 18, 'Ressources Humaines', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Admin';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 19, 'Programmes', 0, NULL, MAX(id) FROM ProjectReportModel prm WHERE prm.name='Mission SitRep';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 20, 'Programme 1', 0, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programmes';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 21, 'RH Projet', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 1';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 22, 'Logisticien', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 1';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 23, 'Admin', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 1';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 24, 'Activité 1', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 1';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 25, 'Activité 2', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 1';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 26, 'Activité 3', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 1';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 27, 'Activité 4', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 1';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 28, 'Activité 5', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 1';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 29, 'Autre', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 1';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 30, 'Programme 2', 0, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programmes';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 31, 'RH Projet', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 2';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 32, 'Logisticien', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 2';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 33, 'Admin', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 2';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 34, 'Activité 1', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 2';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 35, 'Activité 2', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 2';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 36, 'Activité 3', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 2';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 37, 'Activité 4', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 2';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 38, 'Activité 5', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 2';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 39, 'Autre', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 2';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 40, 'Programme 3', 0, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programmes';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 41, 'RH Projet', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 3';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 42, 'Logisticien', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 3';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 43, 'Admin', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 3';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 44, 'Activité 1', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 3';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 45, 'Activité 2', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 3';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 46, 'Activité 3', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 3';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 47, 'Activité 4', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 3';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 48, 'Activité 5', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 3';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 49, 'Autre', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 3';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 50, 'Programme 4', 0, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programmes';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 51, 'RH Projet', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 4';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 52, 'Logisticien', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 4';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 53, 'Admin', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 4';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 54, 'Activité 1', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 4';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 55, 'Activité 2', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 4';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 56, 'Activité 3', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 4';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 57, 'Activité 4', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 4';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 58, 'Activité 5', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 4';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 59, 'Autre', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 4';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 60, 'Programme 5', 0, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programmes';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 61, 'RH Projet', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 5';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 62, 'Logisticien', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 5';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 63, 'Admin', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 5';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 64, 'Activité 1', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 5';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 65, 'Activité 2', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 5';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 66, 'Activité 3', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 5';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 67, 'Activité 4', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 5';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 68, 'Activité 5', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 5';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 69, 'Autre', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Programme 5';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 70, 'Développement et bailleurs de fond', 0, NULL, MAX(id) FROM ProjectReportModel prm WHERE prm.name='Mission SitRep';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 71, 'Axe 1', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Développement et bailleurs de fond';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 72, 'Axe 2', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Développement et bailleurs de fond';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 73, 'Représentation et communication', 0, NULL, MAX(id) FROM ProjectReportModel prm WHERE prm.name='Mission SitRep';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 74, 'Effectué', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Représentation et communication';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 75, 'Prévu', 1, MAX(prms.id), NULL FROM ProjectReportModelSection prms WHERE prms.name='Représentation et communication';
+INSERT INTO ProjectReportModelSection(`sort_order`, name, numberoftextarea, parentsectionmodelid, projectmodelid) SELECT 76, 'Questions au siège', 1, NULL, MAX(id) FROM ProjectReportModel prm WHERE prm.name='Mission SitRep';
+
+
+-- Link Report Model to flexible element named "Situation report for mission"
+INSERT INTO report_element (id_flexible_element, model_id) 
+SELECT id_flexible_element, id
+FROM flexible_element, projectreportmodel
+WHERE label = 'Situation report for mission' AND name = 'Mission SitRep';

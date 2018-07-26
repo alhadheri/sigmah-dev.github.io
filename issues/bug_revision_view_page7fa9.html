@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/bug_revision_view_page.php?rev_id=1066 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 15:23:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.html" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Wed, 25 Jul 2018 14:10:38 GMT" />
+	<link rel="shortcut icon" href="images/favicon.html" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.html?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.html?type=id" />	<title>0000634: Contacts database (aka &quot;CRM&quot;) - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.html"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.html" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_pageb654.html?return=%2Fissues%2Fbug_revision_view_page.php%3Frev_id%3D1066">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-25 16:10 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issues2478.xml?project_id=0"><img src="images/rss.html" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table>
+<br />
+<table class="width100" cellspacing="1">
+
+<tr>
+<td class="form-title" colspan="2">View Revisions: Issue #634</td>
+<td class="right" colspan="2">
+<span class="bracket-link">[&#160;<a href="bug_revision_view_page2806.html?bug_id=634">All Revisions</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="viewf5dd.html?id=634">Back to Issue</a>&#160;]</span> </td>
+</tr>
+
+<tr class="row-1">
+<td class="category" width="15%">Summary</td>
+<td colspan="3">0000634: Contacts database (aka &quot;CRM&quot;)</td>
+</tr>
+
+<tr class="spacer"><td><a name="r1066"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2017-09-25 12:40 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3">This feature should add a new concept inside Sigmah in addition to Project and Orgunit: Contact.<br />
+<br />
+A contact can be of 2 types: an Individual or an Organisation.<br />
+Contacts are as flexible as Projects and Orgunits: all contacts must be created from Contact Models. And the admin can create as many Contact Models as desired. A Contact Model must be either from the Individual or the Organization type. Each Contact Model can have as many fields of characteristics as desired.<br />
+Each Contact Model has 2 non-deletable default fields: &quot;Name&quot;, and &quot;Creation date&quot;. If the contact model is an indivual, the &quot;Name&quot; field will be renamed &quot;Last name&quot;, and a 3rd default field will be created: &quot;First name&quot;. For all contact, 3 deletable default fields are also added: &quot;Email address&quot;, &quot;Phone number&quot;, &quot;Street address&quot;.<br />
+<br />
+This features adds a new field type: Contact relationship. This field can be configured to accept contacts only from a specific type (individual/organisation) or one or several contact models. This field can also be configured to accept a freely defined limit of number of contacts. This field is available for Project, Orgunit and Contact models. For Contact model, an additionnal optional can be set if the accepted contacts are only organisations for the field: &quot;is membership&quot;.<br />
+<br />
+An organisation contact page will have up to 4 sub-tabs: Characteristics, Child organisations, Members, Other relationships. The &quot;Child organisations&quot; and &quot;Members&quot; sub-tab will be filled with contact list of all contacts having a &quot;membership&quot; link with the organisation. If no organisation membership is possible, there will be no &quot;Child organisation&quot; sub-tab. Same for no &quot;Members&quot; if no individual membership.<br />
+The &quot;Other relationships&quot; sub-tab will list all other relationships with all contacts, projects and orgunits.<br />
+<br />
+An individual contact page will look as an organisation contact page, but with only 2 sub-tabs: &quot;Characteristics&quot; and &quot;Relationships&quot;.<br />
+<br />
+A &quot;Contacts&quot; table should be added on the Main Dashboard if contact models are defined. This group will take half of the room taken by the &quot;Organisation chart&quot; group. This table will list all contacts ordered by last modification date. This list will paginated. Several buttons are available: &quot;Add new contact&quot;, &quot;Delete contact&quot;, &quot;Import&quot;, and &quot;Export all&quot;. This &quot;Export all&quot; should export in OpenDocumentSpreadsheet/Excel format, and potentially also in ANSI SQL so that people will have a full relation database easily queriable.<br />
+<br />
+In terms of rights:<br />
+- each contact is attached to a unique organisational unit<br />
+- the contact is visible by all users having the right to see its parent organisational unit<br />
+- a contact can contain fields having a privacy group, and privacy group fields should behave as privacy groups fields for projects or orgunits<br />
+- if a user is attached to several orgunits (see <a href="view0445.html?id=243" title="[closed] User attached to several OrgUnit" class="resolved">0000243</a>), its Contacts table on the dashboard will have its content updated according to the checked status of the &quot;Display only my main organisational unit&quot; checkbox: if checked (by default), only the contacts direct or indirect children of the main orgunit will be displayed, and if not all contacts direct or indirect children of all orgunits attached to the user will be displayed<br />
+<br />
+<br />
+This feature can be used with the Groupe iterations feature to be able to produce richly detailed relationships.</td>
+</tr>
+
+	<tr class="spacer"><td><a name="r484"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2014-09-01 16:05 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3">This feature should add a new concept inside Sigmah in addition to Project and Orgunit: Contact.<br />
+<br />
+A contact can be of 2 types: an Individual or an Organisation.<br />
+Contacts are as flexible as Projects and Orgunits: all contacts must be created from Contact Models. And the admin can create as many Contact Models as desired. A Contact Model must be either from the Individual or the Organization type. Each Contact Model can have as many fields of characteristics as desired.<br />
+Each Contact Model has 2 non-deletable default fields: &quot;Name&quot;, and &quot;Creation date&quot;. If the contact model is an indivual, the &quot;Name&quot; field will be renamed &quot;Last name&quot;, and a 3rd default field will be created: &quot;First name&quot;. For all contact, 3 deletable default fields are also added: &quot;Email address&quot;, &quot;Phone number&quot;, &quot;Street address&quot;.<br />
+<br />
+This features adds a new field type: Contact relationship. This field can be configured to accept contacts only from a specific type (individual/organisation) or one or several contact models. This field can also be configured to accept a freely defined limit of number of contacts. This field is available for Project, Orgunit and Contact models. For Contact model, an additionnal optional can be set if the accepted contacts are only organisations for the field: &quot;is membership&quot;.<br />
+<br />
+An organisation contact page will have up to 4 sub-tabs: Characteristics, Child organisations, Members, Other relationships. The &quot;Child organisations&quot; and &quot;Members&quot; sub-tab will be filled with contact list of all contacts having a &quot;membership&quot; link with the organisation. If no organisation membership is possible, there will be no &quot;Child organisation&quot; sub-tab. Same for no &quot;Members&quot; if no individual membership.<br />
+The &quot;Other relationships&quot; sub-tab will list all other relationships with all contacts, projects and orgunits.<br />
+<br />
+An individual contact page will look as an organisation contact page, but with only 2 sub-tabs: &quot;Characteristics&quot; and &quot;Relationships&quot;.<br />
+<br />
+A &quot;Contacts&quot; group should be added on the Main Dashboard if contact models are defined. This group will take half of the room taken by the &quot;Organisation chart&quot; group. This group will list all contacts ordered by last modification date. This list will paginated. Several buttons are available: &quot;Add new contact&quot;, &quot;Delete contact&quot;, &quot;Import&quot;, and &quot;Export all&quot;. This &quot;Export all&quot; should export in OpenDocumentSpreadsheet/Excel format, and potentially also in ANSI SQL so that people will have a full relation database easily queriable.<br />
+<br />
+<br />
+This feature can be used with the Groupe iterations feature to be able to produce richly detailed relationships.</td>
+</tr>
+
+	<tr class="spacer"><td><a name="r483"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2014-09-01 15:29 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3">This feature should add a new concept inside Sigmah in addition to Project and Orgunit: Contact.<br />
+<br />
+A contact can be of 2 types: an Individual or an Organisation.<br />
+Contacts are as flexible as Projects and Orgunits: all contacts must be created from Contact Models. And the admin can create as many Contact Models as desired. A Contact Model must be either from the Individual or the Organization type. Each Contact Model can have as many fields of characteristics as desired.<br />
+Each Contact Model has 2 non-deletable default fields: &quot;Name&quot;, and &quot;Creation date&quot;. If the contact model is an indivual, the &quot;Name&quot; field will be renamed &quot;Last name&quot;, and a 3rd default field will be created: &quot;First name&quot;. For all contact, 3 deletable default fields are also added: &quot;Email address&quot;, &quot;Phone number&quot;, &quot;Street address&quot;.<br />
+<br />
+This features adds a new field type: Contact relationship. This field can be configured to accept contacts only from a specific type (individual/organisation) or one or several contact models. This field can also be configured to accept a freely defined limit of number of contacts. This field is available for Project, Orgunit and Contact models. For Contact model, an additionnal optional can be set if the accepted contacts are only organisations for the field: &quot;is membership&quot;.<br />
+<br />
+An organisation contact page will have up to 4 sub-tabs: Characteristics, Child organisations, Members, Other relationships. The &quot;Child organisations&quot; and &quot;Members&quot; sub-tab will be filled with contact list of all contacts having a &quot;membership&quot; link with the organisation. If no organisation membership is possible, there will be no &quot;Child organisation&quot; sub-tab. Same for no &quot;Members&quot; if no individual membership.<br />
+The &quot;Other relationships&quot; sub-tab will list all other relationships with all contacts, projects and orgunits.<br />
+<br />
+An individual contact page will look as an organisation contact page, but with only 2 sub-tabs: &quot;Characteristics&quot; and &quot;Relationships&quot;.<br />
+<br />
+<br />
+A &quot;Contacts&quot; group should be added on the Main Dashboard if contact models are defined. This group will take half of the room taken by the &quot;Organisation chart&quot; group. This group will list all contacts ordered by last modification date. This list will paginated. Several buttons are available: &quot;Add new contact&quot;, &quot;Delete contact&quot;, &quot;Import&quot;, and &quot;Export all&quot;.<br />
+<br />
+<br />
+This feature can be used with the Groupe iterations feature to be able to produce richly detailed relationships.</td>
+</tr>
+
+	<tr class="spacer"><td><a name="r482"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2014-09-01 15:16 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3">This feature should add a new concept inside Sigmah in addition to Project and Orgunit: Contact.<br />
+<br />
+A contact can be of 2 types: an Individual or an Organisation.<br />
+Contacts are as flexible as Projects and Orgunits: all contacts must be created from Contact Models. And the admin can create as many Contact Models as desired. A Contact Model must be either from the Individual or the Organization type. Each Contact Model can have as many fields of characteristics as desired.<br />
+<br />
+This features adds a new field type: Contact relationship. This field can be configured to accept contacts only from a specific type (individual/organisation) or one or several contact models. This field can also be configured to accept a freely defined limit of number of contacts. This field is available for Project, Orgunit and Contact models. For Contact model, an additionnal optional can be set if the accepted contacts are only organisations for the field: &quot;is membership&quot;.<br />
+<br />
+An organisation contact page will have up to 4 sub-tabs: Characteristics, Child organisations, Members, Other relationships. The &quot;Child organisations&quot; and &quot;Members&quot; sub-tab will be filled with contact list of all contacts having a &quot;membership&quot; link with the organisation. If no organisation membership is possible, there will be no &quot;Child organisation&quot; sub-tab. Same for no &quot;Members&quot; if no individual membership.<br />
+The &quot;Other relationships&quot; sub-tab will list all other relationships with all contacts, projects and orgunits.<br />
+<br />
+An individual contact page will look as an organisation contact page, but with only 2 sub-tabs: &quot;Characteristics&quot; and &quot;Relationships&quot;.<br />
+<br />
+<br />
+This feature can be used with the Groupe iterations feature to be able to produce richly detailed relationships.<br />
+<br />
+</td>
+</tr>
+
+	
+</table>
+
+	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.html" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/bug_revision_view_page.php?rev_id=1066 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 15:23:53 GMT -->
+</html>

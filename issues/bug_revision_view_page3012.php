@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/bug_revision_view_page.php?rev_id=737 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:03:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.html" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Wed, 25 Jul 2018 15:27:57 GMT" />
+	<link rel="shortcut icon" href="images/favicon.html" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.html?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.html?type=id" />	<title>0000530: New type of orgunit/project field: computation field - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.html"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.html" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_paged333.html?return=%2Fissues%2Fbug_revision_view_page.php%3Frev_id%3D737">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-25 17:27 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issues2478.xml?project_id=0"><img src="images/rss.html" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table>
+<br />
+<table class="width100" cellspacing="1">
+
+<tr>
+<td class="form-title" colspan="2">View Revisions: Issue #530</td>
+<td class="right" colspan="2">
+<span class="bracket-link">[&#160;<a href="bug_revision_view_page3b15.html?bug_id=530">All Revisions</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="view0b8f.html?id=530">Back to Issue</a>&#160;]</span> </td>
+</tr>
+
+<tr class="row-1">
+<td class="category" width="15%">Summary</td>
+<td colspan="3">0000530: New type of orgunit/project field: computation field</td>
+</tr>
+
+<tr class="spacer"><td><a name="r765"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2016-01-29 10:22 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3">The detailed behavior of the feature has been imagined as follows :<br />
+A. Modifications in the server database schema:<br />
+To make this feature work, the following modifications will be made on the server database schema:<br />
+- computation field will be a new kind of &quot;flexible element&quot;, which will store two informations: its latest computed value, and in a text format the formula used for computation with fields part of computation represented as &quot;$ID_OF_FIELD&quot; ($2460, $13986, etc.)<br />
+- a new characteristic of field is added, the &quot;field code&quot; which will be used in computation fields formulas<br />
+- fields part of computation are flagged differently and associated to the computation field they are part of<br />
+<br />
+B. Administration area<br />
+- Since computation field will in this first version only work for Number field, it has been decided to move as main field &quot;Type&quot; the various different text field sub-types: &quot;Text field&quot;, &quot;Paragraph&quot;, &quot;Number&quot; and &quot;Date&quot;.<br />
+- In the &quot;Specific properties&quot; area of the Field popup for field of type &quot;Number&quot;, a new field &quot;Field code&quot; will give the possibility to edit the default code given to the field. Each field has by default a field code in the format &quot;field001&quot;, &quot;field045&quot;, etc. The numbering of this default field codes is done from the first created fields in the model.<br />
+- When creating or editing the computation field in a project/orgunit model, a formula must be entered using the field codes to represent the fields. The list of all fields of the model is available to help the administrator to identify and get the codes of the fields he wants to use, and this list is editable on the field code through a popup. When saving the modifications of the computation field, the system checks that the entered formula is valid and that all field codes used match the most up-to-date field codes in database. Currently, it won't be accepted to make computation field using other computation fields.<br />
+- When deleting or disabling a field part of a computation in a project/orgunit model, a warning message will inform the administrator that : &quot;The field you want to disable/delete is used in computation field(s) NAME_OF_THE_COMPUTATION_FIELD[, list of computation fields where the field is used]. If you disable/delete it without modifying the formula of those computation field(s), the computed values might be aberrant. Are you sure you want to continue?&quot;<br />
+<br />
+C. For the end-user<br />
+- When editing a field part of the computation, the computed value is changed (without controlling the optional limits) when the edition of the field is ended so that the user can be informed of the computed value.<br />
+- When saving ONLINE a modification of one or several fields part of the computation, the server computes the new aggregated value based on the latest values stored in the server database and the modifications made by the user : if there is a limit and if this limit is exceeded, the modification made by the user is rejected and he gets a detailed warning message informing him that &quot;Your latest modification on fields FIELD1, FIELD2, [List of fields modified and part of the computation] cannot be saved because it makes the computed value of NAME_OF_THE_COMPUTATION_FIELD [below/greater] than EXCEEDED_LIMIT. For your information, here are the latest values of all fields used to compute NAME_OF_THE_COMPUTATION_FIELD: [list of fields' values with this template: ' - TITLE_OF_THE_FIELD: VALUE_OF_THE_FIELD (by AUTHOR_OF_LATEST_MODIFICATION on DATETIME_OF_LATEST_MODIFICATION)']&quot;<br />
+- When saving OFFLINE a modification of one or several fields part of the computation, the software on the client-side computes the new aggregated value based on the latest values stored in its offline data base and save always anyway the modification but if a limit is exceeded returns as well the following message: &quot;According the values collected at different times in your offline data base, your latest modification on field(s) FIELD1, FIELD2, [List of fields modified and part of the computation] would make the computed value of NAME_OF_THE_COMPUTATION_FIELD [below/greater] than EXCEEDED_LIMIT. When you will synchronize your offline data base with the server, this modification might then be rejected if it makes the value computed with the other server-side values exceed a limit.&quot;<br />
+- When synchronizing an offline data base with modification of a field part of a computation, control of the aggregated value will be made and the modification might be rejected as if the edition was made online and rejection can join the final synchronization feedback and email.<br />
+<br />
+<br />
+IN THE FUTURE<br />
+In an extended version of this feature, budget and dates will be able also to be taken into account, and a constant could be added as part of the computation (and for dates, it can be either a specific date or today), or global variables (like total amount of funding from all sources of funding, total funded from all funded projects).<br />
+The extended version of this feature which will take into account budget will then be an opportunity for the revision of the budget field which will become a default computation field.<br />
+</td>
+</tr>
+
+	<tr class="spacer"><td><a name="r743"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2015-12-08 16:56 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3">The detailed behavior of the feature has been imagined as follows :<br />
+A. Modifications in the server database schema:<br />
+To make this feature work, the following modifications will be made on the server database schema:<br />
+- computation field will be a new kind of &quot;flexible element&quot;, which will store two informations: its latest computed value, and in a text format the formula used for computation with fields part of computation represented as &quot;$ID_OF_FIELD&quot; ($2460, $13986, etc.)<br />
+- a new characteristic of field is added, the &quot;field code&quot; which will be used in computation fields formulas<br />
+- fields part of computation are flagged differently and associated to the computation field they are part of<br />
+<br />
+B. Administration area<br />
+- Since computation field will in this first version only work for Number field, it has been decided to move as main field &quot;Type&quot; the various different text field sub-types: &quot;Text field&quot;, &quot;Paragraph&quot;, &quot;Number&quot; and &quot;Date&quot;.<br />
+- In the &quot;Specific properties&quot; area of the Field popup for field of type &quot;Number&quot;, a new field &quot;Field code&quot; will give the possibility to edit the default code given to the field. Each field has by default a field code in the format &quot;field001&quot;, &quot;field045&quot;, etc. The numbering of this default field codes is done from the first created fields in the model.<br />
+- When creating or editing the computation field in a project/orgunit model, a formula must be entered using the field codes to represent the fields. The list of all fields of the model is available to help the administrator to identify and get the codes of the fields he wants to use, and this list is editable on the field code through a popup. When saving the modifications of the computation field, the system checks that the entered formula is valid and that all field codes used match the most up-to-date field codes in database. Currently, it won't be accepted to make computation field using other computation fields.<br />
+- When deleting or disabling a field part of a computation in a project/orgunit model, a warning message will inform the administrator that : &quot;The field you want to disable/delete is used in computation field(s) NAME_OF_THE_COMPUTATION_FIELD[, list of computation fields where the field is used]. If you disable/delete it without modifying the formula of those computation field(s), the computed values might be aberrant. Are you sure you want to continue?&quot;<br />
+<br />
+C. For the end-user<br />
+- When editing a field part of the computation, the computed value is changed (without controlling the optional limits) when the edition of the field is ended so that the user can be informed of the computed value.<br />
+- When saving ONLINE a modification of one or several fields part of the computation, the server computes the new aggregated value based on the latest values stored in the server database and the modifications made by the user : if there is a limit and if this limit is exceeded, the modification made by the user is rejected and he gets a detailed warning message informing him that &quot;Your latest modification on field(s) FIELD1, FIELD2, [List of fields modified and part of the computation] cannot be saved because it makes the computed value of NAME_OF_THE_COMPUTATION_FIELD [below/greater] than EXCEEDED_LIMIT. For your information, here are the latest values of all fields used to compute NAME_OF_THE_COMPUTATION_FIELD: [table with columns: Title / Value / Latest modification (datetime) / Author ]&quot;<br />
+- When saving OFFLINE a modification of one or several fields part of the computation, the software on the client-side computes the new aggregated value based on the latest values stored in its offline data base and save always anyway the modification but if a limit is exceeded returns as well the following message: &quot;According the values collected at different times in your offline data base, your latest modification on field(s) FIELD1, FIELD2, [List of fields modified and part of the computation] would make the computed value of NAME_OF_THE_COMPUTATION_FIELD [below/greater] than EXCEEDED_LIMIT. When you will synchronize your offline data base with the server, this modification might then be rejected if it makes the value computed with the other server-side values exceed a limit.&quot;<br />
+- When synchronizing an offline data base with modification of a field part of a computation, control of the aggregated value will be made and the modification might be rejected as if the edition was made online and rejection can join the final synchronization feedback and email.<br />
+<br />
+<br />
+IN THE FUTURE<br />
+In an extended version of this feature, budget and dates will be able also to be taken into account, and a constant could be added as part of the computation (and for dates, it can be either a specific date or today), or global variables (like total amount of funding from all sources of funding, total funded from all funded projects).<br />
+The extended version of this feature which will take into account budget will then be an opportunity for the revision of the budget field which will become a default computation field.<br />
+</td>
+</tr>
+
+	<tr class="spacer"><td><a name="r737"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2015-11-23 15:46 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3">The detailed behavior of the feature has been imagined as follows :<br />
+A. Modifications in the server database schema:<br />
+To make this feature work, the following modifications will be made on the server database schema:<br />
+- computation field will be a new kind of &quot;flexible element&quot;, which will store two informations: its latest computed value, and in a text format the formula used for computation with fields part of computation represented as &quot;$ID_OF_FIELD&quot; ($2460, $13986, etc.)<br />
+- a new characteristic of field is added, the &quot;field code&quot; which will be used in computation fields formulas<br />
+- fields part of computation are flagged differently and associated to the computation field they are part of<br />
+<br />
+B. Administration area<br />
+- In the Field popup, a new field &quot;Field code&quot; will give the possibility to edit the default code given to the field. Each field has by default a field code in the format &quot;field001&quot;, &quot;field045&quot;, etc. The numbering of this default field codes is done from the first created fields in the model.<br />
+- When creating or editing the computation field in a project/orgunit model, a formula must be entered using the field codes to represent the fields. The list of all fields of the model is available to help the administrator to identify and get the codes of the fields he wants to use, and this list is editable on the field code. When saving the modifications of the computation field, the system checks that the entered formula is valid and that all field codes used match the most up-to-date field codes in database. Currently, it won't be accepted to make computation field using other computation fields.<br />
+- When deleting or disabling a field part of a computation in a project/orgunit model, a warning message will inform the administrator that : &quot;The field you want to disable/delete is used in computation field(s) NAME_OF_THE_COMPUTATION_FIELD[, list of computation fields where the field is used]. If you disable/delete it without modifying the formula of those computation field(s), the computed values might be aberrant. Are you sure you want to continue?&quot;<br />
+<br />
+C. For the end-user<br />
+- When editing a field part of the computation, the computed value is changed (without controlling the optional limits) when the edition of the field is ended so that the user can be informed of the computed value.<br />
+- When saving ONLINE a modification of one or several fields part of the computation, the server computes the new aggregated value based on the latest values stored in the server database and the modifications made by the user : if there is a limit and if this limit is exceeded, the modification made by the user is rejected and he gets a detailed warning message informing him that &quot;Your latest modification on field(s) FIELD1, FIELD2, [List of fields modified and part of the computation] cannot be saved because it makes the computed value of NAME_OF_THE_COMPUTATION_FIELD [below/greater] than EXCEEDED_LIMIT. For your information, here are the latest values of all fields used to compute NAME_OF_THE_COMPUTATION_FIELD: [table with columns: Title / Value / Latest modification (datetime) / Author ]&quot;<br />
+- When saving OFFLINE a modification of one or several fields part of the computation, the software on the client-side computes the new aggregated value based on the latest values stored in its offline data base and save always anyway the modification but if a limit is exceeded returns as well the following message: &quot;According the values collected at different times in your offline data base, your latest modification on field(s) FIELD1, FIELD2, [List of fields modified and part of the computation] would make the computed value of NAME_OF_THE_COMPUTATION_FIELD [below/greater] than EXCEEDED_LIMIT. When you will synchronize your offline data base with the server, this modification might then be rejected if it makes the value computed with the other server-side values exceed a limit.&quot;<br />
+- When synchronizing an offline data base with modification of a field part of a computation, control of the aggregated value will be made and the modification might be rejected as if the edition was made online and rejection can join the final synchronization feedback and email.<br />
+<br />
+<br />
+IN THE FUTURE<br />
+In an extended version of this feature, dates will be able also to be taken into account, and a constant could be added as part of the computation (and for dates, it can be either a specific date or today), or global variables (like total amount of funding from all sources of funding, total funded from all funded projects).<br />
+</td>
+</tr>
+
+	<tr class="spacer"><td><a name="r713"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2015-11-06 12:28 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3">In an extended version of this feature, dates will be able also to be taken into account, and a constant could be added as part of the computation (and for dates, it can be either a specific date or today), or global variables (like total amount of funding from all sources of funding, total funded from all funded projects).</td>
+</tr>
+
+	<tr class="spacer"><td><a name="r712"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2013-02-25 15:08 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3"></td>
+</tr>
+
+	
+</table>
+
+	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.html" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/bug_revision_view_page.php?rev_id=737 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:03:09 GMT -->
+</html>

@@ -1,0 +1,125 @@
+[TRACE] {2017/06/13 16:55:10.723} - - Loading state: true ; Running actions: 0
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:109
+[TRACE] {2017/06/13 16:55:10.742} - - Executing 'APP_LOADER' onZoneRequest() method.
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:109
+[TRACE] {2017/06/13 16:55:10.743} - - Application loader update request with loading value 'true'.
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:109
+[ERROR] {2017/06/13 17:00:11.044} - - Exception handler intercepts an InvocationException probably due to network connection problem.
+Class$Sie: 502 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<!-- Mirrored from www.sigmah.org/issues/file_download.php?file_id=408&type=bug by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 15:22:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=us-ascii" /><!-- /Added by HTTrack -->
+<head>
+<title>502 Proxy Error</title>
+</head><body>
+<h1>Proxy Error</h1>
+<p>The proxy server received an invalid
+
+response from an upstream server.<br />
+
+The proxy server could not handle the request <em><a href="http://www.sigmah.org/sigmah/dispatch">POST&nbsp;/sigmah/dispatch</a></em>.<p>
+Reason: <strong>Error reading from remote server</strong></p></p>
+</body>
+<!-- Mirrored from www.sigmah.org/issues/file_download.php?file_id=408&type=bug by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 15:22:02 GMT -->
+</html>
+
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:27
+[WARN ] {2017/06/13 17:00:11.094} - - An error happened while handling the command 'Class$V2i[]'. Retrying offline.
+Class$Sie: 502 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>502 Proxy Error</title>
+</head><body>
+<h1>Proxy Error</h1>
+<p>The proxy server received an invalid
+
+response from an upstream server.<br />
+
+The proxy server could not handle the request <em><a href="http://www.sigmah.org/sigmah/dispatch">POST&nbsp;/sigmah/dispatch</a></em>.<p>
+Reason: <strong>Error reading from remote server</strong></p></p>
+</body></html>
+
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:58
+[TRACE] {2017/06/13 17:00:11.162} - - Loading state: true ; Running actions: 1
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:109
+[TRACE] {2017/06/13 17:00:11.164} - - Executing 'APP_LOADER' onZoneRequest() method.
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:109
+[TRACE] {2017/06/13 17:00:11.165} - - Application loader update request with loading value 'true'.
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:109
+[INFO ] {2017/06/13 17:00:11.166} - - Local Class$V2i is pending...
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:88
+[FATAL] {2017/06/13 17:00:11.168} - - Exception handler intercepts an unknown exception.
+Class$Rqi: No handler is registered for command 'Class$V2i'.
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:27
+[WARN ] {2017/06/13 17:00:11.169} - - Command unavailable when offline.
+Class$Rqi: No handler is registered for command 'Class$V2i'.
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+    at Unknown.anonymous(Unknown Source)
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:58
+[TRACE] {2017/06/13 17:00:11.224} - - Loading state: false ; Running actions: 2
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:109
+[TRACE] {2017/06/13 17:00:11.235} - - Executing 'APP_LOADER' onZoneRequest() method.
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:109
+[TRACE] {2017/06/13 17:00:11.237} - - Application loader update request with loading value 'false'.
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:109
+[TRACE] {2017/06/13 17:00:11.240} - - Loading state: false ; Running actions: 0
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:109
+[TRACE] {2017/06/13 17:00:11.241} - - Executing 'APP_LOADER' onZoneRequest() method.
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:109
+[TRACE] {2017/06/13 17:00:11.242} - - Application loader update request with loading value 'false'.
+  261DABAA493EA5003AF72B8963B3E03B.cache.html:18623:109
+
+        

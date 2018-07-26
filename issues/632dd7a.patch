@@ -1,0 +1,57 @@
+### Eclipse Workspace Patch 1.0
+#P sigmah
+Index: src/main/java/org/sigmah/client/icon/IconImageBundle.java
+===================================================================
+--- src/main/java/org/sigmah/client/icon/IconImageBundle.java	(revision 1595)
++++ src/main/java/org/sigmah/client/icon/IconImageBundle.java	(working copy)
+@@ -134,6 +134,7 @@
+ 
+     AbstractImagePrototype attach();
+ 
++    @Resource(value = "link_delete.png")
+     AbstractImagePrototype remove();
+ 
+     @Resource(value = "bullet_green.png")
+Index: src/main/java/org/sigmah/public/sigmah.css
+===================================================================
+--- src/main/java/org/sigmah/public/sigmah.css	(revision 1595)
++++ src/main/java/org/sigmah/public/sigmah.css	(working copy)
+@@ -1236,7 +1236,7 @@
+ }
+ 
+ .delete-anchor {
+-	background: url("image/remove.png") no-repeat;
++	background: url("image/link_delete.png") no-repeat;
+ 	padding-left: 20px;
+ }
+ 
+Index: src/main/java/org/sigmah/client/icon/link_delete.png
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: src/main/java/org/sigmah/client/icon/link_delete.png
+===================================================================
+--- src/main/java/org/sigmah/client/icon/link_delete.png	(revision 0)
++++ src/main/java/org/sigmah/client/icon/link_delete.png	(working copy)
+
+Property changes on: src/main/java/org/sigmah/client/icon/link_delete.png
+___________________________________________________________________
+Added: svn:mime-type
+## -0,0 +1 ##
++application/octet-stream
+\ No newline at end of property
+Index: src/main/java/org/sigmah/public/image/link_delete.png
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: src/main/java/org/sigmah/public/image/link_delete.png
+===================================================================
+--- src/main/java/org/sigmah/public/image/link_delete.png	(revision 0)
++++ src/main/java/org/sigmah/public/image/link_delete.png	(working copy)
+
+Property changes on: src/main/java/org/sigmah/public/image/link_delete.png
+___________________________________________________________________
+Added: svn:mime-type
+## -0,0 +1 ##
++application/octet-stream
+\ No newline at end of property

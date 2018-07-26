@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/bug_revision_view_page.php?bug_id=885 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:21:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.html" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Wed, 25 Jul 2018 15:52:43 GMT" />
+	<link rel="shortcut icon" href="images/favicon.html" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.html?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.html?type=id" />	<title>0000885: Field modification email notification to team profile - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.html"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.html" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_pagec2e2.html?return=%2Fissues%2Fbug_revision_view_page.php%3Fbug_id%3D885">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-25 17:52 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issues2478.xml?project_id=0"><img src="images/rss.html" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table>
+<br />
+<table class="width100" cellspacing="1">
+
+<tr>
+<td class="form-title" colspan="2">View Revisions: Issue #885</td>
+<td class="right" colspan="2">
+<span class="bracket-link">[&#160;<a href="view8007.html?id=885">Back to Issue</a>&#160;]</span> </td>
+</tr>
+
+<tr class="row-1">
+<td class="category" width="15%">Summary</td>
+<td colspan="3">0000885: Field modification email notification to team profile</td>
+</tr>
+
+<tr class="spacer"><td><a name="r810"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2016-07-07 12:47 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3"></td>
+</tr>
+
+	<tr class="spacer"><td><a name="r811"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2016-07-07 13:16 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3"><b>Email notification template</b><br />
+<i>Email subject:</i> Project PROJECT_CODE just modified by MODIFIER_FIRST_NAME MODIFIER_FAMILY_NAME<br />
+<br />
+<i>Email body:</i><br />
+Dear RECIPIENT_FIRST_NAME RECIPIENT_FAMILY_NAME,<br />
+<br />
+MODIFIER_FIRST_NAME MODIFIER_FAMILY_NAME has just modified field &quot;FIELD_TITLE&quot; in project &quot;PROJECT_CODE - PROJECT_TITLE&quot; as follows:<br />
+- New value: FIELD_NEW_VALUE<br />
+- Last modification date: FIELD_LAST_MODIF_DATE<br />
+- Last modification author: MODIFIER_FIRST_NAME MODIFIER_FAMILY_NAME<br />
+<br />
+Regards,<br />
+<br />
+Sigmah system.<br />
+</td>
+</tr>
+
+	<tr class="spacer"><td><a name="r831"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2016-07-07 12:47 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Description</td>
+<td colspan="3">Sigmah users request to be notified by email on some modifications on projects they are working on.<br />
+<br />
+A part of the solution designed with some users is to add a new option in project models (not on orgunit/contact models) administration field edition popup : &quot;Email notification on field modification to team members with profile(s)&quot;.<br />
+With this feature, it will be possible optionnally to assign one or more user profile(s) to a field. Each time the field will be modified, an email notification will be automatically send to all team members of the given project with one of the selected user profile.<br />
+If one of the assigned profile is selected as a profile as a whole as a team member, all users having this profile will be notified.<br />
+<br />
+<b>Email notification user control [optional]</b><br />
+An optional added part of this feature is to give control to users on the notifications they received.<br />
+A new column &quot;Email notification&quot; will be added in the Team sub-tab members table. This column will be filled with a checkbox for each member.<br />
+For users having only the &quot;View Team sub-tab&quot; global privilege, they will be able to check/uncheck this checkbox for the row corresponding to them. If such a user is represented only by a &quot;profile as whole&quot; row in this team members table, he won't be able to change the notification configuration for this &quot;profile as a whole&quot; row.<br />
+For users having the &quot;Edit Team sub-tab&quot; global privilege, they will be able to edit the notification parameters for any member or whole profile part of the team.<br />
+</td>
+</tr>
+
+	<tr class="spacer"><td><a name="r832"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2016-07-18 12:51 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Description</td>
+<td colspan="3">Sigmah users request to be notified by email on some modifications on projects they are working on.<br />
+<br />
+A part of the solution designed with some users is to add a new option in project models (not on orgunit/contact models) administration field edition popup : &quot;Email notification on field modification to team members with profile(s)&quot;.<br />
+With this feature, it will be possible optionnally to assign one or more user profile(s) to a field. Each time the field will be modified, an email notification will be automatically send to all team members of the given project with one of the selected user profile.<br />
+If one of the assigned profile is selected as a profile as a whole as a team member, all users having this profile will be notified.<br />
+<br />
+<b>End-user information on fields with notifications [optional]</b><br />
+The attached bell icon could be attached to the field title having notifications. And if the user move his cursor above this bell icon, he could get a tooltip message informing him for each user profile for which notifications are planned: &quot;Any modification made to this field will send a notification email to all project team members with profile 'NOTIFICATION_USER_PROFILE'.&quot;.<br />
+This end-user information is optional as part of the feature description.<br />
+<br />
+<b>Email notification user control [optional]</b><br />
+An optional added part of this feature is to give control to users on the notifications they received.<br />
+A new column &quot;Email notification&quot; will be added in the Team sub-tab members table. This column will be filled with a checkbox for each member.<br />
+For users having only the &quot;View Team sub-tab&quot; global privilege, they will be able to check/uncheck this checkbox for the row corresponding to them. If such a user is represented only by a &quot;profile as whole&quot; row in this team members table, he won't be able to change the notification configuration for this &quot;profile as a whole&quot; row.<br />
+For users having the &quot;Edit Team sub-tab&quot; global privilege, they will be able to edit the notification parameters for any member or whole profile part of the team.<br />
+</td>
+</tr>
+
+	
+</table>
+
+	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.html" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/bug_revision_view_page.php?bug_id=885 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:21:55 GMT -->
+</html>

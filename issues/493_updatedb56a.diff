@@ -1,0 +1,120 @@
+Index: sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties
+===================================================================
+--- sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties	(revision 1569)
++++ sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties	(working copy)
+@@ -2389,3 +2389,6 @@
+ categoryNotMapped = Not in any Category
+ 
+ 
++#Name for the Fold/Unfold Buttons in Project Details and Phases Page
++fold = Fold
++unfold = Unfold
+\ No newline at end of file
+Index: sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsView.java
+===================================================================
+--- sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsView.java	(revision 1569)
++++ sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsView.java	(working copy)
+@@ -18,6 +18,7 @@
+ 
+     // Toolbar buttons.
+     private Button saveButton;
++    private Button foldButton;
+ 
+     /**
+      * Builds the details main panel.
+@@ -57,6 +58,10 @@
+         // Save button.
+         saveButton = new Button(I18N.CONSTANTS.save(), IconImageBundle.ICONS.save());
+         saveButton.setEnabled(false);
++        
++        foldButton = new Button(I18N.CONSTANTS.fold());
++        foldButton.setEnabled(true);
++        
+      
+         // Actions toolbar.
+         final ToolBar toolBar = new ToolBar();
+@@ -64,15 +69,20 @@
+         toolBar.setBorders(false);
+ 
+         toolBar.add(saveButton);
++        toolBar.add(foldButton);
+         toolBar.add(new FillToolItem());
+ 
+         return toolBar;
+     }
+-
++    
++    public Button getFoldButton(){
++    	return foldButton;
++    }
++    
++    
+     public Button getSaveButton() {
+         return saveButton;
+     }
+-
+   
+ 	public ContentPanel getMainPanel() {
+         return this;
+Index: sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsPresenter.java
+===================================================================
+--- sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsPresenter.java	(revision 1569)
++++ sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsPresenter.java	(working copy)
+@@ -62,6 +62,7 @@
+ 	public static abstract class View extends ContentPanel {
+ 
+ 		public abstract Button getSaveButton();
++		public abstract Button getFoldButton();
+ 
+ 		public abstract ContentPanel getMainPanel();
+ 	}
+@@ -91,6 +92,11 @@
+ 	 * List of values changes.
+ 	 */
+ 	private ArrayList<ValueEvent> valueChanges = new ArrayList<ValueEvent>();
++	
++	/**
++	 * List of FieldGroups
++	 */
++	private ArrayList<FieldSet> listOfFieldsets = new ArrayList<FieldSet>();
+ 
+ 	/**
+ 	 * The counter before the main panel is unmasked.
+@@ -152,7 +158,26 @@
+ 	 * Initializes the presenter.
+ 	 */
+ 	private void addListeners() {
+-
++		//Fold/Unfold Button
++		view.getFoldButton().addListener(Events.Select, new Listener<ButtonEvent>(){
++			@Override
++			public void handleEvent(ButtonEvent be){
++				if(view.getFoldButton().getText() == I18N.CONSTANTS.fold())
++				{
++				view.getFoldButton().setText(I18N.CONSTANTS.unfold());
++				for(FieldSet f : listOfFieldsets){
++					f.collapse();
++				}
++				}
++				else{
++					view.getFoldButton().setText(I18N.CONSTANTS.fold());
++					for(FieldSet f : listOfFieldsets){
++						f.expand();
++					}
++				}
++			}
++		});
++		
+ 		// Save action.
+ 		view.getSaveButton().addListener(Events.Select, new Listener<ButtonEvent>() {
+ 
+@@ -253,6 +278,9 @@
+ 				// Creates the fieldset and positions it.
+ 				final FieldSet formPanel = (FieldSet) groupLayout.getWidget();
+ 				gridLayout.setWidget(groupLayout.getRow(), groupLayout.getColumn(), formPanel);
++				
++				listOfFieldsets.add(formPanel);//Store it in a list to Fold/Unfold all of them as and when necessary 
++				
+ 
+ 				// For each constraint in the current layout group.
+ 				if (groupLayout.getLayoutConstraintsDTO() != null) {

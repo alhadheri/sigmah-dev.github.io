@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=372&nbn=9 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Jul 2018 14:46:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Tue, 24 Jul 2018 13:33:39 GMT" />
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.php?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.php?type=id" />	<title>0000372: Impossible to change the project model status once no more &quot;Draft&quot; - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.js"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.png" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_page6980.html?return=%2Fissues%2Fview.php%3Fid%3D372%26nbn%3D9">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-24 15:33 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issuesd41d.xml?"><img src="images/rss.png" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table><br /><table class="width100" cellspacing="1"><tr><td class="form-title" colspan="3">View Issue Details&#160;<span class="small"><span class="bracket-link">[&#160;<a href="#bugnotes">Jump to Notes</a>&#160;]</span> </span></td><td class="center"><span class="small"></span></td><td class="right" colspan="2"><span class="small"><span class="bracket-link">[&#160;<a href="view6c7c.html?id=372&amp;history=1#history">Issue History</a>&#160;]</span> </span><span class="small"><span class="bracket-link">[&#160;<a href="print_bug_paged8d5.html?bug_id=372">Print</a>&#160;]</span> </span></td></tr><tr><td class="category" width="15%">ID</td><td class="category" width="20%">Project</td><td class="category" width="15%">Category</td><td class="category" width="15%">View Status</td><td class="category" width="15%">Date Submitted</td><td class="category" width="20%">Last Update</td></tr><tr class="row-1"><td>0000372</td><td>sigmah</td><td>Administration</td><td>public</td><td>2011-09-13 12:34</td><td>2011-10-11 19:14</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category">Reporter</td><td>osarrat</td><td colspan="4">&#160;</td></tr><tr class="row-1"><td class="category">Assigned To</td><td>zhe.hu32</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Priority</td><td>normal</td><td class="category">Severity</td><td>major</td><td class="category">Reproducibility</td><td>always</td></tr><tr class="row-1"><td class="category">Status</td><td bgcolor="#c9ccc4">closed</td><td class="category">Resolution</td><td>fixed</td><td colspan="2">&#160;</td></tr><tr class="row-2"><td class="category">Platform</td><td></td><td class="category">OS</td><td></td><td class="category">OS Version</td><td></td></tr><tr class="row-1"><td class="category">Product Version</td><td>1.0</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Target Version</td><td>1.1</td><td class="category">Fixed in Version</td><td>1.1</td><td colspan="2">&#160;</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category">Summary</td><td colspan="5">0000372: Impossible to change the project model status once no more &quot;Draft&quot;</td></tr><tr class="row-2"><td class="category">Description</td><td colspan="5">In the screen to manage a project model, after the user has changed the status of a project model from &quot;Draft&quot; to another value (either &quot;Available&quot; or &quot;Unavailable&quot;), the &quot;status&quot; field is disabled, and he cannot anymore change it.<br />
+The &quot;status&quot; field is also disabled if the project model is in the &quot;Used&quot; status.<br />
+<br />
+This field should never be disabled.</td></tr><tr class="row-1"><td class="category">Tags</td><td colspan="5">No tags attached.</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category">User Report URL</td><td colspan="5"></td></tr><tr class="row-1"><td class="category">OS</td><td colspan="5">Windows Vista</td></tr><tr class="row-2"><td class="category">Other OS</td><td colspan="5"></td></tr><tr class="row-1"><td class="category">Browser</td><td colspan="5">Mozilla Firefox 4.0</td></tr><tr class="row-2"><td class="category">Other browser</td><td colspan="5"></td></tr><tr class="row-1"><td class="category">ScreenURL</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">(ActivityInfo) Noticed in revision</td><td colspan="5"></td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category"><a name="attachments" id="attachments" />Attached Files</td><td colspan="5"></td></tr><tr align="center"><td align="center" colspan="6"><table><tr class="vcenter"><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td></tr></table></td></tr></table><br />
+
+<div id="relationships_open"><table class="width100" cellspacing="1">
+<tr class="row-2" valign="top">
+	<td width="15%" class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/minus.png" alt="-" /></a>&#160;Relationships	</td>
+</tr>
+<tr>
+	<td colspan="2"></td>
+</tr>
+</table>
+
+</div><div id="relationships_closed" class="hidden"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/plus.png" alt="+" /></a>&#160;Relationships	</td>
+</tr>
+</table>
+
+</div>
+<a name="bugnotes" id="bugnotes" /><br />
+
+<div id="bugnotes_open"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/minus.png" alt="-" /></a>&#160;		Notes	</td>
+</tr>
+<tr class="bugnote" id="c666">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view3887.html?id=372#c666" title="Direct link to note">0000666)</a></span><br />
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-09-19 11:24</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		I just want to make sure if the status of orgunit model should have the same behavior as project model. Or I just make changes for the project model ?	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c667">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view3887.html?id=372#c667" title="Direct link to note">0000667)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2011-09-19 11:36</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Yes, the behavior for this field should be the same for project or orgunit model management. A user should always be allowed to shift from Available/Used to Unavailable both ways anytime he wants. The only change which is not allowed is the shift from Used to Draft. Once Used, a model cannot be set back to Draft and modified. But if a model is Available, it can be set back to Draft.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c668">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view3887.html?id=372#c668" title="Direct link to note">0000668)</a></span><br />
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-09-19 11:54</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Yes, that is what I want to make sure. Thank your.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c675">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view3887.html?id=372#c675" title="Direct link to note">0000675)</a></span><br />
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-09-20 14:35</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		I have two point to make sure.<br />
+<br />
+1. Only in the status &quot;Draft&quot; can we modify the content of the model ? (Except status,of course)<br />
+<br />
+2.In my opinion, we can not shift from &quot;Unavailable&quot; to none of the other 3 status. Because if we can shift from &quot;Unavailable&quot; to &quot;Draft&quot;, that means we can shift from &quot;Used&quot; to &quot;Unavailable&quot; first and then shift it to &quot;Draft&quot;. <br />
+&#160;<br />
+So I think model in status &quot;Unavailable&quot; means &quot;Can not be changed any more totally&quot;.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c676">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view3887.html?id=372#c676" title="Direct link to note">0000676)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2011-09-21 10:43</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		1. =&gt; You're right. Once no more &quot;Draft&quot;, the content of the model (but not its status) cannot be modified.<br />
+<br />
+2. =&gt; &quot;Unavailable&quot; means &quot;no more visible to the end user&quot;. But an administrator can decide to make a model no more visible... and then change his mind and decide to make it visible once again. The only change which is not allowed is coming back to Draft once Used.<br />
+<br />
+<br />
+To make it clearer, technically, there should be 2 informations to track : status asked by user, and &quot;used&quot; status (which is just True/False).<br />
+Once created, a model is always Draft.<br />
+If Draft, user can only set model status to Available.<br />
+If Available, user can set model status back to Draft or to Unavailable.<br />
+If Available, user can create a project from the model which then makes the model status appearing as Used. The &quot;used&quot; internal status will then never be changed and remains &quot;true&quot;.<br />
+If Used, user can only set model status to Unavailable.<br />
+If Unavailable and never &quot;used&quot;, user can set model status back to &quot;Available&quot;<br />
+If Unavailable and already &quot;used&quot;, user can set model status back to &quot;Used&quot;.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c682">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view3887.html?id=372#c682" title="Direct link to note">0000682)</a></span><br />
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-09-23 17:47</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Change Model status changing rules<br />
+<br />
+- fixes issue <a href="view3887.html?id=372" title="[closed] Impossible to change the project model status once no more &quot;Draft&quot;" class="resolved">0000372</a>: Impossible to change the project model status once no more &quot;Draft&quot;<br />
+<br />
+Added : /trunk/sigmah/src/main/java/org/sigmah/client/page/admin/model/common/StatusChangeAction.java<br />
+Added : /trunk/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/CheckModelUsageHandler.java<br />
+Added : /trunk/sigmah/src/main/java/org/sigmah/shared/command/CheckModelUsage.java<br />
+Added : /trunk/sigmah/src/main/java/org/sigmah/shared/command/result/ModelCheckResult.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/i18n/UIMessages.properties<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/page/admin/model/common/AdminOneModelPresenter.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/page/admin/model/common/AdminOneModelView.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/server/policy/OrgUnitModelPolicy.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/server/policy/ProjectModelPolicy.java<br />
+	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c685">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view3887.html?id=372#c685" title="Direct link to note">0000685)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2011-09-26 16:42</span><br />
+		<span class="small">edited on:&#32;2011-09-26 16:43</span><br />		<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Some improvements are still needed for this bug fix. The 2 main issues remaining are:<br />
+- user should not be able to choose the status &quot;Used&quot; for a model.<br />
+- instead of using error messages, it would be better to prevent users from selecting not allowed values for the status<br />
+<br />
+To make things clearer, I suggest to rename the status &quot;Used&quot; into &quot;Available &amp; used&quot;.<br />
+Here is the full exact behavior expected for model status management (both for project or orgunit models):<br />
+1. Model status is Draft<br />
+Status drop-down list has following available values: &quot;Draft&quot;, &quot;Available&quot;, &quot;Unavailable&quot;.<br />
+<br />
+2. Model status is Available :<br />
+Status drop-down list has following available values: &quot;Draft&quot;, &quot;Available&quot;, &quot;Unavailable&quot;.<br />
+<br />
+3. Model status is &quot;Available &amp; used&quot; : (only because a project or orgunit has been created out of the model)<br />
+Status drop-down list has following available values: &quot;Available &amp; used&quot;, &quot;Unavailable&quot;.<br />
+<br />
+4.a. Model status is Unavailable, and has never been Used :<br />
+Status drop-down list has following available values: &quot;Available&quot; and &quot;Unavailable&quot;.<br />
+<br />
+4.b. Model status is Unavailable, and has already been Used :<br />
+Status drop-down list has following available values: &quot;Available &amp; used&quot; and &quot;Unavailable&quot;.<br />
+<br />
+There should be no warning message for any change of status if only those values are presented.<br />
+<br />
+	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c738">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view3887.html?id=372#c738" title="Direct link to note">0000738)</a></span><br />
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2011-09-30 17:49</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Retrieves the list of available status for models administration from the server (fixes issue <a href="view3887.html?id=372" title="[closed] Impossible to change the project model status once no more &quot;Draft&quot;" class="resolved">0000372</a>).<br />
+<br />
+Added : /trunk/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/GetAvailableStatusForModelHandler.java<br />
+Added : /trunk/sigmah/src/main/java/org/sigmah/shared/command/GetAvailableStatusForModel.java<br />
+Added : /trunk/sigmah/src/main/java/org/sigmah/shared/command/result/ProjectModelStatusListResult.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_en.properties<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_es.properties<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/page/admin/model/common/AdminOneModelPresenter.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/client/page/admin/model/common/AdminOneModelView.java<br />
+	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c793">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view3887.html?id=372#c793" title="Direct link to note">0000793)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2011-10-11 19:14</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Issue closed because correct behavior checked on version 1.1-rc2.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+</table>
+
+</div><div id="bugnotes_closed" class="hidden">
+<table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/plus.png" alt="+" /></a>&#160;		Notes	</td>
+</tr>
+</table>
+</div>
+<a name="history" id="history" /><br />
+
+<div id="history_open"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/minus.png" alt="-" /></a>&#160;Issue History	</td>
+</tr>
+<tr class="row-category-history">
+	<td class="small-caption">
+		Date Modified	</td>
+	<td class="small-caption">
+		Username	</td>
+	<td class="small-caption">
+		Field	</td>
+	<td class="small-caption">
+		Change	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-09-13 12:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		New Issue	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-13 12:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		new =&gt; assigned	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-09-13 12:34	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		 =&gt; zhe.hu32	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-19 11:24	</td>
+	<td class="small-caption">
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000666	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-09-19 11:36	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000667	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-19 11:54	</td>
+	<td class="small-caption">
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000668	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-09-20 14:10	</td>
+	<td class="small-caption">
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000674	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-20 14:29	</td>
+	<td class="small-caption">
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>	</td>
+	<td class="small-caption">
+		Note Deleted: 0000674	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-09-20 14:35	</td>
+	<td class="small-caption">
+		<a href="view_user_page87f1.html?id=14">zhe.hu32</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000675	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-21 10:43	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000676	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-09-23 17:47	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Checkin	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-23 17:47	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000682	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-09-23 17:47	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		assigned =&gt; resolved	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-23 17:47	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Resolution	</td>
+	<td class="small-caption">
+		open =&gt; fixed	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-09-26 16:42	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000685	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-26 16:42	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		resolved =&gt; feedback	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-09-26 16:42	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Resolution	</td>
+	<td class="small-caption">
+		fixed =&gt; reopened	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-26 16:43	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Edited: 0000685	</td>
+	<td class="small-caption">
+		<a href="bug_revision_view_page5b3a.html?bugnote_id=685#r150">View Revisions</a>	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-09-30 17:49	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Checkin	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-30 17:49	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000738	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-09-30 17:49	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		feedback =&gt; resolved	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-09-30 17:49	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Resolution	</td>
+	<td class="small-caption">
+		reopened =&gt; fixed	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-10-11 19:14	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000793	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2011-10-11 19:14	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		resolved =&gt; closed	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2011-10-11 19:14	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Fixed in Version	</td>
+	<td class="small-caption">
+		 =&gt; 1.1	</td>
+</tr>
+</table>
+</div><div id="history_closed" class="hidden"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+	<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/plus.png" alt="+" /></a>&#160;Issue History	</td>
+</tr>
+</table>
+
+</div>	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.png" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=372&nbn=9 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Jul 2018 14:46:45 GMT -->
+</html>

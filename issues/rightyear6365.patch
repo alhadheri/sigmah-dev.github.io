@@ -1,0 +1,37 @@
+Index: src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/template/IndicatorEntryCalcTemplate.java
+===================================================================
+--- src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/template/IndicatorEntryCalcTemplate.java	(revision 1596)
++++ src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/template/IndicatorEntryCalcTemplate.java	(working copy)
+@@ -224,6 +224,7 @@
+  		Map<String, Integer> columnIndexMap=new HashMap<String, Integer>();
+ 		for(PivotTableData.Axis axis:leaves){
+ 			CalcUtils.putHeader(row,++cellIndex,  axis.getLabel());
++			axis.setLabel(String.valueOf(cellIndex));
+ 			columnIndexMap.put(axis.getLabel(),cellIndex);
+ 		}
+ 		
+Index: src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/template/IndicatorEntryExcelTemplate.java
+===================================================================
+--- src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/template/IndicatorEntryExcelTemplate.java	(revision 1596)
++++ src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/template/IndicatorEntryExcelTemplate.java	(working copy)
+@@ -217,6 +217,7 @@
+ 		Map<String, Integer> columnIndexMap=new HashMap<String, Integer>();
+ 		for(PivotTableData.Axis axis:leaves){
+ 			utils.putHeader(row,++cellIndex, axis.getLabel());
++			axis.setLabel(String.valueOf(cellIndex));
+ 			columnIndexMap.put(axis.getLabel(),cellIndex);
+ 		}
+ 		
+Index: src/main/java/org/sigmah/shared/report/content/PivotTableData.java
+===================================================================
+--- src/main/java/org/sigmah/shared/report/content/PivotTableData.java	(revision 1596)
++++ src/main/java/org/sigmah/shared/report/content/PivotTableData.java	(working copy)
+@@ -349,7 +349,7 @@
+             this.category = category;
+         }
+ 
+-        private void setLabel(String label) {
++        public void setLabel(String label) {
+             this.label = label;
+         }
+ 

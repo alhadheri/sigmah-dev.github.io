@@ -1,0 +1,15 @@
+### Eclipse Workspace Patch 1.0
+#P sigmah
+Index: src/main/java/org/sigmah/client/ui/GlobalExportSettingsForm.java
+===================================================================
+--- src/main/java/org/sigmah/client/ui/GlobalExportSettingsForm.java	(revision 1595)
++++ src/main/java/org/sigmah/client/ui/GlobalExportSettingsForm.java	(working copy)
+@@ -205,7 +205,7 @@
+ 		w.setModal(true);
+ 		w.setBlinkModal(true);
+ 		w.setLayout(new FitLayout());
+-		w.setSize(900, 420);
++		w.setSize(900, 430);
+ 		w.setHeading(I18N.CONSTANTS.globalExportConfiguration());
+ 
+ 		final FormPanel panel = new FormPanel();

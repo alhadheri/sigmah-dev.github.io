@@ -1,0 +1,36 @@
+Index: sigmah/src/main/java/org/sigmah/client/page/dashboard/ProjectsListPanel.java
+===================================================================
+--- sigmah/src/main/java/org/sigmah/client/page/dashboard/ProjectsListPanel.java	(revision 1561)
++++ sigmah/src/main/java/org/sigmah/client/page/dashboard/ProjectsListPanel.java	(working copy)
+@@ -268,7 +269,9 @@
+         projectTreeGrid.getStyle().setLeafIcon(null);
+         projectTreeGrid.setAutoExpandColumn("fullName");
+         projectTreeGrid.setTrackMouseOver(false);
+-        projectTreeGrid.setAutoExpand(true);               
++        projectTreeGrid.setAutoExpand(true);   
++        
++        
+ 
+      // Apply grid filters
+ 		gridFilters = new GridFilters() {
+@@ -410,7 +413,19 @@
+                     return 0;
+                 } else if ("categoryElements".equals(property)) {
+                     return 0;
+-                } else {
++                } else if("starred".equals(property)){
++                	boolean m1IsStarred = isFavoriteProject(authentication.getUserId(),m1);
++                	boolean m2IsStarred = isFavoriteProject(authentication.getUserId(),m2);
++                	
++                	if(m1IsStarred==true && m2IsStarred == false){
++                		return 1;
++                	}else if(m1IsStarred==false && m2IsStarred == true){
++                		return -1;
++                	}else{
++                		return 0;
++                	}
++                }
++                else {
+                     return super.compare(store, m1, m2, property);
+                 }
+             }

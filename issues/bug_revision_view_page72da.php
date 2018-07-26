@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/bug_revision_view_page.php?rev_id=783 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:01:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.html" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Wed, 25 Jul 2018 15:26:20 GMT" />
+	<link rel="shortcut icon" href="images/favicon.html" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.html?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.html?type=id" />	<title>0000866: Computation field from linked projects - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.html"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.html" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_page6426.html?return=%2Fissues%2Fbug_revision_view_page.php%3Frev_id%3D783">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-25 17:26 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issues2478.xml?project_id=0"><img src="images/rss.html" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table>
+<br />
+<table class="width100" cellspacing="1">
+
+<tr>
+<td class="form-title" colspan="2">View Revisions: Issue #866</td>
+<td class="right" colspan="2">
+<span class="bracket-link">[&#160;<a href="bug_revision_view_page77f7.html?bug_id=866">All Revisions</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="view75cf.html?id=866">Back to Issue</a>&#160;]</span> </td>
+</tr>
+
+<tr class="row-1">
+<td class="category" width="15%">Summary</td>
+<td colspan="3">0000866: Computation field from linked projects</td>
+</tr>
+
+<tr class="spacer"><td><a name="r806"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2016-07-05 17:12 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3"><b>Original need</b><br />
+CARE Nederland, which has requested the development of the &quot;computation field&quot; feature (<a href="view0b8f.html?id=530" title="[closed] New type of orgunit/project field: computation field" class="resolved">0000530</a>) has expressed 3 new needs to extend this feature:<br />
+- Received budget of an in-house project should be automatically calculated as the sum the received budgets of all linked &quot;Funding source&quot; projects with the &quot;Source of funding&quot; project model.<br />
+- The &quot;budget spent&quot; of an in-house project should be calculated as the sum the spent budgets of all linked &quot;Funded&quot; projects with the &quot;Local partner&quot; project model.<br />
+- The value of a received budget of a source of funding project should be the sum of the 5 &quot;Transfers&quot; fields of that project.<br />
+<br />
+This need is planned to be fully covered with the 3 following features:<br />
+- <a href="viewbb33.html?id=864" title="[closed] Revise budget default field design" class="resolved">0000864</a> Revise budget default field design<br />
+- (optional) <a href="viewa010.html?id=865" title="[new] Convenient use of budget information in computation field">0000865</a> Convenient use of budget information in computation field<br />
+- and this <a href="view75cf.html?id=866" title="[closed] Computation field from linked projects" class="resolved">0000866</a> issue<br />
+<br />
+<br />
+<b>New formula items</b><br />
+<br />
+To distinguished between funding sources and funded projects, two functions are available to get access to them in formulas: &quot;fundingSources()&quot; and &quot;fundedProjects()&quot;.<br />
+<br />
+To get the linked projects financial contributions in formulas, the symbol &quot;@contribution&quot; must be used.<br />
+<br />
+Since there can be several linked projects to a project, an aggregation function is required to compute a value from a linked projects field, or financial contributions. Requested aggregation functions at this time are only: average &quot;avg()&quot;, and sum &quot;sum()&quot;. Example: &quot;fundingSources().avg(@contribution)&quot;.<br />
+<br />
+Since there can be several project models used in linked project, a project model filter must be called each time a specific number field or computation field is requested. This field must be the exact project model name used in parameter of the linked projects access function. Example: &quot;fundedProjects(Local partner project v2).sum(field56)&quot;.<br />
+<br />
+A full example : &quot;fundingSources().sum(@contribution) - fundedProjects(Local partner project v2).sum(field56)&quot;<br />
+<br />
+If issue <a href="viewa010.html?id=865" title="[new] Convenient use of budget information in computation field">0000865</a> is developed, it will also be possible to easily aggregate budget with formulas like: &quot;fundedProjects().sum(@budget.spent)&quot; <br />
+<br />
+<b>User interface</b><br />
+In the admin area, the computation field edition popup should be modified so that it is possible to get to know field codes of any project model.<br />
+See attached mockup for suggestion.</td>
+</tr>
+
+	<tr class="spacer"><td><a name="r783"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2016-06-09 19:26 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3"><b>Original need</b><br />
+CARE Nederland, which has requested the development of the &quot;computation field&quot; feature (<a href="view0b8f.html?id=530" title="[closed] New type of orgunit/project field: computation field" class="resolved">0000530</a>) has expressed 3 new needs to extend this feature:<br />
+- Received budget of an in-house project should be automatically calculated as the sum the received budgets of all linked &quot;Funding source&quot; projects with the &quot;Source of funding&quot; project model.<br />
+- The &quot;budget spent&quot; of an in-house project should be calculated as the sum the spent budgets of all linked &quot;Funded&quot; projects with the &quot;Local partner&quot; project model.<br />
+- The value of a received budget of a source of funding project should be the sum of the 5 &quot;Transfers&quot; fields of that project.<br />
+<br />
+This need is planned to be fully covered with the 3 following features:<br />
+- <a href="viewbb33.html?id=864" title="[closed] Revise budget default field design" class="resolved">0000864</a> Revise budget default field design<br />
+- (optional) <a href="viewa010.html?id=865" title="[new] Convenient use of budget information in computation field">0000865</a> Convenient use of budget information in computation field<br />
+- and this <a href="view75cf.html?id=866" title="[closed] Computation field from linked projects" class="resolved">0000866</a> issue<br />
+<br />
+<br />
+<b>New formula items</b><br />
+<br />
+To distinguished between funding sources and funded projects, two functions are available to get access to them in formulas: &quot;fundingSources()&quot; and &quot;fundedProjects()&quot;.<br />
+<br />
+To get the linked projects financial contributions in formulas, the symbol &quot;@contribution&quot; must be used.<br />
+<br />
+Since there can be several linked projects to a project, an aggregation function is required to compute a value from a linked projects field, or financial contributions. Requested aggregation functions at this time are only: average &quot;avg()&quot;, and sum &quot;sum()&quot;. Example: &quot;fundingSources().avg(@contribution)&quot;.<br />
+<br />
+Since there can be several project models used in linked project, a project model filter must be called each time a specific number field is requested. This field must be the exact project model name used in parameter of the linked projects access function. Example: &quot;fundedProjects(Local partner project v2).sum(field56)&quot;.<br />
+<br />
+A full example : &quot;fundingSources().sum(@contribution) - fundedProjects(Local partner project v2).sum(field56)&quot;<br />
+<br />
+If issue <a href="viewa010.html?id=865" title="[new] Convenient use of budget information in computation field">0000865</a> is developed, it will also be possible to easily aggregate budget with formulas like: &quot;fundedProjects().sum(@budget.spent)&quot; <br />
+<br />
+<b>User interface</b><br />
+In the admin area, the computation field edition popup should be modified so that it is possible to get to know field codes of any project model.<br />
+See attached mockup for suggestion.</td>
+</tr>
+
+	<tr class="spacer"><td><a name="r782"></a></td></tr>
+
+<tr class="row-2">
+<td class="category">Revision</td>
+<td colspan="2">2016-06-09 19:23 by osarrat</td>
+<td class="center" width="5%">
+</tr>
+
+<tr class="row-1">
+<td class="category">Additional Information</td>
+<td colspan="3"><b>Original need</b><br />
+CARE Nederland, which has requested the development of the &quot;computation field&quot; feature (<a href="view0b8f.html?id=530" title="[closed] New type of orgunit/project field: computation field" class="resolved">0000530</a>) has expressed 3 new needs to extend this feature:<br />
+- Received budget of an in-house project should be automatically calculated as the sum the received budgets of all linked &quot;Funding source&quot; projects with the &quot;Source of funding&quot; project model.<br />
+- The &quot;budget spent&quot; of an in-house project should be calculated as the sum the spent budgets of all linked &quot;Funded&quot; projects with the &quot;Local partner&quot; project model.<br />
+- The value of a received budget of a source of funding project should be the sum of the 5 &quot;Transfers&quot; fields of that project.<br />
+<br />
+<b>New formula items</b><br />
+<br />
+To distinguished between funding sources and funded projects, two functions are available to get access to them in formulas: &quot;fundingSources()&quot; and &quot;fundedProjects()&quot;.<br />
+<br />
+To get the linked projects financial contributions in formulas, the symbol &quot;@contribution&quot; must be used.<br />
+<br />
+Since there can be several linked projects to a project, an aggregation function is required to compute a value from a linked projects field, or financial contributions. Requested aggregation functions at this time are only: average &quot;avg()&quot;, and sum &quot;sum()&quot;. Example: &quot;fundingSources().avg(@contribution)&quot;.<br />
+<br />
+Since there can be several project models used in linked project, a project model filter must be called each time a specific number field is requested. This field must be the exact project model name used in parameter of the linked projects access function. Example: &quot;fundedProjects(Local partner project v2).sum(field56)&quot;.<br />
+<br />
+A full example : &quot;fundingSources().sum(@contribution) - fundedProjects(Local partner project v2).sum(field56)&quot;<br />
+<br />
+If issue <a href="viewa010.html?id=865" title="[new] Convenient use of budget information in computation field">0000865</a> is developed, it will also be possible to easily aggregate budget with formulas like: &quot;fundedProjects().sum(@budget.spent)&quot; <br />
+<br />
+<b>User interface</b><br />
+In the admin area, the computation field edition popup should be modified so that it is possible to get to know field codes of any project model.<br />
+See attached mockup for suggestion.</td>
+</tr>
+
+	
+</table>
+
+	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.html" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/bug_revision_view_page.php?rev_id=783 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:01:45 GMT -->
+</html>

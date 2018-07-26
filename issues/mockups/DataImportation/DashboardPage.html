@@ -1,0 +1,142 @@
+<html> 
+	
+<!-- Mirrored from www.sigmah.org/issues/mockups/DataImportation/DashboardPage.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:50:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<script src="js/jquery-2.0.2.min.js" type="text/javascript"></script>
+		<script src="js/jquery-ui.js" type="text/javascript"></script>
+		<script src="js/jquery.ui.dialog.js" type="text/javascript"></script>
+		<script src="js/Tools.js" type="text/javascript"></script>
+		<script src="js/mainDashboard.html" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<title> Dashboard page </title>
+	</head>
+	<body>
+		<h1> Dashboard page </h1>
+		<button type="button" onclick="popup_import()" id="import_button">Import</button>
+		<div id="dialog_import">
+			<table id="table_import" >
+				<tr>
+					<td>Importation scheme :</td>
+					<td>
+						<select onchange="addProjectModelField()">
+							<option>Scheme1</option>
+							<option>Scheme2</option>
+						</select></span>
+					</td>
+				</tr>
+				<tr>
+					<td>File to import:</td>
+					<td><input type="text" id="browse_field" /><button type="button" id="browse_button"> Browse </button></td>
+				</tr>
+			</table>
+			<button type="button"  id="preview_import_button" onclick="previewProjects()">Import</button>
+		</div>
+		<div id="dialog_create_project">
+		<form class="form_section_dialog">
+			<table >
+				<tr>
+					<td>Code :</td>
+					<td><input type="text" value="386N"/></td>
+				</tr>
+				<tr>
+					<td>Title :</td>
+					<td><input type="text" /></td>
+				</tr>
+				<tr>
+					<td>Planned Budget (€) :</td>
+					<td><input type="text" value="10000" /></td>
+				</tr>
+				<tr>
+					<td>OrgUnit :</td>
+					<td>
+						<select>
+							<option>Empty HeadQuarters</option>
+							<option>Full HeadQuarters</option>
+						</select></span>
+					</td>
+				</tr>
+				<tr>
+					<td>Model :</td>
+					<td>
+						<select>
+							<option>ProjectModel1</option>
+							<option selected="selected">ProjectModel2</option>
+						</select></span>
+					</td>
+				</tr>
+				<tr>
+					<td>Project's type:</td>
+					<td></td>
+				</tr>
+			</table>
+			<button type="button" onclick="createProject()"> Create </button>
+		</form>
+		</div>
+		
+		<div id="dialog_projects_details_list">
+			<form class="form_section_dialog">
+				<div class="toolbar">
+					Project ( Financement nourriture), identification key : 3465N : 
+				</div>
+				<table class="content_table_home" id="content_table_schemas"> 
+					<tr><th></th><th class="large_th"><span> Field</span></th><th>Container</th><th class="large_th">Old Value</th><th>New value</th></tr>
+					<tr><td><input type="checkbox" /></td><td><span>Budget </span></td><td>Details</td><td>15800</td><td>18500</td></tr>
+					<tr><td><input type="checkbox" /></td><td><span>Title </span></td><td>Details</td><td>Financement Nourriture</td><td>Feeding Financing</td></tr>
+				</table>
+			</form>
+		</div>
+		<div id="dialog_projects_list">
+		
+			<form class="form_section_dialog">
+			<div class="toolbar">
+				Projects
+			</div>
+				<table class="content_table_home" id="content_table_projects"> 
+					<tr><th></th><th>Id key</th><th class="large_th"><span> Code</span></th><th>Name</th><th></th></tr>
+					<tr>
+						<td><input type="checkbox" /></td>
+						<td>Code : 3465N</td><td>3465N</td>
+						<td>Financement nourriture</td>
+						<td><button type="button" id="details_button"> DETAILS</button></td>
+					</tr>
+					<tr id="to_choose">
+						<td><input type="checkbox" /></td>
+						<td>Name : Building Schools</td>
+						<td colspan="2"> 
+							<select>
+								<option> Project ( Code : 154N, Name : Building Schools ) </option>
+								<option> Project ( Code : 156N, Name : Building Schools )</option>
+							</select>
+						</td>
+						<td><button type="button" id="choose_button">CHOOSE</button></td>
+					</tr>
+					<tr id="to_create">
+						<td><input type="checkbox" /></td>
+						<td> Project_identification : 35</td>
+						<td colspan="2"> 
+							Project not found
+						</td>
+						<td><button type="button" id="create_button">CREATE</button></td>
+					</tr>
+					<tr id="to_unlock">
+						<td><input type="checkbox" /></td>
+						<td> Project_identification : 39</td>
+						<td colspan="2"> 
+							Project core locked
+						</td>
+						<td><button type="button" id="unlock_button" onclick="unlockProject()">UNLOCK</button></td>
+					</tr>
+				</table>
+				<button type="button" id="import_final_button">IMPORT</button>
+				<button type="button" id="import_cancel_button">CANCEL</button>
+			</form>
+		</div>	
+		<div id="dialog_confirm_import">
+			<img src="img/clear.cache.html" style="width: 16px; height: 16px; background-image: url(img/C18C262E36AA02F700CC477F30CB85A2.cache.html); background-position: -805px 0px; background-repeat: no-repeat no-repeat;" border="0" role="presentation" class=" x-btn-image">
+			The projects has been updated!
+		</div>
+	</body>
+
+<!-- Mirrored from www.sigmah.org/issues/mockups/DataImportation/DashboardPage.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 16:50:59 GMT -->
+</html>

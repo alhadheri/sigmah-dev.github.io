@@ -1,0 +1,1320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/plugin.php?page=Source/list&id=3&offset=54 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 17:19:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.html" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Wed, 25 Jul 2018 16:31:17 GMT" />
+	<link rel="shortcut icon" href="images/favicon.html" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.html?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.html?type=id" />	<title>Source Control Integration - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.html"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.html" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_page8e29.html?return=%2Fissues%2Fplugin.php%3Fpage%3DSource%2Flist%26id%3D3%26offset%3D54">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-25 18:31 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issues2478.xml?project_id=0"><img src="images/rss.html" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table>
+<br/>
+<table class="width100" cellspacing="1" align="center">
+
+<tr>
+<td class="form-title" colspan="2">Changesets: sigmah</td>
+<td class="right" colspan="2">
+<span class="bracket-link">[&#160;<a href="pluginde5e.html?page=Source/search_page">Search</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah">Browse</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="plugina0e2.html?page=Source/index">Back to Index</a>&#160;]</span> </td>
+</tr>
+
+
+<tr class="row-1">
+<td class="category" width="25%" rowspan="4">
+	<a name="changeset1279">master 12e4585e</a>
+	<br/><span class="small">Timestamp: 2010-11-23 16:05:09</span>
+	<br/><span class="small">Author: Raphael Calabro</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="pluginae26.html?page=Source/view&amp;id=1279">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/12e4585e296f9de246ef8839c20f32ece7d42ff6">Diff</a>&#160;]</span> </td>
+<td colspan="3">Collapse mode changed for the linked projects on the project dashboard view</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/12e4585e296f9de246ef8839c20f32ece7d42ff6">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/12e4585e296f9de246ef8839c20f32ece7d42ff6/sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/12e4585e296f9de246ef8839c20f32ece7d42ff6">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/12e4585e296f9de246ef8839c20f32ece7d42ff6/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/12e4585e296f9de246ef8839c20f32ece7d42ff6">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/12e4585e296f9de246ef8839c20f32ece7d42ff6/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="7">
+	<a name="changeset1280">master dabf5c16</a>
+	<br/><span class="small">Timestamp: 2010-11-23 15:16:14</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin304f.html?page=Source/view&amp;id=1280">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/dabf5c16165f1a60f686f64062e51432c3c90364">Diff</a>&#160;]</span> </td>
+<td colspan="3">Adds icons on toolbars buttons.</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/logframe/ProjectLogFrameView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/dabf5c16165f1a60f686f64062e51432c3c90364">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/dabf5c16165f1a60f686f64062e51432c3c90364/sigmah/src/main/java/org/sigmah/client/page/project/logframe/ProjectLogFrameView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/dabf5c16165f1a60f686f64062e51432c3c90364">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/dabf5c16165f1a60f686f64062e51432c3c90364/sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/dabf5c16165f1a60f686f64062e51432c3c90364">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/dabf5c16165f1a60f686f64062e51432c3c90364/sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/icon/information.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/dabf5c16165f1a60f686f64062e51432c3c90364">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/dabf5c16165f1a60f686f64062e51432c3c90364/sigmah/src/main/java/org/sigmah/client/icon/information.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - .gitattributes</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/dabf5c16165f1a60f686f64062e51432c3c90364">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/dabf5c16165f1a60f686f64062e51432c3c90364/.gitattributes">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/icon/IconImageBundle.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/dabf5c16165f1a60f686f64062e51432c3c90364">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/dabf5c16165f1a60f686f64062e51432c3c90364/sigmah/src/main/java/org/sigmah/client/icon/IconImageBundle.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="12">
+	<a name="changeset1281">master 7ec9ad85</a>
+	<br/><span class="small">Timestamp: 2010-11-23 15:02:19</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin6a82.html?page=Source/view&amp;id=1281">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ec9ad85d465e40fd8f1f9ce660325ea952169f7">Diff</a>&#160;]</span> </td>
+<td colspan="3">- A project doesn't appear in its available fundings list anymore. <br />
+- Improves the funding creation mechanism (now it manages amounts instead of percentages).<br />
+- Keeps the status of the fundings lists.<br />
+(issue <a href="viewa916.html?id=44" title="[resolved] Funding links between projects" class="resolved">0000044</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/ProjectDTOLight.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ec9ad85d465e40fd8f1f9ce660325ea952169f7">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ec9ad85d465e40fd8f1f9ce660325ea952169f7/sigmah/src/main/java/org/sigmah/shared/dto/ProjectDTOLight.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/ProjectDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ec9ad85d465e40fd8f1f9ce660325ea952169f7">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ec9ad85d465e40fd8f1f9ce660325ea952169f7/sigmah/src/main/java/org/sigmah/shared/dto/ProjectDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/CreateEntityHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ec9ad85d465e40fd8f1f9ce660325ea952169f7">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ec9ad85d465e40fd8f1f9ce660325ea952169f7/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/CreateEntityHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/util/NumberUtils.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ec9ad85d465e40fd8f1f9ce660325ea952169f7">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ec9ad85d465e40fd8f1f9ce660325ea952169f7/sigmah/src/main/java/org/sigmah/client/util/NumberUtils.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/logframe/FormWindow.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ec9ad85d465e40fd8f1f9ce660325ea952169f7">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ec9ad85d465e40fd8f1f9ce660325ea952169f7/sigmah/src/main/java/org/sigmah/client/page/project/logframe/FormWindow.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ec9ad85d465e40fd8f1f9ce660325ea952169f7">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ec9ad85d465e40fd8f1f9ce660325ea952169f7/sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ec9ad85d465e40fd8f1f9ce660325ea952169f7">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ec9ad85d465e40fd8f1f9ce660325ea952169f7/sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/dashboard/CreateProjectWindow.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ec9ad85d465e40fd8f1f9ce660325ea952169f7">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ec9ad85d465e40fd8f1f9ce660325ea952169f7/sigmah/src/main/java/org/sigmah/client/page/dashboard/CreateProjectWindow.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ec9ad85d465e40fd8f1f9ce660325ea952169f7">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ec9ad85d465e40fd8f1f9ce660325ea952169f7/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ec9ad85d465e40fd8f1f9ce660325ea952169f7">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ec9ad85d465e40fd8f1f9ce660325ea952169f7/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - .gitattributes</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ec9ad85d465e40fd8f1f9ce660325ea952169f7">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ec9ad85d465e40fd8f1f9ce660325ea952169f7/.gitattributes">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="3">
+	<a name="changeset1282">master dc1f09b2</a>
+	<br/><span class="small">Timestamp: 2010-11-23 11:52:04</span>
+	<br/><span class="small">Author: Raphael Calabro</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin0e42.html?page=Source/view&amp;id=1282">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/dc1f09b283cf3528e0a2227cf5d2ac36e24c2b5c">Diff</a>&#160;]</span> </td>
+<td colspan="3">Report fields can now contain images (issue <a href="viewbb33-2.html?id=47" title="[resolved] Open and display project reports" class="resolved">0000047</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/dc1f09b283cf3528e0a2227cf5d2ac36e24c2b5c">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/dc1f09b283cf3528e0a2227cf5d2ac36e24c2b5c/sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/SigmahAppFrame.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/dc1f09b283cf3528e0a2227cf5d2ac36e24c2b5c">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/dc1f09b283cf3528e0a2227cf5d2ac36e24c2b5c/sigmah/src/main/java/org/sigmah/client/SigmahAppFrame.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="2">
+	<a name="changeset1283">master 1f623838</a>
+	<br/><span class="small">Timestamp: 2010-11-23 11:50:55</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugindf5b.html?page=Source/view&amp;id=1283">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/1f6238387921c497dea4d313b6a7b20ecea78ab2">Diff</a>&#160;]</span> </td>
+<td colspan="3">Removed the unicity constraint between log frames and models.</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/domain/logframe/LogFrame.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/1f6238387921c497dea4d313b6a7b20ecea78ab2">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/1f6238387921c497dea4d313b6a7b20ecea78ab2/sigmah/src/main/java/org/sigmah/shared/domain/logframe/LogFrame.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="3">
+	<a name="changeset1284">master e68bf81c</a>
+	<br/><span class="small">Timestamp: 2010-11-23 11:35:04</span>
+	<br/><span class="small">Author: Raphael Calabro</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin7ff8.html?page=Source/view&amp;id=1284">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/e68bf81c711941fde685f9cd4ceeeeb61cf449dc">Diff</a>&#160;]</span> </td>
+<td colspan="3">Corrected the path of the cookie to delete when logging out (issue <a href="viewadbc.html?id=56" title="[resolved] Sigmah is missing a login screen" class="resolved">0000056</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/auth/SigmahAuthDictionaryServlet.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/e68bf81c711941fde685f9cd4ceeeeb61cf449dc">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/e68bf81c711941fde685f9cd4ceeeeb61cf449dc/sigmah/src/main/java/org/sigmah/server/auth/SigmahAuthDictionaryServlet.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/SigmahAppFrame.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/e68bf81c711941fde685f9cd4ceeeeb61cf449dc">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/e68bf81c711941fde685f9cd4ceeeeb61cf449dc/sigmah/src/main/java/org/sigmah/client/SigmahAppFrame.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="4">
+	<a name="changeset1285">master 5fb95327</a>
+	<br/><span class="small">Timestamp: 2010-11-22 18:04:35</span>
+	<br/><span class="small">Author: Raphael Calabro</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="pluginb468.html?page=Source/view&amp;id=1285">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/5fb953272a9a6558de93ef308cee339113bf8529">Diff</a>&#160;]</span> </td>
+<td colspan="3">Corrected a path related issue that prevented the user to log into Sigmah (issue <a href="viewadbc.html?id=56" title="[resolved] Sigmah is missing a login screen" class="resolved">0000056</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/public/sigmah.html</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/5fb953272a9a6558de93ef308cee339113bf8529">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/5fb953272a9a6558de93ef308cee339113bf8529/sigmah/src/main/java/org/sigmah/public/sigmah.html">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/login/LoginView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/5fb953272a9a6558de93ef308cee339113bf8529">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/5fb953272a9a6558de93ef308cee339113bf8529/sigmah/src/main/java/org/sigmah/client/page/login/LoginView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/SigmahAppFrame.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/5fb953272a9a6558de93ef308cee339113bf8529">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/5fb953272a9a6558de93ef308cee339113bf8529/sigmah/src/main/java/org/sigmah/client/SigmahAppFrame.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="15">
+	<a name="changeset1286">master 96fe5584</a>
+	<br/><span class="small">Timestamp: 2010-11-22 17:55:45</span>
+	<br/><span class="small">Author: Raphael Calabro</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin5d95.html?page=Source/view&amp;id=1286">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> </td>
+<td colspan="3">Added a login screen for Sigmah and a logout mechanism (issue <a href="viewadbc.html?id=56" title="[resolved] Sigmah is missing a login screen" class="resolved">0000056</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/GwtRpcModule.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/GwtRpcModule.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/server/auth/SigmahAuthDictionaryServlet.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/server/auth/SigmahAuthDictionaryServlet.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/public/sigmah.html</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/public/sigmah.html">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/public/sigmah.css</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/public/sigmah.css">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">rm - sigmah/src/main/java/org/sigmah/public/image/logo.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/public/image/logo.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/public/image/login-logo.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/public/image/login-logo.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/login/LoginView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/client/page/login/LoginView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/inject/SigmahAuthProvider.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/client/inject/SigmahAuthProvider.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/SigmahInjector.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/client/SigmahInjector.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/SigmahEntryPoint.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/client/SigmahEntryPoint.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - .gitattributes</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/.gitattributes">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/SigmahAppFrame.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/96fe5584dd0f8d7f565ce8bea8cedfce4644e102">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/96fe5584dd0f8d7f565ce8bea8cedfce4644e102/sigmah/src/main/java/org/sigmah/client/SigmahAppFrame.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="5">
+	<a name="changeset1287">master 6cc578f5</a>
+	<br/><span class="small">Timestamp: 2010-11-22 15:11:32</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugina83e.html?page=Source/view&amp;id=1287">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/6cc578f566403abf8251cbe407eda192e23ab131">Diff</a>&#160;]</span> </td>
+<td colspan="3">Modified the global layout for the fundings (the grids are now side by side). (issue <a href="viewa916.html?id=44" title="[resolved] Funding links between projects" class="resolved">0000044</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/6cc578f566403abf8251cbe407eda192e23ab131">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/6cc578f566403abf8251cbe407eda192e23ab131/sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/icon/table_edit.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/6cc578f566403abf8251cbe407eda192e23ab131">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/6cc578f566403abf8251cbe407eda192e23ab131/sigmah/src/main/java/org/sigmah/client/icon/table_edit.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - .gitattributes</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/6cc578f566403abf8251cbe407eda192e23ab131">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/6cc578f566403abf8251cbe407eda192e23ab131/.gitattributes">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/icon/IconImageBundle.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/6cc578f566403abf8251cbe407eda192e23ab131">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/6cc578f566403abf8251cbe407eda192e23ab131/sigmah/src/main/java/org/sigmah/client/icon/IconImageBundle.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="2">
+	<a name="changeset1288">master c9a50cdd</a>
+	<br/><span class="small">Timestamp: 2010-11-22 14:18:39</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin2eb0.html?page=Source/view&amp;id=1288">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c9a50cdd05134527528bb6e3db6895600c73d185">Diff</a>&#160;]</span> </td>
+<td colspan="3">The flexible elements in banner are now represented with labels instead of read-only fields. (issue <a href="view98dc.html?id=45" title="[resolved] Banner in the project page." class="resolved">0000045</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/element/DefaultFlexibleElementDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c9a50cdd05134527528bb6e3db6895600c73d185">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/c9a50cdd05134527528bb6e3db6895600c73d185/sigmah/src/main/java/org/sigmah/shared/dto/element/DefaultFlexibleElementDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="2">
+	<a name="changeset1289">master b037d0f2</a>
+	<br/><span class="small">Timestamp: 2010-11-22 13:47:41</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugindf67.html?page=Source/view&amp;id=1289">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/b037d0f2e7cfa32c4bde348922a11b4cc16175e0">Diff</a>&#160;]</span> </td>
+<td colspan="3">Switch the labels of the percentages columns for fundings. (issue <a href="viewa916.html?id=44" title="[resolved] Funding links between projects" class="resolved">0000044</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/b037d0f2e7cfa32c4bde348922a11b4cc16175e0">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/b037d0f2e7cfa32c4bde348922a11b4cc16175e0/sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="5">
+	<a name="changeset1290">master 0a3f67e3</a>
+	<br/><span class="small">Timestamp: 2010-11-22 13:43:34</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin4dc3.html?page=Source/view&amp;id=1290">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/0a3f67e33b472416dc4e58bbd6df831aaa4759e2">Diff</a>&#160;]</span> </td>
+<td colspan="3">Modification of the header of the project banner. (issue <a href="viewa9e4.html?id=55" title="[resolved] Project banner heading" class="resolved">0000055</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/ProjectView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/0a3f67e33b472416dc4e58bbd6df831aaa4759e2">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/0a3f67e33b472416dc4e58bbd6df831aaa4759e2/sigmah/src/main/java/org/sigmah/client/page/project/ProjectView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/ProjectPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/0a3f67e33b472416dc4e58bbd6df831aaa4759e2">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/0a3f67e33b472416dc4e58bbd6df831aaa4759e2/sigmah/src/main/java/org/sigmah/client/page/project/ProjectPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/0a3f67e33b472416dc4e58bbd6df831aaa4759e2">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/0a3f67e33b472416dc4e58bbd6df831aaa4759e2/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/0a3f67e33b472416dc4e58bbd6df831aaa4759e2">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/0a3f67e33b472416dc4e58bbd6df831aaa4759e2/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="13">
+	<a name="changeset1291">master baf0134b</a>
+	<br/><span class="small">Timestamp: 2010-11-22 10:50:40</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugind5f4.html?page=Source/view&amp;id=1291">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> </td>
+<td colspan="3">- All groups in the log frame are now displayed even if there are empty. (issue <a href="view3ca5.html?id=53" title="[resolved] Empty logframe group freshly created disappears after saving" class="resolved">0000053</a>)<br />
+- Groups labels are now editable (with an actions menu next to their labels). (issue <a href="view2568.html?id=49" title="[resolved] Editable logframe group name" class="resolved">0000049</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/policy/ProjectPolicy.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/baf0134b9c811c02c59d563772136bc4e9438490/sigmah/src/main/java/org/sigmah/server/policy/ProjectPolicy.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/logframe/grid/RowsGroup.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/baf0134b9c811c02c59d563772136bc4e9438490/sigmah/src/main/java/org/sigmah/client/page/project/logframe/grid/RowsGroup.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/logframe/grid/GroupActionMenu.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/baf0134b9c811c02c59d563772136bc4e9438490/sigmah/src/main/java/org/sigmah/client/page/project/logframe/grid/GroupActionMenu.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/logframe/grid/FlexTableView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/baf0134b9c811c02c59d563772136bc4e9438490/sigmah/src/main/java/org/sigmah/client/page/project/logframe/grid/FlexTableView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/logframe/grid/ActionsMenu.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/baf0134b9c811c02c59d563772136bc4e9438490/sigmah/src/main/java/org/sigmah/client/page/project/logframe/grid/ActionsMenu.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/logframe/ProjectLogFramePresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/baf0134b9c811c02c59d563772136bc4e9438490/sigmah/src/main/java/org/sigmah/client/page/project/logframe/ProjectLogFramePresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/logframe/ProjectLogFrameGrid.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/baf0134b9c811c02c59d563772136bc4e9438490/sigmah/src/main/java/org/sigmah/client/page/project/logframe/ProjectLogFrameGrid.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/icon/page_edit.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/baf0134b9c811c02c59d563772136bc4e9438490/sigmah/src/main/java/org/sigmah/client/icon/page_edit.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/icon/IconImageBundle.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/baf0134b9c811c02c59d563772136bc4e9438490/sigmah/src/main/java/org/sigmah/client/icon/IconImageBundle.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/baf0134b9c811c02c59d563772136bc4e9438490/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - .gitattributes</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/baf0134b9c811c02c59d563772136bc4e9438490/.gitattributes">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/baf0134b9c811c02c59d563772136bc4e9438490">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/baf0134b9c811c02c59d563772136bc4e9438490/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="2">
+	<a name="changeset1292">master be8f53ff</a>
+	<br/><span class="small">Timestamp: 2010-11-19 16:12:16</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin0465.html?page=Source/view&amp;id=1292">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/be8f53ffd5e5c7c3ad32f0e3ced7a0abca68279a">Diff</a>&#160;]</span> </td>
+<td colspan="3">Sets the default params for the connected user for Sigmah sprint 2.2.</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/public/Sigmah.params.js</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/be8f53ffd5e5c7c3ad32f0e3ced7a0abca68279a">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/be8f53ffd5e5c7c3ad32f0e3ced7a0abca68279a/sigmah/src/main/java/org/sigmah/public/Sigmah.params.js">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="4">
+	<a name="changeset1293">master 999f57c1</a>
+	<br/><span class="small">Timestamp: 2010-11-19 16:09:36</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugincfcf.html?page=Source/view&amp;id=1293">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/999f57c1aa849470a15125b0d80ec7bcc3cb5a0b">Diff</a>&#160;]</span> </td>
+<td colspan="3">Attaches the log frame models at the project models. Each time a project is instanciated, an empty log frame is created from this model. (issue <a href="view4944.html?id=48" title="[resolved] Link Logframe model to Project model" class="resolved">0000048</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/domain/logframe/LogFrameModel.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/999f57c1aa849470a15125b0d80ec7bcc3cb5a0b">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/999f57c1aa849470a15125b0d80ec7bcc3cb5a0b/sigmah/src/main/java/org/sigmah/shared/domain/logframe/LogFrameModel.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/domain/ProjectModel.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/999f57c1aa849470a15125b0d80ec7bcc3cb5a0b">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/999f57c1aa849470a15125b0d80ec7bcc3cb5a0b/sigmah/src/main/java/org/sigmah/shared/domain/ProjectModel.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/policy/ProjectPolicy.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/999f57c1aa849470a15125b0d80ec7bcc3cb5a0b">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/999f57c1aa849470a15125b0d80ec7bcc3cb5a0b/sigmah/src/main/java/org/sigmah/server/policy/ProjectPolicy.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="8">
+	<a name="changeset1294">master c1ca101a</a>
+	<br/><span class="small">Timestamp: 2010-11-18 18:45:53</span>
+	<br/><span class="small">Author: Raphael Calabro</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin3808.html?page=Source/view&amp;id=1294">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3">Diff</a>&#160;]</span> </td>
+<td colspan="3">Bug fixes in the report saving process + localization of the labels used in the project report screen (issue <a href="viewbb33-2.html?id=47" title="[resolved] Open and display project reports" class="resolved">0000047</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/policy/ProjectReportPolicy.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3/sigmah/src/main/java/org/sigmah/server/policy/ProjectReportPolicy.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/dao/hibernate/ProjectReportHibernateDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3/sigmah/src/main/java/org/sigmah/server/dao/hibernate/ProjectReportHibernateDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/dao/ProjectReportDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3/sigmah/src/main/java/org/sigmah/server/dao/ProjectReportDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3/sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3/sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/c1ca101af7efed8f507dd6626cfc3ebaa5535ff3/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="2">
+	<a name="changeset1295">master 84ed754f</a>
+	<br/><span class="small">Timestamp: 2010-11-18 17:39:53</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin8e84.html?page=Source/view&amp;id=1295">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/84ed754ff95d9fff0ba34d457cd95b2874b624dc">Diff</a>&#160;]</span> </td>
+<td colspan="3">Added the feature for collapsing fieldsets. (issue <a href="view7df0.html?id=41" title="[resolved] Add collapse/expand option on phase details fieldset" class="resolved">0000041</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/layout/LayoutGroupDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/84ed754ff95d9fff0ba34d457cd95b2874b624dc">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/84ed754ff95d9fff0ba34d457cd95b2874b624dc/sigmah/src/main/java/org/sigmah/shared/dto/layout/LayoutGroupDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="10">
+	<a name="changeset1296">master d96e27c4</a>
+	<br/><span class="small">Timestamp: 2010-11-18 17:33:32</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin29b4.html?page=Source/view&amp;id=1296">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d96e27c469202f803c9e20c0031c58f7ac29e05e">Diff</a>&#160;]</span> </td>
+<td colspan="3">- Added the project details page. (issue <a href="view1e85.html?id=54" title="[resolved] Create and layout the project details page" class="resolved">0000054</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/ProjectDetailsDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d96e27c469202f803c9e20c0031c58f7ac29e05e">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d96e27c469202f803c9e20c0031c58f7ac29e05e/sigmah/src/main/java/org/sigmah/shared/dto/ProjectDetailsDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/ProjectBannerDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d96e27c469202f803c9e20c0031c58f7ac29e05e">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d96e27c469202f803c9e20c0031c58f7ac29e05e/sigmah/src/main/java/org/sigmah/shared/dto/ProjectBannerDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/domain/ProjectDetails.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d96e27c469202f803c9e20c0031c58f7ac29e05e">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d96e27c469202f803c9e20c0031c58f7ac29e05e/sigmah/src/main/java/org/sigmah/shared/domain/ProjectDetails.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d96e27c469202f803c9e20c0031c58f7ac29e05e">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d96e27c469202f803c9e20c0031c58f7ac29e05e/sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d96e27c469202f803c9e20c0031c58f7ac29e05e">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d96e27c469202f803c9e20c0031c58f7ac29e05e/sigmah/src/main/java/org/sigmah/client/page/project/details/ProjectDetailsPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/ProjectPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d96e27c469202f803c9e20c0031c58f7ac29e05e">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d96e27c469202f803c9e20c0031c58f7ac29e05e/sigmah/src/main/java/org/sigmah/client/page/project/ProjectPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d96e27c469202f803c9e20c0031c58f7ac29e05e">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d96e27c469202f803c9e20c0031c58f7ac29e05e/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - .gitattributes</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d96e27c469202f803c9e20c0031c58f7ac29e05e">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d96e27c469202f803c9e20c0031c58f7ac29e05e/.gitattributes">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d96e27c469202f803c9e20c0031c58f7ac29e05e">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d96e27c469202f803c9e20c0031c58f7ac29e05e/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="28">
+	<a name="changeset1297">master 9706d59a</a>
+	<br/><span class="small">Timestamp: 2010-11-18 15:38:57</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin85ba.html?page=Source/view&amp;id=1297">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> </td>
+<td colspan="3">- Added the default flexible elements. This kind of elements is linked to a property of the underlying project. (issue <a href="view084d.html?id=46" title="[resolved] Default flexible elements for each project" class="resolved">0000046</a>)<br />
+- Manages the layout in the banner of the project page. The layout takes only default flexible elements and imposes constraints to its layout (no more than 2 rows and 4 columns, max 1 element per cell). (issue <a href="view98dc.html?id=45" title="[resolved] Banner in the project page." class="resolved">0000045</a>)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/resources/dozer-schema-mapping.xml</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/resources/dozer-schema-mapping.xml">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/element/handler/ValueEvent.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/dto/element/handler/ValueEvent.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/dto/element/handler/GWTImmortalEvent.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/dto/element/handler/GWTImmortalEvent.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/element/FlexibleElementType.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/dto/element/FlexibleElementType.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/element/FlexibleElementDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/dto/element/FlexibleElementDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/dto/element/DefaultFlexibleElementDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/dto/element/DefaultFlexibleElementDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/UserPermissionDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/dto/UserPermissionDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/ProjectModelDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/dto/ProjectModelDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/ProjectDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/dto/ProjectDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/ProjectBannerDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/dto/ProjectBannerDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/domain/element/DefaultFlexibleElementType.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/domain/element/DefaultFlexibleElementType.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/domain/element/DefaultFlexibleElement.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/domain/element/DefaultFlexibleElement.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/domain/ProjectBanner.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/domain/ProjectBanner.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/domain/Project.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/shared/domain/Project.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/policy/ProjectPolicy.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/server/policy/ProjectPolicy.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/UpdateProjectHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/UpdateProjectHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/GetCountriesHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/GetCountriesHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/domain/PersistentClasses.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/server/domain/PersistentClasses.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/public/sigmah.css</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/public/sigmah.css">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/ProjectView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/client/page/project/ProjectView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/ProjectPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/client/page/project/ProjectPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/dashboard/CreateProjectWindow.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/client/page/dashboard/CreateProjectWindow.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - .gitattributes</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/.gitattributes">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/9706d59a29b551d6ff67d7f1a762a3d6b7aff553">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/9706d59a29b551d6ff67d7f1a762a3d6b7aff553/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="15">
+	<a name="changeset1298">master d46557ac</a>
+	<br/><span class="small">Timestamp: 2010-11-17 18:02:15</span>
+	<br/><span class="small">Author: Raphael Calabro</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin87a0.html?page=Source/view&amp;id=1298">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> </td>
+<td colspan="3">Users can now create and save reports</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/domain/report/RichTextElement.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/shared/domain/report/RichTextElement.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/domain/report/ProjectReport.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/shared/domain/report/ProjectReport.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/command/result/ProjectReportModelListResult.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/shared/command/result/ProjectReportModelListResult.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/command/GetProjectReportModels.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/shared/command/GetProjectReportModels.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/policy/ProjectReportPolicy.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/server/policy/ProjectReportPolicy.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/UpdateEntityHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/UpdateEntityHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/GetProjectReportModelsHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/GetProjectReportModelsHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/dao/hibernate/ProjectReportHibernateDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/server/dao/hibernate/ProjectReportHibernateDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/dao/hibernate/HibernateModule.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/server/dao/hibernate/HibernateModule.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/dao/ProjectReportDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/server/dao/ProjectReportDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/calendar/ProjectCalendarView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/sigmah/src/main/java/org/sigmah/client/page/project/calendar/ProjectCalendarView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - .gitattributes</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/d46557ac901f064a700b442eac74b0371447e540">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/d46557ac901f064a700b442eac74b0371447e540/.gitattributes">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="45">
+	<a name="changeset1299">master 91edf190</a>
+	<br/><span class="small">Timestamp: 2010-11-17 11:05:57</span>
+	<br/><span class="small">Author: Raphael Calabro</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin35f2.html?page=Source/view&amp;id=1299">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> </td>
+<td colspan="3">Added the &quot;Reports &amp; Documents&quot; sub-section (issue 0000047)</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/dto/report/RichTextElementDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/shared/dto/report/RichTextElementDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/dto/report/ProjectReportSectionDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/shared/dto/report/ProjectReportSectionDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/dto/report/ProjectReportDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/shared/dto/report/ProjectReportDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/ProjectDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/shared/dto/ProjectDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/domain/report/RichTextElement.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/shared/domain/report/RichTextElement.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/domain/report/ProjectReportModelSection.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/shared/domain/report/ProjectReportModelSection.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/domain/report/ProjectReportModel.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/shared/domain/report/ProjectReportModel.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/domain/report/ProjectReport.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/shared/domain/report/ProjectReport.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/command/result/ProjectReportListResult.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/shared/command/result/ProjectReportListResult.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/command/GetProjectReports.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/shared/command/GetProjectReports.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/command/GetProjectReport.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/shared/command/GetProjectReport.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/server/policy/ProjectReportPolicy.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/server/policy/ProjectReportPolicy.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/GetProjectReportsHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/GetProjectReportsHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/GetProjectReportHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/GetProjectReportHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/CreateEntityHandler.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/server/endpoint/gwtrpc/handler/CreateEntityHandler.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/server/dao/hibernate/ProjectReportHibernateDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/server/dao/hibernate/ProjectReportHibernateDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/dao/hibernate/PersonalEventHibernateDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/server/dao/hibernate/PersonalEventHibernateDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/server/dao/ProjectReportDAO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/server/dao/ProjectReportDAO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/public/sigmah.css</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/public/sigmah.css">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/ui/FoldPanel.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/ui/FoldPanel.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_underline.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_underline.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_superscript.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_superscript.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_subscript.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_subscript.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_strikethrough.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_strikethrough.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_list_numbers.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_list_numbers.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_list_bullets.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_list_bullets.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_italic.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_italic.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_horizontalrule.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_horizontalrule.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_bold.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_bold.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_align_right.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_align_right.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_align_left.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_align_left.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_align_justify.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_align_justify.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_align_center.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/text_align_center.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/image_add.png</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/image_add.png">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/images/ToolbarImages.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/images/ToolbarImages.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsView.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsView.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/reports/ProjectReportsPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/calendar/ProjectCalendarPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/calendar/ProjectCalendarPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/ProjectState.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/ProjectState.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/ProjectPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/ProjectPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/client/page/project/DummyPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/page/project/DummyPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - .gitattributes</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/.gitattributes">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/91edf19028b81a924b90722e194f169f15884ea3">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/91edf19028b81a924b90722e194f169f15884ea3/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="10">
+	<a name="changeset1300">master 89d4a5c7</a>
+	<br/><span class="small">Timestamp: 2010-11-16 14:44:36</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin66cf-2.html?page=Source/view&amp;id=1300">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89d4a5c72e6f0002cf0776bbb3808705c93e7f27">Diff</a>&#160;]</span> </td>
+<td colspan="3">Improved the quality framework concept : added the criteria types, added a criteria list available in the framework, added some attributes for the criteria.</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/dto/quality/QualityFrameworkDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89d4a5c72e6f0002cf0776bbb3808705c93e7f27">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89d4a5c72e6f0002cf0776bbb3808705c93e7f27/sigmah/src/main/java/org/sigmah/shared/dto/quality/QualityFrameworkDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/quality/QualityCriterionDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89d4a5c72e6f0002cf0776bbb3808705c93e7f27">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89d4a5c72e6f0002cf0776bbb3808705c93e7f27/sigmah/src/main/java/org/sigmah/shared/dto/quality/QualityCriterionDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/dto/quality/CriterionTypeDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89d4a5c72e6f0002cf0776bbb3808705c93e7f27">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89d4a5c72e6f0002cf0776bbb3808705c93e7f27/sigmah/src/main/java/org/sigmah/shared/dto/quality/CriterionTypeDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/element/QuestionElementDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89d4a5c72e6f0002cf0776bbb3808705c93e7f27">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89d4a5c72e6f0002cf0776bbb3808705c93e7f27/sigmah/src/main/java/org/sigmah/shared/dto/element/QuestionElementDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/domain/quality/QualityFramework.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89d4a5c72e6f0002cf0776bbb3808705c93e7f27">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89d4a5c72e6f0002cf0776bbb3808705c93e7f27/sigmah/src/main/java/org/sigmah/shared/domain/quality/QualityFramework.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/domain/quality/QualityCriterion.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89d4a5c72e6f0002cf0776bbb3808705c93e7f27">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89d4a5c72e6f0002cf0776bbb3808705c93e7f27/sigmah/src/main/java/org/sigmah/shared/domain/quality/QualityCriterion.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">add - sigmah/src/main/java/org/sigmah/shared/domain/quality/CriterionType.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89d4a5c72e6f0002cf0776bbb3808705c93e7f27">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89d4a5c72e6f0002cf0776bbb3808705c93e7f27/sigmah/src/main/java/org/sigmah/shared/domain/quality/CriterionType.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - .gitattributes</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89d4a5c72e6f0002cf0776bbb3808705c93e7f27">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89d4a5c72e6f0002cf0776bbb3808705c93e7f27/.gitattributes">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/server/domain/PersistentClasses.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/89d4a5c72e6f0002cf0776bbb3808705c93e7f27">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/89d4a5c72e6f0002cf0776bbb3808705c93e7f27/sigmah/src/main/java/org/sigmah/server/domain/PersistentClasses.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="2">
+	<a name="changeset1301">master 156d9611</a>
+	<br/><span class="small">Timestamp: 2010-11-16 10:39:40</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin1015.html?page=Source/view&amp;id=1301">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/156d96113191be578a126f3f0bc646466418eccd">Diff</a>&#160;]</span> </td>
+<td colspan="3">Added notifications in the log frame instead of alerts.</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/logframe/ProjectLogFramePresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/156d96113191be578a126f3f0bc646466418eccd">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/156d96113191be578a126f3f0bc646466418eccd/sigmah/src/main/java/org/sigmah/client/page/project/logframe/ProjectLogFramePresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="5">
+	<a name="changeset1302">master 7ca7f004</a>
+	<br/><span class="small">Timestamp: 2010-11-16 10:29:55</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin5ed0.html?page=Source/view&amp;id=1302">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ca7f00427d86a1c29e0cc04014b060f8934c82f">Diff</a>&#160;]</span> </td>
+<td colspan="3">- Updated the funding labels to be more consistent with the funding notions.<br />
+- Added notification when a phase is saved instead of an alert.</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardPresenter.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ca7f00427d86a1c29e0cc04014b060f8934c82f">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ca7f00427d86a1c29e0cc04014b060f8934c82f/sigmah/src/main/java/org/sigmah/client/page/project/dashboard/ProjectDashboardPresenter.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/page/dashboard/CreateProjectWindow.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ca7f00427d86a1c29e0cc04014b060f8934c82f">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ca7f00427d86a1c29e0cc04014b060f8934c82f/sigmah/src/main/java/org/sigmah/client/page/dashboard/CreateProjectWindow.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ca7f00427d86a1c29e0cc04014b060f8934c82f">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ca7f00427d86a1c29e0cc04014b060f8934c82f/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants_fr.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/7ca7f00427d86a1c29e0cc04014b060f8934c82f">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/7ca7f00427d86a1c29e0cc04014b060f8934c82f/sigmah/src/main/java/org/sigmah/client/i18n/UIConstants.properties">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr class="row-1">
+<td class="category" width="25%" rowspan="4">
+	<a name="changeset1303">master c6f93a0a</a>
+	<br/><span class="small">Timestamp: 2010-11-15 17:32:16</span>
+	<br/><span class="small">Author: Tom Miette</span>
+			<br/><span class="small">Ported: N/A</span>
+		<br/><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="plugin9275.html?page=Source/view&amp;id=1303">Details</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c6f93a0a3981e86ddd3b09505cafa525593c77ea">Diff</a>&#160;]</span> </td>
+<td colspan="3">Added explicit casts of primitive types in DTO (try to fix Mike's build).</td>
+</tr>
+
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/ProjectFundingDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c6f93a0a3981e86ddd3b09505cafa525593c77ea">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/c6f93a0a3981e86ddd3b09505cafa525593c77ea/sigmah/src/main/java/org/sigmah/shared/dto/ProjectFundingDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/ProjectDTOLight.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c6f93a0a3981e86ddd3b09505cafa525593c77ea">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/c6f93a0a3981e86ddd3b09505cafa525593c77ea/sigmah/src/main/java/org/sigmah/shared/dto/ProjectDTOLight.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr class="row-2">
+<td class="small mono" colspan="2">mod - sigmah/src/main/java/org/sigmah/shared/dto/ProjectDTO.java</td>
+<td class="center" width="12%"><span class="small-links">
+		<span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/commit/c6f93a0a3981e86ddd3b09505cafa525593c77ea">Diff</a>&#160;]</span> <span class="bracket-link">[&#160;<a href="http://github.com/sigmah-dev/sigmah/tree/c6f93a0a3981e86ddd3b09505cafa525593c77ea/sigmah/src/main/java/org/sigmah/shared/dto/ProjectDTO.java">File</a>&#160;]</span> </span></td>
+</tr>
+		<tr><td class="spacer"></td></tr>
+		
+<tr>
+<td colspan="4" class="center">
+
+<a href="plugin98ef.html?page=Source/list&amp;id=3&amp;offset=53"><<</a>&nbsp;&nbsp;<a href="plugin40d9.html?page=Source/list&amp;id=3&amp;offset=1">1</a> <a href="pluginb93a.html?page=Source/list&amp;id=3&amp;offset=2">2</a> <a href="plugin9307.html?page=Source/list&amp;id=3&amp;offset=3">3</a> ... <a href="plugin21e5.html?page=Source/list&amp;id=3&amp;offset=12">12</a> ... <a href="plugin57a4.html?page=Source/list&amp;id=3&amp;offset=24">24</a> ... <a href="pluginb775.html?page=Source/list&amp;id=3&amp;offset=36">36</a> ... <a href="plugin3ac3.html?page=Source/list&amp;id=3&amp;offset=48">48</a> <a href="plugin6278.html?page=Source/list&amp;id=3&amp;offset=49">49</a> <a href="pluginb1f4.html?page=Source/list&amp;id=3&amp;offset=50">50</a> <a href="plugin29f1.html?page=Source/list&amp;id=3&amp;offset=51">51</a> <a href="plugin67bb.html?page=Source/list&amp;id=3&amp;offset=52">52</a> <a href="plugin98ef.html?page=Source/list&amp;id=3&amp;offset=53">53</a> <strong>54</strong> <a href="pluginac7c.html?page=Source/list&amp;id=3&amp;offset=55">55</a> <a href="pluginb9ec.html?page=Source/list&amp;id=3&amp;offset=56">56</a> <a href="plugin12f3.html?page=Source/list&amp;id=3&amp;offset=57">57</a> <a href="plugin215a.html?page=Source/list&amp;id=3&amp;offset=58">58</a> <a href="plugin8a79.html?page=Source/list&amp;id=3&amp;offset=59">59</a> <a href="pluginedcd.html?page=Source/list&amp;id=3&amp;offset=60">60</a> ... <a href="plugin80db.html?page=Source/list&amp;id=3&amp;offset=68">68</a> <a href="plugin481a.html?page=Source/list&amp;id=3&amp;offset=69">69</a> <a href="pluginb806.html?page=Source/list&amp;id=3&amp;offset=70">70</a>&nbsp;&nbsp;<a href="pluginac7c.html?page=Source/list&amp;id=3&amp;offset=55">>></a></td>
+</tr>
+
+</table>
+
+	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.html" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/plugin.php?page=Source/list&id=3&offset=54 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 17:20:04 GMT -->
+</html>

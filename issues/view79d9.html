@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=463&history=1 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 15:49:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.html" />
+	<script type="text/javascript"><!--
+		if(document.layers) {document.write("<style>td{padding:0px;}<\/style>")}
+	// --></script>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma-directive" content="no-cache" />
+	<meta http-equiv="Cache-Directive" content="no-cache" />
+	<meta http-equiv="Expires" content="Wed, 25 Jul 2018 15:15:19 GMT" />
+	<link rel="shortcut icon" href="images/favicon.html" type="image/x-icon" />
+	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Text Search" href="browser_search_plugin84ae.html?type=text" />	<link rel="search" type="application/opensearchdescription+xml" title="MantisBT: Issue Id" href="browser_search_pluginb70d.html?type=id" />	<title>0000463: Problem between local date and stored date in the database - Sigmah Issue Tracker</title>
+<script type="text/javascript" src="javascript/min/common.html"></script>
+<script type="text/javascript">var loading_lang = "Loading...";</script><script type="text/javascript" src="javascript/min/ajax.js"></script>
+<link rel="stylesheet" type="text/css" href="plugin_filea93c.css?file=Source/style.css"/></head>
+<body>
+<div align="left"><a href="my_view_page.html"><img border="0" alt="Sigmah Issue Tracker" src="images/sigmah-logo-Mantis.html" /></a></div><table class="hide"><tr><td class="login-info-left">Anonymous | <a href="login_page9325.html?return=%2Fissues%2Fview.php%3Fid%3D463%26history%3D1">Login</a> | <a href="signup_page.html">Signup for a new account</a></td><td class="login-info-middle"><span class="italic">2018-07-25 17:15 CEST</span></td><td class="login-info-right"><form method="post" name="form_set_project" action="http://www.sigmah.org/issues/set_project.php">Project: <select name="project_id" class="small" onchange="document.forms.form_set_project.submit();"><option value="0" selected="selected" >All Projects</option>
+<option value="1">sigmah</option>
+<option value="4">Sigmah Central</option>
+</select> <input type="submit" class="button-small" value="Switch" /></form><a href="200_rss_Sigmah_Issue_Tracker_-_Issuesd41d.xml?"><img src="images/rss.html" alt="RSS" style="border-style: none; margin: 5px; vertical-align: middle;" /></a></td></tr></table><table class="width100" cellspacing="0"><tr><td class="menu"><a href="my_view_page.html">My View</a> | <a href="view_all_bug_page.html">View Issues</a> | <a href="changelog_page.html">Change Log</a> | <a href="roadmap_page.html">Roadmap</a> | <a href="plugina0e2.html?page=Source/index">Repositories</a> | <a href="account_page.html">My Account</a></td><td class="menu right nowrap"><form method="post" action="http://www.sigmah.org/issues/jump_to_bug.php"><input type="text" name="bug_id" size="10" class="small" value="Issue #" onfocus="if (this.value == 'Issue #') this.value = ''" onblur="if (this.value == '') this.value = 'Issue #'" />&#160;<input type="submit" class="button-small" value="Jump" />&#160;</form></td></tr></table><br /><table class="width100" cellspacing="1"><tr><td class="form-title" colspan="3">View Issue Details&#160;<span class="small"><span class="bracket-link">[&#160;<a href="#bugnotes">Jump to Notes</a>&#160;]</span> </span></td><td class="center"><span class="small"></span></td><td class="right" colspan="2"><span class="small"><span class="bracket-link">[&#160;<a href="view79d9.html?id=463&amp;history=1#history">Issue History</a>&#160;]</span> </span><span class="small"><span class="bracket-link">[&#160;<a href="print_bug_pageef66.html?bug_id=463">Print</a>&#160;]</span> </span></td></tr><tr><td class="category" width="15%">ID</td><td class="category" width="20%">Project</td><td class="category" width="15%">Category</td><td class="category" width="15%">View Status</td><td class="category" width="15%">Date Submitted</td><td class="category" width="20%">Last Update</td></tr><tr class="row-1"><td>0000463</td><td>sigmah</td><td>Project</td><td>public</td><td>2012-05-02 12:26</td><td>2015-07-08 17:03</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category">Reporter</td><td>aponcon</td><td colspan="4">&#160;</td></tr><tr class="row-1"><td class="category">Assigned To</td><td></td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Priority</td><td>normal</td><td class="category">Severity</td><td>major</td><td class="category">Reproducibility</td><td>always</td></tr><tr class="row-1"><td class="category">Status</td><td bgcolor="#fcbdbd">new</td><td class="category">Resolution</td><td>reopened</td><td colspan="2">&#160;</td></tr><tr class="row-2"><td class="category">Platform</td><td></td><td class="category">OS</td><td></td><td class="category">OS Version</td><td></td></tr><tr class="row-1"><td class="category">Product Version</td><td>1.1.1</td><td colspan="4">&#160;</td></tr><tr class="row-2"><td class="category">Target Version</td><td>next-but-one</td><td class="category">Fixed in Version</td><td></td><td colspan="2">&#160;</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category">Summary</td><td colspan="5">0000463: Problem between local date and stored date in the database</td></tr><tr class="row-2"><td class="category">Description</td><td colspan="5">When an user use the software in a place with a different timezone than the database and if this user change the value of a date field, the value showed after can be inconsistent relatively to the date previously entered.<br />
+This problem is occuring only on some date field as the start date and the end date of a project.</td></tr><tr class="row-1"><td class="category">Steps To Reproduce</td><td colspan="5">- Change the timezone of your PC for an upper timezone than yours <br />
+- Restart your Tomcat / Jetty if it is currently running on your PC<br />
+- Go to your Sigmah instance<br />
+- Open a project<br />
+- Open the tab named &quot;Informations&quot;<br />
+- Change the start date<br />
+- Save your work<br />
+- Close the project<br />
+- Re-open the same project<br />
+- Go back to the &quot;Informations&quot; tab<br />
+=&gt; the starting date is one day earlier than the day previously entered<br />
+</td></tr><tr class="row-2"><td class="category">Tags</td><td colspan="5">No tags attached.</td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-1"><td class="category">User Report URL</td><td colspan="5"><a href="http://www.sigmah.org/node/583">http://www.sigmah.org/node/583</a> [<a href="http://www.sigmah.org/node/583" target="_blank">^</a>] &amp; <a href="http://www.sigmah.org/node/707">http://www.sigmah.org/node/707</a> [<a href="http://www.sigmah.org/node/707" target="_blank">^</a>]</td></tr><tr class="row-2"><td class="category">OS</td><td colspan="5">NA</td></tr><tr class="row-1"><td class="category">Other OS</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">Browser</td><td colspan="5">NA</td></tr><tr class="row-1"><td class="category">Other browser</td><td colspan="5"></td></tr><tr class="row-2"><td class="category">ScreenURL</td><td colspan="5"></td></tr><tr class="row-1"><td class="category">(ActivityInfo) Noticed in revision</td><td colspan="5"></td></tr><tr class="spacer"><td colspan="6"></td></tr><tr class="row-2"><td class="category"><a name="attachments" id="attachments" />Attached Files</td><td colspan="5"></td></tr><tr align="center"><td align="center" colspan="6"><table><tr class="vcenter"><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td><td class="center"></td></tr></table></td></tr></table><br />
+
+<div id="relationships_open"><table class="width100" cellspacing="1">
+<tr class="row-2" valign="top">
+	<td width="15%" class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;Relationships	</td>
+</tr>
+<tr>
+	<td colspan="2"><table border="0" width="100%" cellpadding="0" cellspacing="1"><tr bgcolor="#c9ccc4"><td><span class="nowrap">parent of</span>&#160;</td><td><a href="view6048.html?id=425">0000425</a></td><td><span class="issue-status" title="won't fix">closed</span></td><td><span class="nowrap"><a href="view_user_page0b30.html?id=2">osarrat</a></span>&#160;</td><td>Stored date is one day earlier than entered date on Sigmah Central&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">has duplicate</span>&#160;</td><td><a href="view2a23.html?id=677">0000677</a></td><td><span class="issue-status" title="duplicate">closed</span></td><td>&#160;</td><td>Wrong Timezone difference management&#160;</td></tr>
+<tr bgcolor="#c9ccc4"><td><span class="nowrap">related to</span>&#160;</td><td><a href="view3958.html?id=467">0000467</a></td><td><span class="issue-status" title="fixed">closed</span></td><td><span class="nowrap"><a href="view_user_pageea25.html?id=24">aponcon</a></span>&#160;</td><td>Data written in the indicator space can be moved on a near month&#160;</td></tr>
+</table></td>
+</tr>
+</table>
+
+</div><div id="relationships_closed" class="hidden"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title">
+		<a href="#" onclick="ToggleDiv( 'relationships' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;Relationships	</td>
+</tr>
+</table>
+
+</div>
+<a name="bugnotes" id="bugnotes" /><br />
+
+<div id="bugnotes_open"><table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;		Notes	</td>
+</tr>
+<tr class="bugnote" id="c919">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view9aa3.html?id=463#c919" title="Direct link to note">0000919)</a></span><br />
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2012-05-09 14:39</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Patch by Aurélien Ponçon : changes the date type columns to timestamp to avoid time difference (fixes issue <a href="view9aa3.html?id=463" title="[new] Problem between local date and stored date in the database">0000463</a>).<br />
+<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/shared/domain/Project.java<br />
+Modified : /trunk/sigmah/src/main/java/org/sigmah/shared/domain/UserDatabase.java<br />
+	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1150">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view9aa3.html?id=463#c1150" title="Direct link to note">0001150)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2013-05-03 18:51</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		When testing this issue, have a look to <a href="http://www.sigmah.org/node/707">http://www.sigmah.org/node/707</a> [<a href="http://www.sigmah.org/node/707" target="_blank">^</a>] to test the resolution of this issue, because according to this post, the resolution of this issue in 1.2-rc1 is incomplete.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1177">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view9aa3.html?id=463#c1177" title="Direct link to note">0001177)</a></span><br />
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2013-05-16 19:31</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Added test case TB3 on wiki page TestScenario4TransversalBehaviors through web user interface to test resolution of issue <a href="view9aa3.html?id=463" title="[new] Problem between local date and stored date in the database">0000463</a> and issue <a href="view3958.html?id=467" title="[closed] Data written in the indicator space can be moved on a near month" class="resolved">0000467</a>.<br />
+<br />
+Modified : /wiki/TestScenario4TransversalBehaviors.wiki<br />
+	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1179">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view9aa3.html?id=463#c1179" title="Direct link to note">0001179)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2013-05-16 19:36</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Issue switched back from resolved to assigned because test case <a href="http://code.google.com/p/sigma-h/wiki/TestScenario4TransversalBehaviors#TB3">http://code.google.com/p/sigma-h/wiki/TestScenario4TransversalBehaviors#TB3</a> [<a href="http://code.google.com/p/sigma-h/wiki/TestScenario4TransversalBehaviors#TB3" target="_blank">^</a>] failed with it.<br />
+<br />
+This is coherent with note <a href="view9aa3.html?id=463#c1150">http://www.sigmah.org/issues/view.php?id=463#c1150</a> [<a href="view9aa3.html?id=463#c1150" target="_blank">^</a>] .<br />
+<br />
+The resolution of this bug should be revised.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1221">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view9aa3.html?id=463#c1221" title="Direct link to note">0001221)</a></span><br />
+		<a href="view_user_page2580.html?id=43">Guerline</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2013-06-10 17:39</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Report mantis to the 1.3 version. For now, all dates are converted to the client's timezone.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1222">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view9aa3.html?id=463#c1222" title="Direct link to note">0001222)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2013-06-10 18:37</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Does the conversion to the client's timezone will be done without any commit?<br />
+Does the behavior planned with all dates converted to final user's timezone (aka client's timezone) fix the bug as given in this issue &quot;Steps to reproduce&quot;?	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1225">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view9aa3.html?id=463#c1225" title="Direct link to note">0001225)</a></span><br />
+		<a href="view_user_page2580.html?id=43">Guerline</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2013-06-11 12:21</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Yes, the conversion to the client's time zone will be done without any commit but the behavior planned doesn't fix the issue.<br />
+Since the dates change according to client's time zone, if the client's time zone is prior to the server one, then the date displayed will still be one day earlier that entered one.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1242">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view9aa3.html?id=463#c1242" title="Direct link to note">0001242)</a></span><br />
+		<a href="view_user_page2580.html?id=43">Guerline</a>		<span class="small">(developer)</span>
+				<br />
+		<span class="small">2013-06-12 15:01</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		This issue concerns particularly projects (start and end dates), calendar (full day events, activities, reminders...) and date fields.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+<tr class="bugnote" id="c1650">
+        <td class="bugnote-public">
+				<span class="small">(<a href="view9aa3.html?id=463#c1650" title="Direct link to note">0001650)</a></span><br />
+		<a href="view_user_page0b30.html?id=2">osarrat</a>		<span class="small">(administrator)</span>
+				<br />
+		<span class="small">2015-04-30 10:11</span><br />
+				<br /><div class="small">
+				</div>
+	</td>
+	<td class="bugnote-note-public">
+		Issue still visible on v2.0-rc1.	</td>
+</tr>
+<tr class="spacer">
+	<td colspan="2"></td>
+</tr>
+</table>
+
+</div><div id="bugnotes_closed" class="hidden">
+<table class="width100" cellspacing="1">
+<tr>
+	<td class="form-title" colspan="2">
+		<a href="#" onclick="ToggleDiv( 'bugnotes' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;		Notes	</td>
+</tr>
+</table>
+</div>
+<a name="history" id="history" /><br />
+
+<div id="history_open"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/minus.html" alt="-" /></a>&#160;Issue History	</td>
+</tr>
+<tr class="row-category-history">
+	<td class="small-caption">
+		Date Modified	</td>
+	<td class="small-caption">
+		Username	</td>
+	<td class="small-caption">
+		Field	</td>
+	<td class="small-caption">
+		Change	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2012-05-02 12:26	</td>
+	<td class="small-caption">
+		<a href="view_user_pageea25.html?id=24">aponcon</a>	</td>
+	<td class="small-caption">
+		New Issue	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2012-05-02 12:26	</td>
+	<td class="small-caption">
+		<a href="view_user_pageea25.html?id=24">aponcon</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		new =&gt; assigned	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2012-05-02 12:26	</td>
+	<td class="small-caption">
+		<a href="view_user_pageea25.html?id=24">aponcon</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		 =&gt; aponcon	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2012-05-02 12:26	</td>
+	<td class="small-caption">
+		<a href="view_user_pageea25.html?id=24">aponcon</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		child of 0000425	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2012-05-02 12:30	</td>
+	<td class="small-caption">
+		<a href="view_user_pageea25.html?id=24">aponcon</a>	</td>
+	<td class="small-caption">
+		User Report URL	</td>
+	<td class="small-caption">
+		 =&gt; <a href="http://www.sigmah.org/node/583">http://www.sigmah.org/node/583</a> [<a href="http://www.sigmah.org/node/583" target="_blank">^</a>]	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2012-05-02 12:31	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship replaced	</td>
+	<td class="small-caption">
+		has duplicate 0000425	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2012-05-02 12:32	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship replaced	</td>
+	<td class="small-caption">
+		parent of 0000425	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2012-05-09 14:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Checkin	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2012-05-09 14:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Note Added: 0000919	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2012-05-09 14:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		assigned =&gt; resolved	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2012-05-09 14:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Resolution	</td>
+	<td class="small-caption">
+		open =&gt; fixed	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2012-06-15 11:54	</td>
+	<td class="small-caption">
+		<a href="view_user_pageea25.html?id=24">aponcon</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		related to 0000467	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-03 18:51	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		User Report URL	</td>
+	<td class="small-caption">
+		<a href="http://www.sigmah.org/node/583">http://www.sigmah.org/node/583</a> [<a href="http://www.sigmah.org/node/583" target="_blank">^</a>] =&gt; <a href="http://www.sigmah.org/node/583">http://www.sigmah.org/node/583</a> [<a href="http://www.sigmah.org/node/583" target="_blank">^</a>] &amp; <a href="http://www.sigmah.org/node/707">http://www.sigmah.org/node/707</a> [<a href="http://www.sigmah.org/node/707" target="_blank">^</a>]	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-03 18:51	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001150	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-16 19:31	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Checkin	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-16 19:31	</td>
+	<td class="small-caption">
+		<a href="view_user_page5255.html?id=9">svn_mantis-robot</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001177	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-16 19:36	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001179	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-05-16 19:36	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		resolved =&gt; assigned	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-05-28 10:29	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		aponcon =&gt; Guerline	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-06-10 17:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001221	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-06-10 17:39	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Target Version	</td>
+	<td class="small-caption">
+		1.2 =&gt; 2.0	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-06-10 18:37	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001222	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2013-06-11 12:21	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001225	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2013-06-12 15:01	</td>
+	<td class="small-caption">
+		<a href="view_user_page2580.html?id=43">Guerline</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001242	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2015-04-30 10:11	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		OS	</td>
+	<td class="small-caption">
+		Windows XP =&gt; NA	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2015-04-30 10:11	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Browser	</td>
+	<td class="small-caption">
+		Google Chrome 8.0 =&gt; NA	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2015-04-30 10:11	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Note Added: 0001650	</td>
+	<td class="small-caption">
+			</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2015-04-30 10:11	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Resolution	</td>
+	<td class="small-caption">
+		fixed =&gt; reopened	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2015-04-30 10:12	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Relationship added	</td>
+	<td class="small-caption">
+		has duplicate 0000677	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2015-04-30 10:13	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		Guerline =&gt; rcalabro	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2015-07-08 17:03	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Assigned To	</td>
+	<td class="small-caption">
+		rcalabro =&gt; 	</td>
+</tr>
+<tr class="row-2">
+	<td class="small-caption">
+		2015-07-08 17:03	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Status	</td>
+	<td class="small-caption">
+		assigned =&gt; new	</td>
+</tr>
+<tr class="row-1">
+	<td class="small-caption">
+		2015-07-08 17:03	</td>
+	<td class="small-caption">
+		<a href="view_user_page0b30.html?id=2">osarrat</a>	</td>
+	<td class="small-caption">
+		Target Version	</td>
+	<td class="small-caption">
+		2.0 =&gt; next-but-one	</td>
+</tr>
+</table>
+</div><div id="history_closed" class="hidden"><table class="width100" cellspacing="0">
+<tr>
+	<td class="form-title" colspan="4">
+	<a href="#" onclick="ToggleDiv( 'history' ); return false;"
+			><img border="0" src="images/plus.html" alt="+" /></a>&#160;Issue History	</td>
+</tr>
+</table>
+
+</div>	<br />
+	<hr size="1" />
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><tr valign="top"><td>	<address>Copyright &copy; 2000 - 2018 MantisBT Team</address>
+</td><td>
+	<div align="right"><a href="http://www.mantisbt.org/" title="Free Web Based Bug Tracker"><img src="images/mantis_logo.html" width="145" height="50" alt="Powered by Mantis Bugtracker" border="0" /></a></div>
+</td></tr></table>
+</body>
+
+<!-- Mirrored from www.sigmah.org/issues/view.php?id=463&history=1 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jul 2018 15:49:02 GMT -->
+</html>

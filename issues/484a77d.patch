@@ -1,0 +1,153 @@
+Index: src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/ExcelUtils.java
+===================================================================
+--- src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/ExcelUtils.java	(revision 1581)
++++ src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/ExcelUtils.java	(working copy)
+@@ -255,6 +255,29 @@
+    cell.setCellStyle(style);
+ 	}
+ 	
++	public void createLinkCell_URL(HSSFCell cell, String value, 
++			String target,
++			boolean bordered) {
++		cell.setCellValue(value);
++
++		
++		CellStyle style = wb.createCellStyle();
++		if (bordered)
++			style=createBorderedStyle(wb);
++		Font hlink_font = wb.createFont();
++		hlink_font.setUnderline(Font.U_SINGLE);
++		hlink_font.setColor(IndexedColors.BLUE.getIndex());
++		style.setFont(hlink_font);
++		style.setVerticalAlignment(CellStyle.VERTICAL_CENTER);
++		style.setIndention((short) 1);
++		style.setWrapText(true);
++
++		HSSFHyperlink link = new HSSFHyperlink(HSSFHyperlink.LINK_URL);
++		link.setAddress(target);
++		cell.setHyperlink(link);
++   cell.setCellStyle(style);
++	}
++	
+ 	public String normalizeAsLink(String linkName){
+ 		//Escape characters which can't be included in a sheet's name
+ 		linkName = linkName.replaceAll("('|\\?|\\/|\\[|\\]|\\:)", "_");
+Index: src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/GlobalExportDataProvider.java
+===================================================================
+--- src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/GlobalExportDataProvider.java	(revision 1581)
++++ src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/GlobalExportDataProvider.java	(working copy)
+@@ -241,7 +241,9 @@
+ 						if (elementName.equals("element.QuestionElement")) {
+ 							pair = getChoicePair(element, valueResult);
+ 						}
+-
++						
++						pair = new ValueLabel(element.getClass().getSimpleName(),element.getClass().getSimpleName());
++						
+ 						// titles
+ 
+ 						if (isFirstLine) {
+Index: src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/template/BaseSynthesisExcelTemplate.java
+===================================================================
+--- src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/template/BaseSynthesisExcelTemplate.java	(revision 1581)
++++ src/main/java/org/sigmah/server/endpoint/export/sigmah/spreadsheet/template/BaseSynthesisExcelTemplate.java	(working copy)
+@@ -6,6 +6,13 @@
+ 
+ import java.io.OutputStream;
+ 
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++import java.util.Map.Entry;
++
++import javassist.bytecode.Descriptor.Iterator;
++
+ import org.apache.poi.hssf.usermodel.HSSFCell;
+ import org.apache.poi.hssf.usermodel.HSSFRow;
+ import org.apache.poi.hssf.usermodel.HSSFSheet;
+@@ -16,15 +23,19 @@
+ import org.sigmah.server.endpoint.export.sigmah.spreadsheet.GlobalExportDataProvider;
+ import org.sigmah.server.endpoint.export.sigmah.spreadsheet.GlobalExportDataProvider.ValueLabel;
+ import org.sigmah.server.endpoint.export.sigmah.spreadsheet.data.BaseSynthesisData;
++import org.sigmah.server.endpoint.file.FileManager.FileElement;
+ import org.sigmah.shared.command.GetValue;
+ import org.sigmah.shared.command.result.ValueResult;
+ import org.sigmah.shared.domain.OrgUnit;
+ import org.sigmah.shared.domain.PhaseModel;
+ import org.sigmah.shared.domain.Project;
++import org.sigmah.shared.domain.element.FilesListElement;
+ import org.sigmah.shared.domain.element.FlexibleElement;
+ import org.sigmah.shared.domain.layout.Layout;
+ import org.sigmah.shared.domain.layout.LayoutConstraint;
+ import org.sigmah.shared.domain.layout.LayoutGroup;
++import org.sigmah.shared.dto.value.FileDTO;
++import org.sigmah.shared.dto.value.ListableValue;
+ 
+ /*
+  * Base excel template for project/orgunit excel templates
+@@ -134,6 +145,8 @@
+ 				// skip if element is not exportable
+ 				if (!element.isExportable())
+ 					continue;
++				
++				HashMap<String, Integer> fileDTOMap = new HashMap<String, Integer>();
+ 
+ 				final String elementName = "element." + element.getClass().getSimpleName();
+ 				Integer id = (clazz.equals(Project.class)) ? data.getProject().getId() : data.getOrgUnit().getId();
+@@ -149,7 +162,14 @@
+ 					pair = data.getDataProvider().getDefElementPair(valueResult, element,
+ 					                data.getProject() != null ? data.getProject() : data.getOrgUnit(), clazz,
+ 					                data.getEntityManager(), data.getLocale(), data.getTranslator());
+-
++				}/* FILE LIST */ else if(elementName.equals("element.FilesListElement")){
++										
++					String ans="";
++					for(ListableValue f: valueResult.getValuesObject()){
++						FileDTO F = (FileDTO) f;						
++						fileDTOMap.put(F.getName(), F.getId());
++					}
++					
+ 				}/* CHECKBOX */else if (elementName.equals("element.CheckboxElement")) {
+ 					pair = data.getDataProvider().getCheckboxElementPair(valueResult, element, data.getLocale(),
+ 					                data.getTranslator());
+@@ -168,8 +188,14 @@
+ 					isMessage = true;
+ 				}
+ 
+-				if (pair != null)
++				
++				if(elementName.equals("element.FilesListElement")){
++					if (fileDTOMap.size()>0){
++						putElementFileLinks(sheet, ++rowIndex, "Sample Label", fileDTOMap, isMessage);
++					}
++				} else if (pair != null){
+ 					putElement(sheet, ++rowIndex, pair, isMessage);
++				}
+ 
+ 			}// elements
+ 		}
+@@ -197,6 +223,24 @@
+ 
+ 		row.setHeightInPoints(lineCount * defHeight);
+ 	}
++	
++	private void putElementFileLinks(HSSFSheet sheet, int rowIndex, String label, HashMap<String, Integer> data, boolean isMessage) {
++		row = sheet.createRow(rowIndex);
++		
++		utils.putBorderedBasicCell(sheet, rowIndex, 2, label);
++		HSSFCell C = null;
++		int k=3;
++		for(Map.Entry<String, Integer> record :  data.entrySet()) {		
++			C = utils.putBorderedBasicCell(sheet, rowIndex, k++, "");
++			//To-DO : Replace with dynamic hostname before submitting patch
++			utils.createLinkCell_URL(C, record.getKey(), "http://localhost:9090/Sigmah/download?id="+record.getValue(), false);
++		}
++		
++		if (isMessage) {
++			row.getCell(k).getCellStyle().setFont(utils.getItalicFont(wb, (short) 11));
++		}
++
++	}
+ 
+ 	@Override
+ 	public void write(OutputStream output) throws Throwable {

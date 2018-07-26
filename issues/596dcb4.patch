@@ -1,0 +1,87 @@
+Index: sigmah/src/main/java/org/sigmah/client/i18n/UIMessages_es.properties
+===================================================================
+--- sigmah/src/main/java/org/sigmah/client/i18n/UIMessages_es.properties	(revision 1561)
+	+++ sigmah/src/main/java/org/sigmah/client/i18n/UIMessages_es.properties	(working copy)
+	@@ -126,3 +126,5 @@
+	 adminProfilesDeleteNone=No ha seleccionado ningun perfil ! Por favor, seleccione una li\u00F1a o m\u00E1s.
+	  #Warns the user that his file is too big to be uploaded
+	  flexibleElementFilesListUploadErrorTooBig=El archivo es demasiado grande ({0} MB, tama\u00F1o m\u00E1ximo permitido: {1} MB)
+	+#IE_Warning
+	+ieWarning=Warning :: You are using Internet Explorer (IE) which is not fully compatible with Sigmah. We would suggest you to use a different browser.
+	Index: sigmah/src/main/java/org/sigmah/client/i18n/UIMessages.properties
+	===================================================================
+	--- sigmah/src/main/java/org/sigmah/client/i18n/UIMessages.properties	(revision 1561)
+	+++ sigmah/src/main/java/org/sigmah/client/i18n/UIMessages.properties	(working copy)
+	@@ -233,4 +233,6 @@
+	 #Heading for the reviewing the details imported for a project/org unit
+	 importConfirmationDetailsHeading=Confirm importation details for {0}
+	  #Notification that the importation has been successful
+	 -importSuccessful=The importation was successful for  ''{0}''
+	 \ No newline at end of file
+	 +importSuccessful=The importation was successful for  ''{0}''
+	 +#IE_Warning
+	 +ieWarning=Warning :: You are using Internet Explorer (IE) which is not fully compatible with Sigmah. We would suggest you to use a different browser.
+	 \ No newline at end of file
+	 Index: sigmah/src/main/java/org/sigmah/client/i18n/UIMessages_en.properties
+	 ===================================================================
+	 --- sigmah/src/main/java/org/sigmah/client/i18n/UIMessages_en.properties	(revision 1561)
+	+++ sigmah/src/main/java/org/sigmah/client/i18n/UIMessages_en.properties	(working copy)
+	@@ -126,3 +126,6 @@
+	 adminProfilesDeleteNone=You did not select any profile. Please select one ore more row.
+	  #Warns the user that his file is too big to be uploaded
+	  flexibleElementFilesListUploadErrorTooBig=The file is too big ({0} MB, maximum allowed size: {1} MB).
+	  +#IE_Warning
+	  +ieWarning=Warning :: You are using Internet Explorer (IE) which is not fully compatible with Sigmah. We would suggest you to use a different browser.
+	  +
+	  Index: sigmah/src/main/java/org/sigmah/client/i18n/UIMessages_fr.properties
+	  ===================================================================
+	  --- sigmah/src/main/java/org/sigmah/client/i18n/UIMessages_fr.properties	(revision 1561)
+	+++ sigmah/src/main/java/org/sigmah/client/i18n/UIMessages_fr.properties	(working copy)
+	@@ -126,3 +126,5 @@
+	 adminProfilesDeleteNone=Vous n''avez s\u00E9lectionn\u00E9 aucun profil. Veuillez s\u00E9lectionner une ou plusieurs lignes.
+	  #Warns the user that his file is too big to be uploaded
+	  flexibleElementFilesListUploadErrorTooBig=Le fichier est trop gros ({0} Mo, taille maximale autoris\u00E9e : {1} Mo).
+	  +#IE_Warning
+	  +ieWarning=Warning :: You are using Internet Explorer (IE) which is not fully compatible with Sigmah. We would suggest you to use a different browser.
+	  Index: sigmah/src/main/java/org/sigmah/client/SigmahAppFrame.java
+	  ===================================================================
+	  --- sigmah/src/main/java/org/sigmah/client/SigmahAppFrame.java	(revision 1561)
+	+++ sigmah/src/main/java/org/sigmah/client/SigmahAppFrame.java	(working copy)
+	@@ -57,6 +57,7 @@
+	 import com.google.gwt.user.client.rpc.AsyncCallback;
+	  import com.google.gwt.user.client.ui.Anchor;
+	   import com.google.gwt.user.client.ui.Label;
+	   +import com.google.gwt.user.client.ui.HTML;
+	    import com.google.gwt.user.client.ui.RootPanel;
+	     import com.google.gwt.user.client.ui.Widget;
+	      import com.google.inject.Inject;
+	      @@ -116,7 +117,13 @@
+	       				}
+ 
+ 			});
+-
++			
++			//Add UserAgent Check as asked in #596, and display an error message in case of IE
++			if(getUserAgent().toLowerCase().indexOf("msie ")!=-1){
+	+				RootPanel.get("global_error_notification").add(new HTML("<font color='red'>"+I18N.MESSAGES.ieWarning()+"</font>"));
+	+			}
+	+			//UserAgent Check added
+	+			
+	 			RootPanel.get("bugreport").add(reportButton);
+				 
+				 			final Anchor helpButton = new Anchor(I18N.CONSTANTS.help());
+Index: sigmah/src/main/resources/org/sigmah/server/bootstrap/SigmahHostController.html
+===================================================================
+--- sigmah/src/main/resources/org/sigmah/server/bootstrap/SigmahHostController.html	(revision 1561)
+	+++ sigmah/src/main/resources/org/sigmah/server/bootstrap/SigmahHostController.html	(working copy)
+	@@ -84,6 +84,9 @@
+	         <div id="username"><img src="image/name.png" alt=""/> </div>
+		  		<div id="orgname">SIGMAH</div>
+				     </div>
+				     +    <div class="top_bar_messages">
+				     +    	<div id="global_error_notification"></div>
+				     +    </div>
+				          <div class="sigmah">
+					           <div id="logout"><img src="image/deconnexion.png" alt="" /> </div>
+						            <!-- hide credit frame -->
+
